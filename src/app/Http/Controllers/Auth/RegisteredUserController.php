@@ -32,15 +32,35 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
+            'nickname' => ['required', 'string', 'max:255'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
+
+        if (isset($request->icon)) {
+            $icon = request()->file('icon')->getClientOriginalName();
+            request()->file('icon')->move('storage/images', $icon);
+        }
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'nickname' => $request->nickname,
+            'icon' => $icon,
             'password' => Hash::make($request->password),
         ]);
+
+        // $user = $request->name;
+        // $user = $request->email;
+        // $user = $request->nickname;
+        // if (isset($request->icon)) {
+        //     $icon = request()->file('icon')->getClientOriginalName();
+        //     request()->file('icon')->move('storage/images', $icon);
+        //     $user = $icon;
+        // }
+        // $user = Hash::make($request->password);
+
+        // dd($user);
 
         event(new Registered($user));
 
