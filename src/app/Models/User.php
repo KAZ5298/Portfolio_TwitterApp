@@ -5,6 +5,10 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
 use App\Models\Models\Tweet;
+use App\Models\Models\Favorite;
+use App\Models\Models\Follower;
+use App\Models\Models\Room;
+use App\Models\Models\Message;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -68,5 +72,4 @@ class User extends Authenticatable
     {
         return $this->hasMany(Message::class);
     }
-
 }

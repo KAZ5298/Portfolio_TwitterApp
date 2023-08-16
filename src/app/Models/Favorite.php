@@ -2,7 +2,8 @@
 
 namespace App\Models;
 
-use App\Models\Models\Tweet;
+use App\Models\User;
+use App\Models\Tweet;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
