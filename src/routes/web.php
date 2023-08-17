@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TweetController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,5 +32,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/tweet', function () {
     return view('tweet.index');
 });
+
+Route::get('/tweet', [TweetController::class, 'allTweetGet'])->name('tweet.index');
 
 require __DIR__ . '/auth.php';
