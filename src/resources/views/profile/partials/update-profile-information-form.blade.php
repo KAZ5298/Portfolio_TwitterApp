@@ -59,19 +59,20 @@
 
         <div>
             <x-input-label for="icon" :value="__('Icon')" />
-            <x-text-input id="icon" name="icon" type="text" class="mt-1 block w-full" :value="old('name', $user->icon)"
-                required autofocus autocomplete="name" />
-            <x-input-error class="mt-2" :messages="$errors->get('icon')" />
-        </div>
+            @if ($user->icon)
+                <div>
+                    (画像ファイル：{{ $user->icon }})
+                </div>
+                <img src="{{ asset('storage/images/' . $user->icon) }}" class="mx-auto" style="height:300px;">
+            @endif
 
-        <!-- Profile Icon -->
-        <div class="mt-4">
-            <label for="icon" class="font-semibold leading-none mt-4">画像 （1MBまで）</label>
-            <div>
-                <input id="icon" type="file" name="icon">
+            <div class="mt-4">
+                <label for="icon" class="font-semibold leading-none mt-4">画像 （1MBまで）</label>
+                <div>
+                    <input id="icon" type="file" name="icon">
+                </div>
             </div>
         </div>
-
 
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Save') }}</x-primary-button>

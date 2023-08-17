@@ -38,7 +38,8 @@ class RegisteredUserController extends Controller
         ]);
 
         if (isset($request->icon)) {
-            $icon = request()->file('icon')->getClientOriginalName();
+            $original = request()->file('icon')->getClientOriginalName();
+            $icon = date('Ymd_His') . ' ' . $original;
             request()->file('icon')->move('storage/images', $icon);
         }
 
@@ -49,18 +50,6 @@ class RegisteredUserController extends Controller
             'icon' => $icon,
             'password' => Hash::make($request->password),
         ]);
-
-        // $user = $request->name;
-        // $user = $request->email;
-        // $user = $request->nickname;
-        // if (isset($request->icon)) {
-        //     $icon = request()->file('icon')->getClientOriginalName();
-        //     request()->file('icon')->move('storage/images', $icon);
-        //     $user = $icon;
-        // }
-        // $user = Hash::make($request->password);
-
-        // dd($user);
 
         event(new Registered($user));
 

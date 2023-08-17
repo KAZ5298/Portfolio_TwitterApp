@@ -32,6 +32,14 @@ class ProfileController extends Controller
             $request->user()->email_verified_at = null;
         }
 
+        if (isset($request->icon)) {
+            $original = request()->file('icon')->getClientOriginalName();
+            $icon = date('Ymd_His') . ' ' . $original;
+            request()->file('icon')->move('storage/images', $icon);
+        }
+
+        $request->user()->icon = $icon;
+
         $request->user()->save();
 
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
