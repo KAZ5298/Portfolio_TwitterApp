@@ -13,7 +13,7 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6" enctype="multipart/form-data">
         @csrf
         @method('patch')
 
@@ -49,6 +49,29 @@
                 </div>
             @endif
         </div>
+
+        <div>
+            <x-input-label for="nickname" :value="__('NickName')" />
+            <x-text-input id="nickname" name="nickname" type="text" class="mt-1 block w-full" :value="old('name', $user->nickname)"
+                required autofocus autocomplete="username" />
+            <x-input-error class="mt-2" :messages="$errors->get('nickname')" />
+        </div>
+
+        <div>
+            <x-input-label for="icon" :value="__('Icon')" />
+            <x-text-input id="icon" name="icon" type="text" class="mt-1 block w-full" :value="old('name', $user->icon)"
+                required autofocus autocomplete="name" />
+            <x-input-error class="mt-2" :messages="$errors->get('icon')" />
+        </div>
+
+        <!-- Profile Icon -->
+        <div class="mt-4">
+            <label for="icon" class="font-semibold leading-none mt-4">画像 （1MBまで）</label>
+            <div>
+                <input id="icon" type="file" name="icon">
+            </div>
+        </div>
+
 
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Save') }}</x-primary-button>
