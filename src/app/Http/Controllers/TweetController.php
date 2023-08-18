@@ -13,6 +13,8 @@ class TweetController extends Controller
 
         $tweets = Tweet::orderby('created_at', 'desc')->get();
 
+        // dd($tweets);
+
         return view('tweet.index', compact('loginUser', 'tweets'));
     }
 }

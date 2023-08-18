@@ -41,9 +41,18 @@
     </div>
 
     <div class="main">
-        @foreach ($tweets as $tweet)
-            {{ $tweet->content }}
-        @endforeach
+        <div class="container">
+            <table>
+                @foreach ($tweets as $tweet)
+                    <tr>
+                        <td>{{ $tweet->user->name }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ $tweet->content }}</td>
+                    </tr>
+                @endforeach
+            </table>
+        </div>
     </div>
 
     <div class="footer">
