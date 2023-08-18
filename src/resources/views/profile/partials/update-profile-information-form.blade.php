@@ -18,14 +18,14 @@
         @method('patch')
 
         <div>
-            <x-input-label for="name" :value="__('Name')" />
+            <x-input-label for="name" value="アカウント名" />
             <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)"
                 required autofocus autocomplete="name" />
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
 
         <div>
-            <x-input-label for="email" :value="__('Email')" />
+            <x-input-label for="email" value="メールアドレス" />
             <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)"
                 required autocomplete="username" />
             <x-input-error class="mt-2" :messages="$errors->get('email')" />
@@ -51,14 +51,14 @@
         </div>
 
         <div>
-            <x-input-label for="nickname" :value="__('NickName')" />
+            <x-input-label for="nickname" value="ニックネーム（一覧画面での表示名）" />
             <x-text-input id="nickname" name="nickname" type="text" class="mt-1 block w-full" :value="old('name', $user->nickname)"
                 required autofocus autocomplete="username" />
             <x-input-error class="mt-2" :messages="$errors->get('nickname')" />
         </div>
 
         <div>
-            <x-input-label for="icon" :value="__('Icon')" />
+            <x-input-label for="icon" value="プロフィール画像" />
             @if ($user->icon)
                 <div>
                     (画像ファイル：{{ $user->icon }})
@@ -67,7 +67,6 @@
             @endif
 
             <div class="mt-4">
-                <label for="icon" class="font-semibold leading-none mt-4">画像 （1MBまで）</label>
                 <div>
                     <input id="icon" type="file" name="icon">
                 </div>
