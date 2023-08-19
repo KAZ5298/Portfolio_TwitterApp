@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\FavoriteController;
-use App\Http\Controllers\FollowerController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TweetController;
 use Illuminate\Support\Facades\Route;
@@ -38,8 +38,8 @@ Route::get('/tweet', function () {
 Route::get('/tweet', [TweetController::class, 'allTweetGet'])->name('tweet.index');
 
 // フォロー機能
-Route::post('/follow/{tweet}', [FollowerController::class, 'followerGet'])->name('follower.get');
-Route::delete('/follow/{tweet}', [FollowerController::class, 'followerDestroy'])->name('follower.destroy');
+Route::post('/tweet/{user}/follow', [UserController::class, 'follow'])->name('follow');
+Route::delete('/tweet/{user}/unfollow', [UserController::class, 'unfollow'])->name('unfollow');
 
 // いいね機能
 Route::post('/favorite/{tweet}', [FavoriteController::class, 'favoriteGet'])->name('favorite.get');

@@ -6,7 +6,6 @@ namespace App\Models;
 
 use App\Models\Models\Tweet;
 use App\Models\Models\Favorite;
-use App\Models\Models\Follower;
 use App\Models\Models\Room;
 use App\Models\Models\Message;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -60,10 +59,6 @@ class User extends Authenticatable
     {
         return $this->hasMany(Favorite::class);
     }
-    public function followers()
-    {
-        return $this->hasMany(Follower::class);
-    }
 
     public function rooms()
     {
@@ -73,5 +68,39 @@ class User extends Authenticatable
     public function messages()
     {
         return $this->hasMany(Message::class);
+    }
+
+    public function followers()
+    {
+        return $this->belongsToMany(self::class, 'followers', 'followed_id', 'following_id');
+    }
+
+    public function follows()
+    {
+        return $this->belongsToMany(self::class, 'followers', 'following_id', 'followed_id');
+    }
+
+    // フォローする
+    public function follow(int $user_id)
+    {
+        return $this->follows()->attach($user_id);
+    }
+
+    // フォロー解除する
+    public function unfollow(int $user_id)
+    {
+        return $this->follows()->detach($user_id);
+    }
+
+    // フォローしているかチェック
+    public function isFollowing(int $user_id)
+    {
+        return (boolean) $this->follows()->where('followed_id', $user_id)->first(['id']);
+    }
+
+    // フォローされているかチェック
+    public function isFollowed(int $user_id)
+    {
+        return (boolean) $this->followers()->where('following_id', $user_id)->first(['id']);
     }
 }
