@@ -20,4 +20,29 @@ class Favorite extends Model
     {
         return $this->belongsTo(Tweet::class);
     }
+
+    // いいねする
+    public function favorite(int $user_id, int $tweet_id)
+    {
+        $this->user_id = $user_id;
+        $this->tweet_id = $tweet_id;
+        $this->save();
+
+        return;
+    }
+
+    // いいね解除する
+    public function unfavorite(int $favorite_id)
+    {
+        return $this->where('id', $favorite_id)->delete();
+    }
+
+    // いいねされているかチェック
+    public function isFavorite(int $user_id, int $tweet_id)
+    {
+        return (boolean) $this->where('user_id', $user_id)->where('tweet_id', $tweet_id)->first();
+    }
+
+    public $timestamps = false;
+
 }

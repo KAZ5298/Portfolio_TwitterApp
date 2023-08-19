@@ -14,7 +14,6 @@ class UserController extends Controller
 
         // フォローしているかチェック
         $is_following = $follower->isFollowing($user->id);
-        // dd($user);
         if (!$is_following) {
             // フォローしていなければフォローする
             $follower->follow($user->id);

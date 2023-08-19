@@ -59,14 +59,26 @@
                                     <td><input type="submit" value="フォローする"></td>
                                 </form>
                             @endif
-                            <td>favorite</td>
+                            {{-- <?= dd($tweet->user->id, $tweet->id, $tweet->isFavorite($tweet->user->id, $tweet->id)) ?> --}}
+                            @if ($tweet->isFavorite($tweet->user->id, $tweet->id))
+                                <form action="{{ route('unfavorite', $tweet->id) }}" method="POST">
+                                    @csrf
+                                    @method('delete')
+                                    <td><input type="submit" value="いいね解除"></td>
+                                </form>
+                            @else
+                                {{-- <form action="{{ route('favorite', $tweet->favorite->id) }}" method="POST">
+                                    @csrf
+                                    <td><input type="submit" value="いいね"></td>
+                                </form> --}}
+                            @endif
                         @endif
                     </tr>
                     <tr>
                         <td>{{ $tweet->content }}</td>
                     </tr>
                     <tr>
-                        <td>{{ $tweet->created_at }}</td>
+                        <td>投稿日時：{{ $tweet->created_at }}</td>
                     </tr>
                 @endforeach
             </table>

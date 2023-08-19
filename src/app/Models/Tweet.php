@@ -20,4 +20,11 @@ class Tweet extends Model
     {
         return $this->hasMany(Favorite::class);
     }
+
+    // いいねされているかチェック
+    public function isFavorite(int $user_id, int $tweet_id)
+    {
+        return (boolean) $this->favorites->where('user_id', $user_id)->where('tweet_id', $tweet_id)->first();
+    }
+
 }

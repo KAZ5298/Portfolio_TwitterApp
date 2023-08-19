@@ -42,7 +42,7 @@ Route::post('/tweet/{user}/follow', [UserController::class, 'follow'])->name('fo
 Route::delete('/tweet/{user}/unfollow', [UserController::class, 'unfollow'])->name('unfollow');
 
 // いいね機能
-Route::post('/favorite/{tweet}', [FavoriteController::class, 'favoriteGet'])->name('favorite.get');
-Route::delete('/favorite/{tweet}', [FavoriteController::class, 'favoriteDestroy'])->name('favorite.destroy');
+Route::post('/tweet/{tweet}/favorite', [FavoriteController::class, 'favorite'])->name('favorite');
+Route::delete('/tweet/{tweet}/unfavorite', [FavoriteController::class, 'unfavorite'])->name('unfavorite');
 
 require __DIR__ . '/auth.php';
