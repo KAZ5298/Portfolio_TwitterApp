@@ -45,7 +45,7 @@
             <table>
                 @foreach ($tweets as $tweet)
                     <tr>
-                        <td>{{ $tweet->user->name }}</td>
+                        <td>投稿者：{{ $tweet->user->name }}</td>
                         @if ($tweet->user->id != $loginUser->id)
                             @if ($loginUser->isFollowing($tweet->user->id))
                                 <form action="{{ route('unfollow', $tweet->user->id) }}" method="POST">
@@ -59,23 +59,22 @@
                                     <td><input type="submit" value="フォローする"></td>
                                 </form>
                             @endif
-                            {{-- <?= dd($tweet->user->id, $tweet->id, $tweet->isFavorite($tweet->user->id, $tweet->id)) ?> --}}
-                            @if ($tweet->isFavorite($tweet->user->id, $tweet->id))
-                                <form action="{{ route('unfavorite', $tweet->id) }}" method="POST">
+                            @if ($tweet->isFavorite($loginUser->id, $tweet->id))
+                                <form action="{{ route('unfavorite', $tweet) }}" method="POST">
                                     @csrf
                                     @method('delete')
                                     <td><input type="submit" value="いいね解除"></td>
                                 </form>
                             @else
-                                {{-- <form action="{{ route('favorite', $tweet->favorite->id) }}" method="POST">
+                                <form action="{{ route('favorite', $tweet) }}" method="POST">
                                     @csrf
                                     <td><input type="submit" value="いいね"></td>
-                                </form> --}}
+                                </form>
                             @endif
                         @endif
                     </tr>
                     <tr>
-                        <td>{{ $tweet->content }}</td>
+                        <td>投稿内容：{{ $tweet->content }}</td>
                     </tr>
                     <tr>
                         <td>投稿日時：{{ $tweet->created_at }}</td>
