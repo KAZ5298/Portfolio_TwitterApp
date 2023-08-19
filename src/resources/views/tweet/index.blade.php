@@ -46,9 +46,28 @@
                 @foreach ($tweets as $tweet)
                     <tr>
                         <td>{{ $tweet->user->name }}</td>
+                        @if ($tweet->user->id != $loginUser->id)
+                        {{-- <?= dd($followers) ?> --}}
+                            @if (!$tweet->user->id == $followers)
+                                <form action="{{ route('follower.get', $tweet) }}" method="POST">
+                                    @csrf
+                                    <td><input type="submit" value="フォローする"></td>
+                                </form>
+                            @else
+                                <form action="{{ route('follower.destroy', $tweet) }}" method="POST">
+                                    @csrf
+                                    @method('delete')
+                                    <td><input type="submit" value="フォロー解除"></td>
+                                </form>
+                            @endif
+                            <td>favorite</td>
+                        @endif
                     </tr>
                     <tr>
                         <td>{{ $tweet->content }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ $tweet->created_at }}</td>
                     </tr>
                 @endforeach
             </table>
