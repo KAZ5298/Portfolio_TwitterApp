@@ -18,8 +18,9 @@ class TweetFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => $this->faker->numberBetween(1,3),
+            'user_id' => $this->faker->numberBetween(1,5),
             'content' => $this->faker->numerify('hogehoge ###'),
+            'created_at' => $this->faker->date($format = 'Y-m-d H:i:s', $max = 'now'),
         ];
     }
 }
