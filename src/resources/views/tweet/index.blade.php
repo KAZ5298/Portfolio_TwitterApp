@@ -10,17 +10,19 @@
 </head>
 
 <body>
+
+    {{--  ヘッダー --}}
     <div class="header">
         <div class="container">
             <h1>Twitter Modoki</h1>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">全てのつぶやき</a>
+                    <a class="navbar-brand" href="{{ route('alltweetget') }}">全てのつぶやき</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a class="navbar-brand" href="#">自分のつぶやき</a>
+                    <a class="navbar-brand" href="{{ route('mytweetget', $loginUser->id) }}">自分のつぶやき</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -40,6 +42,7 @@
         </div>
     </div>
 
+    {{-- メインコンテンツ --}}
     <div class="main">
         <div class="container">
             <table>
@@ -84,6 +87,7 @@
         </div>
     </div>
 
+    {{-- フッター --}}
     <div class="footer">
 
     </div>
