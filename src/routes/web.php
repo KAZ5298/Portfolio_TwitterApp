@@ -40,9 +40,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/tweet/{followed_id}', [TweetController::class, 'followerTweetGet'])->name('followerTweetGet');
 
     // つぶやき投稿機能
-
+    Route::post('/tweet', [TweetController::class, 'tweetPost'])->name('tweetPost');
     // つぶやき削除機能
-    Route::delete('tweet/{tweet}/destroy', [TweetController::class, 'tweetDestroy'])->name('tweetdestroy');
+    Route::delete('tweet/{tweet}/destroy', [TweetController::class, 'tweetDestroy'])->name('tweetDestroy');
 
     // フォロー機能
     Route::post('/tweet/{user}/follow', [UserController::class, 'follow'])->name('follow');

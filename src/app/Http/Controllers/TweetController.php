@@ -46,4 +46,16 @@ class TweetController extends Controller
 
         return redirect()->route('tweet.index');
     }
+
+    public function tweetPost(Request $request)
+    {
+        $tweet = new Tweet();
+
+        $tweet->user_id = auth()->user()->id;
+        $tweet->content = $request->content;
+
+        $tweet->save();
+
+        return redirect()->route('tweet.index');
+    }
 }
