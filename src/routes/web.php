@@ -34,8 +34,15 @@ Route::middleware('auth')->group(function () {
         return view('tweet.index');
     });
 
-    Route::get('/tweet', [TweetController::class, 'allTweetGet'])->name('alltweetget');
-    Route::get('/tweet/{user}', [TweetController::class, 'myTweetGet'])->name('mytweetget');
+    // つぶやき一覧表示機能
+    Route::get('/tweet', [TweetController::class, 'allTweetGet'])->name('tweet.index');
+    Route::get('/tweet/{user}', [TweetController::class, 'myTweetGet'])->name('myTweetGet');
+    Route::get('/tweet/{followed_id}', [TweetController::class, 'followerTweetGet'])->name('followerTweetGet');
+
+    // つぶやき投稿機能
+
+    // つぶやき削除機能
+    Route::delete('tweet/{tweet}/destroy', [TweetController::class, 'tweetDestroy'])->name('tweetdestroy');
 
     // フォロー機能
     Route::post('/tweet/{user}/follow', [UserController::class, 'follow'])->name('follow');

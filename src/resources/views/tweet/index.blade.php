@@ -17,17 +17,17 @@
             <h1>Twitter Modoki</h1>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="{{ route('alltweetget') }}">全てのつぶやき</a>
+                    <a class="navbar-brand" href="{{ route('tweet.index') }}">全てのつぶやき</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a class="navbar-brand" href="{{ route('mytweetget', $loginUser->id) }}">自分のつぶやき</a>
+                    <a class="navbar-brand" href="{{ route('myTweetGet', $loginUser->id) }}">自分のつぶやき</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a class="navbar-brand" href="#">フォロワーのつぶやき</a>
+                    <a class="navbar-brand" href="{{ route('followerTweetGet', $loginUser->id) }}">フォロワーのつぶやき</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -74,6 +74,12 @@
                                     <td><input type="submit" value="いいね"></td>
                                 </form>
                             @endif
+                        @else
+                            <form action="{{ route('tweetdestroy', $tweet->id) }}" method="POST">
+                                @csrf
+                                @method('delete')
+                                <td><input type="submit" value="削除"></td>
+                            </form>
                         @endif
                     </tr>
                     <tr>
