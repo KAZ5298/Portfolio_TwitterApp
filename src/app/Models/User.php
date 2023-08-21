@@ -4,10 +4,10 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
-use App\Models\Models\Tweet;
-use App\Models\Models\Favorite;
-use App\Models\Models\Room;
-use App\Models\Models\Message;
+use App\Models\Tweet;
+use App\Models\Favorite;
+use App\Models\Room;
+use App\Models\Message;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -95,12 +95,20 @@ class User extends Authenticatable
     // フォローしているかチェック
     public function isFollowing(int $user_id)
     {
-        return (boolean) $this->follows()->where('followed_id', $user_id)->first(['id']);
+        return (bool) $this->follows()->where('followed_id', $user_id)->first(['id']);
     }
 
     // フォローされているかチェック
     public function isFollowed(int $user_id)
     {
-        return (boolean) $this->followers()->where('following_id', $user_id)->first(['id']);
+        return (bool) $this->followers()->where('following_id', $user_id)->first(['id']);
+    }
+
+    // フォロワーのユーザーIDを取得
+    public function getFollowerId(int $user_id)
+    {
+        // dd($this->followers()->where('following_id', $user_id)->toSql());
+        // dd($this->follows()->where('followed_id', '=', $user_id));
+        return $this->followers()->where('following_id', '=', $user_id)->get();
     }
 }

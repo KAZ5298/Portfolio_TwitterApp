@@ -37,7 +37,7 @@ Route::middleware('auth')->group(function () {
     // つぶやき一覧表示機能
     Route::get('/tweet', [TweetController::class, 'allTweetGet'])->name('allTweetGet');
     Route::get('/tweet/{user}', [TweetController::class, 'myTweetGet'])->name('myTweetGet');
-    Route::get('/tweet/{followed_id}', [TweetController::class, 'followerTweetGet'])->name('followerTweetGet');
+    Route::get('/followertweet', [TweetController::class, 'followerTweetGet'])->name('followerTweetGet');
 
     // つぶやき投稿機能
     Route::post('/tweet', [TweetController::class, 'tweetPost'])->name('tweetPost');

@@ -26,16 +26,29 @@ class TweetController extends Controller
         return view('tweet.index', compact('loginUser', 'tweets'));
     }
 
-    public function followerTweetGet(User $user)
+    public function followerTweetGet()
     {
-        $user1 = new User();
-        $loginUser = $user;
+        $user = new User();
+        $loginUser = auth()->user();
 
-        // dd($loginUser);
+        // $followers_id = User::find($loginUser->id)->follows();
 
-        $follower_id = $user1->follows()->where('followed_id', $loginUser->id)->first(['id']);
+        // foreach ($followers_id->follows as $ids){
+        //     dd($ids->pivot->followed_id, $ids->pivot->following_id);
+        // }
 
-        $tweets = Tweet::where('user_id', $follower_id)->orderby('created_at', 'desc')->get();
+
+
+        // dd(Tweet::whereIn('tweets.user_id', [2, 3]));
+
+        // dd($followers_ids->follows->pivot->followed_id);
+
+        $tweets = User::find($loginUser->id)->follows[0]->tweets;
+
+
+        // dd(User::find($loginUser->id)->follows->toArray());
+
+        // $tweets = Tweet::where('user_id', $follower_ids)->orderby('created_at', 'desc')->get();
 
         return view('tweet.index', compact('loginUser', 'tweets'));
     }

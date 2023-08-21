@@ -32,10 +32,6 @@ class Favorite extends Model
     }
 
     // いいね解除する
-    // public function unfavorite(int $favorite_id)
-    // {
-    //     return $this->where('id', $favorite_id)->delete();
-    // }
     public function unfavorite(int $user_id, int $tweet_id)
     {
         return $this->where('user_id', $user_id)->where('tweet_id', $tweet_id)->delete();

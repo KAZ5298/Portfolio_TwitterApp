@@ -12,11 +12,8 @@ class FavoriteController extends Controller
     {
         $user = auth()->user();
 
-        // dd($favorite, $user, $tweet_id, $tweet);
-
         // いいねしているかチェック
         $is_favorite = $favorite->isFavorite($user->id, $tweet->id);
-        // dd($is_favorite);
         if (!$is_favorite) {
             // いいねしていなければいいねする
             $favorite->favorite($user->id, $tweet->id);
