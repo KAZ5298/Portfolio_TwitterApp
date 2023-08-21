@@ -22,7 +22,7 @@
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a class="navbar-brand" href="{{ route('myTweetGet', $loginUser->id) }}">自分のつぶやき</a>
+                    <a class="navbar-brand" href="{{ route('myTweetGet') }}">自分のつぶやき</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -96,11 +96,13 @@
     {{-- フッター --}}
     <div class="footer">
         <div class="container">
-            <form action="{{ route('tweetPost') }}" method="POST">
-                @csrf
-                <textarea name="content"></textarea>
-                <input type="submit" value="つぶやく">
-            </form>
+            @if (!$followerFlg)
+                <form action="{{ route('tweetPost') }}" method="POST">
+                    @csrf
+                    <textarea name="content"></textarea>
+                    <input type="submit" value="つぶやく">
+                </form>
+            @endif
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"

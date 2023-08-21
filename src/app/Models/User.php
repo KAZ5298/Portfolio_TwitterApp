@@ -104,11 +104,4 @@ class User extends Authenticatable
         return (bool) $this->followers()->where('following_id', $user_id)->first(['id']);
     }
 
-    // フォロワーのユーザーIDを取得
-    public function getFollowerId(int $user_id)
-    {
-        // dd($this->followers()->where('following_id', $user_id)->toSql());
-        // dd($this->follows()->where('followed_id', '=', $user_id));
-        return $this->followers()->where('following_id', '=', $user_id)->get();
-    }
 }

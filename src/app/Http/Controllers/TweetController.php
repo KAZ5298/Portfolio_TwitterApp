@@ -12,18 +12,22 @@ class TweetController extends Controller
     {
         $loginUser = auth()->user();
 
+        $followerFlg = false;
+
         $tweets = Tweet::orderby('created_at', 'desc')->get();
 
-        return view('tweet.index', compact('loginUser', 'tweets'));
+        return view('tweet.index', compact('loginUser', 'tweets', 'followerFlg'));
     }
 
-    public function myTweetGet(User $user)
+    public function myTweetGet()
     {
-        $loginUser = $user;
+        $loginUser = auth()->user();
+
+        $followerFlg = false;
 
         $tweets = Tweet::where('user_id', $loginUser->id)->orderby('created_at', 'desc')->get();
 
-        return view('tweet.index', compact('loginUser', 'tweets'));
+        return view('tweet.index', compact('loginUser', 'tweets', 'followerFlg'));
     }
 
     public function followerTweetGet()
@@ -31,27 +35,33 @@ class TweetController extends Controller
         $user = new User();
         $loginUser = auth()->user();
 
-        // $followers_id = User::find($loginUser->id)->follows();
+        $followerFlg = true;
 
-        // foreach ($followers_id->follows as $ids){
-        //     dd($ids->pivot->followed_id, $ids->pivot->following_id);
-        // }
+        $followerId = User::find($loginUser->id)->follows->map(function ($id){
+            return $id->id;
+        });
 
+        $tweets = Tweet::whereIn('user_id', $followerId)->orderby('created_at', 'desc')->get();
 
-
-        // dd(Tweet::whereIn('tweets.user_id', [2, 3]));
-
-        // dd($followers_ids->follows->pivot->followed_id);
-
-        $tweets = User::find($loginUser->id)->follows[0]->tweets;
-
-
-        // dd(User::find($loginUser->id)->follows->toArray());
-
-        // $tweets = Tweet::where('user_id', $follower_ids)->orderby('created_at', 'desc')->get();
-
-        return view('tweet.index', compact('loginUser', 'tweets'));
+        return view('tweet.index', compact('loginUser', 'tweets', 'followerFlg'));
     }
+
+    // 違う形？　明日チェック
+    // public function followerTweetGet()
+    // {
+    //     $user = new User();
+    //     $loginUser = auth()->user();
+
+    //     $followerFlg = true;
+
+    //     $tweets = User::find($loginUser->id)->follows->map(function ($tweet) {
+    //         return $tweet->tweets;
+    //     });
+
+    //     dd($tweets);
+
+    //     return view('tweet.index', compact('loginUser', 'tweets', 'followerFlg'));
+    // }
 
     public function tweetDestroy(Tweet $tweet)
     {
