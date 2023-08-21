@@ -44,7 +44,7 @@ class TweetController extends Controller
     {
         Tweet::where('id', $tweet->id)->delete();
 
-        return redirect()->route('tweet.index');
+        return back();
     }
 
     public function tweetPost(Request $request)
@@ -56,6 +56,6 @@ class TweetController extends Controller
 
         $tweet->save();
 
-        return redirect()->route('tweet.index');
+        return back();
     }
 }

@@ -20,7 +20,7 @@ class FavoriteController extends Controller
         if (!$is_favorite) {
             // いいねしていなければいいねする
             $favorite->favorite($user->id, $tweet->id);
-            return redirect()->route('tweet.index');
+            return back();
         }
     }
 
@@ -33,7 +33,7 @@ class FavoriteController extends Controller
         if ($is_favorite) {
             // いいねしていればいいね解除する
             $favorite->unfavorite($user->id, $tweet->id);
-            return redirect()->route('tweet.index');
+            return back();
         }
     }
 }

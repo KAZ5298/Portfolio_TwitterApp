@@ -17,7 +17,7 @@
             <h1>Twitter Modoki</h1>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="{{ route('tweet.index') }}">全てのつぶやき</a>
+                    <a class="navbar-brand" href="{{ route('allTweetGet') }}">全てのつぶやき</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -75,7 +75,7 @@
                                 </form>
                             @endif
                         @else
-                            <form action="{{ route('tweetDestroy', $tweet->id) }}" method="POST">
+                            <form action="{{ route('tweetDestroy', $tweet) }}" method="POST">
                                 @csrf
                                 @method('delete')
                                 <td><input type="submit" value="削除"></td>

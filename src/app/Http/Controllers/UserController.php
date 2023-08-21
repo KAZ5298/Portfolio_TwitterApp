@@ -17,7 +17,7 @@ class UserController extends Controller
         if (!$is_following) {
             // フォローしていなければフォローする
             $follower->follow($user->id);
-            return redirect()->route('tweet.index');
+            return back();
         }
     }
 
@@ -31,7 +31,7 @@ class UserController extends Controller
         if ($is_following) {
             // フォローしていればフォロー解除する
             $follower->unfollow($user->id);
-            return redirect()->route('tweet.index');
+            return back();
         }
     }
 }
