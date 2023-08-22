@@ -16,6 +16,25 @@
         <div class="container">
             <h1>Twitter Modoki</h1>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <h2>ログイン中：{{ $loginUser->name }}</h2>
+                <div class="container-fluid">
+                  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          ユーザーメニュー
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">ユーザー情報編集</a></li>
+                          <li><a class="dropdown-item" href="#">フォロワー一覧</a></li>
+                          <li><a class="dropdown-item" href="#">ログアウト</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="{{ route('allTweetGet') }}">全てのつぶやき</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
