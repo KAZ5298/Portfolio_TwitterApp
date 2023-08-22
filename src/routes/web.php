@@ -3,6 +3,7 @@
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RoomController;
 use App\Http\Controllers\TweetController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,7 +31,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/tweet', function () {
+    // つぶやき関連View
+    Route::get('/allTweets', function () {
         return view('tweet.index');
     });
 
@@ -52,6 +54,14 @@ Route::middleware('auth')->group(function () {
     // いいね機能
     Route::post('/tweet/{tweet}/favorite', [FavoriteController::class, 'favorite'])->name('favorite');
     Route::delete('/tweet/{tweet}/unfavorite', [FavoriteController::class, 'unfavorite'])->name('unfavorite');
+
+    // トークルーム関連View
+    Route::get('/talkRoom', function () {
+        return view('room.index');
+    });
+
+    // トークルーム一覧表示
+    Route::get('/talkRoom', [RoomController::class, 'talkRoomIndex'])->name('talkRoom');
 
 });
 

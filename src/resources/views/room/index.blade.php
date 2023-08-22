@@ -45,65 +45,13 @@
     {{-- メインコンテンツ --}}
     <div class="main">
         <div class="container">
-            <table>
-                @foreach ($tweets as $tweet)
-                    <tr>
-                        <td>投稿者：{{ $tweet->user->name }}</td>
-                        @if ($tweet->user->id != $loginUser->id)
-                            @if ($loginUser->isFollowing($tweet->user->id))
-                                <form action="{{ route('unfollow', $tweet->user->id) }}" method="POST">
-                                    @csrf
-                                    @method('delete')
-                                    <td><input type="submit" value="フォロー解除"></td>
-                                </form>
-                            @else
-                                <form action="{{ route('follow', $tweet->user->id) }}" method="POST">
-                                    @csrf
-                                    <td><input type="submit" value="フォローする"></td>
-                                </form>
-                            @endif
-                            @if ($tweet->isFavorite($loginUser->id, $tweet->id))
-                                <form action="{{ route('unfavorite', $tweet) }}" method="POST">
-                                    @csrf
-                                    @method('delete')
-                                    <td><input type="submit" value="いいね解除"></td>
-                                </form>
-                            @else
-                                <form action="{{ route('favorite', $tweet) }}" method="POST">
-                                    @csrf
-                                    <td><input type="submit" value="いいね"></td>
-                                </form>
-                            @endif
-                        @else
-                            <form action="{{ route('tweetDestroy', $tweet) }}" method="POST">
-                                @csrf
-                                @method('delete')
-                                <td><input type="submit" value="削除"></td>
-                            </form>
-                        @endif
-                    </tr>
-                    <tr>
-                        <td>投稿内容：{{ $tweet->content }}</td>
-                    </tr>
-                    <tr>
-                        <td>投稿日時：{{ $tweet->created_at }}</td>
-                    </tr>
-                @endforeach
-            </table>
+            
         </div>
     </div>
 
     {{-- フッター --}}
     <div class="footer">
-        <div class="container">
-            @if (!$followerFlg)
-                <form action="{{ route('tweetPost') }}" method="POST">
-                    @csrf
-                    <textarea name="content"></textarea>
-                    <input type="submit" value="つぶやく">
-                </form>
-            @endif
-        </div>
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
