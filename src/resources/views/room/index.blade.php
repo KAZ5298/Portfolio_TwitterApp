@@ -65,7 +65,13 @@
     {{-- メインコンテンツ --}}
     <div class="main">
         <div class="container">
-
+            <table>
+                @foreach ($rooms as $room)
+                    <tr>
+                        <td><a href="{{ $room->user->nickname }}">{{ $room->user->nickname }} さんとのトークルーム</a></td>
+                    </tr>
+                @endforeach
+            </table>
         </div>
     </div>
 
