@@ -16,7 +16,7 @@
         <div class="container">
             <h1>Twitter Modoki</h1>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <h2>ログイン中：{{ $loginUser->name }}</h2>
+                <h2>ログイン中：{{ $loginUser->nickname }}</h2>
                 <div class="container-fluid">
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav">
@@ -68,7 +68,7 @@
             <table>
                 @foreach ($tweets as $tweet)
                     <tr>
-                        <td>投稿者：{{ $tweet->user->name }}</td>
+                        <td>投稿者：{{ $tweet->user->nickname }}</td>
                         @if ($tweet->user->id != $loginUser->id)
                             @if ($loginUser->isFollowing($tweet->user->id))
                                 <form action="{{ route('unfollow', $tweet->user->id) }}" method="POST">

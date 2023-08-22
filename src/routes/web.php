@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::get('/dashboard', function () {
@@ -49,10 +49,14 @@ Route::middleware('auth')->group(function () {
 
     // フォロー機能
     Route::post('/tweet/{user}/follow', [UserController::class, 'follow'])->name('follow');
+
+    // フォロー解除機能
     Route::delete('/tweet/{user}/unfollow', [UserController::class, 'unfollow'])->name('unfollow');
 
     // いいね機能
     Route::post('/tweet/{tweet}/favorite', [FavoriteController::class, 'favorite'])->name('favorite');
+    
+    // いいね取消
     Route::delete('/tweet/{tweet}/unfavorite', [FavoriteController::class, 'unfavorite'])->name('unfavorite');
 
     // トークルーム関連View

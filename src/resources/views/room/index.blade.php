@@ -16,7 +16,7 @@
         <div class="container">
             <h1>Twitter Modoki</h1>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <h2>ログイン中：{{ $loginUser->name }}</h2>
+                <h2>ログイン中：{{ $loginUser->nickname }}</h2>
                 <div class="container-fluid">
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav">

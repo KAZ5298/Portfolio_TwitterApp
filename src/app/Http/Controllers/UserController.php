@@ -14,9 +14,19 @@ class UserController extends Controller
 
         // フォローしているかチェック
         $is_following = $follower->isFollowing($user->id);
+
+        // フォローされているかチェック
+        $is_followed = $follower->isFollowed($user->id);
+
         if (!$is_following) {
             // フォローしていなければフォローする
             $follower->follow($user->id);
+
+            // 相互フォローになった場合トークルーム作成する
+            if ($is_followed) {
+                $follower->createTalkRoom($follower->id, $user->id);
+            }
+
             return back();
         }
     }
@@ -28,9 +38,17 @@ class UserController extends Controller
 
         // フォローしているかチェック
         $is_following = $follower->isFollowing($user->id);
+
+        // フォローされているかチェック
+        $is_followed = $follower->isFollowed($user->id);
+
         if ($is_following) {
             // フォローしていればフォロー解除する
             $follower->unfollow($user->id);
+
+            // トークルームを削除する
+            $follower->deleteTalkRoom($follower->id, $user->id);
+            
             return back();
         }
     }

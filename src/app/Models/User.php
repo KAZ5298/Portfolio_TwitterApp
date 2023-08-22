@@ -95,13 +95,39 @@ class User extends Authenticatable
     // フォローしているかチェック
     public function isFollowing(int $user_id)
     {
-        return (boolean) $this->follows()->where('followed_id', $user_id)->first(['id']);
+        return (bool) $this->follows()->where('followed_id', $user_id)->first(['id']);
     }
 
     // フォローされているかチェック
     public function isFollowed(int $user_id)
     {
-        return (boolean) $this->followers()->where('following_id', $user_id)->first(['id']);
+        return (bool) $this->followers()->where('following_id', $user_id)->first(['id']);
     }
 
+    // トークルーム作成
+    public function createTalkRoom(int $loginUser, int $follower)
+    {
+        $roomId = 'room:' . $loginUser . '.' . $follower;
+
+        $rooms = [
+            ["id" => $roomId, "user_id" => $loginUser],
+            ["id" => $roomId, "user_id" => $follower]
+        ];
+
+        // dd($roomId);
+
+        $record = Room::insert($rooms);
+
+        // return $record;
+    }
+
+    // トークルーム削除
+    public function deleteTalkRoom(int $loginUser, int $follower)
+    {
+        $roomId = 'room:' . $loginUser . '.' . $follower;
+
+        $this->rooms()->find($roomId)->delete();
+
+        // return $record;
+    }
 }
