@@ -28,7 +28,12 @@
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#">ユーザー情報編集</a></li>
                                     <li><a class="dropdown-item" href="{{ route('followerList') }}">フォロワー一覧</a></li>
-                                    <li><a class="dropdown-item" href="#">ログアウト</a></li>
+                                    <li><a class="dropdown-item">
+                                            <form method="POST" action="{{ route('logout') }}"> @csrf
+                                                <input type="submit" value="ログアウト">
+                                            </form>
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
@@ -38,25 +43,9 @@
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="{{ route('allTweetGet') }}">全てのつぶやき</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
                     <a class="navbar-brand" href="{{ route('myTweetGet') }}">自分のつぶやき</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
                     <a class="navbar-brand" href="{{ route('followerTweetGet') }}">フォロワーのつぶやき</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
                     <a class="navbar-brand" href="{{ route('talkRoom') }}">トークルーム</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
                 </div>
             </nav>
         </div>

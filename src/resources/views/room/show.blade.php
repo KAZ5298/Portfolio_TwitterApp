@@ -28,7 +28,12 @@
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#">ユーザー情報編集</a></li>
                                     <li><a class="dropdown-item" href="{{ route('followerList') }}">フォロワー一覧</a></li>
-                                    <li><a class="dropdown-item" href="#">ログアウト</a></li>
+                                    <li><a class="dropdown-item">
+                                            <form method="POST" action="{{ route('logout') }}"> @csrf
+                                                <input type="submit" value="ログアウト">
+                                            </form>
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
@@ -46,13 +51,17 @@
     {{-- メインコンテンツ --}}
     <div class="main">
         <div class="container">
-            <table>
-                @foreach ($messages as $message)
-                    <tr>
-                        <td>{{ $message->message }}</td>
-                    </tr>
-                @endforeach
-            </table>
+            @foreach ($messages as $message)
+                @if ($message->user_id == $loginUser->id)
+                    <div class="fukidasi right">
+                        {{ $message->message }}
+                    </div>
+                @else
+                    <div class="fukidasi left">
+                        {{ $message->message }}
+                    </div>
+                @endif
+            @endforeach
             <form action="{{ route('messagePost', $rooms->id) }}" method="POST">
                 @csrf
                 <textarea name="message"></textarea>
