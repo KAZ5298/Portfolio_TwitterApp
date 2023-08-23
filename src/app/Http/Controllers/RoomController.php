@@ -18,8 +18,17 @@ class RoomController extends Controller
 
         $rooms = Room::whereIn('id', $roomId)->where('user_id', '<>', $loginUser->id)->get();
 
-        // dd($rooms[0]->user->nickname);
-
         return view('room.index', compact('loginUser', 'rooms'));
+    }
+
+    public function talkRoomShow(Room $room)
+    {
+        $loginUser = auth()->user();
+
+        // $rooms = Room::find($room->id);
+        $rooms = Room::where('id', $room->id)->where('user_id', '<>', $loginUser->id)->first();
+        // dd($rooms);
+
+        return view('room.show', compact('loginUser', 'rooms'));
     }
 }

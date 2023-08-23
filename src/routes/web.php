@@ -55,7 +55,7 @@ Route::middleware('auth')->group(function () {
 
     // いいね機能
     Route::post('/tweet/{tweet}/favorite', [FavoriteController::class, 'favorite'])->name('favorite');
-    
+
     // いいね取消
     Route::delete('/tweet/{tweet}/unfavorite', [FavoriteController::class, 'unfavorite'])->name('unfavorite');
 
@@ -67,6 +67,8 @@ Route::middleware('auth')->group(function () {
     // トークルーム一覧表示
     Route::get('/talkRoom', [RoomController::class, 'talkRoomIndex'])->name('talkRoom');
 
+    // 各トークルーム
+    Route::get('/talkRoom/{room}', [RoomController::class, 'talkRoomShow'])->name('talkRoomShow');
 });
 
 

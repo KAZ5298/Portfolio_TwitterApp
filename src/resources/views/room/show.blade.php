@@ -37,26 +37,7 @@
             </nav>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="{{ route('allTweetGet') }}">全てのつぶやき</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <a class="navbar-brand" href="{{ route('myTweetGet') }}">自分のつぶやき</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <a class="navbar-brand" href="{{ route('followerTweetGet') }}">フォロワーのつぶやき</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <a class="navbar-brand" href="{{ route('talkRoom') }}">トークルーム</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                    <a class="navbar-brand">{{ $rooms->user->nickname }}さんとのトークルーム</a>
                 </div>
             </nav>
         </div>
@@ -65,13 +46,13 @@
     {{-- メインコンテンツ --}}
     <div class="main">
         <div class="container">
-            <table>
+            {{-- <table>
                 @foreach ($rooms as $room)
                     <tr>
                         <td><a href="{{ route('talkRoomShow', $room->id) }}">{{ $room->user->nickname }} さんとのトークルーム</a></td>
                     </tr>
                 @endforeach
-            </table>
+            </table> --}}
         </div>
     </div>
 
