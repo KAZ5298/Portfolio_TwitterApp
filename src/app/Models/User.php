@@ -114,11 +114,7 @@ class User extends Authenticatable
             ["id" => $roomId, "user_id" => $follower]
         ];
 
-        // dd($roomId);
-
         $record = Room::insert($rooms);
-
-        // return $record;
     }
 
     // トークルーム削除
@@ -127,7 +123,5 @@ class User extends Authenticatable
         $roomId = 'room:' . $loginUser . '.' . $follower;
 
         $this->rooms()->find($roomId)->delete();
-
-        // return $record;
     }
 }

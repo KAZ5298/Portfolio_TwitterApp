@@ -37,7 +37,7 @@
             </nav>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
-                    <a class="navbar-brand">{{ $rooms->user->nickname }}さんとのトークルーム</a>
+                    <a class="navbar-brand">フォロワー一覧</a>
                 </div>
             </nav>
         </div>
@@ -47,17 +47,16 @@
     <div class="main">
         <div class="container">
             <table>
-                @foreach ($messages as $message)
+                @foreach ($followers as $follower)
                     <tr>
-                        <td>{{ $message->message }}</td>
+                        <td>{{ $follower->nickname }}
+                            @if ($loginUser->isFollowed($follower->id))
+                                フォローされています
+                            @endif
+                        </td>
                     </tr>
                 @endforeach
             </table>
-            <form action="{{ route('messagePost', $rooms->id) }}" method="POST">
-                @csrf
-                <textarea name="message"></textarea>
-                <input type="submit" value="つぶやく">
-            </form>
             <a href="javascript:history.back()">戻る</a>
         </div>
     </div>

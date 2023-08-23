@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\FollowerController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
@@ -73,6 +74,14 @@ Route::middleware('auth')->group(function () {
 
     // トークルーム内のメッセージ投稿機能
     Route::post('/talkRoom/{room}', [MessageController::class, 'messagePost'])->name('messagePost');
+
+    // フォロワー一覧View
+    Route::get('/followerList', function () {
+        return view('follow.index');
+    });
+
+    // フォロワー一覧表示
+    Route::get('/followerList',[FollowerController::class, 'allFollowerGet'])->name('followerList');
 });
 
 
