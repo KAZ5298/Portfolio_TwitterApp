@@ -16,6 +16,9 @@
         <div class="container">
             <h1>Twitter Modoki</h1>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                @if ($loginUser->icon)
+                    <img src="{{ asset('storage/images/' . $loginUser->icon) }}" width="80" height="80">
+                @endif
                 <h2>ログイン中：{{ $loginUser->nickname }}</h2>
                 <div class="container-fluid">
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -57,6 +60,9 @@
             <table>
                 @foreach ($tweets as $tweet)
                     <tr>
+                        @if ($tweet->user->icon)
+                            <td><img src="{{ asset('storage/images/' . $loginUser->icon) }}" width="80" height="80"></td>
+                        @endif
                         <td>投稿者：{{ $tweet->user->nickname }}
                             @if ($loginUser->isFollowed($tweet->user->id))
                                 フォローされています
