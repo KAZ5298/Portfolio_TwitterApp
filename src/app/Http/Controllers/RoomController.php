@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Room;
 use App\Models\User;
+use App\Models\Message;
 
 class RoomController extends Controller
 {
@@ -25,10 +26,12 @@ class RoomController extends Controller
     {
         $loginUser = auth()->user();
 
-        // $rooms = Room::find($room->id);
         $rooms = Room::where('id', $room->id)->where('user_id', '<>', $loginUser->id)->first();
-        // dd($rooms);
 
-        return view('room.show', compact('loginUser', 'rooms'));
+        $messages = Message::where('room_id', $room->id)->get();
+
+        // dd($messages);
+
+        return view('room.show', compact('loginUser', 'rooms', 'messages'));
     }
 }

@@ -46,13 +46,13 @@
     {{-- メインコンテンツ --}}
     <div class="main">
         <div class="container">
-            {{-- <table>
-                @foreach ($rooms as $room)
+            <table>
+                @foreach ($messages as $message)
                     <tr>
-                        <td><a href="{{ route('talkRoomShow', $room->id) }}">{{ $room->user->nickname }} さんとのトークルーム</a></td>
+                        <td>{{ $message->message }}</td>
                     </tr>
                 @endforeach
-            </table> --}}
+            </table>
         </div>
     </div>
 

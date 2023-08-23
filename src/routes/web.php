@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoomController;
@@ -69,6 +70,9 @@ Route::middleware('auth')->group(function () {
 
     // 各トークルーム
     Route::get('/talkRoom/{room}', [RoomController::class, 'talkRoomShow'])->name('talkRoomShow');
+
+    // トークルーム内のメッセージ表示
+    // Route::get('/talkRoom/{room}', [MessageController::class, 'messageShow'])->name('messageShow');
 });
 
 
