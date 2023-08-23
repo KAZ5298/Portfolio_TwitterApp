@@ -26,7 +26,7 @@
                                     ユーザーメニュー
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">ユーザー情報編集</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('profile.edit') }}">ユーザー情報編集</a></li>
                                     <li><a class="dropdown-item" href="{{ route('followerList') }}">フォロワー一覧</a></li>
                                     <li><a class="dropdown-item">
                                             <form method="POST" action="{{ route('logout') }}"> @csrf
@@ -57,7 +57,8 @@
             <table>
                 @foreach ($rooms as $room)
                     <tr>
-                        <td><a href="{{ route('talkRoomShow', $room->id) }}">{{ $room->user->nickname }} さんとのトークルーム</a></td>
+                        <td><a href="{{ route('talkRoomShow', $room->id) }}">{{ $room->user->nickname }} さんとのトークルーム</a>
+                        </td>
                     </tr>
                 @endforeach
             </table>

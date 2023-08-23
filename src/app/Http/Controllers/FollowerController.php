@@ -19,11 +19,6 @@ class FollowerController extends Controller
     
             $followers = User::whereIn('id', $followerId)->get();
     
-
-            // $followers = Follower::where('following_id', $loginUser->id)->get();
-
-            // dd($followers);
-    
             return view('follow.index', compact('loginUser', 'followers'));
         }
     
