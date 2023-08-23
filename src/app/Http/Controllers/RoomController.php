@@ -30,8 +30,6 @@ class RoomController extends Controller
 
         $messages = Message::where('room_id', $room->id)->get();
 
-        // dd($messages);
-
         return view('room.show', compact('loginUser', 'rooms', 'messages'));
     }
 }

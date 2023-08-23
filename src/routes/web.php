@@ -71,8 +71,8 @@ Route::middleware('auth')->group(function () {
     // 各トークルーム
     Route::get('/talkRoom/{room}', [RoomController::class, 'talkRoomShow'])->name('talkRoomShow');
 
-    // トークルーム内のメッセージ表示
-    // Route::get('/talkRoom/{room}', [MessageController::class, 'messageShow'])->name('messageShow');
+    // トークルーム内のメッセージ投稿機能
+    Route::post('/talkRoom/{room}', [MessageController::class, 'messagePost'])->name('messagePost');
 });
 
 

@@ -53,6 +53,11 @@
                     </tr>
                 @endforeach
             </table>
+            <form action="{{ route('messagePost', $rooms->id) }}" method="POST">
+                @csrf
+                <textarea name="message"></textarea>
+                <input type="submit" value="つぶやく">
+            </form>
         </div>
     </div>
 
