@@ -58,6 +58,7 @@
                 <textarea name="message"></textarea>
                 <input type="submit" value="つぶやく">
             </form>
+            <a href="{{ route('talkRoom') }}">戻る</a>
         </div>
     </div>
 

@@ -68,7 +68,11 @@
             <table>
                 @foreach ($tweets as $tweet)
                     <tr>
-                        <td>投稿者：{{ $tweet->user->nickname }}</td>
+                        <td>投稿者：{{ $tweet->user->nickname }}
+                            @if ($loginUser->isFollowed($tweet->user->id))
+                                フォローされています
+                            @endif
+                        </td>
                         @if ($tweet->user->id != $loginUser->id)
                             @if ($loginUser->isFollowing($tweet->user->id))
                                 <form action="{{ route('unfollow', $tweet->user->id) }}" method="POST">

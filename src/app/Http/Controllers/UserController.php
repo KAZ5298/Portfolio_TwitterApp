@@ -46,9 +46,11 @@ class UserController extends Controller
             // フォローしていればフォロー解除する
             $follower->unfollow($user->id);
 
-            // トークルームを削除する
-            $follower->deleteTalkRoom($follower->id, $user->id);
-            
+            // 相手にフォローされていればトークルームを削除する
+            if ($is_followed) {
+                $follower->deleteTalkRoom($follower->id, $user->id);
+            }
+
             return back();
         }
     }
