@@ -41,6 +41,8 @@ class RegisteredUserController extends Controller
             $original = request()->file('icon')->getClientOriginalName();
             $icon = date('Ymd_His') . ' ' . $original;
             request()->file('icon')->move('storage/images', $icon);
+        } else {
+            $icon = null;
         }
 
         $user = User::create([

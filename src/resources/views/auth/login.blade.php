@@ -6,13 +6,19 @@
         @csrf
 
         <!-- Email Address -->
-        <div>
+        {{-- <div>
             <x-input-label for="email" :value="__('Email')" />
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required
                 autofocus autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        </div> --}}
+        <div>
+            <x-input-label for="email" value="アカウント名（ユーザーＩＤ）または、メールアドレス" />
+            <x-text-input id="email" class="block mt-1 w-full" type="text" name="email_or_id" :value="old('email_or_id')" required
+                autofocus autocomplete="username" />
+            <x-input-error :messages="$errors->get('email_or_id')" class="mt-2" />
         </div>
-
+        
         <!-- Password -->
         <div class="mt-4">
             <x-input-label for="password" :value="__('Password')" />
