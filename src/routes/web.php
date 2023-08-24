@@ -81,7 +81,7 @@ Route::middleware('auth')->group(function () {
     });
 
     // フォロワー一覧表示
-    Route::get('/followerList',[FollowerController::class, 'allFollowerGet'])->name('followerList');
+    Route::get('/followerList', [FollowerController::class, 'allFollowerGet'])->name('followerList');
 });
 
 

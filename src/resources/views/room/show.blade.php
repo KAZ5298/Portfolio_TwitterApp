@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Twitter Modoki</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
 </head>
 
 <body>
@@ -54,21 +53,23 @@
     {{-- メインコンテンツ --}}
     <div class="main">
         <div class="container">
-            <img src="{{ asset('storage/images/' . $rooms->user->icon) }}" width="80" height="80">
-            {{ $rooms->user->nickname }}
-            <img src="{{ asset('storage/images/' . $loginUser->icon) }}" width="80" height="80">
-            {{ $loginUser->nickname }}
-            @foreach ($messages as $message)
-                @if ($message->user_id == $loginUser->id)
-                    <div class="fukidasi right">
-                        {{ $message->message }}
-                    </div>
-                @else
-                    <div class="fukidasi left">
-                        {{ $message->message }}
-                    </div>
-                @endif
-            @endforeach
+            <div class="kaiwa line">
+                <img src="{{ asset('storage/images/' . $rooms->user->icon) }}" width="80" height="80">
+                {{ $rooms->user->nickname }}
+                <img src="{{ asset('storage/images/' . $loginUser->icon) }}" width="80" height="80">
+                {{ $loginUser->nickname }}
+                @foreach ($messages as $message)
+                    @if ($message->user_id == $loginUser->id)
+                        <div class="fukidasi right">
+                            {{ $message->message }}
+                        </div>
+                    @else
+                        <div class="fukidasi left">
+                            {{ $message->message }}
+                        </div>
+                    @endif
+                @endforeach
+            </div>
             <form action="{{ route('messagePost', $rooms->id) }}" method="POST">
                 @csrf
                 <textarea name="message"></textarea>
