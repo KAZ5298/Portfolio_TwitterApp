@@ -54,6 +54,10 @@
     {{-- メインコンテンツ --}}
     <div class="main">
         <div class="container">
+            <img src="{{ asset('storage/images/' . $rooms->user->icon) }}" width="80" height="80">
+            {{ $rooms->user->nickname }}
+            <img src="{{ asset('storage/images/' . $loginUser->icon) }}" width="80" height="80">
+            {{ $loginUser->nickname }}
             @foreach ($messages as $message)
                 @if ($message->user_id == $loginUser->id)
                     <div class="fukidasi right">
