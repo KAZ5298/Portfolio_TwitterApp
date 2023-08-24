@@ -36,6 +36,8 @@ class ProfileController extends Controller
             $original = request()->file('icon')->getClientOriginalName();
             $icon = date('Ymd_His') . ' ' . $original;
             request()->file('icon')->move('storage/images', $icon);
+        } else {
+            $icon = null;
         }
 
         $request->user()->icon = $icon;

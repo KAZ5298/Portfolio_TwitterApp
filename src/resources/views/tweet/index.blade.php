@@ -61,7 +61,7 @@
                 @foreach ($tweets as $tweet)
                     <tr>
                         @if ($tweet->user->icon)
-                            <td><img src="{{ asset('storage/images/' . $loginUser->icon) }}" width="80" height="80"></td>
+                            <td><img src="{{ asset('storage/images/' . $tweet->user->icon) }}" width="80" height="80"></td>
                         @endif
                         <td>投稿者：{{ $tweet->user->nickname }}
                             @if ($loginUser->isFollowed($tweet->user->id))
