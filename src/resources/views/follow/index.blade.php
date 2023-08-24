@@ -59,7 +59,8 @@
                     <tr>
                         @if ($follower->icon)
                             <td>
-                                <img src="{{ asset('storage/images/' . $follower->icon) }}" width="80" height="80">
+                                <img src="{{ asset('storage/images/' . $follower->icon) }}" width="80"
+                                    height="80">
                             </td>
                         @endif
                         <td>{{ $follower->nickname }}
@@ -67,10 +68,17 @@
                                 フォローされています
                             @endif
                         </td>
+                        @if ($loginUser->isFollowing($follower->id))
+                            <form action="{{ route('unfollow', $follower->id) }}" method="POST">
+                                @csrf
+                                @method('delete')
+                                <td><input type="submit" value="フォロー解除"></td>
+                            </form>
+                        @endif
                     </tr>
                 @endforeach
             </table>
-            <a href="javascript:history.back()">戻る</a>
+            <a href="{{ route('allTweetGet') }}">戻る</a>
         </div>
     </div>
 
