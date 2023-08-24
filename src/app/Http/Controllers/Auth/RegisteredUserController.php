@@ -59,4 +59,12 @@ class RegisteredUserController extends Controller
 
         return redirect(RouteServiceProvider::HOME);
     }
+
+    public function show(Request $request)
+    {
+        $user = $request;
+
+        dd($user);
+        return view('auth.check', compact('user'));
+    }
 }

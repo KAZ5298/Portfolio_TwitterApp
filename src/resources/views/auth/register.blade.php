@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('registerCheck') }}" enctype="multipart/form-data" >
         @csrf
 
         <!-- Name -->
@@ -29,7 +29,6 @@
         <!-- Profile Icon -->
         <div class="mt-4">
             <x-input-label for="icon" value="プロフィール画像" />
-            {{-- <label for="icon" class="font-semibold leading-none mt-4">画像 （1MBまで）</label> --}}
             <div>
                 <input id="icon" type="file" name="icon">
             </div>
@@ -55,7 +54,13 @@
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
-        <div class="flex items-center justify-end mt-4">
+        <input type="submit" value="登録">
+
+        {{-- <a href="{{ route('registerCheck') }}">登録</a> --}}
+        <a href="#">リセット</a>
+        <a href="{{ route('login') }}">ログイン画面へ戻る</a>
+
+        {{-- <div class="flex items-center justify-end mt-4">
             <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 href="{{ route('login') }}">
                 {{ __('Already registered?') }}
@@ -64,6 +69,6 @@
             <x-primary-button class="ml-4">
                 {{ __('Register') }}
             </x-primary-button>
-        </div>
+        </div> --}}
     </form>
 </x-guest-layout>

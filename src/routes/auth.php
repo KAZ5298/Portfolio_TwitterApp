@@ -17,6 +17,12 @@ Route::middleware('guest')->group(function () {
 
     Route::post('register', [RegisteredUserController::class, 'store']);
 
+    Route::get('/register_check', function () {
+        return view('auth.check');
+    });
+
+    Route::post('/register_check', [RegisteredUserController::class, 'show'])->name('registerCheck');
+
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
         ->name('login');
 

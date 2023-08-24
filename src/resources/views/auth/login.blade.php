@@ -6,19 +6,13 @@
         @csrf
 
         <!-- Email Address -->
-        {{-- <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required
-                autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div> --}}
         <div>
             <x-input-label for="email" value="アカウント名（ユーザーＩＤ）または、メールアドレス" />
-            <x-text-input id="email" class="block mt-1 w-full" type="text" name="email_or_id" :value="old('email_or_id')" required
-                autofocus autocomplete="username" />
+            <x-text-input id="email" class="block mt-1 w-full" type="text" name="email_or_id" :value="old('email_or_id')"
+                required autofocus autocomplete="username" />
             <x-input-error :messages="$errors->get('email_or_id')" class="mt-2" />
         </div>
-        
+
         <!-- Password -->
         <div class="mt-4">
             <x-input-label for="password" :value="__('Password')" />
@@ -29,8 +23,16 @@
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
+        <div>
+            <a href="{{ route('register') }}" >新規登録</a>
+        </div>
+
+        <div>
+            <input type="submit" value="ログイン">
+        </div>
+
         <!-- Remember Me -->
-        <div class="block mt-4">
+        {{-- <div class="block mt-4">
             <label for="remember_me" class="inline-flex items-center">
                 <input id="remember_me" type="checkbox"
                     class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
@@ -49,6 +51,6 @@
             <x-primary-button class="ml-3">
                 {{ __('Log in') }}
             </x-primary-button>
-        </div>
+        </div> --}}
     </form>
 </x-guest-layout>

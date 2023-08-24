@@ -12,8 +12,6 @@ class MessageController extends Controller
     {
         $message = new Message();
 
-        // dd($room->id);
-
         $message->room_id = $room->id;
         $message->user_id = auth()->user()->id;
         $message->message = $request->message;

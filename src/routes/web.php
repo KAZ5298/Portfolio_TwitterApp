@@ -88,6 +88,4 @@ Route::middleware('auth')->group(function () {
     Route::get('/followerList', [FollowerController::class, 'allFollowerGet'])->name('followerList');
 });
 
-
-
 require __DIR__ . '/auth.php';
