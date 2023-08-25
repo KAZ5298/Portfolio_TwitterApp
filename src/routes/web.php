@@ -45,8 +45,6 @@ Route::middleware('auth')->group(function () {
         return view('profile.done');
     });
 
-    // Route::get('/loginRedirect/{user}', [RegisteredUserController::class, 'loginRedirect'])->name('loginRedirect');
-
     Route::post('/profile_check', [ProfileController::class, 'show'])->name('profileCheck');
 
     // つぶやき関連View
