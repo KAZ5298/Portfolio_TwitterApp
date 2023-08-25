@@ -18,7 +18,7 @@
             <h1>登録が完了しました。</h1>
 
             <div class="d-grid gap-2">
-                <a href="{{ route('allTweetGet') }}"class="btn btn-primary">ログインして一覧画面へ</a>
+                <a href="{{ route('loginRedirect', $user) }}"class="btn btn-primary">ログインして一覧画面へ</a>
                 <a href="{{ route('login') }}"class="btn btn-secondary">ログイン画面へ戻る</a>
             </div>
 

@@ -25,8 +25,8 @@ Route::middleware('guest')->group(function () {
         return view('auth.done');
     });
 
+    Route::get('/loginRedirect/{user}', [RegisteredUserController::class, 'loginRedirect'])->name('loginRedirect');
 
-    
     Route::post('/register_check', [RegisteredUserController::class, 'show'])->name('registerCheck');
 
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
