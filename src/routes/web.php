@@ -37,6 +37,18 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+    Route::get('/profile_check', function () {
+        return view('profile.check');
+    });
+
+    Route::get('/profile_done', function () {
+        return view('profile.done');
+    });
+
+    // Route::get('/loginRedirect/{user}', [RegisteredUserController::class, 'loginRedirect'])->name('loginRedirect');
+
+    Route::post('/profile_check', [ProfileController::class, 'show'])->name('profileCheck');
+
     // つぶやき関連View
     Route::get('/allTweets', function () {
         return view('tweet.index');

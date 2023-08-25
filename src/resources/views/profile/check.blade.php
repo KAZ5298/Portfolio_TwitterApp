@@ -15,8 +15,9 @@
     {{-- メインコンテンツ --}}
     <div class="main">
         <div class="container">
-            <form method="POST" action="{{ route('register') }}">
+            <form method="POST" action="{{ route('profile.update') }}">
                 @csrf
+                @method('patch')
 
                 <!-- Name -->
                 <div>
@@ -57,8 +58,8 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary">はい</button>
-                <a href="{{ route('register') }}" class="btn btn-danger">いいえ</a>
-                <a href="{{ route('login') }}" class="btn btn-secondary">ログイン画面へ戻る</a>
+                <a href="{{ route('profile.edit') }}" class="btn btn-danger">いいえ</a>
+                <a href="{{ route('allTweetGet') }}" class="btn btn-secondary">ＴＯＰ画面へ戻る</a>
 
             </form>
         </div>
