@@ -45,8 +45,6 @@ class LoginRequest extends FormRequest
         $email_or_id = $this->input('email_or_id');
         $password = $this->input('password');
 
-        // dd($email_or_id, $password);
-
         if (filter_var($email_or_id, \FILTER_VALIDATE_EMAIL)) {
             $credentials = ['email' => $email_or_id, 'password' => $password];
         } else {

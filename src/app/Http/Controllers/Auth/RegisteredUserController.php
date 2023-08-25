@@ -37,6 +37,24 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'nickname' => $request->nickname,
+            'icon' => $request->icon,
+            'password' => Hash::make($request->password),
+        ]);
+
+        event(new Registered($user));
+
+        // Auth::login($user);
+        return redirect(RouteServiceProvider::REGISTERDONE);
+    }
+
+    public function show(Request $request)
+    {
+        $user = $request;
+
         if (isset($request->icon)) {
             $original = request()->file('icon')->getClientOriginalName();
             $icon = date('Ymd_His') . ' ' . $original;
@@ -45,26 +63,6 @@ class RegisteredUserController extends Controller
             $icon = null;
         }
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'nickname' => $request->nickname,
-            'icon' => $icon,
-            'password' => Hash::make($request->password),
-        ]);
-
-        event(new Registered($user));
-
-        Auth::login($user);
-
-        return redirect(RouteServiceProvider::HOME);
-    }
-
-    public function show(Request $request)
-    {
-        $user = $request;
-
-        dd($user);
-        return view('auth.check', compact('user'));
+        return view('auth.check', compact('user', 'icon'));
     }
 }

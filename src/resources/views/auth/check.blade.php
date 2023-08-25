@@ -21,38 +21,44 @@
                 <!-- Name -->
                 <div>
                     <p>アカウント名（ユーザーＩＤ）：{{ $user->name }}</p>
+                    <input type="hidden" name="name" value="{{ $user->name }}">
                 </div>
 
                 <!-- Email Address -->
                 <div>
                     <p>メールアドレス：{{ $user->email }}</p>
+                    <input type="hidden" name="email" value="{{ $user->email }}">
                 </div>
 
                 <!-- Nick Name -->
                 <div>
                     <p>ニックネーム（一覧画面での表示名）：{{ $user->nickname }}</p>
+                    <input type="hidden" name="nickname" value="{{ $user->nickname }}">
                 </div>
 
                 <!-- Profile Icon -->
                 <div>
-                    {{-- <p>プロフィール画像：<img src="{{ asset('storage/images/' . $user->icon) }}" width="80" height="80"></p> --}}
+                    @if (isset($icon))
+                        <p>プロフィール画像：<img src="{{ asset('storage/images/' . $icon) }}" width="80" height="80"></p>
+                    @else
+                        <p>プロフィール画像：選択されていません</p>
+                    @endif
+                    <input type="hidden" name="icon" value="{{ $icon }}">
                 </div>
 
                 <!-- Password -->
-                {{-- <div>
-                    <p>メールアドレス：{{ $user->password }}</p>
+                <div>
+                    <input type="hidden" name="password" value="{{ $user->password }}">
                 </div>
 
                 <!-- Confirm Password -->
                 <div>
-                    <p>メールアドレス：{{ $user->password_confirmation }}</p>
-                </div> --}}
+                    <input type="hidden" name="password_confirmation" value="{{ $user->password_confirmation }}">
+                </div>
 
-                <input type="submit" value="はい">
-
-                {{-- <a href="{{ route('registerCheck') }}">登録</a> --}}
-                <a href="#">いいえ</a>
-                <a href="{{ route('login') }}">ログイン画面へ戻る</a>
+                <button type="submit" class="btn btn-primary">はい</button>
+                <a href="{{ route('register') }}" class="btn btn-danger">いいえ</a>
+                <a href="{{ route('login') }}" class="btn btn-secondary">ログイン画面へ戻る</a>
 
             </form>
         </div>
@@ -62,9 +68,7 @@
     <div class="footer">
 
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
-    </script>
+    <script src="{{ asset('/js/bootstrap.bundle.min.js') }}"></script>
 </body>
 
 </html>
