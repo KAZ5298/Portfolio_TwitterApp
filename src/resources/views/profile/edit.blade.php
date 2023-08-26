@@ -11,6 +11,11 @@
 <body>
 
     {{--  ヘッダー --}}
+    <div class="header">
+        <div class="container">
+            <h1>Twitter Modoki</h1>
+        </div>
+    </div>
 
     {{-- メインコンテンツ --}}
     <div class="main">
@@ -18,31 +23,33 @@
             <form method="POST" action="{{ route('profileCheck') }}" enctype="multipart/form-data">
                 @csrf
 
+                <label>下記の項目を入力してください。<span style="color:red">（※項目は入力必須）</span></label>
+
                 <!-- Name -->
                 <div>
-                    <p>アカウント名（ユーザーＩＤ）</p>
+                    <label>アカウント名（ユーザーＩＤ）<span style="color:red">※</span></label>
                     <input type="text" name="name" value="{{ $user->name }}">
                 </div>
 
                 <!-- Email Address -->
                 <div>
-                    <p>メールアドレス</p>
+                    <label>メールアドレス <span style="color:red">※</span></label>
                     <input type="email" name="email" value="{{ $user->email }}">
                 </div>
 
                 <!-- Nick Name -->
                 <div>
-                    <p>ニックネーム（一覧画面での表示名）</p>
+                    <label>ニックネーム（一覧画面での表示名）<span style="color:red">※</span></label>
                     <input type="text" name="nickname" value="{{ $user->nickname }}">
                 </div>
 
                 <!-- Profile Icon -->
                 <div>
-                    <p>プロフィール画像</p>
+                    <label>プロフィール画像</label>
                     @if (isset($user->icon))
                         <img src="{{ asset('storage/images/' . $user->icon) }}" width="80" height="80">
                     @else
-                        <p>登録なし</p>
+                        <label>登録なし</label>
                     @endif
                     <br>
                     <input type="file" name="icon">
@@ -50,13 +57,13 @@
 
                 <!-- Password -->
                 <div>
-                    <p>パスワード</p>
+                    <label>パスワード <span style="color:red">※</span></label>
                     <input type="password" name="password">
                 </div>
 
                 <!-- Confirm Password -->
                 <div>
-                    <p>パスワード（再確認）</p>
+                    <label>パスワード（再確認）<span style="color:red">※</span></label>
                     <input type="password" name="password_confirmation">
                 </div>
 

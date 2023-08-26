@@ -11,11 +11,16 @@
 <body>
 
     {{--  ヘッダー --}}
+    <div class="header">
+        <div class="container">
+            <h1>Twitter Modoki</h1>
+        </div>
+    </div>
 
     {{-- メインコンテンツ --}}
     <div class="main">
         <div class="container">
-            <h1>修正が完了しました。</h1>
+            <label>修正が完了しました。</label>
 
             <div class="d-grid gap-2">
                 <a href="{{ route('allTweetGet') }}"class="btn btn-primary">ＴＯＰ画面へ戻る</a>

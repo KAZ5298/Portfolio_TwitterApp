@@ -11,11 +11,16 @@
 <body>
 
     {{--  ヘッダー --}}
+    <div class="header">
+        <div class="container">
+            <h1>Twitter Modoki</h1>
+        </div>
+    </div>
 
     {{-- メインコンテンツ --}}
     <div class="main">
         <div class="container">
-            <h1>登録が完了しました。</h1>
+            <label>登録が完了しました。</label>
 
             <div class="d-grid gap-2">
                 <a href="{{ route('loginRedirect', $user) }}"class="btn btn-primary">ログインして一覧画面へ</a>

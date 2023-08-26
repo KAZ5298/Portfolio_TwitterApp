@@ -8,6 +8,11 @@
 <body>
 
     {{--  ヘッダー --}}
+    <div class="header">
+        <div class="container">
+            <h1>Twitter Modoki</h1>
+        </div>
+    </div>
 
     {{-- メインコンテンツ --}}
     <div class="main">

@@ -11,12 +11,19 @@
 <body>
 
     {{--  ヘッダー --}}
+    <div class="header">
+        <div class="container">
+            <h1>Twitter Modoki</h1>
+        </div>
+    </div>
 
     {{-- メインコンテンツ --}}
     <div class="main">
         <div class="container">
             <form method="POST" action="{{ route('registerCheck') }}" enctype="multipart/form-data">
                 @csrf
+
+                <label>下記の項目を入力してください。<span style="color:red">（※項目は入力必須）</span></label>
 
                 <!-- Name -->
                 <div>
