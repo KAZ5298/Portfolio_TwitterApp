@@ -60,69 +60,72 @@
 
     {{-- メインコンテンツ --}}
     <div class="main">
-        <div class="container">
-            <table>
-                @foreach ($tweets as $tweet)
-                    <tr>
-                        <td>
-                            @if ($tweet->user->icon)
-                                <img src="{{ asset('storage/images/' . $tweet->user->icon) }}" width="80" height="80">
-                            @endif
-                        </td>
-                        <td>
-                            投稿者：{{ $tweet->user->nickname }}<br>
-                            @if ($loginUser->isFollowed($tweet->user->id))
-                                フォローされています
-                            @endif
-                        </td>
-                        @if ($tweet->user->id != $loginUser->id)
-                            <td>
-                                @if ($loginUser->isFollowing($tweet->user->id))
-                                    <form action="{{ route('unfollow', $tweet->user->id) }}" method="POST">
-                                        @csrf
-                                        @method('delete')
-                                        <input type="submit" class="btn btn-danger" value="フォロー解除">
-                                    </form>
-                                @else
-                                    <form action="{{ route('follow', $tweet->user->id) }}" method="POST">
-                                        @csrf
-                                        <input type="submit" class="btn btn-primary" value="フォローする">
-                                    </form>
-                                @endif
-                            </td>
-                            <td>
-                                @if ($tweet->isFavorite($loginUser->id, $tweet->id))
-                                    <form action="{{ route('unfavorite', $tweet) }}" method="POST">
-                                        @csrf
-                                        @method('delete')
-                                        <input type="submit" class="btn btn-danger" value="いいね解除">
-                                    </form>
-                                @else
-                                    <form action="{{ route('favorite', $tweet) }}" method="POST">
-                                        @csrf
-                                        <input type="submit" class="btn btn-primary" value="いいね">
-                                    </form>
-                                @endif
-                            </td>
-                        @else
-                            <td>
-                                <form action="{{ route('tweetDestroy', $tweet) }}" method="POST">
+        @foreach ($tweets as $tweet)
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-3 border">
+                        @if ($tweet->user->icon)
+                            <img src="{{ asset('storage/images/' . $tweet->user->icon) }}" width="80"
+                                height="80">
+                        @endif
+                    </div>
+                    <div class="col-md-3 border">
+                        {{ $tweet->user->nickname }}<br>
+                        @if ($loginUser->isFollowed($tweet->user->id))
+                            フォローされています
+                        @endif
+                    </div>
+                    @if ($tweet->user->id != $loginUser->id)
+                        <div class="col-3 border">
+                            @if ($loginUser->isFollowing($tweet->user->id))
+                                <form action="{{ route('unfollow', $tweet->user->id) }}" method="POST">
                                     @csrf
                                     @method('delete')
-                                    <input type="submit" class="btn btn-danger" value="削除">
+                                    <input type="submit" class="btn btn-danger" value="フォロー解除">
                                 </form>
-                            </td>
-                        @endif
-                    </tr>
-                    <tr>
-                        <td>投稿内容：{{ $tweet->content }}</td>
-                    </tr>
-                    <tr>
-                        <td>投稿日時：{{ $tweet->created_at }}</td>
-                    </tr>
-                @endforeach
-            </table>
-        </div>
+                            @else
+                                <form action="{{ route('follow', $tweet->user->id) }}" method="POST">
+                                    @csrf
+                                    <input type="submit" class="btn btn-primary" value="フォローする">
+                                </form>
+                            @endif
+                        </div>
+                        <div class="col-3 border">
+                            @if ($tweet->isFavorite($loginUser->id, $tweet->id))
+                                <form action="{{ route('unfavorite', $tweet) }}" method="POST">
+                                    @csrf
+                                    @method('delete')
+                                    <input type="submit" class="btn btn-danger" value="いいね解除">
+                                </form>
+                            @else
+                                <form action="{{ route('favorite', $tweet) }}" method="POST">
+                                    @csrf
+                                    <input type="submit" class="btn btn-primary" value="いいね">
+                                </form>
+                            @endif
+                        </div>
+                    @else
+                        <div class="col-6 border">
+                            <form action="{{ route('tweetDestroy', $tweet) }}" method="POST">
+                                @csrf
+                                @method('delete')
+                                <input type="submit" class="btn btn-danger" value="削除">
+                            </form>
+                        </div>
+                    @endif
+                </div>
+                <div class="row">
+                    <div class="col border">
+                        {{ $tweet->content }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col border">
+                        {{ $tweet->created_at }}
+                    </div>
+                </div>
+            </div>
+        @endforeach
     </div>
 
     {{-- フッター --}}
