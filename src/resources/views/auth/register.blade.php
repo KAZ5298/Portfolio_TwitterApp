@@ -77,10 +77,11 @@
                     <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                 </div>
 
-
-                <button type="submit" class="btn btn-primary">登録</button>
-                <button type="reset" class="btn btn-danger">リセット</button>
-                <a href="{{ route('login') }}" class="btn btn-secondary">ログイン画面へ戻る</a>
+                <div>
+                    <button type="submit" class="btn btn-primary">登録</button>
+                    <button type="reset" class="btn btn-danger">リセット</button>
+                    <a href="{{ route('login') }}" class="btn btn-secondary">ログイン画面へ戻る</a>
+                </div>
             </form>
         </div>
     </div>

@@ -52,21 +52,21 @@
                     <input type="hidden" name="icon" value="{{ $icon }}">
                 </div>
 
-                <!-- Password -->
                 <div>
+                    <!-- Password -->
                     <input type="hidden" name="password" value="{{ $user->password }}">
-                </div>
 
-                <!-- Confirm Password -->
-                <div>
+                    <!-- Confirm Password -->
                     <input type="hidden" name="password_confirmation" value="{{ $user->password_confirmation }}">
                 </div>
 
                 <label>上記の内容で登録します。よろしいですか？</label>
 
-                <button type="submit" class="btn btn-primary">はい</button>
-                <a href="{{ route('profile.edit') }}" class="btn btn-danger">いいえ</a>
-                <a href="{{ route('allTweetGet') }}" class="btn btn-secondary">ＴＯＰ画面へ戻る</a>
+                <div>
+                    <button type="submit" class="btn btn-primary">はい</button>
+                    <a href="{{ route('profile.edit') }}" class="btn btn-danger">いいえ</a>
+                    <a href="{{ route('allTweetGet') }}" class="btn btn-secondary">ＴＯＰ画面へ戻る</a>
+                </div>
 
             </form>
         </div>

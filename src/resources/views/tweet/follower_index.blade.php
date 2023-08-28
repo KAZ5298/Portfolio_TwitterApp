@@ -29,7 +29,9 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="{{ route('profile.edit') }}">ユーザー情報編集</a></li>
+                                    <li><hr class="dropdown-divider"></li>
                                     <li><a class="dropdown-item" href="{{ route('followerList') }}">フォロワー一覧</a></li>
+                                    <li><hr class="dropdown-divider"></li>
                                     <li><a class="dropdown-item">
                                             <form method="POST" action="{{ route('logout') }}">
                                                 @csrf
@@ -46,7 +48,8 @@
             <ul class="nav nav-tabs justify-content-center nav-fill" id="myTab" role="tablist">
                 <a class="nav-link nav-item" href="{{ route('allTweetGet') }}">全てのつぶやき</a>
                 <a class="nav-link nav-item" href="{{ route('myTweetGet') }}">自分のつぶやき</a>
-                <a class="nav-link nav-item active" aria-current="page" href="{{ route('followerTweetGet') }}">フォロワーのつぶやき</a>
+                <a class="nav-link nav-item active" aria-current="page"
+                    href="{{ route('followerTweetGet') }}">フォロワーのつぶやき</a>
                 <a class="nav-link nav-item" href="{{ route('talkRoom') }}">トークルーム</a>
             </ul>
         </div>
@@ -58,48 +61,54 @@
             <table>
                 @foreach ($tweets as $tweet)
                     <tr>
-                        @if ($tweet->user->icon)
-                            <td>
-                                <img src="{{ asset('storage/images/' . $tweet->user->icon) }}" width="80"
-                                    height="80">
-                            </td>
-                        @endif
-                        <td>投稿者：{{ $tweet->user->nickname }}
+                        <td>
+                            @if ($tweet->user->icon)
+                                <img src="{{ asset('storage/images/' . $tweet->user->icon) }}" width="80" height="80">
+                            @endif
+                        </td>
+                        <td>
+                            投稿者：{{ $tweet->user->nickname }}<br>
                             @if ($loginUser->isFollowed($tweet->user->id))
                                 フォローされています
                             @endif
                         </td>
                         @if ($tweet->user->id != $loginUser->id)
-                            @if ($loginUser->isFollowing($tweet->user->id))
-                                <form action="{{ route('unfollow', $tweet->user->id) }}" method="POST">
-                                    @csrf
-                                    @method('delete')
-                                    <td><input type="submit" value="フォロー解除"></td>
-                                </form>
-                            @else
-                                <form action="{{ route('follow', $tweet->user->id) }}" method="POST">
-                                    @csrf
-                                    <td><input type="submit" value="フォローする"></td>
-                                </form>
-                            @endif
-                            @if ($tweet->isFavorite($loginUser->id, $tweet->id))
-                                <form action="{{ route('unfavorite', $tweet) }}" method="POST">
-                                    @csrf
-                                    @method('delete')
-                                    <td><input type="submit" value="いいね解除"></td>
-                                </form>
-                            @else
-                                <form action="{{ route('favorite', $tweet) }}" method="POST">
-                                    @csrf
-                                    <td><input type="submit" value="いいね"></td>
-                                </form>
-                            @endif
+                            <td>
+                                @if ($loginUser->isFollowing($tweet->user->id))
+                                    <form action="{{ route('unfollow', $tweet->user->id) }}" method="POST">
+                                        @csrf
+                                        @method('delete')
+                                        <input type="submit" class="btn btn-danger" value="フォロー解除">
+                                    </form>
+                                @else
+                                    <form action="{{ route('follow', $tweet->user->id) }}" method="POST">
+                                        @csrf
+                                        <input type="submit" class="btn btn-primary" value="フォローする">
+                                    </form>
+                                @endif
+                            </td>
+                            <td>
+                                @if ($tweet->isFavorite($loginUser->id, $tweet->id))
+                                    <form action="{{ route('unfavorite', $tweet) }}" method="POST">
+                                        @csrf
+                                        @method('delete')
+                                        <input type="submit" class="btn btn-danger" value="いいね解除">
+                                    </form>
+                                @else
+                                    <form action="{{ route('favorite', $tweet) }}" method="POST">
+                                        @csrf
+                                        <input type="submit" class="btn btn-primary" value="いいね">
+                                    </form>
+                                @endif
+                            </td>
                         @else
-                            <form action="{{ route('tweetDestroy', $tweet) }}" method="POST">
-                                @csrf
-                                @method('delete')
-                                <td><input type="submit" value="削除"></td>
-                            </form>
+                            <td>
+                                <form action="{{ route('tweetDestroy', $tweet) }}" method="POST">
+                                    @csrf
+                                    @method('delete')
+                                    <input type="submit" class="btn btn-danger" value="削除">
+                                </form>
+                            </td>
                         @endif
                     </tr>
                     <tr>
@@ -120,14 +129,12 @@
                 <form action="{{ route('tweetPost') }}" method="POST">
                     @csrf
                     <textarea name="content"></textarea>
-                    <input type="submit" value="つぶやく">
+                    <button type="submit" class="btn btn-primary">つぶやく</button>
                 </form>
             @endif
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
-    </script>
+    <script src="{{ asset('/js/bootstrap.bundle.min.js') }}"></script>
 </body>
 
 </html>

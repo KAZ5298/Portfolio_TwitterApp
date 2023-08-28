@@ -29,9 +29,12 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="{{ route('profile.edit') }}">ユーザー情報編集</a></li>
+                                    <li><hr class="dropdown-divider"></li>
                                     <li><a class="dropdown-item" href="{{ route('followerList') }}">フォロワー一覧</a></li>
+                                    <li><hr class="dropdown-divider"></li>
                                     <li><a class="dropdown-item">
-                                            <form method="POST" action="{{ route('logout') }}"> @csrf
+                                            <form method="POST" action="{{ route('logout') }}">
+                                                @csrf
                                                 <input type="submit" value="ログアウト">
                                             </form>
                                         </a>
@@ -70,9 +73,7 @@
     <div class="footer">
 
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
-    </script>
+    <script src="{{ asset('/js/bootstrap.bundle.min.js') }}"></script>
 </body>
 
 </html>

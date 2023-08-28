@@ -29,9 +29,16 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="{{ route('profile.edit') }}">ユーザー情報編集</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
                                     <li><a class="dropdown-item" href="{{ route('followerList') }}">フォロワー一覧</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
                                     <li><a class="dropdown-item">
-                                            <form method="POST" action="{{ route('logout') }}"> @csrf
+                                            <form method="POST" action="{{ route('logout') }}">
+                                                @csrf
                                                 <input type="submit" value="ログアウト">
                                             </form>
                                         </a>
@@ -57,12 +64,10 @@
                 @foreach ($followers as $follower)
                     <tr>
                         @if ($follower->icon)
-                            <td>
-                                <img src="{{ asset('storage/images/' . $follower->icon) }}" width="80"
-                                    height="80">
-                            </td>
+                            <td><img src="{{ asset('storage/images/' . $follower->icon) }}" width="80" height="80"></td>
                         @endif
-                        <td>{{ $follower->nickname }}
+                        <td>
+                            {{ $follower->nickname }}<br>
                             @if ($loginUser->isFollowed($follower->id))
                                 フォローされています
                             @endif
@@ -71,13 +76,13 @@
                             <form action="{{ route('unfollow', $follower->id) }}" method="POST">
                                 @csrf
                                 @method('delete')
-                                <td><input type="submit" value="フォロー解除"></td>
+                                <td><input type="submit" class="btn btn-danger" value="フォロー解除"></td>
                             </form>
                         @endif
                     </tr>
                 @endforeach
             </table>
-            <a href="{{ route('allTweetGet') }}">戻る</a>
+            <a href="{{ route('allTweetGet') }}" class="btn btn-primary">戻る</a>
         </div>
     </div>
 
@@ -85,9 +90,7 @@
     <div class="footer">
 
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
-    </script>
+    <script src="{{ asset('/js/bootstrap.bundle.min.js') }}"></script>
 </body>
 
 </html>
