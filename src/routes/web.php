@@ -49,7 +49,15 @@ Route::middleware('auth')->group(function () {
 
     // つぶやき関連View
     Route::get('/allTweets', function () {
-        return view('tweet.index');
+        return view('tweet.all_index');
+    });
+
+    Route::get('/myTweets', function () {
+        return view('tweet.owner_index');
+    });
+
+    Route::get('/followerTweets', function () {
+        return view('tweet.follower_index');
     });
 
     // つぶやき一覧表示機能

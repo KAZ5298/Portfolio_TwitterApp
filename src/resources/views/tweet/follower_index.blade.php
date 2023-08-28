@@ -43,14 +43,12 @@
                     </div>
                 </div>
             </nav>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="{{ route('allTweetGet') }}">全てのつぶやき</a>
-                    <a class="navbar-brand" href="{{ route('myTweetGet') }}">自分のつぶやき</a>
-                    <a class="navbar-brand" href="{{ route('followerTweetGet') }}">フォロワーのつぶやき</a>
-                    <a class="navbar-brand" href="{{ route('talkRoom') }}">トークルーム</a>
-                </div>
-            </nav>
+            <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+                <a class="nav-link" aria-current="page" href="{{ route('allTweetGet') }}">全てのつぶやき</a>
+                <a class="nav-link" href="{{ route('myTweetGet') }}">自分のつぶやき</a>
+                <a class="nav-link active" href="{{ route('followerTweetGet') }}">フォロワーのつぶやき</a>
+                <a class="nav-link" href="{{ route('talkRoom') }}">トークルーム</a>
+            </ul>
         </div>
     </div>
 
@@ -61,8 +59,10 @@
                 @foreach ($tweets as $tweet)
                     <tr>
                         @if ($tweet->user->icon)
-                            <td><img src="{{ asset('storage/images/' . $tweet->user->icon) }}" width="80"
-                                    height="80"></td>
+                            <td>
+                                <img src="{{ asset('storage/images/' . $tweet->user->icon) }}" width="80"
+                                    height="80">
+                            </td>
                         @endif
                         <td>投稿者：{{ $tweet->user->nickname }}
                             @if ($loginUser->isFollowed($tweet->user->id))

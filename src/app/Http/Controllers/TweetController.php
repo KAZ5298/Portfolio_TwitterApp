@@ -16,7 +16,7 @@ class TweetController extends Controller
 
         $tweets = Tweet::orderby('created_at', 'desc')->get();
 
-        return view('tweet.index', compact('loginUser', 'tweets', 'followerFlg'));
+        return view('tweet.all_index', compact('loginUser', 'tweets', 'followerFlg'));
     }
 
     public function myTweetGet()
@@ -27,7 +27,7 @@ class TweetController extends Controller
 
         $tweets = Tweet::where('user_id', $loginUser->id)->orderby('created_at', 'desc')->get();
 
-        return view('tweet.index', compact('loginUser', 'tweets', 'followerFlg'));
+        return view('tweet.owner_index', compact('loginUser', 'tweets', 'followerFlg'));
     }
 
     public function followerTweetGet()
@@ -43,7 +43,7 @@ class TweetController extends Controller
 
         $tweets = Tweet::whereIn('user_id', $followerId)->orderby('created_at', 'desc')->get();
 
-        return view('tweet.index', compact('loginUser', 'tweets', 'followerFlg'));
+        return view('tweet.follower_index', compact('loginUser', 'tweets', 'followerFlg'));
     }
 
     // 違う形？　明日チェック
