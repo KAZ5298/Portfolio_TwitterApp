@@ -43,11 +43,11 @@
                     </div>
                 </div>
             </nav>
-            <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
-                <a class="nav-link" aria-current="page" href="{{ route('allTweetGet') }}">全てのつぶやき</a>
-                <a class="nav-link" href="{{ route('myTweetGet') }}">自分のつぶやき</a>
-                <a class="nav-link active" href="{{ route('followerTweetGet') }}">フォロワーのつぶやき</a>
-                <a class="nav-link" href="{{ route('talkRoom') }}">トークルーム</a>
+            <ul class="nav nav-tabs justify-content-center nav-fill" id="myTab" role="tablist">
+                <a class="nav-link nav-item" href="{{ route('allTweetGet') }}">全てのつぶやき</a>
+                <a class="nav-link nav-item" href="{{ route('myTweetGet') }}">自分のつぶやき</a>
+                <a class="nav-link nav-item active" aria-current="page" href="{{ route('followerTweetGet') }}">フォロワーのつぶやき</a>
+                <a class="nav-link nav-item" href="{{ route('talkRoom') }}">トークルーム</a>
             </ul>
         </div>
     </div>

@@ -43,52 +43,12 @@
                     </div>
                 </div>
             </nav>
-            {{-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="{{ route('allTweetGet') }}">全てのつぶやき</a>
-                    <a class="navbar-brand" href="{{ route('myTweetGet') }}">自分のつぶやき</a>
-                    <a class="navbar-brand" href="{{ route('followerTweetGet') }}">フォロワーのつぶやき</a>
-                    <a class="navbar-brand" href="{{ route('talkRoom') }}">トークルーム</a>
-                </div>
-            </nav> --}}
-            <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
-                <a class="nav-link active" aria-current="page" href="{{ route('allTweetGet') }}">全てのつぶやき</a>
-                <a class="nav-link" href="{{ route('myTweetGet') }}">自分のつぶやき</a>
-                <a class="nav-link" href="{{ route('followerTweetGet') }}">フォロワーのつぶやき</a>
-                <a class="nav-link" href="{{ route('talkRoom') }}">トークルーム</a>
-                {{-- <li class="nav-item" role="presentation" href="{{ route('allTweetGet') }}">
-                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
-                        type="button" role="tab" aria-controls="home-tab-pane"
-                        aria-selected="true">全てのつぶやき</button>
-                </li>
-                <li class="nav-item" role="presentation" href="{{ route('myTweetGet') }}">
-                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
-                        type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false"
-                        >自分のつぶやき</button>
-                </li>
-                <li class="nav-item" role="presentation" href="{{ route('followerTweetGet') }}">
-                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
-                        type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false"
-                        >フォロワーのつぶやき</button>
-                </li>
-                <li class="nav-item" role="presentation" href="{{ route('talkRoom') }}">
-                    <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane"
-                        type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false"
-                        >トークルーム</button>
-                </li> --}}
+            <ul class="nav nav-tabs justify-content-center nav-fill" id="myTab" role="tablist">
+                <a class="nav-link nav-item active" aria-current="page" href="{{ route('allTweetGet') }}">全てのつぶやき</a>
+                <a class="nav-link nav-item" href="{{ route('myTweetGet') }}">自分のつぶやき</a>
+                <a class="nav-link nav-item" href="{{ route('followerTweetGet') }}">フォロワーのつぶやき</a>
+                <a class="nav-link nav-item" href="{{ route('talkRoom') }}">トークルーム</a>
             </ul>
-            {{-- <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
-                    tabindex="0">...</div>
-                <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
-                    tabindex="0">...</div>
-                <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab"
-                    tabindex="0">...</div>
-                <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab"
-                    tabindex="0">...</div>
-            </div> --}}
-
-
         </div>
     </div>
 
