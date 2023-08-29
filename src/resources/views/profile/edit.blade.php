@@ -26,25 +26,28 @@
                 <label>下記の項目を入力してください。<span style="color:red">（※項目は入力必須）</span></label>
 
                 <!-- Name -->
-                <div>
+                <div class="mt-4">
                     <label>アカウント名（ユーザーＩＤ）<span style="color:red">※</span></label>
+                    <br>
                     <input type="text" name="name" value="{{ $user->name }}">
                 </div>
 
                 <!-- Email Address -->
-                <div>
+                <div class="mt-4">
                     <label>メールアドレス <span style="color:red">※</span></label>
+                    <br>
                     <input type="email" name="email" value="{{ $user->email }}">
                 </div>
 
                 <!-- Nick Name -->
-                <div>
+                <div class="mt-4">
                     <label>ニックネーム（一覧画面での表示名）<span style="color:red">※</span></label>
+                    <br>
                     <input type="text" name="nickname" value="{{ $user->nickname }}">
                 </div>
 
                 <!-- Profile Icon -->
-                <div>
+                <div class="mt-4">
                     <label>プロフィール画像</label>
                     @if (isset($user->icon))
                         <img src="{{ asset('storage/images/' . $user->icon) }}" width="80" height="80">
@@ -56,21 +59,24 @@
                 </div>
 
                 <!-- Password -->
-                <div>
+                <div class="mt-4">
                     <label>パスワード <span style="color:red">※</span></label>
+                    <br>
                     <input type="password" name="password">
                 </div>
 
                 <!-- Confirm Password -->
-                <div>
+                <div class="mt-4">
                     <label>パスワード（再確認）<span style="color:red">※</span></label>
+                    <br>
                     <input type="password" name="password_confirmation">
                 </div>
 
-
-                <button type="submit" class="btn btn-primary">登録</button>
-                <button type="reset" class="btn btn-danger">リセット</button>
-                <a href="{{ route('allTweetGet') }}" class="btn btn-secondary">ＴＯＰ画面へ戻る</a>
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-primary">登録</button>
+                    <button type="reset" class="btn btn-danger">リセット</button>
+                    <a href="{{ route('allTweetGet') }}" class="btn btn-secondary">ＴＯＰ画面へ戻る</a>
+                </div>
             </form>
         </div>
     </div>

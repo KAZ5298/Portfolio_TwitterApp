@@ -48,10 +48,7 @@
                     <a href="{{ route('register') }}" class="btn btn-primary">新規登録</a>
                     <button type="submit" class="btn btn-primary">ログイン</button>
                 </div>
-
-                {{-- <div>
-                    <button type="submit" class="btn btn-primary">ログイン</button>
-                </div> --}}
+            </form>
         </div>
     </div>
 
