@@ -57,10 +57,18 @@
 
     {{-- メインコンテンツ --}}
     <div class="main">
+        @if ($errors->any())
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        @endif
+
         @foreach ($tweets as $tweet)
             <div class="container text-center">
                 <div class="row">
-                    <div class="col-md-3 border">
+                    <div class="col-1 border">
                         @if ($tweet->user->icon)
                             <img src="{{ asset('storage/images/' . $tweet->user->icon) }}" width="80"
                                 height="80">
@@ -74,7 +82,7 @@
                         @endif
                     </div>
                     @if ($tweet->user->id != $loginUser->id)
-                        <div class="col-3 border">
+                        <div class="col border">
                             @if ($loginUser->isFollowing($tweet->user->id))
                                 <form action="{{ route('unfollow', $tweet->user->id) }}" method="POST">
                                     @csrf
@@ -88,7 +96,7 @@
                                 </form>
                             @endif
                         </div>
-                        <div class="col-3 border">
+                        <div class="col border">
                             @if ($tweet->isFavorite($loginUser->id, $tweet->id))
                                 <form action="{{ route('unfavorite', $tweet) }}" method="POST">
                                     @csrf
@@ -103,7 +111,7 @@
                             @endif
                         </div>
                     @else
-                        <div class="col-6 border">
+                        <div class="col border">
                             <form action="{{ route('tweetDestroy', $tweet) }}" method="POST">
                                 @csrf
                                 @method('delete')
@@ -129,13 +137,11 @@
     {{-- フッター --}}
     <div class="footer">
         <div class="container">
-            @if (!$followerFlg)
-                <form action="{{ route('tweetPost') }}" method="POST">
-                    @csrf
-                    <textarea name="content"></textarea>
-                    <button type="submit" class="btn btn-primary">つぶやく</button>
-                </form>
-            @endif
+            <form action="{{ route('tweetPost') }}" method="POST">
+                @csrf
+                <textarea name="content"></textarea>
+                <button type="submit" class="btn btn-primary">つぶやく</button>
+            </form>
         </div>
     </div>
     <script src="{{ asset('/js/bootstrap.bundle.min.js') }}"></script>

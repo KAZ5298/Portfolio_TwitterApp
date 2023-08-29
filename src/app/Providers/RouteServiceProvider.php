@@ -20,8 +20,6 @@ class RouteServiceProvider extends ServiceProvider
     // public const HOME = '/dashboard';
     public const HOME = '/allTweets';
 
-    public const REGISTERDONE = '/register_done';
-
     /**
      * Define your route model bindings, pattern filters, and other route configuration.
      */

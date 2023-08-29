@@ -28,7 +28,7 @@ class LoginRequest extends FormRequest
     {
         return [
             // 'email' => ['required', 'string', 'email'],
-            'email_or_id' => ['required', 'string'],
+            'email_or_id' => ['required', 'string', 'exists:users,name'],
             'password' => ['required', 'string'],
         ];
     }
@@ -93,4 +93,14 @@ class LoginRequest extends FormRequest
     {
         return Str::transliterate(Str::lower($this->input('email_or_id')) . '|' . $this->ip());
     }
+
+    public function messages()
+    {
+        return [
+            'email_or_id.required' => 'ユーザーIDまたはメールアドレスが空白です。',
+            'email_or_id.exists' => 'ユーザーIDまたはパスワードが違います。',
+            'password.required' => 'パスワードが空白です。',
+        ];
+    }
+
 }

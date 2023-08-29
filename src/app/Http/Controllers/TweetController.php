@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Tweet;
 use app\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Requests\TweetRequest;
 
 class TweetController extends Controller
 {
@@ -12,22 +13,18 @@ class TweetController extends Controller
     {
         $loginUser = auth()->user();
 
-        $followerFlg = false;
-
         $tweets = Tweet::orderby('created_at', 'desc')->get();
 
-        return view('tweet.all_index', compact('loginUser', 'tweets', 'followerFlg'));
+        return view('tweet.all_index', compact('loginUser', 'tweets'));
     }
 
     public function myTweetGet()
     {
         $loginUser = auth()->user();
 
-        $followerFlg = false;
-
         $tweets = Tweet::where('user_id', $loginUser->id)->orderby('created_at', 'desc')->get();
 
-        return view('tweet.owner_index', compact('loginUser', 'tweets', 'followerFlg'));
+        return view('tweet.owner_index', compact('loginUser', 'tweets'));
     }
 
     public function followerTweetGet()
@@ -35,15 +32,13 @@ class TweetController extends Controller
         $user = new User();
         $loginUser = auth()->user();
 
-        $followerFlg = true;
-
         $followerId = User::find($loginUser->id)->follows->map(function ($id){
             return $id->id;
         });
 
         $tweets = Tweet::whereIn('user_id', $followerId)->orderby('created_at', 'desc')->get();
 
-        return view('tweet.follower_index', compact('loginUser', 'tweets', 'followerFlg'));
+        return view('tweet.follower_index', compact('loginUser', 'tweets'));
     }
 
     // 違う形？　明日チェック
@@ -70,7 +65,7 @@ class TweetController extends Controller
         return back();
     }
 
-    public function tweetPost(Request $request)
+    public function tweetPost(TweetRequest $request)
     {
         $tweet = new Tweet();
 

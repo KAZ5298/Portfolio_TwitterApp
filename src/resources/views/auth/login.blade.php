@@ -12,6 +12,15 @@
         <div class="container">
             <h1>Twitter Modoki</h1>
         </div>
+
+        @if ($errors->any())
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        @endif
+
     </div>
 
     {{-- メインコンテンツ --}}

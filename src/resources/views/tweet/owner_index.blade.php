@@ -57,6 +57,14 @@
 
     {{-- メインコンテンツ --}}
     <div class="main">
+        @if ($errors->any())
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        @endif
+
         @foreach ($tweets as $tweet)
             <div class="container text-center">
                 <div class="row">
@@ -94,13 +102,11 @@
     {{-- フッター --}}
     <div class="footer">
         <div class="container">
-            @if (!$followerFlg)
-                <form action="{{ route('tweetPost') }}" method="POST">
-                    @csrf
-                    <textarea name="content"></textarea>
-                    <button type="submit" class="btn btn-primary">つぶやく</button>
-                </form>
-            @endif
+            <form action="{{ route('tweetPost') }}" method="POST">
+                @csrf
+                <textarea name="content"></textarea>
+                <button type="submit" class="btn btn-primary">つぶやく</button>
+            </form>
         </div>
     </div>
     <script src="{{ asset('/js/bootstrap.bundle.min.js') }}"></script>

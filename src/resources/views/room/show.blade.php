@@ -56,6 +56,14 @@
 
     {{-- メインコンテンツ --}}
     <div class="main">
+        @if ($errors->any())
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        @endif
+
         <div class="container">
             <div class="kaiwa line">
                 <img src="{{ asset('storage/images/' . $rooms->user->icon) }}" width="80" height="80">

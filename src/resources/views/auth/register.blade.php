@@ -20,13 +20,21 @@
     {{-- メインコンテンツ --}}
     <div class="main">
         <div class="container">
+            @if ($errors->any())
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            @endif
+
             <form method="POST" action="{{ route('registerCheck') }}" enctype="multipart/form-data">
                 @csrf
 
                 <label>下記の項目を入力してください。<span style="color:red">（※項目は入力必須）</span></label>
 
                 <!-- Name -->
-                <div>
+                <div class="mt-4">
                     {{-- <x-input-label for="name" value="アカウント名" />
                     <x-text-input id="name" class="block mt-1 w-full" type="text" name="name"
                         :value="old('name')" required autofocus autocomplete="name" />
@@ -61,7 +69,6 @@
                 <!-- Profile Icon -->
                 <div class="mt-4">
                     <label>プロフィール画像</label>
-                    {{-- <x-input-label for="icon" value="プロフィール画像" /> --}}
                     <br>
                     <input id="icon" type="file" name="icon">
                 </div>

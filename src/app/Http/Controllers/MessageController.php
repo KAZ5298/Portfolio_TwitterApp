@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Message;
 use App\Models\Room;
+use App\Http\Requests\MessageRequest;
 
 class MessageController extends Controller
 {
-    public function messagePost(Request $request, Room $room)
+    public function messagePost(MessageRequest $request, Room $room)
     {
         $message = new Message();
 
