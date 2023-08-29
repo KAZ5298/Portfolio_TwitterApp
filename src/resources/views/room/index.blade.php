@@ -29,10 +29,11 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="{{ route('profile.edit') }}">ユーザー情報編集</a></li>
-                                    <li><hr class="dropdown-divider"></li>
+                                    <hr class="dropdown-divider">
                                     <li><a class="dropdown-item" href="{{ route('followerList') }}">フォロワー一覧</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item">
+                                    <hr class="dropdown-divider">
+                                    <li>
+                                        <a class="dropdown-item">
                                             <form method="POST" action="{{ route('logout') }}">
                                                 @csrf
                                                 <input type="submit" value="ログアウト">

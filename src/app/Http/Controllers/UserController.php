@@ -8,23 +8,23 @@ use App\Models\User;
 class UserController extends Controller
 {
     // フォロー
-    public function follow(User $user)
+    public function follow(User $follower)
     {
-        $follower = auth()->user();
+        $loginUser = auth()->user();
 
         // フォローしているかチェック
-        $is_following = $follower->isFollowing($user->id);
+        $is_following = $loginUser->isFollowing($follower->id);
 
         // フォローされているかチェック
-        $is_followed = $follower->isFollowed($user->id);
+        $is_followed = $loginUser->isFollowed($follower->id);
 
         if (!$is_following) {
             // フォローしていなければフォローする
-            $follower->follow($user->id);
+            $loginUser->follow($follower->id);
 
             // 相互フォローになった場合トークルーム作成する
             if ($is_followed) {
-                $follower->createTalkRoom($follower->id, $user->id);
+                $loginUser->createTalkRoom($loginUser->id, $follower->id);
             }
 
             return back();
@@ -32,23 +32,23 @@ class UserController extends Controller
     }
 
     // フォロー解除
-    public function unfollow(User $user)
+    public function unfollow(User $follower)
     {
-        $follower = auth()->user();
+        $loginUser = auth()->user();
 
         // フォローしているかチェック
-        $is_following = $follower->isFollowing($user->id);
+        $is_following = $loginUser->isFollowing($follower->id);
 
         // フォローされているかチェック
-        $is_followed = $follower->isFollowed($user->id);
+        $is_followed = $loginUser->isFollowed($follower->id);
 
         if ($is_following) {
             // フォローしていればフォロー解除する
-            $follower->unfollow($user->id);
+            $loginUser->unfollow($follower->id);
 
             // 相手にフォローされていればトークルームを削除する
             if ($is_followed) {
-                $follower->deleteTalkRoom($follower->id, $user->id);
+                $loginUser->deleteTalkRoom($loginUser->id, $follower->id);
             }
 
             return back();

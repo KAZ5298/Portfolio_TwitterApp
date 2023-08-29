@@ -72,10 +72,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/tweet/{tweet}/destroy', [TweetController::class, 'tweetDestroy'])->name('tweetDestroy');
 
     // フォロー機能
-    Route::post('/tweet/{user}/follow', [UserController::class, 'follow'])->name('follow');
+    Route::post('/tweet/{follower}/follow', [UserController::class, 'follow'])->name('follow');
 
     // フォロー解除機能
-    Route::delete('/tweet/{user}/unfollow', [UserController::class, 'unfollow'])->name('unfollow');
+    Route::delete('/tweet/{follower}/unfollow', [UserController::class, 'unfollow'])->name('unfollow');
 
     // いいね機能
     Route::post('/tweet/{tweet}/favorite', [FavoriteController::class, 'favorite'])->name('favorite');

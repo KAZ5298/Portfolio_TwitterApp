@@ -95,32 +95,40 @@ class User extends Authenticatable
     // フォローしているかチェック
     public function isFollowing(int $user_id)
     {
-        return (bool) $this->follows()->where('followed_id', $user_id)->first(['id']);
+        return (boolean) $this->follows()->where('followed_id', $user_id)->first(['id']);
     }
 
     // フォローされているかチェック
     public function isFollowed(int $user_id)
     {
-        return (bool) $this->followers()->where('following_id', $user_id)->first(['id']);
+        return (boolean) $this->followers()->where('following_id', $user_id)->first(['id']);
     }
 
     // トークルーム作成
     public function createTalkRoom(int $loginUser, int $follower)
     {
-        $roomId = 'room:' . $loginUser . '.' . $follower;
+        if ($loginUser < $follower) {
+            $roomId = 'room:' . $loginUser . '.' . $follower;
+        } else {
+            $roomId = 'room:' . $follower . '.' . $loginUser;
+        }
 
         $rooms = [
             ["id" => $roomId, "user_id" => $loginUser],
             ["id" => $roomId, "user_id" => $follower]
         ];
 
-        $record = Room::insert($rooms);
+        Room::insert($rooms);
     }
 
     // トークルーム削除
     public function deleteTalkRoom(int $loginUser, int $follower)
     {
-        $roomId = 'room:' . $loginUser . '.' . $follower;
+        if ($loginUser < $follower) {
+            $roomId = 'room:' . $loginUser . '.' . $follower;
+        } else {
+            $roomId = 'room:' . $follower . '.' . $loginUser;
+        }
 
         $this->rooms()->find($roomId)->delete();
     }

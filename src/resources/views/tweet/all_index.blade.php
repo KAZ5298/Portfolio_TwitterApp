@@ -29,14 +29,11 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="{{ route('profile.edit') }}">ユーザー情報編集</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
+                                    <hr class="dropdown-divider">
                                     <li><a class="dropdown-item" href="{{ route('followerList') }}">フォロワー一覧</a></li>
+                                    <hr class="dropdown-divider">
                                     <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item">
+                                        <a class="dropdown-item">
                                             <form method="POST" action="{{ route('logout') }}">
                                                 @csrf
                                                 <input type="submit" value="ログアウト">
@@ -70,7 +67,8 @@
                         @endif
                     </div>
                     <div class="col-md-3 border">
-                        {{ $tweet->user->nickname }}<br>
+                        {{ $tweet->user->nickname }}
+                        <br>
                         @if ($loginUser->isFollowed($tweet->user->id))
                             フォローされています
                         @endif
@@ -119,7 +117,7 @@
                         {{ $tweet->content }}
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mb-2">
                     <div class="col border">
                         {{ $tweet->created_at }}
                     </div>
