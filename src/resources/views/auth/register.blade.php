@@ -20,18 +20,22 @@
     {{-- メインコンテンツ --}}
     <div class="main">
         <div class="container">
-            @if ($errors->any())
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            @endif
-
             <form method="POST" action="{{ route('registerCheck') }}" enctype="multipart/form-data">
                 @csrf
 
-                <label>下記の項目を入力してください。<span style="color:red">（※項目は入力必須）</span></label>
+                <div class="title mt-4">
+                    <label>下記の項目を入力してください。<span style="color:red">（※項目は入力必須）</span></label>
+                </div>
+
+                <div class="error_msg mt-4">
+                    @if ($errors->any())
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
+                </div>
 
                 <!-- Name -->
                 <div class="mt-4">

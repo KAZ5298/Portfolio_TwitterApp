@@ -56,16 +56,19 @@
 
     {{-- メインコンテンツ --}}
     <div class="main">
-        @if ($errors->any())
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        @endif
-
         <div class="container">
-            <div class="kaiwa line">
+
+            <div class="error_msg mt-4">
+                @if ($errors->any())
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                @endif
+            </div>
+
+            <div class="kaiwa line mt-4">
                 <img src="{{ asset('storage/images/' . $rooms->user->icon) }}" width="80" height="80">
                 {{ $rooms->user->nickname }}
                 <img src="{{ asset('storage/images/' . $loginUser->icon) }}" width="80" height="80">

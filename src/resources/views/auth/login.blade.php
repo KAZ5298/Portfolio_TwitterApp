@@ -12,15 +12,6 @@
         <div class="container">
             <h1>Twitter Modoki</h1>
         </div>
-
-        @if ($errors->any())
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        @endif
-
     </div>
 
     {{-- メインコンテンツ --}}
@@ -29,8 +20,18 @@
             <form method="POST" action="{{ route('login') }}">
                 @csrf
 
+                <div class="error_msg mt-4">
+                    @if ($errors->any())
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
+                </div>
+
                 <!-- Email Address -->
-                <div>
+                <div class="mt-4">
                     {{-- <x-input-label for="email" value="アカウント名（ユーザーＩＤ）または、メールアドレス" />
                     <x-text-input id="email" class="block mt-1 w-full" type="text" name="email_or_id"
                         :value="old('email_or_id')" required autofocus autocomplete="username" />

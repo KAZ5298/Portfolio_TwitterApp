@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use App\Http\Requests\Auth\RegisterRequest;
 
 class RegisteredUserController extends Controller
 {
@@ -28,7 +29,7 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request)
+    public function store(RegisterRequest $request)
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
@@ -52,7 +53,7 @@ class RegisteredUserController extends Controller
         return view('auth.done', compact('user'));
     }
 
-    public function show(Request $request)
+    public function show(RegisterRequest $request)
     {
         $user = $request;
 
