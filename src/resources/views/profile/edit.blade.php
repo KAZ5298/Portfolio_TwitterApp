@@ -28,6 +28,14 @@
                 <!-- Name -->
                 <div class="mt-4">
                     <label>アカウント名（ユーザーＩＤ）<span style="color:red">※</span></label>
+                    @if ($errors->has('name'))
+                        <tr>
+                            @foreach ($errors->get('name') as $message)
+                                <td> {{ $message }} </td>
+                            @endforeach
+                        </tr>
+                    @endif
+                    <br>
                     <br>
                     <input type="text" name="name" value="{{ $user->name }}">
                 </div>
@@ -35,6 +43,13 @@
                 <!-- Email Address -->
                 <div class="mt-4">
                     <label>メールアドレス <span style="color:red">※</span></label>
+                    @if ($errors->has('email'))
+                        <tr>
+                            @foreach ($errors->get('email') as $message)
+                                <td> {{ $message }} </td>
+                            @endforeach
+                        </tr>
+                    @endif
                     <br>
                     <input type="email" name="email" value="{{ $user->email }}">
                 </div>
@@ -42,6 +57,13 @@
                 <!-- Nick Name -->
                 <div class="mt-4">
                     <label>ニックネーム（一覧画面での表示名）<span style="color:red">※</span></label>
+                    @if ($errors->has('nickname'))
+                        <tr>
+                            @foreach ($errors->get('nickname') as $message)
+                                <td> {{ $message }} </td>
+                            @endforeach
+                        </tr>
+                    @endif
                     <br>
                     <input type="text" name="nickname" value="{{ $user->nickname }}">
                 </div>
@@ -61,6 +83,13 @@
                 <!-- Password -->
                 <div class="mt-4">
                     <label>パスワード <span style="color:red">※</span></label>
+                    @if ($errors->has('password'))
+                        <tr>
+                            @foreach ($errors->get('password') as $message)
+                                <td> {{ $message }} </td>
+                            @endforeach
+                        </tr>
+                    @endif
                     <br>
                     <input type="password" name="password">
                 </div>

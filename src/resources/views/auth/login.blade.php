@@ -22,11 +22,11 @@
 
                 <div class="error_msg mt-4">
                     @if ($errors->any())
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
+                        <tr>
+                            @foreach ($errors->all() as $message)
+                                <td> {{ $message }} </td>
                             @endforeach
-                        </ul>
+                        </tr>
                     @endif
                 </div>
 

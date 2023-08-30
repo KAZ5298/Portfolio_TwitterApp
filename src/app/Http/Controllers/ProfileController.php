@@ -69,7 +69,7 @@ class ProfileController extends Controller
         return Redirect::to('/');
     }
 
-    public function show(Request $request)
+    public function show(ProfileUpdateRequest $request)
     {
         $user = $request;
 

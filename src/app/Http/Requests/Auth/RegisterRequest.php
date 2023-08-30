@@ -4,6 +4,7 @@ namespace App\Http\Requests\Auth;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules;
+use App\Models\User;
 
 class RegisterRequest extends FormRequest
 {
@@ -26,7 +27,7 @@ class RegisterRequest extends FormRequest
             'name' => ['required', 'string', 'max:50'],
             'email' => ['required', 'string', 'email', 'max:50', 'unique:' . User::class],
             'nickname' => ['required', 'string', 'max:50'],
-            'password' => ['required', 'confirmed', 'regex:'],
+            'password' => ['required', 'confirmed', 'regex:/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z\-]{8,}$/'],
         ];
     }
 
@@ -46,7 +47,7 @@ class RegisterRequest extends FormRequest
 
             // 正規表現チェック
             'email.email' => 'メールアドレスは xxx@xxx の形式で入力して下さい。',
-            'password.Rules' => 'パスワードは半角英数大文字小文字１文字含む８文字以上で入力して下さい。',
+            'password.regex' => 'パスワードは半角英数大文字小文字１文字含む８文字以上で入力して下さい。',
 
             // ダブルチェック
             'password.confirmed' => 'パスワードが一致しません。',

@@ -28,7 +28,7 @@ class LoginRequest extends FormRequest
     {
         return [
             // 'email' => ['required', 'string', 'email'],
-            'email_or_id' => ['required', 'string', 'exists:users,name'],
+            'email_or_id' => ['required', 'string'],//, 'exists:App\Models\User,name,email'],
             'password' => ['required', 'string'],
         ];
     }
@@ -98,9 +98,8 @@ class LoginRequest extends FormRequest
     {
         return [
             'email_or_id.required' => 'ユーザーIDまたはメールアドレスが空白です。',
-            'email_or_id.exists' => 'ユーザーIDまたはパスワードが違います。',
+            // 'email_or_id.exists' => '⚠アカウント名、またはパスワードが違います⚠',
             'password.required' => 'パスワードが空白です。',
         ];
     }
-
 }

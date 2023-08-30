@@ -75,5 +75,7 @@ class TweetController extends Controller
         $tweet->save();
 
         return back();
+
+        // return redirect()->route('allTweetGet')->with('message', 'つぶやきを投稿しました。');
     }
 }

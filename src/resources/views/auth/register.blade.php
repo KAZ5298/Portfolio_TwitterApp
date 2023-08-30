@@ -27,16 +27,6 @@
                     <label>下記の項目を入力してください。<span style="color:red">（※項目は入力必須）</span></label>
                 </div>
 
-                <div class="error_msg mt-4">
-                    @if ($errors->any())
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    @endif
-                </div>
-
                 <!-- Name -->
                 <div class="mt-4">
                     {{-- <x-input-label for="name" value="アカウント名" />
@@ -44,6 +34,13 @@
                         :value="old('name')" required autofocus autocomplete="name" />
                     <x-input-error :messages="$errors->get('name')" class="mt-2" /> --}}
                     <label>アカウント名（ユーザーＩＤ）<span style="color:red">※</span></label>
+                    @if ($errors->has('name'))
+                        <tr>
+                            @foreach ($errors->get('name') as $message)
+                                <td> {{ $message }} </td>
+                            @endforeach
+                        </tr>
+                    @endif
                     <br>
                     <input type="text" name="name">
                 </div>
@@ -55,6 +52,13 @@
                         :value="old('email')" required autocomplete="username" />
                     <x-input-error :messages="$errors->get('email')" class="mt-2" /> --}}
                     <label>メールアドレス <span style="color:red">※</span></label>
+                    @if ($errors->has('email'))
+                        <tr>
+                            @foreach ($errors->get('email') as $message)
+                                <td> {{ $message }} </td>
+                            @endforeach
+                        </tr>
+                    @endif
                     <br>
                     <input type="email" name="email">
                 </div>
@@ -66,6 +70,13 @@
                         :value="old('nickname')" required autocomplete="username" />
                     <x-input-error :messages="$errors->get('nickname')" class="mt-2" /> --}}
                     <label>ニックネーム（一覧画面での表示名）<span style="color:red">※</span></label>
+                    @if ($errors->has('nickname'))
+                        <tr>
+                            @foreach ($errors->get('nickname') as $message)
+                                <td> {{ $message }} </td>
+                            @endforeach
+                        </tr>
+                    @endif
                     <br>
                     <input type="text" name="nickname">
                 </div>
@@ -74,7 +85,7 @@
                 <div class="mt-4">
                     <label>プロフィール画像</label>
                     <br>
-                    <input id="icon" type="file" name="icon">
+                    <input type="file" name="icon">
                 </div>
 
                 <!-- Password -->
@@ -86,6 +97,13 @@
 
                     <x-input-error :messages="$errors->get('password')" class="mt-2" /> --}}
                     <label>パスワード <span style="color:red">※</span></label>
+                    @if ($errors->has('password'))
+                        <tr>
+                            @foreach ($errors->get('password') as $message)
+                                <td> {{ $message }} </td>
+                            @endforeach
+                        </tr>
+                    @endif
                     <br>
                     <input type="password" name="password">
                 </div>
