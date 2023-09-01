@@ -98,9 +98,8 @@ class LoginRequest extends FormRequest
     public function messages()
     {
         return [
-            'email_or_id.required' => 'ユーザーIDまたはメールアドレスが空白です。',
-            // 'email_or_id.exists' => '⚠アカウント名、またはパスワードが違います⚠',
-            'password.required' => 'パスワードが空白です。',
+            'email_or_id.required' => '⚠アカウント名、またはパスワードが違います⚠',
+            'password.required' => '⚠アカウント名、またはパスワードが違います⚠',
         ];
     }
 }

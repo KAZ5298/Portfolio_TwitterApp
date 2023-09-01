@@ -51,7 +51,7 @@
                         </tr>
                     @endif
                     <br>
-                    <input type="email" name="email" value="{{ $user->email }}" placeholder="※">
+                    <input type="text" name="email" value="{{ $user->email }}" placeholder="※">
                 </div>
 
                 <!-- Nick Name -->

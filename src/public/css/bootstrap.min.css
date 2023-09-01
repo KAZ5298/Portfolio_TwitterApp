@@ -14001,14 +14001,3 @@ LINE風フキダシ
 }
 
 /*# sourceMappingURL=bootstrap.min.css.map */
-
-.tweetpost .messagepost {
-    align-items: center;
-    justify-content: center;
-}
-
-.logout_button {
-    border: 2px solid transparent;
-    background: transparent;
-    text-align: left;
-}

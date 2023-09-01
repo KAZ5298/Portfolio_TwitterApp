@@ -36,7 +36,7 @@
                                         <a class="dropdown-item">
                                             <form method="POST" action="{{ route('logout') }}">
                                                 @csrf
-                                                <input type="submit" value="ログアウト">
+                                                <input type="submit" value="ログアウト" style="background-color: transparent; outline: none; border: none;">
                                             </form>
                                         </a>
                                     </li>
