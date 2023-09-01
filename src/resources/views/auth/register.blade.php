@@ -33,7 +33,7 @@
                     <x-text-input id="name" class="block mt-1 w-full" type="text" name="name"
                         :value="old('name')" required autofocus autocomplete="name" />
                     <x-input-error :messages="$errors->get('name')" class="mt-2" /> --}}
-                    <label>アカウント名（ユーザーＩＤ）<span style="color:red">※</span></label>
+                    <label>アカウント名（ユーザーＩＤ）</label>
                     @if ($errors->has('name'))
                         <tr>
                             @foreach ($errors->get('name') as $message)
@@ -51,7 +51,7 @@
                     <x-text-input id="email" class="block mt-1 w-full" type="email" name="email"
                         :value="old('email')" required autocomplete="username" />
                     <x-input-error :messages="$errors->get('email')" class="mt-2" /> --}}
-                    <label>メールアドレス <span style="color:red">※</span></label>
+                    <label>メールアドレス</label>
                     @if ($errors->has('email'))
                         <tr>
                             @foreach ($errors->get('email') as $message)
@@ -69,7 +69,7 @@
                     <x-text-input id="nickname" class="block mt-1 w-full" type="text" name="nickname"
                         :value="old('nickname')" required autocomplete="username" />
                     <x-input-error :messages="$errors->get('nickname')" class="mt-2" /> --}}
-                    <label>ニックネーム（一覧画面での表示名）<span style="color:red">※</span></label>
+                    <label>ニックネーム（一覧画面での表示名）</label>
                     @if ($errors->has('nickname'))
                         <tr>
                             @foreach ($errors->get('nickname') as $message)
@@ -96,7 +96,7 @@
                         autocomplete="new-password" />
 
                     <x-input-error :messages="$errors->get('password')" class="mt-2" /> --}}
-                    <label>パスワード <span style="color:red">※</span></label>
+                    <label>パスワード</label>
                     @if ($errors->has('password'))
                         <tr>
                             @foreach ($errors->get('password') as $message)
@@ -116,7 +116,7 @@
                         name="password_confirmation" required autocomplete="new-password" />
 
                     <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" /> --}}
-                    <label>パスワード（再確認）<span style="color:red">※</span></label>
+                    <label>パスワード（再確認）</label>
                     <br>
                     <input type="password" name="password_confirmation" placeholder="※">
                 </div>

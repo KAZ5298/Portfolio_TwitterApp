@@ -27,7 +27,7 @@
 
                 <!-- Name -->
                 <div class="mt-4">
-                    <label>アカウント名（ユーザーＩＤ）<span style="color:red">※</span></label>
+                    <label>アカウント名（ユーザーＩＤ）</label>
                     @if ($errors->has('name'))
                         <tr>
                             @foreach ($errors->get('name') as $message)
@@ -37,12 +37,12 @@
                     @endif
                     <br>
                     <br>
-                    <input type="text" name="name" value="{{ $user->name }}">
+                    <input type="text" name="name" value="{{ $user->name }}" placeholder="※">
                 </div>
 
                 <!-- Email Address -->
                 <div class="mt-4">
-                    <label>メールアドレス <span style="color:red">※</span></label>
+                    <label>メールアドレス</label>
                     @if ($errors->has('email'))
                         <tr>
                             @foreach ($errors->get('email') as $message)
@@ -51,12 +51,12 @@
                         </tr>
                     @endif
                     <br>
-                    <input type="email" name="email" value="{{ $user->email }}">
+                    <input type="email" name="email" value="{{ $user->email }}" placeholder="※">
                 </div>
 
                 <!-- Nick Name -->
                 <div class="mt-4">
-                    <label>ニックネーム（一覧画面での表示名）<span style="color:red">※</span></label>
+                    <label>ニックネーム（一覧画面での表示名）</label>
                     @if ($errors->has('nickname'))
                         <tr>
                             @foreach ($errors->get('nickname') as $message)
@@ -65,7 +65,7 @@
                         </tr>
                     @endif
                     <br>
-                    <input type="text" name="nickname" value="{{ $user->nickname }}">
+                    <input type="text" name="nickname" value="{{ $user->nickname }}" placeholder="※">
                 </div>
 
                 <!-- Profile Icon -->
@@ -82,7 +82,7 @@
 
                 <!-- Password -->
                 <div class="mt-4">
-                    <label>パスワード <span style="color:red">※</span></label>
+                    <label>パスワード</label>
                     @if ($errors->has('password'))
                         <tr>
                             @foreach ($errors->get('password') as $message)
@@ -91,14 +91,14 @@
                         </tr>
                     @endif
                     <br>
-                    <input type="password" name="password">
+                    <input type="password" name="password" placeholder="※">
                 </div>
 
                 <!-- Confirm Password -->
                 <div class="mt-4">
-                    <label>パスワード（再確認）<span style="color:red">※</span></label>
+                    <label>パスワード（再確認）</label>
                     <br>
-                    <input type="password" name="password_confirmation">
+                    <input type="password" name="password_confirmation" placeholder="※">
                 </div>
 
                 <div class="mt-4">
