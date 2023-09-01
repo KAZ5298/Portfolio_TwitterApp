@@ -25,7 +25,7 @@ class RegisterRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:50'],
-            'email' => ['required', 'string', 'email', 'max:50', 'unique:' . User::class],
+            'email' => ['required', 'string', 'email:filter', 'max:50', 'unique:' . User::class],
             'nickname' => ['required', 'string', 'max:50'],
             'password' => ['required', 'confirmed', 'regex:/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z\-]{8,}$/'],
         ];
@@ -46,7 +46,7 @@ class RegisterRequest extends FormRequest
             'nickname.max' => 'ニックネームは５０文字以下で入力して下さい。',
 
             // 正規表現チェック
-            'email.email' => 'メールアドレスは xxx@xxx の形式で入力して下さい。',
+            'email.email' => 'メールアドレスは xxx@xxx.xxx の形式で入力して下さい。',
             'password.regex' => 'パスワードは半角英数大文字小文字１文字含む８文字以上で入力して下さい。',
 
             // ダブルチェック

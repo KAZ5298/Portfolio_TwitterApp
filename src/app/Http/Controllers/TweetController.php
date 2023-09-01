@@ -9,6 +9,13 @@ use App\Http\Requests\TweetRequest;
 
 class TweetController extends Controller
 {
+    // private $loginUser;
+
+    // public function __construct()
+    // {
+    //     $this->loginUser = auth()->user();
+    // }
+
     public function allTweetGet()
     {
         $loginUser = auth()->user();
@@ -29,10 +36,9 @@ class TweetController extends Controller
 
     public function followerTweetGet()
     {
-        $user = new User();
         $loginUser = auth()->user();
 
-        $followerId = User::find($loginUser->id)->follows->map(function ($id){
+        $followerId = User::find($loginUser->id)->follows->map(function ($id) {
             return $id->id;
         });
 
@@ -40,23 +46,6 @@ class TweetController extends Controller
 
         return view('tweet.follower_index', compact('loginUser', 'tweets'));
     }
-
-    // 違う形？　明日チェック
-    // public function followerTweetGet()
-    // {
-    //     $user = new User();
-    //     $loginUser = auth()->user();
-
-    //     $followerFlg = true;
-
-    //     $tweets = User::find($loginUser->id)->follows->map(function ($tweet) {
-    //         return $tweet->tweets;
-    //     });
-
-    //     dd($tweets);
-
-    //     return view('tweet.index', compact('loginUser', 'tweets', 'followerFlg'));
-    // }
 
     public function tweetDestroy(Tweet $tweet)
     {

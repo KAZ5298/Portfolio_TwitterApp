@@ -537,7 +537,8 @@ button:not(:disabled) {
 }
 
 textarea {
-    resize: vertical
+    /* resize: vertical */
+    resize: none;
 }
 
 fieldset {
@@ -13908,12 +13909,13 @@ LINE風フキダシ
     margin: 0 auto;
     padding: 10px 0;
     background: #769ece;
-    font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","Helvetica Neue", "Lucida Sans Unicode", "Arial";
+    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Helvetica Neue", "Lucida Sans Unicode", "Arial";
     font-size: 16px;
     color: #333;
     line-height: 1.4;
     overflow: hidden;
 }
+
 /*フキダシ共通*/
 .kaiwa.line .fukidasi {
     position: relative;
@@ -13924,30 +13926,36 @@ LINE風フキダシ
     border-radius: 19px;
     overflow-wrap: break-word;
     clear: both;
-    box-sizing: content-box;/*はてな用*/
+    box-sizing: content-box;
+    /*はてな用*/
 }
+
 /*フキダシ左*/
 .kaiwa.line .fukidasi.left {
     float: left;
     margin-left: 62px;
     background: white;
 }
+
 /*グループのときのフキダシ*/
-.kaiwa.line .name + .fukidasi.left {
+.kaiwa.line .name+.fukidasi.left {
     margin-top: 5px;
 }
+
 /*フキダシ右*/
 .kaiwa.line .fukidasi.right {
     float: right;
     margin-right: 12px;
     background: #7adc40;
 }
+
 /*相手の名前*/
 .kaiwa.line .name {
     clear: right;
     margin-left: 62px;
     color: white;
 }
+
 /*ユーザアイコン*/
 .kaiwa.line .icon {
     position: absolute;
@@ -13957,10 +13965,12 @@ LINE風フキダシ
     top: -2px;
     border-radius: 20px;
 }
+
 /*グループのときのユーザアイコン*/
-.kaiwa.line .name + .left .icon {
+.kaiwa.line .name+.left .icon {
     top: -1.8em;
 }
+
 /*しっぽ共通*/
 .kaiwa.line .fukidasi::after {
     position: absolute;
@@ -13969,22 +13979,36 @@ LINE風フキダシ
     height: 36px;
     top: -21px;
 }
+
 /*しっぽ左*/
 .kaiwa.line .fukidasi.left:after {
     left: -10px;
     border-radius: 18px 0 6px 18px/18px 0 1px 18px;
     box-shadow: -3px -15px 0 -5px white inset;
 }
+
 /*しっぽ右*/
 .kaiwa.line .fukidasi.right::after {
     right: -10px;
     border-radius: 0 18px 18px 6px/0 18px 18px 1px;
     box-shadow: inset 3px -15px 0 -5px #7adc40;
 }
+
 /*フキダシが続いてしっぽがないとき*/
-.kaiwa.line .left + .left::after,
-.kaiwa.line .right + .right::after {
+.kaiwa.line .left+.left::after,
+.kaiwa.line .right+.right::after {
     content: none;
 }
 
 /*# sourceMappingURL=bootstrap.min.css.map */
+
+.tweetpost .messagepost {
+    align-items: center;
+    justify-content: center;
+}
+
+.logout_button {
+    border: 2px solid transparent;
+    background: transparent;
+    text-align: left;
+}

@@ -37,6 +37,7 @@
                                             <form method="POST" action="{{ route('logout') }}">
                                                 @csrf
                                                 <input type="submit" value="ログアウト">
+                                                {{-- <button type="button" class="logout_button">ログアウト</button> --}}
                                             </form>
                                         </a>
                                     </li>
@@ -64,6 +65,14 @@
                 @endforeach
             </ul>
         @endif
+
+        <div class="tweetpost">
+            <form action="{{ route('tweetPost') }}" method="POST">
+                @csrf
+                <textarea name="content" rows="1" cols="150" placeholder="つぶやきは１００文字以下で入力してください。"></textarea>
+                <button type="submit" class="btn btn-primary">つぶやく</button>
+            </form>
+        </div>
 
         @foreach ($tweets as $tweet)
             <div class="container text-center">
@@ -136,13 +145,13 @@
 
     {{-- フッター --}}
     <div class="footer">
-        <div class="container">
+        {{-- <div class="container">
             <form action="{{ route('tweetPost') }}" method="POST">
                 @csrf
                 <textarea name="content"></textarea>
                 <button type="submit" class="btn btn-primary">つぶやく</button>
             </form>
-        </div>
+        </div> --}}
     </div>
     <script src="{{ asset('/js/bootstrap.bundle.min.js') }}"></script>
 </body>

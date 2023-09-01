@@ -28,7 +28,7 @@ class LoginRequest extends FormRequest
     {
         return [
             // 'email' => ['required', 'string', 'email'],
-            'email_or_id' => ['required', 'string'],//, 'exists:App\Models\User,name,email'],
+            'email_or_id' => ['required', 'string'],
             'password' => ['required', 'string'],
         ];
     }
@@ -56,7 +56,8 @@ class LoginRequest extends FormRequest
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([
-                'email_or_id' => trans('auth.failed'),
+                // 'email_or_id' => trans('auth.failed'),
+                'email_or_id' => trans('⚠アカウント名、またはパスワードが違います⚠'),
             ]);
         }
 

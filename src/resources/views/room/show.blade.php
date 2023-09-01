@@ -68,6 +68,14 @@
                 @endif
             </div>
 
+            <div class="messagepost">
+                <form action="{{ route('messagePost', $rooms->id) }}" method="POST">
+                    @csrf
+                    <textarea name="message" rows="1" cols="150" placeholder="メッセージは１００文字以下で入力してください。"></textarea>
+                    <button type="submit" class="btn btn-primary">つぶやく</button>
+                </form>
+            </div>
+    
             <div class="kaiwa line mt-4">
                 <img src="{{ asset('storage/images/' . $rooms->user->icon) }}" width="80" height="80">
                 {{ $rooms->user->nickname }}
@@ -85,11 +93,6 @@
                     @endif
                 @endforeach
             </div>
-            <form action="{{ route('messagePost', $rooms->id) }}" method="POST">
-                @csrf
-                <textarea name="message"></textarea>
-                <button type="submit" class="btn btn-primary">つぶやく</button>
-            </form>
             <a href="{{ route('talkRoom') }}" class="btn btn-primary">戻る</a>
         </div>
     </div>

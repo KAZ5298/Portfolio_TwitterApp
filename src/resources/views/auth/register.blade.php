@@ -42,7 +42,7 @@
                         </tr>
                     @endif
                     <br>
-                    <input type="text" name="name">
+                    <input type="text" name="name" value="{{ old('name') }}" placeholder="※">
                 </div>
 
                 <!-- Email Address -->
@@ -60,7 +60,7 @@
                         </tr>
                     @endif
                     <br>
-                    <input type="email" name="email">
+                    <input type="text" name="email" value="{{ old('email') }}" placeholder="※">
                 </div>
 
                 <!-- Nick Name -->
@@ -78,7 +78,7 @@
                         </tr>
                     @endif
                     <br>
-                    <input type="text" name="nickname">
+                    <input type="text" name="nickname" value="{{ old('nickname') }}" placeholder="※">
                 </div>
 
                 <!-- Profile Icon -->
@@ -105,7 +105,7 @@
                         </tr>
                     @endif
                     <br>
-                    <input type="password" name="password">
+                    <input type="password" name="password" placeholder="※">
                 </div>
 
                 <!-- Confirm Password -->
@@ -118,7 +118,7 @@
                     <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" /> --}}
                     <label>パスワード（再確認）<span style="color:red">※</span></label>
                     <br>
-                    <input type="password" name="password_confirmation">
+                    <input type="password" name="password_confirmation" placeholder="※">
                 </div>
 
                 <div class="mt-4">

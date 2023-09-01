@@ -65,6 +65,14 @@
             </ul>
         @endif
 
+        <div class="tweetcontainer">
+            <form action="{{ route('tweetPost') }}" method="POST">
+                @csrf
+                <textarea name="content" rows="1" cols="150" placeholder="つぶやきは１００文字以下で入力してください。"></textarea>
+                <button type="submit" class="btn btn-primary">つぶやく</button>
+            </form>
+        </div>
+
         @foreach ($tweets as $tweet)
             <div class="container text-center">
                 <div class="row">
@@ -101,13 +109,13 @@
 
     {{-- フッター --}}
     <div class="footer">
-        <div class="container">
+        {{-- <div class="container">
             <form action="{{ route('tweetPost') }}" method="POST">
                 @csrf
                 <textarea name="content"></textarea>
                 <button type="submit" class="btn btn-primary">つぶやく</button>
             </form>
-        </div>
+        </div> --}}
     </div>
     <script src="{{ asset('/js/bootstrap.bundle.min.js') }}"></script>
 </body>
