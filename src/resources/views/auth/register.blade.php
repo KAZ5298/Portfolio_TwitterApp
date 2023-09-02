@@ -29,17 +29,13 @@
 
                 <!-- Name -->
                 <div class="mt-4">
-                    {{-- <x-input-label for="name" value="アカウント名" />
-                    <x-text-input id="name" class="block mt-1 w-full" type="text" name="name"
-                        :value="old('name')" required autofocus autocomplete="name" />
-                    <x-input-error :messages="$errors->get('name')" class="mt-2" /> --}}
                     <label>アカウント名（ユーザーＩＤ）</label>
                     @if ($errors->has('name'))
-                        <tr>
+                        <div class="border px-4 py-3 rounded relative bg-danger-subtle">
                             @foreach ($errors->get('name') as $message)
-                                <td> {{ $message }} </td>
+                                {{ $message }}
                             @endforeach
-                        </tr>
+                        </div>
                     @endif
                     <br>
                     <input type="text" name="name" value="{{ old('name') }}" placeholder="※">
@@ -47,17 +43,13 @@
 
                 <!-- Email Address -->
                 <div class="mt-4">
-                    {{-- <x-input-label for="email" value="メールアドレス" />
-                    <x-text-input id="email" class="block mt-1 w-full" type="email" name="email"
-                        :value="old('email')" required autocomplete="username" />
-                    <x-input-error :messages="$errors->get('email')" class="mt-2" /> --}}
                     <label>メールアドレス</label>
                     @if ($errors->has('email'))
-                        <tr>
+                        <div class="border px-4 py-3 rounded relative bg-danger-subtle">
                             @foreach ($errors->get('email') as $message)
-                                <td> {{ $message }} </td>
+                                {{ $message }}
                             @endforeach
-                        </tr>
+                        </div>
                     @endif
                     <br>
                     <input type="text" name="email" value="{{ old('email') }}" placeholder="※">
@@ -65,17 +57,13 @@
 
                 <!-- Nick Name -->
                 <div class="mt-4">
-                    {{-- <x-input-label for="nickname" value="ニックネーム（一覧画面での表示名）" />
-                    <x-text-input id="nickname" class="block mt-1 w-full" type="text" name="nickname"
-                        :value="old('nickname')" required autocomplete="username" />
-                    <x-input-error :messages="$errors->get('nickname')" class="mt-2" /> --}}
                     <label>ニックネーム（一覧画面での表示名）</label>
                     @if ($errors->has('nickname'))
-                        <tr>
+                        <div class="border px-4 py-3 rounded relative bg-danger-subtle">
                             @foreach ($errors->get('nickname') as $message)
-                                <td> {{ $message }} </td>
+                                {{ $message }}
                             @endforeach
-                        </tr>
+                        </div>
                     @endif
                     <br>
                     <input type="text" name="nickname" value="{{ old('nickname') }}" placeholder="※">
@@ -90,19 +78,13 @@
 
                 <!-- Password -->
                 <div class="mt-4">
-                    {{-- <x-input-label for="password" value="パスワード" />
-
-                    <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required
-                        autocomplete="new-password" />
-
-                    <x-input-error :messages="$errors->get('password')" class="mt-2" /> --}}
                     <label>パスワード</label>
                     @if ($errors->has('password'))
-                        <tr>
+                        <div class="border px-4 py-3 rounded relative bg-danger-subtle">
                             @foreach ($errors->get('password') as $message)
-                                <td> {{ $message }} </td>
+                                {{ $message }}
                             @endforeach
-                        </tr>
+                        </div>
                     @endif
                     <br>
                     <input type="password" name="password" placeholder="※">
@@ -110,12 +92,6 @@
 
                 <!-- Confirm Password -->
                 <div class="mt-4">
-                    {{-- <x-input-label for="password_confirmation" value="パスワード（再確認）" />
-
-                    <x-text-input id="password_confirmation" class="block mt-1 w-full" type="password"
-                        name="password_confirmation" required autocomplete="new-password" />
-
-                    <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" /> --}}
                     <label>パスワード（再確認）</label>
                     <br>
                     <input type="password" name="password_confirmation" placeholder="※">

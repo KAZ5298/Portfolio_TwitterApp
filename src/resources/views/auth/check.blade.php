@@ -61,7 +61,9 @@
                     <input type="hidden" name="password_confirmation" value="{{ $user->password_confirmation }}">
                 </div>
 
-                <label>上記の内容で登録します。よろしいですか？</label>
+                <div class="border px-4 py-3 rounded relative bg-warning-subtle">
+                    <label>上記の内容で登録します。よろしいですか？</label>
+                </div>
 
                 <button type="submit" class="btn btn-primary">はい</button>
                 <a href="{{ route('register') }}" class="btn btn-danger">いいえ</a>

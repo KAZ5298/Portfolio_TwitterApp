@@ -21,7 +21,7 @@
     <div class="main">
         <div class="container">
             <div class="border px-4 py-3 rounded relative bg-success-subtle">
-                <label class="text-align: center;">修正が完了しました。</label>
+                <label>修正が完了しました。</label>
             </div>
 
             <div class="d-grid gap-2">

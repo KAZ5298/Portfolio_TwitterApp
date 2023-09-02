@@ -20,7 +20,9 @@
     {{-- メインコンテンツ --}}
     <div class="main">
         <div class="container">
-            <label>登録が完了しました。</label>
+            <div class="border px-4 py-3 rounded relative bg-success-subtle">
+                <label>登録が完了しました。</label>
+            </div>
 
             <div class="d-grid gap-2">
                 <a href="{{ route('loginRedirect', $user) }}"class="btn btn-primary">ログインして一覧画面へ</a>
