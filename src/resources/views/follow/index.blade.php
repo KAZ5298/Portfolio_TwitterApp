@@ -13,14 +13,14 @@
     {{--  ヘッダー --}}
     <div class="header">
         <div class="container">
-            <h1>Twitter Modoki</h1>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <nav class="navbar navbar-expand navbar-right bg-primary-subtle">
+                <h1>Twitter Modoki</h1>
                 @if ($loginUser->icon)
                     <img src="{{ asset('storage/images/' . $loginUser->icon) }}" width="80" height="80">
                 @endif
-                <h2>ログイン中：{{ $loginUser->nickname }}</h2>
                 <div class="container-fluid">
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <h2>ログイン中：{{ $loginUser->nickname }}</h2>
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button"
@@ -29,19 +29,15 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="{{ route('profile.edit') }}">ユーザー情報編集</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
+                                    <hr class="dropdown-divider">
                                     <li><a class="dropdown-item" href="{{ route('followerList') }}">フォロワー一覧</a></li>
+                                    <hr class="dropdown-divider">
                                     <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item">
-                                            <form method="POST" action="{{ route('logout') }}">
-                                                @csrf
-                                                <input type="submit" value="ログアウト">
-                                            </form>
-                                        </a>
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault(); document.getElementById('logout').submit();">ログアウト</a>
+                                        <form id="logout" action="{{ route('logout') }}" method="POST">
+                                            @csrf
+                                        </form>
                                     </li>
                                 </ul>
                             </li>

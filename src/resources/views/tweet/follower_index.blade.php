@@ -13,14 +13,14 @@
     {{--  ヘッダー --}}
     <div class="header">
         <div class="container">
-            <h1>Twitter Modoki</h1>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <nav class="navbar navbar-expand navbar-right bg-primary-subtle">
+                <h1>Twitter Modoki</h1>
                 @if ($loginUser->icon)
                     <img src="{{ asset('storage/images/' . $loginUser->icon) }}" width="80" height="80">
                 @endif
-                <h2>ログイン中：{{ $loginUser->nickname }}</h2>
                 <div class="container-fluid">
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <h2>ログイン中：{{ $loginUser->nickname }}</h2>
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button"

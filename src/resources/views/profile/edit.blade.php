@@ -29,13 +29,12 @@
                 <div class="mt-4">
                     <label>アカウント名（ユーザーＩＤ）</label>
                     @if ($errors->has('name'))
-                        <tr>
+                        <div class="border px-4 py-3 rounded relative bg-danger-subtle">
                             @foreach ($errors->get('name') as $message)
-                                <td> {{ $message }} </td>
+                                {{ $message }}
                             @endforeach
-                        </tr>
+                        </div>
                     @endif
-                    <br>
                     <br>
                     <input type="text" name="name" value="{{ $user->name }}" placeholder="※">
                 </div>
@@ -44,11 +43,11 @@
                 <div class="mt-4">
                     <label>メールアドレス</label>
                     @if ($errors->has('email'))
-                        <tr>
+                        <div class="border px-4 py-3 rounded relative bg-danger-subtle">
                             @foreach ($errors->get('email') as $message)
-                                <td> {{ $message }} </td>
+                                {{ $message }}
                             @endforeach
-                        </tr>
+                        </div>
                     @endif
                     <br>
                     <input type="text" name="email" value="{{ $user->email }}" placeholder="※">
@@ -58,11 +57,11 @@
                 <div class="mt-4">
                     <label>ニックネーム（一覧画面での表示名）</label>
                     @if ($errors->has('nickname'))
-                        <tr>
+                        <div class="border px-4 py-3 rounded relative bg-danger-subtle">
                             @foreach ($errors->get('nickname') as $message)
-                                <td> {{ $message }} </td>
+                                {{ $message }}
                             @endforeach
-                        </tr>
+                        </div>
                     @endif
                     <br>
                     <input type="text" name="nickname" value="{{ $user->nickname }}" placeholder="※">
@@ -84,11 +83,11 @@
                 <div class="mt-4">
                     <label>パスワード</label>
                     @if ($errors->has('password'))
-                        <tr>
+                        <div class="border px-4 py-3 rounded relative bg-danger-subtle">
                             @foreach ($errors->get('password') as $message)
-                                <td> {{ $message }} </td>
+                                {{ $message }}
                             @endforeach
-                        </tr>
+                        </div>
                     @endif
                     <br>
                     <input type="password" name="password" placeholder="※">

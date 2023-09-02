@@ -20,7 +20,9 @@
     {{-- メインコンテンツ --}}
     <div class="main">
         <div class="container">
-            <label>修正が完了しました。</label>
+            <div class="border px-4 py-3 rounded relative bg-success-subtle">
+                <label class="text-align: center;">修正が完了しました。</label>
+            </div>
 
             <div class="d-grid gap-2">
                 <a href="{{ route('allTweetGet') }}"class="btn btn-primary">ＴＯＰ画面へ戻る</a>

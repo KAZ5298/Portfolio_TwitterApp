@@ -45,7 +45,8 @@
                 <!-- Profile Icon -->
                 <div>
                     @if (isset($icon))
-                        <label>プロフィール画像：<img src="{{ asset('storage/images/' . $icon) }}" width="80" height="80"></label>
+                        <label>プロフィール画像：<img src="{{ asset('storage/images/' . $icon) }}" width="80"
+                                height="80"></label>
                     @else
                         <label>プロフィール画像：登録なし</label>
                     @endif
@@ -60,7 +61,9 @@
                     <input type="hidden" name="password_confirmation" value="{{ $user->password_confirmation }}">
                 </div>
 
-                <label>上記の内容で登録します。よろしいですか？</label>
+                <div class="border px-4 py-3 rounded relative bg-warning-subtle">
+                    <label>上記の内容で登録します。よろしいですか？</label>
+                </div>
 
                 <div>
                     <button type="submit" class="btn btn-primary">はい</button>
