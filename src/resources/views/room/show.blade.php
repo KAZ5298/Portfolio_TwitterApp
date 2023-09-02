@@ -33,12 +33,11 @@
                                     <li><a class="dropdown-item" href="{{ route('followerList') }}">フォロワー一覧</a></li>
                                     <hr class="dropdown-divider">
                                     <li>
-                                        <a class="dropdown-item">
-                                            <form method="POST" action="{{ route('logout') }}">
-                                                @csrf
-                                                <input type="submit" value="ログアウト" style="background-color: transparent; outline: none; border: none;">
-                                            </form>
-                                        </a>
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault(); document.getElementById('logout').submit();">ログアウト</a>
+                                        <form id="logout" action="{{ route('logout') }}" method="POST">
+                                            @csrf
+                                        </form>
                                     </li>
                                 </ul>
                             </li>
