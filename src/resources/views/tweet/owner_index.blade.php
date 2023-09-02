@@ -57,11 +57,11 @@
     {{-- メインコンテンツ --}}
     <div class="main">
         @if ($errors->any())
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
+            <div class="border px-4 py-3 rounded relative bg-danger-subtle">
+                @foreach ($errors->all() as $message)
+                    {{ $message }}
                 @endforeach
-            </ul>
+            </div>
         @endif
 
         <div class="tweetcontainer">
