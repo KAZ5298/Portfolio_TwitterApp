@@ -100,7 +100,12 @@
                                 <form action="{{ route('unfollow', $tweet->user->id) }}" method="POST">
                                     @csrf
                                     @method('delete')
-                                    <input type="submit" class="btn btn-danger" value="フォロー解除">
+                                    @if ($loginUser->checkMessageInTalkRoom($loginUser->id, $tweet->user->id))
+                                        <input type="submit" class="btn btn-danger"
+                                            onclick="return confirm('トークルームのメッセージが削除されます。よろしいですか？');" value="フォロー解除">
+                                    @else
+                                        <input type="submit" class="btn btn-danger" value="フォロー解除">
+                                    @endif
                                 </form>
                             @else
                                 <form action="{{ route('follow', $tweet->user->id) }}" method="POST">

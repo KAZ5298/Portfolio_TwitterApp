@@ -42,6 +42,9 @@ class UserController extends Controller
         // フォローされているかチェック
         $is_followed = $loginUser->isFollowed($follower->id);
 
+        // トークルーム内にメッセージがあるか確認
+        $is_message = $loginUser->checkMessageInTalkRoom($loginUser->id, $follower->id);
+
         if ($is_following) {
             // フォローしていればフォロー解除する
             $loginUser->unfollow($follower->id);
@@ -49,6 +52,11 @@ class UserController extends Controller
             // 相手にフォローされていればトークルームを削除する
             if ($is_followed) {
                 $loginUser->deleteTalkRoom($loginUser->id, $follower->id);
+            }
+
+            // トークルーム内にメッセージがあれば全てのメッセージを削除する
+            if ($is_message) {
+                $loginUser->deleteAllMessages($loginUser->id, $follower->id);
             }
 
             return back()->with('message', 'フォロー解除しました。');

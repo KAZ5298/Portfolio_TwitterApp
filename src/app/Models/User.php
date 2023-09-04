@@ -132,4 +132,28 @@ class User extends Authenticatable
 
         $this->rooms()->find($roomId)->delete();
     }
+
+    // トークルーム内にメッセージがあるか確認
+    public function checkMessageInTalkRoom(int $loginUser, int $follower)
+    {
+        if ($loginUser < $follower) {
+            $roomId = 'room:' . $loginUser . '.' . $follower;
+        } else {
+            $roomId = 'room:' . $follower . '.' . $loginUser;
+        }
+
+        return (boolean) $this->messages()->where('room_id', $roomId)->first(['room_id']);
+    }
+
+    // トークルームの全メッセージ削除
+    public function deleteAllMessages(int $loginUser, int $follower)
+    {
+        if ($loginUser < $follower) {
+            $roomId = 'room:' . $loginUser . '.' . $follower;
+        } else {
+            $roomId = 'room:' . $follower . '.' . $loginUser;
+        }
+
+        $this->messages()->where('room_id', $roomId)->delete();
+    }
 }
