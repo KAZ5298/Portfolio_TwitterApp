@@ -57,6 +57,20 @@
 
     {{-- メインコンテンツ --}}
     <div class="main">
+        @if ($errors->any())
+            <div class="border px-4 py-3 rounded relative bg-danger-subtle">
+                @foreach ($errors->all() as $message)
+                    {{ $message }}
+                @endforeach
+            </div>
+        @endif
+
+        @if (session('message'))
+            <div class="border px-4 py-3 rounded relative bg-success-subtle">
+                {{ session('message') }}
+            </div>
+        @endif
+     
         @foreach ($tweets as $tweet)
             <div class="container text-center">
                 <div class="row">

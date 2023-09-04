@@ -49,6 +49,10 @@
                 <div class="container-fluid">
                     <a class="navbar-brand">フォロワー一覧</a>
                 </div>
+                <div class="container-fluid">
+                    <a class="navbar-brand btn btn-secondary" href=""
+                        onclick="javascript:history.back(); return false;">ＴＯＰ画面へ戻る</a>
+                </div>
             </nav>
         </div>
     </div>
@@ -60,7 +64,8 @@
                 @foreach ($followers as $follower)
                     <tr>
                         @if ($follower->icon)
-                            <td><img src="{{ asset('storage/images/' . $follower->icon) }}" width="80" height="80"></td>
+                            <td><img src="{{ asset('storage/images/' . $follower->icon) }}" width="80"
+                                    height="80"></td>
                         @endif
                         <td>
                             {{ $follower->nickname }}<br>
@@ -78,7 +83,6 @@
                     </tr>
                 @endforeach
             </table>
-            <a href="{{ route('allTweetGet') }}" class="btn btn-primary">戻る</a>
         </div>
     </div>
 

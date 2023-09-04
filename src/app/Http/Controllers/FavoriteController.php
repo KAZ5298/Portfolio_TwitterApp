@@ -17,7 +17,7 @@ class FavoriteController extends Controller
         if (!$is_favorite) {
             // いいねしていなければいいねする
             $favorite->favorite($user->id, $tweet->id);
-            return back();
+            return back()->with('message', 'いいねしました。');
         }
     }
 
@@ -30,7 +30,7 @@ class FavoriteController extends Controller
         if ($is_favorite) {
             // いいねしていればいいね解除する
             $favorite->unfavorite($user->id, $tweet->id);
-            return back();
+            return back()->with('message', 'いいね解除しました。');
         }
     }
 }

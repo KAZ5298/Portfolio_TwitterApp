@@ -27,7 +27,7 @@ class UserController extends Controller
                 $loginUser->createTalkRoom($loginUser->id, $follower->id);
             }
 
-            return back();
+            return back()->with('message', 'フォローしました。');
         }
     }
 
@@ -51,7 +51,7 @@ class UserController extends Controller
                 $loginUser->deleteTalkRoom($loginUser->id, $follower->id);
             }
 
-            return back();
+            return back()->with('message', 'フォロー解除しました。');
         }
     }
 

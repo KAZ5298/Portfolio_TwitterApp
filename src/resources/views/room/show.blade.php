@@ -50,7 +50,7 @@
                     <a class="navbar-brand">{{ $rooms->user->nickname }}さんとのトークルーム</a>
                 </div>
                 <div class="container-fluid">
-                    <a class="navbar-brand btn btn-primary" href="{{ route('talkRoom') }}">一覧へ戻る</a>
+                    <a class="navbar-brand btn btn-secondary" href="{{ route('talkRoom') }}">一覧へ戻る</a>
                 </div>
             </nav>
         </div>
@@ -74,7 +74,7 @@
             @endif
 
             <div class="messagepost">
-                <form action="{{ route('messagePost', $rooms->id) }}" method="POST">
+                <form action="{{ route('messagePost', $rooms) }}" method="POST">
                     @csrf
                     <textarea name="message" rows="1" cols="150" placeholder="メッセージは１００文字以下で入力してください。"></textarea>
                     <button type="submit" class="btn btn-primary">つぶやく</button>
