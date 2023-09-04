@@ -19,6 +19,6 @@ class MessageController extends Controller
 
         $message->save();
 
-        return back();
+        return back()->with('message', 'つぶやきを投稿しました。');
     }
 }

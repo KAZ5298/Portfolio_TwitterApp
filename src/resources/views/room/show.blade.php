@@ -49,6 +49,9 @@
                 <div class="container-fluid">
                     <a class="navbar-brand">{{ $rooms->user->nickname }}さんとのトークルーム</a>
                 </div>
+                <div class="container-fluid">
+                    <a class="navbar-brand btn btn-primary" href="{{ route('talkRoom') }}">一覧へ戻る</a>
+                </div>
             </nav>
         </div>
     </div>
@@ -56,16 +59,19 @@
     {{-- メインコンテンツ --}}
     <div class="main">
         <div class="container">
+            @if ($errors->any())
+                <div class="border px-4 py-3 rounded relative bg-danger-subtle">
+                    @foreach ($errors->all() as $message)
+                        {{ $message }}
+                    @endforeach
+                </div>
+            @endif
 
-            <div class="error_msg mt-4">
-                @if ($errors->any())
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                @endif
-            </div>
+            @if (session('message'))
+                <div class="border px-4 py-3 rounded relative bg-success-subtle">
+                    {{ session('message') }}
+                </div>
+            @endif
 
             <div class="messagepost">
                 <form action="{{ route('messagePost', $rooms->id) }}" method="POST">
@@ -74,7 +80,7 @@
                     <button type="submit" class="btn btn-primary">つぶやく</button>
                 </form>
             </div>
-    
+
             <div class="kaiwa line mt-4">
                 <img src="{{ asset('storage/images/' . $rooms->user->icon) }}" width="80" height="80">
                 {{ $rooms->user->nickname }}
@@ -92,7 +98,6 @@
                     @endif
                 @endforeach
             </div>
-            <a href="{{ route('talkRoom') }}" class="btn btn-primary">戻る</a>
         </div>
     </div>
 

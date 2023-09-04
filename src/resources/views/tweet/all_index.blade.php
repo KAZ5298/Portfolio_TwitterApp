@@ -149,13 +149,6 @@
 
     {{-- フッター --}}
     <div class="footer">
-        {{-- <div class="container">
-            <form action="{{ route('tweetPost') }}" method="POST">
-                @csrf
-                <textarea name="content"></textarea>
-                <button type="submit" class="btn btn-primary">つぶやく</button>
-            </form>
-        </div> --}}
     </div>
     <script src="{{ asset('/js/bootstrap.bundle.min.js') }}"></script>
 </body>

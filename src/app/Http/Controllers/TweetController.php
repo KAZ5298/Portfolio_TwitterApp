@@ -51,7 +51,7 @@ class TweetController extends Controller
     {
         Tweet::where('id', $tweet->id)->delete();
 
-        return redirect()->route('allTweetGet')->with('message', 'つぶやきを削除しました。');
+        return back()->with('message', 'つぶやきを削除しました。');
     }
 
     public function tweetPost(TweetRequest $request)
@@ -63,6 +63,6 @@ class TweetController extends Controller
 
         $tweet->save();
 
-        return redirect()->route('allTweetGet')->with('message', 'つぶやきを投稿しました。');
+        return back()->with('message', 'つぶやきを投稿しました。');
     }
 }

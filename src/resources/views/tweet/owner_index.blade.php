@@ -64,6 +64,12 @@
             </div>
         @endif
 
+        @if (session('message'))
+            <div class="border px-4 py-3 rounded relative bg-success-subtle">
+                {{ session('message') }}
+            </div>
+        @endif
+
         <div class="tweetcontainer">
             <form action="{{ route('tweetPost') }}" method="POST">
                 @csrf
@@ -108,13 +114,6 @@
 
     {{-- フッター --}}
     <div class="footer">
-        {{-- <div class="container">
-            <form action="{{ route('tweetPost') }}" method="POST">
-                @csrf
-                <textarea name="content"></textarea>
-                <button type="submit" class="btn btn-primary">つぶやく</button>
-            </form>
-        </div> --}}
     </div>
     <script src="{{ asset('/js/bootstrap.bundle.min.js') }}"></script>
 </body>
