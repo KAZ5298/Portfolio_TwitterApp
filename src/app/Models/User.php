@@ -154,6 +154,6 @@ class User extends Authenticatable
             $roomId = 'room:' . $follower . '.' . $loginUser;
         }
 
-        $this->messages()->where('room_id', $roomId)->delete();
+        Message::where('room_id', $roomId)->delete();
     }
 }

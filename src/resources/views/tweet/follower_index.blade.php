@@ -57,22 +57,22 @@
 
     {{-- メインコンテンツ --}}
     <div class="main">
-        @if ($errors->any())
-            <div class="border px-4 py-3 rounded relative bg-danger-subtle">
-                @foreach ($errors->all() as $message)
-                    {{ $message }}
-                @endforeach
-            </div>
-        @endif
+        <div class="container">
+            @if ($errors->any())
+                <div class="border px-4 py-3 rounded relative bg-danger-subtle">
+                    @foreach ($errors->all() as $message)
+                        {{ $message }}
+                    @endforeach
+                </div>
+            @endif
 
-        @if (session('message'))
-            <div class="border px-4 py-3 rounded relative bg-success-subtle">
-                {{ session('message') }}
-            </div>
-        @endif
+            @if (session('message'))
+                <div class="border px-4 py-3 rounded relative bg-success-subtle">
+                    {{ session('message') }}
+                </div>
+            @endif
 
-        @foreach ($tweets as $tweet)
-            <div class="container text-center">
+            @foreach ($tweets as $tweet)
                 <div class="row">
                     <div class="col-md-3 border">
                         @if ($tweet->user->icon)
@@ -130,8 +130,8 @@
                         {{ $tweet->created_at }}
                     </div>
                 </div>
-            </div>
-        @endforeach
+            @endforeach
+        </div>
     </div>
 
     {{-- フッター --}}
