@@ -3,6 +3,13 @@ h1.fStyle {
     font-family: 'Black Ops One', cursive;
 }
 
-.container {
+/* .container {
     margin: 25px;
+} */
+
+.header {
+    width: 100%;
+    height: 50%;
+    margin: 25px;
+    background-color: blue;
 }
