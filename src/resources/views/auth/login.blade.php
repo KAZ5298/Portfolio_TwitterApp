@@ -3,6 +3,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Twitter Modoki</title>
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/login_view.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap">
 </head>
 
 <body>
@@ -10,7 +14,7 @@
     {{--  ヘッダー --}}
     <div class="header">
         <div class="container">
-            <h1>Twitter Modoki</h1>
+            <h1 class="fStyle">Twitter Modoki</h1>
         </div>
     </div>
 
@@ -21,21 +25,19 @@
                 @csrf
 
                 <div class="error_msg mt-4">
-                    @if ($errors->any())
-                        <tr>
-                            @foreach ($errors->all() as $message)
-                                <td> {{ $message }} </td>
-                            @endforeach
-                        </tr>
-                    @endif
+                    <ul>
+                        @if ($errors->any())
+                            <div class="border px-4 py-3 rounded relative bg-danger-subtle">
+                                @foreach ($errors->all() as $message)
+                                    <li> {{ $message }} </li>
+                                @endforeach
+                            </div>
+                        @endif
+                    </ul>
                 </div>
 
                 <!-- Email Address -->
                 <div class="mt-4">
-                    {{-- <x-input-label for="email" value="アカウント名（ユーザーＩＤ）または、メールアドレス" />
-                    <x-text-input id="email" class="block mt-1 w-full" type="text" name="email_or_id"
-                        :value="old('email_or_id')" required autofocus autocomplete="username" />
-                    <x-input-error :messages="$errors->get('email_or_id')" class="mt-2" /> --}}
                     <label>アカウント名（ユーザーＩＤ）または、メールアドレス</label>
                     <br>
                     <input type="text" name="email_or_id">
@@ -43,12 +45,6 @@
 
                 <!-- Password -->
                 <div class="mt-4">
-                    {{-- <x-input-label for="password" :value="__('Password')" />
-
-                    <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required
-                        autocomplete="current-password" />
-
-                    <x-input-error :messages="$errors->get('password')" class="mt-2" /> --}}
                     <label>パスワード</label>
                     <br>
                     <input type="password" name="password">

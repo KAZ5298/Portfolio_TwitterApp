@@ -57,7 +57,7 @@ class LoginRequest extends FormRequest
 
             throw ValidationException::withMessages([
                 // 'email_or_id' => trans('auth.failed'),
-                'email_or_id' => trans('⚠アカウント名、またはパスワードが違います⚠'),
+                'email_or_id' => trans('アカウント名、またはパスワードが違います。'),
             ]);
         }
 
@@ -98,8 +98,8 @@ class LoginRequest extends FormRequest
     public function messages()
     {
         return [
-            'email_or_id.required' => '⚠アカウント名、またはパスワードが違います⚠',
-            'password.required' => '⚠アカウント名、またはパスワードが違います⚠',
+            'email_or_id.required' => 'アカウント名が空白です。',
+            'password.required' => 'パスワードが空白です。',
         ];
     }
 }
