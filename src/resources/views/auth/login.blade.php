@@ -14,13 +14,13 @@
     {{--  ヘッダー --}}
     <div class="header">
         <div class="container">
-            <h1 class="fStyle">Twitter Modoki</h1>
+            <h1 class="fStyle bg-primary">Twitter Modoki</h1>
         </div>
     </div>
 
     {{-- メインコンテンツ --}}
     <div class="main">
-        <div class="container">
+        <div class="container bg-primary-subtle">
             <form method="POST" action="{{ route('login') }}">
                 @csrf
 
@@ -40,14 +40,14 @@
                 <div class="mt-4">
                     <label>アカウント名（ユーザーＩＤ）または、メールアドレス</label>
                     <br>
-                    <input type="text" name="email_or_id">
+                    <input class="input" type="text" name="email_or_id">
                 </div>
 
                 <!-- Password -->
                 <div class="mt-4">
                     <label>パスワード</label>
                     <br>
-                    <input type="password" name="password">
+                    <input class="input" type="password" name="password">
                 </div>
 
                 <div class="mt-4">
