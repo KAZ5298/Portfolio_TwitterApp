@@ -6,14 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Twitter Modoki</title>
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/profile_edit_view.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap">
 </head>
 
-<body>
+<body class="bg-primary-subtle">
 
     {{--  ヘッダー --}}
     <div class="header">
-        <div class="container">
-            <h1>Twitter Modoki</h1>
+        <div class="title bg-primary">
+            Twitter Modoki
         </div>
     </div>
 
@@ -23,53 +27,71 @@
             <form method="POST" action="{{ route('profileCheck') }}" enctype="multipart/form-data">
                 @csrf
 
-                <label>下記の項目を入力してください。<span style="color:red">（※項目は入力必須）</span></label>
+                <div class="input mb-4">
+                    <label>下記の項目を入力してください。<span style="color:red">（※項目は入力必須）</span></label>
+                </div>
 
                 <!-- Name -->
-                <div class="mt-4">
+                <div class="input">
                     <label>アカウント名（ユーザーＩＤ）</label>
-                    @if ($errors->has('name'))
-                        <div class="border px-4 py-3 rounded relative bg-danger-subtle">
-                            @foreach ($errors->get('name') as $message)
-                                {{ $message }}
-                            @endforeach
-                        </div>
-                    @endif
                     <br>
-                    <input type="text" name="name" value="{{ $user->name }}" placeholder="※">
+                    <div class="mb-4">
+                        @if (!$errors->has('name'))
+                            <input class="form" type="text" name="name" value="{{ $user->name }}"
+                                placeholder="※">
+                            <label>　</label>
+                        @else
+                            <input style="border: solid 2px red;" class="form" type="text" name="name"
+                                value="{{ $user->name }}" placeholder="※">
+                            @foreach ($errors->get('name') as $message)
+                                <label style="color: red">{{ $message }}</label>
+                            @endforeach
+                        @endif
+                    </div>
                 </div>
 
                 <!-- Email Address -->
-                <div class="mt-4">
+                <div class="input">
                     <label>メールアドレス</label>
-                    @if ($errors->has('email'))
-                        <div class="border px-4 py-3 rounded relative bg-danger-subtle">
-                            @foreach ($errors->get('email') as $message)
-                                {{ $message }}
-                            @endforeach
-                        </div>
-                    @endif
                     <br>
-                    <input type="text" name="email" value="{{ $user->email }}" placeholder="※">
+                    <div class="mb-4">
+                        @if (!$errors->has('email'))
+                            <input class="form" type="text" name="name" value="{{ $user->email }}"
+                                placeholder="※">
+                            <label>　</label>
+                        @else
+                            <input style="border: solid 2px red;" class="form" type="text" name="email"
+                                value="{{ $user->email }}" placeholder="※">
+                            @foreach ($errors->get('email') as $message)
+                                <label style="color: red">{{ $message }}</label>
+                            @endforeach
+                        @endif
+                    </div>
                 </div>
 
                 <!-- Nick Name -->
-                <div class="mt-4">
+                <div class="input">
                     <label>ニックネーム（一覧画面での表示名）</label>
-                    @if ($errors->has('nickname'))
-                        <div class="border px-4 py-3 rounded relative bg-danger-subtle">
-                            @foreach ($errors->get('nickname') as $message)
-                                {{ $message }}
-                            @endforeach
-                        </div>
-                    @endif
                     <br>
-                    <input type="text" name="nickname" value="{{ $user->nickname }}" placeholder="※">
+                    <div class="mb-4">
+                        @if (!$errors->has('nickname'))
+                            <input class="form" type="text" name="name" value="{{ $user->nickname }}"
+                                placeholder="※">
+                            <label>　</label>
+                        @else
+                            <input style="border: solid 2px red;" class="form" type="text" name="nickname"
+                                value="{{ $user->nickname }}" placeholder="※">
+                            @foreach ($errors->get('nickname') as $message)
+                                <label style="color: red">{{ $message }}</label>
+                            @endforeach
+                        @endif
+                    </div>
                 </div>
 
                 <!-- Profile Icon -->
                 <div class="mt-4">
                     <label>プロフィール画像</label>
+                    <br>
                     @if (isset($user->icon))
                         <img src="{{ asset('storage/images/' . $user->icon) }}" width="80" height="80">
                     @else
@@ -77,30 +99,38 @@
                     @endif
                     <br>
                     <input type="file" name="icon">
+                    <br>
+                    <label>　</label>
                 </div>
 
                 <!-- Password -->
-                <div class="mt-4">
+                <div class="input">
                     <label>パスワード</label>
-                    @if ($errors->has('password'))
-                        <div class="border px-4 py-3 rounded relative bg-danger-subtle">
-                            @foreach ($errors->get('password') as $message)
-                                {{ $message }}
-                            @endforeach
-                        </div>
-                    @endif
                     <br>
-                    <input type="password" name="password" placeholder="※">
+                    <div class="mb-4">
+                        @if (!$errors->has('password'))
+                            <input class="form" type="password" name="name" placeholder="※">
+                            <label>　</label>
+                        @else
+                            <input style="border: solid 2px red;" class="form" type="password" name="password"
+                                placeholder="※">
+                            @foreach ($errors->get('password') as $message)
+                                <label style="color: red">{{ $message }}</label>
+                            @endforeach
+                        @endif
+                    </div>
                 </div>
 
                 <!-- Confirm Password -->
-                <div class="mt-4">
-                    <label>パスワード（再確認）</label>
-                    <br>
-                    <input type="password" name="password_confirmation" placeholder="※">
+                <div class="mb-4">
+                    <div class="input">
+                        <label>パスワード（再確認）</label>
+                        <br>
+                        <input class="form" type="password" name="password_confirmation" placeholder="※">
+                    </div>
                 </div>
 
-                <div class="mt-4">
+                <div class="button">
                     <button type="submit" class="btn btn-primary">登録</button>
                     <button type="reset" class="btn btn-danger">リセット</button>
                     <a href="{{ route('allTweetGet') }}" class="btn btn-secondary">ＴＯＰ画面へ戻る</a>

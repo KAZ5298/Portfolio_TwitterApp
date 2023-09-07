@@ -44,7 +44,7 @@
                             <input style="border: solid 2px red;" class="form" type="text" name="name"
                                 value="{{ old('name') }}" placeholder="※">
                             @foreach ($errors->get('name') as $message)
-                                <label style="color: red"> {{ $message }}</label>
+                                <label style="color: red">{{ $message }}</label>
                             @endforeach
                         @endif
                     </div>
@@ -63,7 +63,7 @@
                             <input style="border: solid 2px red;" class="form" type="text" name="email"
                                 value="{{ old('email') }}" placeholder="※">
                             @foreach ($errors->get('email') as $message)
-                                <label style="color: red"> {{ $message }}</label>
+                                <label style="color: red">{{ $message }}</label>
                             @endforeach
                         @endif
                     </div>
@@ -82,7 +82,7 @@
                             <input style="border: solid 2px red;" class="form" type="text" name="nickname"
                                 value="{{ old('nickname') }}" placeholder="※">
                             @foreach ($errors->get('nickname') as $message)
-                                <label style="color: red"> {{ $message }}</label>
+                                <label style="color: red">{{ $message }}</label>
                             @endforeach
                         @endif
                     </div>
@@ -109,7 +109,7 @@
                             <input style="border: solid 2px red;" class="form" type="password" name="password"
                                 placeholder="※">
                             @foreach ($errors->get('password') as $message)
-                                <label style="color: red"> {{ $message }}</label>
+                                <label style="color: red">{{ $message }}</label>
                             @endforeach
                         @endif
                     </div>
