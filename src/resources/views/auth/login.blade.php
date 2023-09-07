@@ -26,30 +26,34 @@
             <form method="POST" action="{{ route('login') }}">
                 @csrf
 
-                <div class="error_msg mt-4">
-                    <ul>
-                        @if ($errors->any())
-                            <div class="border px-4 py-3 rounded relative bg-danger-subtle">
-                                @foreach ($errors->all() as $message)
-                                    <li> {{ $message }} </li>
-                                @endforeach
-                            </div>
-                        @endif
-                    </ul>
-                </div>
-
-                <!-- Email Address -->
                 <div class="input">
                     <label>アカウント名（ユーザーＩＤ）または、メールアドレス</label>
                     <br>
-                    <input class="form" type="text" name="email_or_id">
+                    <div class="mb-4">
+                        @if (!$errors->has('email_or_id'))
+                            <input class="form" type="text" name="email_or_id">
+                        @else
+                            <input style="border: solid 2px red;" class="form" type="text" name="email_or_id">
+                            @foreach ($errors->get('email_or_id') as $message)
+                                <label style="color: red">{{ $message }}</label>
+                            @endforeach
+                        @endif
+                    </div>
                 </div>
 
-                <!-- Password -->
                 <div class="input">
                     <label>パスワード</label>
                     <br>
-                    <input class="form" type="password" name="password">
+                    <div class="mb-4">
+                        @if (!$errors->has('password'))
+                            <input class="form" type="password" name="password">
+                        @else
+                            <input style="border: solid 2px red;" class="form" type="password" name="password">
+                            @foreach ($errors->get('password') as $message)
+                                <label style="color: red">{{ $message }}</label>
+                            @endforeach
+                        @endif
+                    </div>
                 </div>
 
                 <div class="button">

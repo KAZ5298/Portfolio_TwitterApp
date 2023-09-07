@@ -3,7 +3,7 @@
     font-family: 'Black Ops One', cursive;
     font-size: 60px;
     width: 600px;
-    height: 200px;
+    height: 180px;
     text-align: center;
     padding: 50px 0;
     margin: 0 auto;
@@ -16,18 +16,14 @@
     background-color: white;
     margin: 0 auto;
     width: 600px;
-    height: 400px;
+    height: 330px;
     padding: 20px;
     border-radius: 0 0 10px 10px;
 }
 
-/* .input {
-    margin: 0 auto;
-} */
-
 .form {
     width: 540px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 .btn {
