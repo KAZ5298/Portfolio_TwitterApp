@@ -1,3 +1,5 @@
+<html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,18 +11,18 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap">
 </head>
 
-<body>
+<body class="bg-primary-subtle">
 
     {{--  ヘッダー --}}
     <div class="header">
-        <div class="container">
-            <h1 class="fStyle bg-primary">Twitter Modoki</h1>
+        <div class="title bg-primary">
+            Twitter Modoki
         </div>
     </div>
 
     {{-- メインコンテンツ --}}
     <div class="main">
-        <div class="container bg-primary-subtle">
+        <div class="container bg-primary-border-subtle">
             <form method="POST" action="{{ route('login') }}">
                 @csrf
 
@@ -37,20 +39,20 @@
                 </div>
 
                 <!-- Email Address -->
-                <div class="mt-4">
+                <div class="input">
                     <label>アカウント名（ユーザーＩＤ）または、メールアドレス</label>
                     <br>
-                    <input class="input" type="text" name="email_or_id">
+                    <input class="form" type="text" name="email_or_id">
                 </div>
 
                 <!-- Password -->
-                <div class="mt-4">
+                <div class="input">
                     <label>パスワード</label>
                     <br>
-                    <input class="input" type="password" name="password">
+                    <input class="form" type="password" name="password">
                 </div>
 
-                <div class="mt-4">
+                <div class="button">
                     <a href="{{ route('register') }}" class="btn btn-primary">新規登録</a>
                     <button type="submit" class="btn btn-primary">ログイン</button>
                 </div>
