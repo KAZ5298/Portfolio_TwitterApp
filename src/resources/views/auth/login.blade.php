@@ -22,7 +22,7 @@
 
     {{-- メインコンテンツ --}}
     <div class="main">
-        <div class="container bg-primary-border-subtle">
+        <div class="container">
             <form method="POST" action="{{ route('login') }}">
                 @csrf
 
@@ -32,6 +32,7 @@
                     <div class="mb-4">
                         @if (!$errors->has('email_or_id'))
                             <input class="form" type="text" name="email_or_id">
+                            <label>　</label>
                         @else
                             <input style="border: solid 2px red;" class="form" type="text" name="email_or_id">
                             @foreach ($errors->get('email_or_id') as $message)
@@ -47,6 +48,7 @@
                     <div class="mb-4">
                         @if (!$errors->has('password'))
                             <input class="form" type="password" name="password">
+                            <label>　</label>
                         @else
                             <input style="border: solid 2px red;" class="form" type="password" name="password">
                             @foreach ($errors->get('password') as $message)

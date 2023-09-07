@@ -1,0 +1,37 @@
+/* google web font */
+.title {
+    font-family: 'Black Ops One', cursive;
+    font-size: 60px;
+    width: 600px;
+    height: 180px;
+    text-align: center;
+    padding: 50px 0;
+    margin: 0 auto;
+    margin-top: 30px;
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+.main {
+    background-color: white;
+    margin: 0 auto;
+    width: 600px;
+    height: 700px;
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+}
+
+.form {
+    width: 540px;
+    /* margin-bottom: 20px; */
+}
+
+.btn {
+    width: 200px;
+    margin: 10px 20px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
