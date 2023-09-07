@@ -27,7 +27,7 @@
             <form method="POST" action="{{ route('registerCheck') }}" enctype="multipart/form-data">
                 @csrf
 
-                <div class="input">
+                <div class="input mb-4">
                     <label>下記の項目を入力してください。<span style="color:red">（※項目は入力必須）</span></label>
                 </div>
 
@@ -39,6 +39,7 @@
                         @if (!$errors->has('name'))
                             <input class="form" type="text" name="name" value="{{ old('name') }}"
                                 placeholder="※">
+                            <label>　</label>
                         @else
                             <input style="border: solid 2px red;" class="form" type="text" name="name"
                                 value="{{ old('name') }}" placeholder="※">
@@ -57,6 +58,7 @@
                         @if (!$errors->has('email'))
                             <input class="form" type="text" name="name" value="{{ old('email') }}"
                                 placeholder="※">
+                            <label>　</label>
                         @else
                             <input style="border: solid 2px red;" class="form" type="text" name="email"
                                 value="{{ old('email') }}" placeholder="※">
@@ -75,6 +77,7 @@
                         @if (!$errors->has('nickname'))
                             <input class="form" type="text" name="name" value="{{ old('nickname') }}"
                                 placeholder="※">
+                            <label>　</label>
                         @else
                             <input style="border: solid 2px red;" class="form" type="text" name="nickname"
                                 value="{{ old('nickname') }}" placeholder="※">
@@ -90,6 +93,8 @@
                     <label>プロフィール画像</label>
                     <br>
                     <input type="file" name="icon">
+                    <br>
+                    <label>　</label>
                 </div>
 
                 <!-- Password -->
@@ -98,9 +103,10 @@
                     <br>
                     <div class="mb-4">
                         @if (!$errors->has('password'))
-                            <input class="form" type="text" name="name" placeholder="※">
+                            <input class="form" type="password" name="name" placeholder="※">
+                            <label>　</label>
                         @else
-                            <input style="border: solid 2px red;" class="form" type="text" name="password"
+                            <input style="border: solid 2px red;" class="form" type="password" name="password"
                                 placeholder="※">
                             @foreach ($errors->get('password') as $message)
                                 <label style="color: red"> {{ $message }}</label>

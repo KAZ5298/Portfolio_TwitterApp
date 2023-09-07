@@ -23,15 +23,21 @@
 
 .form {
     width: 540px;
-    /* margin-bottom: 20px; */
 }
 
 .btn {
     width: 200px;
+    height: 50px;
     margin: 10px 20px;
 }
 
 .button {
     display: flex;
     justify-content: center;
+}
+
+.button a{
+    display: block;
+    padding: 10px;
+    text-align: center;
 }
