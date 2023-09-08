@@ -1,0 +1,30 @@
+/* google web font */
+.header > .container {
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    font-family: 'Black Ops One', cursive;
+    font-size: 60px;
+    width: 600px;
+    height: 200px;
+    text-align: center;
+    padding: 50px 0;
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+.loginUser {
+    height: 200px;
+    color: white;
+    font-size: 20px;
+    padding: 80px 0;
+}
+
+.userMenu {
+    height: 200px;
+    color: white;
+    font-size: 20px;
+    padding: 50px 0;
+}

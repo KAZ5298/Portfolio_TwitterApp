@@ -6,19 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Twitter Modoki</title>
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/tweet.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap">
 </head>
 
-<body>
+<body class="bg-primary-subtle">
 
     {{--  ヘッダー --}}
-    <div class="header">
+    <div class="header bg-primary">
         <div class="container">
-            <nav class="navbar navbar-expand navbar-right bg-primary-subtle">
-                <h1>Twitter Modoki</h1>
+            <div class="title">
+                Twitter Modoki
+            </div>
+            <div class="userIcon">
+                @if ($loginUser->icon)
+                    <img src="{{ asset('storage/images/' . $loginUser->icon) }}" width="200" height="200">
+                @endif
+            </div>
+            <div class="loginUser">ログイン中：{{ $loginUser->nickname }}</div>
+            <div class="userMenu">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        ユーザーメニュー
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ route('profile.edit') }}">ユーザー情報編集</a></li>
+                        <hr class="dropdown-divider">
+                        <li><a class="dropdown-item" href="{{ route('followerList') }}">フォロワー一覧</a></li>
+                        <hr class="dropdown-divider">
+                        <li>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault(); document.getElementById('logout').submit();">ログアウト</a>
+                            <form id="logout" action="{{ route('logout') }}" method="POST">
+                                @csrf
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+            </div>
+            {{-- <nav class="navbar navbar-expand navbar-right bg-primary">
+                <div class="title bg-primary">
+                    Twitter Modoki
+                </div>
                 @if ($loginUser->icon)
                     <img src="{{ asset('storage/images/' . $loginUser->icon) }}" width="80" height="80">
                 @endif
-                <div class="container-fluid">
+                <div class="container-fluid bg-primary">
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <h2>ログイン中：{{ $loginUser->nickname }}</h2>
                         <ul class="navbar-nav">
@@ -44,7 +80,9 @@
                         </ul>
                     </div>
                 </div>
-            </nav>
+            </nav> --}}
+        </div>
+        <div class="nav-tabs">
             <ul class="nav nav-tabs justify-content-center nav-fill" id="myTab" role="tablist">
                 <a class="nav-link nav-item active" aria-current="page" href="{{ route('allTweetGet') }}">全てのつぶやき</a>
                 <a class="nav-link nav-item" href="{{ route('myTweetGet') }}">自分のつぶやき</a>
