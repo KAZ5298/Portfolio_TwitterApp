@@ -27,11 +27,11 @@
             </div>
             <div class="loginUser">ログイン中：{{ $loginUser->nickname }}</div>
             <div class="userMenu">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         ユーザーメニュー
-                    </a>
+                    </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{{ route('profile.edit') }}">ユーザー情報編集</a></li>
                         <hr class="dropdown-divider">
@@ -45,42 +45,8 @@
                             </form>
                         </li>
                     </ul>
-                </li>
+                </div>
             </div>
-            {{-- <nav class="navbar navbar-expand navbar-right bg-primary">
-                <div class="title bg-primary">
-                    Twitter Modoki
-                </div>
-                @if ($loginUser->icon)
-                    <img src="{{ asset('storage/images/' . $loginUser->icon) }}" width="80" height="80">
-                @endif
-                <div class="container-fluid bg-primary">
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                        <h2>ログイン中：{{ $loginUser->nickname }}</h2>
-                        <ul class="navbar-nav">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    ユーザーメニュー
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="{{ route('profile.edit') }}">ユーザー情報編集</a></li>
-                                    <hr class="dropdown-divider">
-                                    <li><a class="dropdown-item" href="{{ route('followerList') }}">フォロワー一覧</a></li>
-                                    <hr class="dropdown-divider">
-                                    <li>
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                            onclick="event.preventDefault(); document.getElementById('logout').submit();">ログアウト</a>
-                                        <form id="logout" action="{{ route('logout') }}" method="POST">
-                                            @csrf
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav> --}}
         </div>
         <div class="nav-tabs">
             <ul class="nav nav-tabs justify-content-center nav-fill" id="myTab" role="tablist">
