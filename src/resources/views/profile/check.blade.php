@@ -6,14 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Twitter Modoki</title>
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/check_view.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap">
 </head>
 
-<body>
+<body class="bg-primary-subtle">
 
     {{--  ヘッダー --}}
     <div class="header">
-        <div class="container">
-            <h1>Twitter Modoki</h1>
+        <div class="title bg-primary">
+            Twitter Modoki
         </div>
     </div>
 
@@ -24,48 +28,42 @@
                 @csrf
                 @method('patch')
 
-                <!-- Name -->
-                <div>
-                    <label>アカウント名（ユーザーＩＤ）：{{ $user->name }}</label>
-                    <input type="hidden" name="name" value="{{ $user->name }}">
+                <table>
+                    <tr>
+                        <th><label>アカウント名（ユーザーＩＤ）</label></th>
+                        <td><label>{{ $user->name }}</label></td>
+                        <input type="hidden" name="name" value="{{ $user->name }}">
+                    </tr>
+                    <tr>
+                        <th><label>メールアドレス</label></th>
+                        <td><label>{{ $user->email }}</label></td>
+                        <input type="hidden" name="email" value="{{ $user->email }}">
+                    </tr>
+                    <tr>
+                        <th><label>ニックネーム（一覧画面での表示名）</label></th>
+                        <td><label>{{ $user->nickname }}</label></td>
+                        <input type="hidden" name="nickname" value="{{ $user->nickname }}">
+                    </tr>
+                    <tr>
+                        <th><label>プロフィール画像</label></th>
+                        <td>
+                            @if (isset($icon))
+                                <label><img src="{{ asset('storage/images/' . $icon) }}" width="80"
+                                        height="80"></label>
+                            @else
+                                <label>登録なし</label>
+                            @endif
+                            <input type="hidden" name="icon" value="{{ $icon }}">
+                        </td>
+                        <input type="hidden" name="password" value="{{ $user->password }}">
+                        <input type="hidden" name="password_confirmation" value="{{ $user->password_confirmation }}">
+                </table>
+
+                <div class="mt-2 border px-4 py-3 rounded relative bg-warning-subtle">
+                    <label style="display: flex; justify-content: center;">上記の内容で登録します。よろしいですか？</label>
                 </div>
 
-                <!-- Email Address -->
-                <div>
-                    <label>メールアドレス：{{ $user->email }}</label>
-                    <input type="hidden" name="email" value="{{ $user->email }}">
-                </div>
-
-                <!-- Nick Name -->
-                <div>
-                    <label>ニックネーム（一覧画面での表示名）：{{ $user->nickname }}</label>
-                    <input type="hidden" name="nickname" value="{{ $user->nickname }}">
-                </div>
-
-                <!-- Profile Icon -->
-                <div>
-                    @if (isset($icon))
-                        <label>プロフィール画像：<img src="{{ asset('storage/images/' . $icon) }}" width="80"
-                                height="80"></label>
-                    @else
-                        <label>プロフィール画像：登録なし</label>
-                    @endif
-                    <input type="hidden" name="icon" value="{{ $icon }}">
-                </div>
-
-                <div>
-                    <!-- Password -->
-                    <input type="hidden" name="password" value="{{ $user->password }}">
-
-                    <!-- Confirm Password -->
-                    <input type="hidden" name="password_confirmation" value="{{ $user->password_confirmation }}">
-                </div>
-
-                <div class="border px-4 py-3 rounded relative bg-warning-subtle">
-                    <label>上記の内容で登録します。よろしいですか？</label>
-                </div>
-
-                <div>
+                <div class="button">
                     <button type="submit" class="btn btn-primary">はい</button>
                     <a href="{{ route('profile.edit') }}" class="btn btn-danger">いいえ</a>
                     <a href="{{ route('allTweetGet') }}" class="btn btn-secondary">ＴＯＰ画面へ戻る</a>
