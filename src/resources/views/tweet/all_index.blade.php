@@ -56,6 +56,13 @@
                 <a class="nav-link nav-item" href="{{ route('talkRoom') }}">トークルーム</a>
             </ul>
         </div>
+        <div class="tweetpost">
+            <form action="{{ route('tweetPost') }}" method="POST">
+                @csrf
+                <textarea class="tweet" name="content" placeholder="つぶやきは１００文字以下で入力してください。"></textarea>
+                <button type="submit" class="btn btn-info">つぶやく</button>
+            </form>
+        </div>
     </div>
 
     {{-- メインコンテンツ --}}
@@ -74,14 +81,6 @@
                     {{ session('message') }}
                 </div>
             @endif
-
-            <div class="tweetpost">
-                <form action="{{ route('tweetPost') }}" method="POST">
-                    @csrf
-                    <textarea name="content" rows="1" cols="150" placeholder="つぶやきは１００文字以下で入力してください。"></textarea>
-                    <button type="submit" class="btn btn-primary">つぶやく</button>
-                </form>
-            </div>
 
             @foreach ($tweets as $tweet)
                 <div class="row">
@@ -114,7 +113,7 @@
                             @else
                                 <form action="{{ route('follow', $tweet->user->id) }}" method="POST">
                                     @csrf
-                                    <input type="submit" class="btn btn-primary" value="フォローする">
+                                    <input type="submit" class="btn btn-info" value="フォローする">
                                 </form>
                             @endif
                         </div>
@@ -128,7 +127,7 @@
                             @else
                                 <form action="{{ route('favorite', $tweet) }}" method="POST">
                                     @csrf
-                                    <input type="submit" class="btn btn-primary" value="いいね">
+                                    <input type="submit" class="btn btn-info" value="いいね">
                                 </form>
                             @endif
                         </div>

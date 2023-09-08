@@ -50,8 +50,8 @@
         </div>
         <div class="nav-tabs">
             <ul class="nav nav-tabs justify-content-center nav-fill" id="myTab" role="tablist">
-                <a class="nav-link nav-item active" aria-current="page" href="{{ route('allTweetGet') }}">全てのつぶやき</a>
-                <a class="nav-link nav-item" href="{{ route('myTweetGet') }}">自分のつぶやき</a>
+                <a class="nav-link nav-item" href="{{ route('allTweetGet') }}">全てのつぶやき</a>
+                <a class="nav-link nav-item active" aria-current="page" href="{{ route('myTweetGet') }}">自分のつぶやき</a>
                 <a class="nav-link nav-item" href="{{ route('followerTweetGet') }}">フォロワーのつぶやき</a>
                 <a class="nav-link nav-item" href="{{ route('talkRoom') }}">トークルーム</a>
             </ul>
