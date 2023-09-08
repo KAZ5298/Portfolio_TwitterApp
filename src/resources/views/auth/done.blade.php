@@ -6,29 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Twitter Modoki</title>
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/register_done_view.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap">
 </head>
 
-<body>
+<body class="bg-primary-subtle">
 
     {{--  ヘッダー --}}
     <div class="header">
-        <div class="container">
-            <h1>Twitter Modoki</h1>
+        <div class="title bg-primary">
+            Twitter Modoki
         </div>
     </div>
 
     {{-- メインコンテンツ --}}
     <div class="main">
         <div class="container">
-            <div class="border px-4 py-3 rounded relative bg-success-subtle">
-                <label>登録が完了しました。</label>
+            <div class="mt-2 border px-4 py-3 rounded relative bg-success-subtle">
+                <label style="display: flex; justify-content: center;">登録が完了しました。</label>
             </div>
 
-            <div class="d-grid gap-2">
+            <div class="button">
                 <a href="{{ route('loginRedirect', $user) }}"class="btn btn-primary">ログインして一覧画面へ</a>
                 <a href="{{ route('login') }}"class="btn btn-secondary">ログイン画面へ戻る</a>
             </div>
-
         </div>
     </div>
 

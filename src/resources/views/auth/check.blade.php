@@ -27,51 +27,46 @@
             <form method="POST" action="{{ route('register') }}">
                 @csrf
 
-                <!-- Name -->
-                <div>
-                    <label>アカウント名（ユーザーＩＤ）：{{ $user->name }}</label>
-                    <input type="hidden" name="name" value="{{ $user->name }}">
+                <table>
+                    <tr>
+                        <th><label>アカウント名（ユーザーＩＤ）</label></th>
+                        <td><label>{{ $user->name }}</label></td>
+                        <input type="hidden" name="name" value="{{ $user->name }}">
+                    </tr>
+                    <tr>
+                        <th><label>メールアドレス</label></th>
+                        <td><label>{{ $user->email }}</label></td>
+                        <input type="hidden" name="email" value="{{ $user->email }}">
+                    </tr>
+                    <tr>
+                        <th><label>ニックネーム（一覧画面での表示名）</label></th>
+                        <td><label>{{ $user->nickname }}</label></td>
+                        <input type="hidden" name="nickname" value="{{ $user->nickname }}">
+                    </tr>
+                    <tr>
+                        <th><label>プロフィール画像</label></th>
+                        <td>
+                            @if (isset($icon))
+                                <label><img src="{{ asset('storage/images/' . $icon) }}" width="80"
+                                        height="80"></label>
+                            @else
+                                <label>登録なし</label>
+                            @endif
+                            <input type="hidden" name="icon" value="{{ $icon }}">
+                        </td>
+                        <input type="hidden" name="password" value="{{ $user->password }}">
+                        <input type="hidden" name="password_confirmation" value="{{ $user->password_confirmation }}">
+                </table>
+
+                <div class="mt-2 border px-4 py-3 rounded relative bg-warning-subtle">
+                    <label style="display: flex; justify-content: center;">上記の内容で登録します。よろしいですか？</label>
                 </div>
 
-                <!-- Email Address -->
-                <div>
-                    <label>メールアドレス：{{ $user->email }}</label>
-                    <input type="hidden" name="email" value="{{ $user->email }}">
+                <div class="button">
+                    <button type="submit" class="btn btn-primary">はい</button>
+                    <a href="{{ route('register') }}" class="btn btn-danger">いいえ</a>
+                    <a href="{{ route('login') }}" class="btn btn-secondary">ログイン画面へ戻る</a>
                 </div>
-
-                <!-- Nick Name -->
-                <div>
-                    <label>ニックネーム（一覧画面での表示名）：{{ $user->nickname }}</label>
-                    <input type="hidden" name="nickname" value="{{ $user->nickname }}">
-                </div>
-
-                <!-- Profile Icon -->
-                <div>
-                    @if (isset($icon))
-                        <label>プロフィール画像：<img src="{{ asset('storage/images/' . $icon) }}" width="80" height="80"></label>
-                    @else
-                        <label>プロフィール画像：登録なし</label>
-                    @endif
-                    <input type="hidden" name="icon" value="{{ $icon }}">
-                </div>
-
-                <!-- Password -->
-                <div>
-                    <input type="hidden" name="password" value="{{ $user->password }}">
-                </div>
-
-                <!-- Confirm Password -->
-                <div>
-                    <input type="hidden" name="password_confirmation" value="{{ $user->password_confirmation }}">
-                </div>
-
-                <div class="border px-4 py-3 rounded relative bg-warning-subtle">
-                    <label>上記の内容で登録します。よろしいですか？</label>
-                </div>
-
-                <button type="submit" class="btn btn-primary">はい</button>
-                <a href="{{ route('register') }}" class="btn btn-danger">いいえ</a>
-                <a href="{{ route('login') }}" class="btn btn-secondary">ログイン画面へ戻る</a>
 
             </form>
         </div>
