@@ -6,55 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Twitter Modoki</title>
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/tweet.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap">
 </head>
 
-<body>
+<body class="bg-primary-subtle">
 
     {{--  ヘッダー --}}
-    <div class="header">
+    <div class="header bg-primary">
         <div class="container">
-            <nav class="navbar navbar-expand navbar-right bg-primary-subtle">
-                <h1>Twitter Modoki</h1>
+            <div class="title">
+                Twitter Modoki
+            </div>
+            <div class="userIcon">
                 @if ($loginUser->icon)
-                    <img src="{{ asset('storage/images/' . $loginUser->icon) }}" width="80" height="80">
+                    <img src="{{ asset('storage/images/' . $loginUser->icon) }}" width="200" height="200">
                 @endif
-                <div class="container-fluid">
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                        <h2>ログイン中：{{ $loginUser->nickname }}</h2>
-                        <ul class="navbar-nav">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    ユーザーメニュー
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="{{ route('profile.edit') }}">ユーザー情報編集</a></li>
-                                    <hr class="dropdown-divider">
-                                    <li><a class="dropdown-item" href="{{ route('followerList') }}">フォロワー一覧</a></li>
-                                    <hr class="dropdown-divider">
-                                    <li>
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                            onclick="event.preventDefault(); document.getElementById('logout').submit();">ログアウト</a>
-                                        <form id="logout" action="{{ route('logout') }}" method="POST">
-                                            @csrf
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+            </div>
+            <div class="loginUser">ログイン中：{{ $loginUser->nickname }}</div>
+            <div class="userMenu">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        ユーザーメニュー
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ route('profile.edit') }}">ユーザー情報編集</a></li>
+                        <hr class="dropdown-divider">
+                        <li><a class="dropdown-item" href="{{ route('followerList') }}">フォロワー一覧</a></li>
+                        <hr class="dropdown-divider">
+                        <li>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault(); document.getElementById('logout').submit();">ログアウト</a>
+                            <form id="logout" action="{{ route('logout') }}" method="POST">
+                                @csrf
+                            </form>
+                        </li>
+                    </ul>
                 </div>
-            </nav>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-                    <a class="navbar-brand">フォロワー一覧</a>
-                </div>
-                <div class="container-fluid">
-                    <a class="navbar-brand btn btn-secondary" href=""
-                        onclick="javascript:history.back(); return false;">ＴＯＰ画面へ戻る</a>
-                </div>
-            </nav>
+            </div>
         </div>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand">フォロワー一覧</a>
+            </div>
+            <div class="container-fluid">
+                <a class="navbar-brand btn btn-secondary" href=""
+                    onclick="javascript:history.back(); return false;">ＴＯＰ画面へ戻る</a>
+            </div>
+        </nav>
     </div>
 
     {{-- メインコンテンツ --}}

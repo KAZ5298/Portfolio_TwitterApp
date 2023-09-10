@@ -56,6 +56,13 @@
                 <a class="nav-link nav-item" href="{{ route('talkRoom') }}">トークルーム</a>
             </ul>
         </div>
+        <div class="tweetpost">
+            <form action="{{ route('tweetPost') }}" method="POST">
+                @csrf
+                <textarea class="tweet" name="content" placeholder="つぶやきは１００文字以下で入力してください。"></textarea>
+                <button type="submit" class="btn btn-info">つぶやく</button>
+            </form>
+        </div>
     </div>
 
     {{-- メインコンテンツ --}}
@@ -74,14 +81,6 @@
                     {{ session('message') }}
                 </div>
             @endif
-
-            <div class="tweetcontainer">
-                <form action="{{ route('tweetPost') }}" method="POST">
-                    @csrf
-                    <textarea name="content" rows="1" cols="150" placeholder="つぶやきは１００文字以下で入力してください。"></textarea>
-                    <button type="submit" class="btn btn-primary">つぶやく</button>
-                </form>
-            </div>
 
             @foreach ($tweets as $tweet)
                 <div class="row">

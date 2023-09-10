@@ -38,14 +38,16 @@
 
 .tweetpost {
     background-color: white;
+    width: 100%;
 }
 
-.tweetpost > .tweet {
+.tweet {
     width: 80%;
 }
 
-.tweetpost > .btn {
+.tweetpost .btn {
     width: 20%;
+    position: absolute;
 }
 
 .main {
