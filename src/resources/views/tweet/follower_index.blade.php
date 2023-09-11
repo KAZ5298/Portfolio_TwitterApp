@@ -52,7 +52,8 @@
             <ul class="nav nav-tabs justify-content-center nav-fill" id="myTab" role="tablist">
                 <a class="nav-link nav-item" href="{{ route('allTweetGet') }}">全てのつぶやき</a>
                 <a class="nav-link nav-item" href="{{ route('myTweetGet') }}">自分のつぶやき</a>
-                <a class="nav-link nav-item active" aria-current="page"  href="{{ route('followerTweetGet') }}">フォロワーのつぶやき</a>
+                <a class="nav-link nav-item active" aria-current="page"
+                    href="{{ route('followerTweetGet') }}">フォロワーのつぶやき</a>
                 <a class="nav-link nav-item" href="{{ route('talkRoom') }}">トークルーム</a>
             </ul>
         </div>
@@ -75,65 +76,77 @@
                 </div>
             @endif
 
-            @foreach ($tweets as $tweet)
-                <div class="row">
-                    <div class="col-md-3 border">
-                        @if ($tweet->user->icon)
-                            <img src="{{ asset('storage/images/' . $tweet->user->icon) }}" width="80"
-                                height="80">
-                        @endif
-                    </div>
-                    <div class="col-md-3 border">
-                        {{ $tweet->user->nickname }}<br>
-                        @if ($loginUser->isFollowed($tweet->user->id))
-                            フォローされています
-                        @endif
-                    </div>
-                    <div class="col-3 border">
-                        @if ($loginUser->isFollowing($tweet->user->id))
-                            <form action="{{ route('unfollow', $tweet->user->id) }}" method="POST">
-                                @csrf
-                                @method('delete')
-                                @if ($loginUser->checkMessageInTalkRoom($loginUser->id, $tweet->user->id))
-                                    <input type="submit" class="btn btn-danger"
-                                        onclick="return confirm('トークルームのメッセージが削除されます。よろしいですか？');" value="フォロー解除">
-                                @else
-                                    <input type="submit" class="btn btn-danger" value="フォロー解除">
+            <div class="tweetContent">
+                @foreach ($tweets as $tweet)
+                    <table>
+                        <tr>
+                            <td>
+                                @if ($tweet->user->icon)
+                                    <img src="{{ asset('storage/images/' . $tweet->user->icon) }}" width="80"
+                                        height="80">
                                 @endif
-                            </form>
-                        @else
-                            <form action="{{ route('follow', $tweet->user->id) }}" method="POST">
-                                @csrf
-                                <input type="submit" class="btn btn-primary" value="フォローする">
-                            </form>
-                        @endif
-                    </div>
-                    <div class="col-3 border">
-                        @if ($tweet->isFavorite($loginUser->id, $tweet->id))
-                            <form action="{{ route('unfavorite', $tweet) }}" method="POST">
-                                @csrf
-                                @method('delete')
-                                <input type="submit" class="btn btn-danger" value="いいね解除">
-                            </form>
-                        @else
-                            <form action="{{ route('favorite', $tweet) }}" method="POST">
-                                @csrf
-                                <input type="submit" class="btn btn-primary" value="いいね">
-                            </form>
-                        @endif
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col border">
-                        {{ $tweet->content }}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col border">
-                        {{ $tweet->created_at }}
-                    </div>
-                </div>
-            @endforeach
+                            </td>
+                            <td>
+                                {{ $tweet->user->nickname }}
+                                <br>
+                                @if ($loginUser->isFollowed($tweet->user->id))
+                                    フォローされています
+                                @endif
+                            </td>
+                            <td>
+                                @if ($tweet->user->id != $loginUser->id)
+                                    @if ($loginUser->isFollowing($tweet->user->id))
+                                        <form action="{{ route('unfollow', $tweet->user->id) }}" method="POST">
+                                            @csrf
+                                            @method('delete')
+                                            @if ($loginUser->checkMessageInTalkRoom($loginUser->id, $tweet->user->id))
+                                                <input type="submit" class="btn btn-danger"
+                                                    onclick="return confirm('トークルームのメッセージが削除されます。よろしいですか？');"
+                                                    value="フォロー解除">
+                                            @else
+                                                <input type="submit" class="btn btn-danger" value="フォロー解除">
+                                            @endif
+                                        </form>
+                                    @else
+                                        <form action="{{ route('follow', $tweet->user->id) }}" method="POST">
+                                            @csrf
+                                            <input type="submit" class="btn btn-info" value="フォローする">
+                                        </form>
+                                    @endif
+                                    @if ($tweet->isFavorite($loginUser->id, $tweet->id))
+                                        <form action="{{ route('unfavorite', $tweet) }}" method="POST">
+                                            @csrf
+                                            @method('delete')
+                                            <input type="submit" class="btn btn-danger" value="いいね解除">
+                                        </form>
+                                    @else
+                                        <form action="{{ route('favorite', $tweet) }}" method="POST">
+                                            @csrf
+                                            <input type="submit" class="btn btn-info" value="いいね">
+                                        </form>
+                                    @endif
+                                @else
+                                    <form action="{{ route('tweetDestroy', $tweet) }}" method="POST">
+                                        @csrf
+                                        @method('delete')
+                                        <input type="submit" class="btn btn-danger" value="削除">
+                                    </form>
+                                @endif
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                {{ $tweet->content }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                {{ $tweet->created_at }}
+                            </td>
+                        </tr>
+                    </table>
+                @endforeach
+            </div>
         </div>
     </div>
 

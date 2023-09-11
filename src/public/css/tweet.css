@@ -39,16 +39,20 @@
 .tweetpost {
     background-color: white;
     width: 100%;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    padding: 20px;
 }
 
-.tweet {
+/* .tweet {
     width: 80%;
-}
+    display: block;
+} */
 
-.tweetpost .btn {
+/* .tweetpost .btn {
     width: 20%;
     position: absolute;
-}
+} */
 
 .main {
     background-color: white;
@@ -56,4 +60,14 @@
     width: 90%;
     border-radius: 0 0 10px 10px;
     margin-bottom: 30px;
+}
+
+th,td {
+    border: solid 1px;              /* 枠線指定 */
+    height: 90px;
+    width: 270px;
+}
+
+table {
+    border-collapse:  collapse;     /* セルの線を重ねる */
 }
