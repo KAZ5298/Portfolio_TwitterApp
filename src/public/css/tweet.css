@@ -60,11 +60,6 @@
     padding: 10px;
 }
 
-/* .tweet {
-    width: 80%;
-    display: block;
-} */
-
 .tweetpost .btn {
     margin-left: 10px;
 }
@@ -80,35 +75,41 @@
 .tweetContainer {
     width: 50%;
     display: grid;
-    grid-template-columns: 100px 100px 100px;
+    grid-template-columns: 100px 100px 1fr;
     grid-template-rows: 50px 50px 50px 25px;
-    /* border: solid black 1px;
-    border-collapse: collapse; */
+    margin-bottom: 5px;
+    /* border: 1px solid; */
 }
 
 .tweetIcon {
-    border: inset black 1px;
-    border-collapse: collapse;
     grid-column: 1 / 2;
     grid-row: 1 / 5;
     align-items: center;
     display: flex;
+    border: 1px solid;
 }
 
 .tweetNickname {
-    border: solid black 1px;
-    border-collapse: collapse;
     grid-column: 2 / 4;
     grid-row: 1 / 2;
+    border: 1px solid;
+}
+
+.followed {
+    background-color: darkgrey;
+    font-size: 9px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100px;
+    font-weight: bold;
 }
 
 .tweetButton {
-    border: solid black 1px;
-    border-collapse: collapse;
-    grid-column: 4 / 6;
+    grid-column: 4 / 5;
     grid-row: 1 / 2;
     display: flex;
     justify-content: left;
+    border: 1px solid;
 }
 
 .tweetButton .btn {
@@ -118,15 +119,13 @@
 }
 
 .tweetContent {
-    border: solid black 1px;
-    border-collapse: collapse;
-    grid-column: 2 / 6;
+    grid-column: 2 / 5;
     grid-row: 2 / 4;
+    border: 1px solid;
 }
 
 .tweetTime {
-    border: solid black 1px;
-    border-collapse: collapse;
-    grid-column: 2 / 6;
+    grid-column: 2 / 5;
     grid-row: 4 / 5;
+    border: 1px solid;
 }

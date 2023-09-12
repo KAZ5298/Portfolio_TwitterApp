@@ -83,7 +83,6 @@
             @endif
 
             @foreach ($tweets as $tweet)
-
                 <div class="tweetContainer">
                     <div class="tweetIcon">
                         @if ($tweet->user->icon)
@@ -95,7 +94,9 @@
                         {{ $tweet->user->nickname }}
                         <br>
                         @if ($loginUser->isFollowed($tweet->user->id))
-                            フォローされています
+                            <div class="followed">
+                                フォローされています
+                            </div>
                         @endif
                     </div>
                     <div class="tweetButton">
