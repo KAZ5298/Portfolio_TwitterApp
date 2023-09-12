@@ -22,7 +22,7 @@
             </div>
             <div class="userIcon">
                 @if ($loginUser->icon)
-                    <img src="{{ asset('storage/images/' . $loginUser->icon) }}" width="200" height="200">
+                    <img src="{{ asset('storage/images/' . $loginUser->icon) }}" width="100" height="100">
                 @endif
             </div>
             <div class="loginUser">ログイン中：{{ $loginUser->nickname }}</div>
@@ -84,12 +84,25 @@
 
             <div class="tweetContent">
                 @foreach ($tweets as $tweet)
+                    <div class="tweetIcon">
+                        @if ($tweet->user->icon)
+                            <img src="{{ asset('storage/images/' . $tweet->user->icon) }}" width="100"
+                                height="100">
+                        @endif
+                    </div>
+                    <div class="tweetNickname">
+                        {{ $tweet->user->nickname }}
+                        <br>
+                        @if ($loginUser->isFollowed($tweet->user->id))
+                            フォローされています
+                        @endif
+                    </div>
                     <table>
                         <tr>
                             <td>
                                 @if ($tweet->user->icon)
-                                    <img src="{{ asset('storage/images/' . $tweet->user->icon) }}" width="80"
-                                        height="80">
+                                    <img src="{{ asset('storage/images/' . $tweet->user->icon) }}" width="100"
+                                        height="100">
                                 @endif
                             </td>
                             <td>

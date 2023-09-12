@@ -6,7 +6,7 @@
     margin-top: 30px;
 }
 
-.header > .container {
+.header>.container {
     display: flex;
     justify-content: center;
 }
@@ -17,23 +17,39 @@
     width: 600px;
     height: 200px;
     text-align: center;
-    padding: 50px 0;
     color: white;
     border-radius: 10px 10px 0 0;
+    margin: auto;
+    align-items: center;
+    display: flex;
 }
 
 .loginUser {
     height: 200px;
     color: white;
     font-size: 20px;
-    padding: 80px 20px;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    align-items: center;
 }
 
 .userMenu {
     height: 200px;
     color: white;
     font-size: 20px;
-    padding: 80px 20px;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.userIcon {
+    text-align: center;
+    height: 200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
 }
 
 .tweetpost {
@@ -41,7 +57,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: 4fr 1fr;
-    padding: 20px;
+    padding: 10px;
 }
 
 /* .tweet {
@@ -49,10 +65,9 @@
     display: block;
 } */
 
-/* .tweetpost .btn {
-    width: 20%;
-    position: absolute;
-} */
+.tweetpost .btn {
+    margin-left: 10px;
+}
 
 .main {
     background-color: white;
@@ -62,12 +77,20 @@
     margin-bottom: 30px;
 }
 
-th,td {
-    border: solid 1px;              /* 枠線指定 */
+.tweetContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+th,
+td {
+    border: solid 1px;
+    /* 枠線指定 */
     height: 90px;
     width: 270px;
 }
 
 table {
-    border-collapse:  collapse;     /* セルの線を重ねる */
+    border-collapse: collapse;
+    /* セルの線を重ねる */
 }

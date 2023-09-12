@@ -22,13 +22,13 @@
             </div>
             <div class="userIcon">
                 @if ($loginUser->icon)
-                    <img src="{{ asset('storage/images/' . $loginUser->icon) }}" width="200" height="200">
+                    <img src="{{ asset('storage/images/' . $loginUser->icon) }}" width="100" height="100">
                 @endif
             </div>
             <div class="loginUser">ログイン中：{{ $loginUser->nickname }}</div>
             <div class="userMenu">
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         ユーザーメニュー
                     </button>
