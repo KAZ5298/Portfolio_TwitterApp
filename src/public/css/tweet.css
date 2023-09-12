@@ -77,20 +77,56 @@
     margin-bottom: 30px;
 }
 
-.tweetContent {
+.tweetContainer {
+    width: 50%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 50px 50px 50px 25px;
+    /* border: solid black 1px;
+    border-collapse: collapse; */
 }
 
-th,
-td {
-    border: solid 1px;
-    /* 枠線指定 */
-    height: 90px;
-    width: 270px;
-}
-
-table {
+.tweetIcon {
+    border: inset black 1px;
     border-collapse: collapse;
-    /* セルの線を重ねる */
+    grid-column: 1 / 2;
+    grid-row: 1 / 5;
+    align-items: center;
+    display: flex;
+}
+
+.tweetNickname {
+    border: solid black 1px;
+    border-collapse: collapse;
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+}
+
+.tweetButton {
+    border: solid black 1px;
+    border-collapse: collapse;
+    grid-column: 4 / 6;
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: left;
+}
+
+.tweetButton .btn {
+    width: 100px;
+    height: auto;
+    margin: 5px;
+}
+
+.tweetContent {
+    border: solid black 1px;
+    border-collapse: collapse;
+    grid-column: 2 / 6;
+    grid-row: 2 / 4;
+}
+
+.tweetTime {
+    border: solid black 1px;
+    border-collapse: collapse;
+    grid-column: 2 / 6;
+    grid-row: 4 / 5;
 }
