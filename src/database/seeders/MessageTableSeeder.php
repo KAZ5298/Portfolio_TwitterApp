@@ -15,42 +15,42 @@ class MessageTableSeeder extends Seeder
     public function run(): void
     {
         Message::create([
-            'room_id' => 'room:4.5',
-            'user_id' => 4,
+            'room_id' => 'room:2.5',
+            'user_id' => 2,
             'message' => 'Hello!',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
         ]);
         Message::create([
-            'room_id' => 'room:4.5',
+            'room_id' => 'room:2.5',
             'user_id' => 5,
             'message' => 'Hey!',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
         ]);
         Message::create([
-            'room_id' => 'room:4.5',
-            'user_id' => 4,
+            'room_id' => 'room:2.5',
+            'user_id' => 2,
             'message' => 'How are you ?',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
         ]);
         Message::create([
-            'room_id' => 'room:4.5',
+            'room_id' => 'room:2.5',
             'user_id' => 5,
             'message' => 'I am fine thank you and you ?',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
         ]);
         Message::create([
-            'room_id' => 'room:4.5',
-            'user_id' => 4,
+            'room_id' => 'room:2.5',
+            'user_id' => 2,
             'message' => 'I am fine too!',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
         ]);
         Message::create([
-            'room_id' => 'room:4.5',
+            'room_id' => 'room:2.5',
             'user_id' => 5,
             'message' => 'That is nice!',
             'created_at' => new DateTime(),
