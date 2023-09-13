@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Twitter Modoki</title>
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/tweet.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/follow.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap">
@@ -62,35 +62,38 @@
     {{-- メインコンテンツ --}}
     <div class="main">
         <div class="container">
-            <table>
-                @foreach ($followers as $follower)
-                    <tr>
+            @foreach ($followers as $follower)
+                <div class="followerContainer">
+                    <div class="followerIcon">
                         @if ($follower->icon)
-                            <td><img src="{{ asset('storage/images/' . $follower->icon) }}" width="80"
-                                    height="80"></td>
+                            <img src="{{ asset('storage/images/' . $follower->icon) }}" width="100" height="100">
                         @endif
-                        <td>
-                            {{ $follower->nickname }}<br>
-                            @if ($loginUser->isFollowed($follower->id))
+                    </div>
+                    <div class="followerNickname">
+                        {{ $follower->nickname }}
+                        <br>
+                        @if ($loginUser->isFollowed($follower->id))
+                            <div class="followed">
                                 フォローされています
-                            @endif
-                        </td>
+                            </div>
+                        @endif
+                    </div>
+                    <div class="followerButton">
                         @if ($loginUser->isFollowing($follower->id))
                             <form action="{{ route('unfollow', $follower->id) }}" method="POST">
                                 @csrf
                                 @method('delete')
                                 @if ($loginUser->checkMessageInTalkRoom($loginUser->id, $follower->id))
-                                    <td><input type="submit" class="btn btn-danger"
-                                            onclick="return confirm('トークルームのメッセージが削除されます。よろしいですか？');" value="フォロー解除">
-                                    </td>
+                                    <input type="submit" class="btn btn-danger"
+                                        onclick="return confirm('トークルームのメッセージが削除されます。よろしいですか？');" value="フォロー解除">
                                 @else
-                                    <td><input type="submit" class="btn btn-danger" value="フォロー解除"></td>
+                                    <input type="submit" class="btn btn-danger" value="フォロー解除">
                                 @endif
                             </form>
                         @endif
-                    </tr>
-                @endforeach
-            </table>
+                    </div>
+                </div>
+            @endforeach
         </div>
     </div>
 
