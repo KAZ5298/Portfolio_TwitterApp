@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Twitter Modoki</title>
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/tweet.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/room.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap">
@@ -61,15 +61,19 @@
     {{-- メインコンテンツ --}}
     <div class="main">
         <div class="container">
-            <table>
-                @foreach ($rooms as $room)
-                    <tr>
-                        <td><a href="{{ route('talkRoomShow', $room->id) }}">{{ $room->user->nickname }}
-                                さんとのトークルーム</a>
-                        </td>
-                    </tr>
-                @endforeach
-            </table>
+            @foreach ($rooms as $room)
+                <div class="roomContainer">
+                    <div class="roomIcon">
+                        @if ($room->user->icon)
+                            <img src="{{ asset('storage/images/' . $room->user->icon) }}" width="100"
+                                height="100">
+                        @endif
+                    </div>
+                    <div class="roomLink">
+                        <a href="{{ route('talkRoomShow', $room->id) }}">{{ $room->user->nickname }}さんとのトークルーム</a>
+                    </div>
+                </div>
+            @endforeach
         </div>
     </div>
 

@@ -11,6 +11,7 @@ class MessageController extends Controller
 {
     public function messagePost(MessageRequest $request, Room $room)
     {
+
         $message = new Message();
 
         $message->room_id = $room->id;
@@ -19,6 +20,6 @@ class MessageController extends Controller
 
         $message->save();
 
-        return back()->with('message', 'つぶやきを投稿しました。');
+        return back()->with('message', 'メッセージを投稿しました。');
     }
 }

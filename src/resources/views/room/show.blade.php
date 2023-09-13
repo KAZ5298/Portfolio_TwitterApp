@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Twitter Modoki</title>
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/tweet.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/room.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap">
@@ -75,19 +75,29 @@
                 </div>
             @endif
 
-            <div class="messagepost">
-                <form action="{{ route('messagePost', $rooms) }}" method="POST">
-                    @csrf
-                    <textarea name="message" rows="1" cols="150" placeholder="メッセージは１００文字以下で入力してください。"></textarea>
+            <form action="{{ route('messagePost', $rooms) }}" method="POST">
+                @csrf
+                <div class="messagepost">
+                    <textarea class="message" name="message" placeholder="つぶやきは１００文字以下で入力してください。"></textarea>
                     <button type="submit" class="btn btn-primary">つぶやく</button>
-                </form>
-            </div>
+                </div>
+            </form>
 
             <div class="kaiwa line mt-4">
-                <img src="{{ asset('storage/images/' . $rooms->user->icon) }}" width="80" height="80">
-                {{ $rooms->user->nickname }}
-                <img src="{{ asset('storage/images/' . $loginUser->icon) }}" width="80" height="80">
-                {{ $loginUser->nickname }}
+                <div class="profile">
+                    <div class="followerIcon">
+                        <img src="{{ asset('storage/images/' . $rooms->user->icon) }}" width="100" height="100">
+                    </div>
+                    <div class="followerName">
+                        {{ $rooms->user->nickname }}
+                    </div>
+                    <div class="loginUserIcon">
+                        <img src="{{ asset('storage/images/' . $loginUser->icon) }}" width="100" height="100">
+                    </div>
+                    <div class="loginUserName">
+                        {{ $loginUser->nickname }}
+                    </div>
+                </div>
                 @foreach ($messages as $message)
                     @if ($message->user_id == $loginUser->id)
                         <div class="fukidasi right">
