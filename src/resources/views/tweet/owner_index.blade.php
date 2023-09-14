@@ -7,6 +7,7 @@
     <title>Twitter Modoki</title>
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/navigation.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/tweet.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,14 +50,14 @@
                 </div>
             </div>
         </div>
-        <div class="nav-tabs bg-info-subtle">
-            <ul class="nav nav-tabs justify-content-center nav-fill" id="myTab" role="tablist">
-                <a class="nav-link nav-item" href="{{ route('allTweetGet') }}">全てのつぶやき</a>
-                <a class="nav-link nav-item active" aria-current="page" href="{{ route('myTweetGet') }}">自分のつぶやき</a>
-                <a class="nav-link nav-item" href="{{ route('followerTweetGet') }}">フォロワーのつぶやき</a>
-                <a class="nav-link nav-item" href="{{ route('talkRoom') }}">トークルーム</a>
+        <nav class="navbar bg-body">
+            <ul>
+                <li><a href="{{ route('allTweetGet') }}">全てのつぶやき</a></li>
+                <li class="current"><a href="{{ route('myTweetGet') }}">自分のつぶやき</a></li>
+                <li><a href="{{ route('followerTweetGet') }}">フォロワーのつぶやき</a></li>
+                <li><a href="{{ route('talkRoom') }}">トークルーム</a></li>
             </ul>
-        </div>
+        </nav>
         <form action="{{ route('tweetPost') }}" method="POST">
             @csrf
             <div class="tweetpost">

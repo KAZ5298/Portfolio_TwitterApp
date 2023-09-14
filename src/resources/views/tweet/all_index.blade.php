@@ -50,20 +50,14 @@
                 </div>
             </div>
         </div>
-        {{-- <ul class="gnavi">
-            <li class="current"><a href="{{ route('allTweetGet') }}">全てのつぶやき</a></li>
-            <li><a href="{{ route('myTweetGet') }}">自分のつぶやき</a></li>
-            <li><a href="{{ route('followerTweetGet') }}">フォロワーのつぶやき</a></li>
-            <li><a href="{{ route('talkRoom') }}">トークルーム</a></li>
-        </ul> --}}
-        <div class="nav-tabs">
-            <ul class="nav nav-tabs justify-content-center nav-fill" id="myTab" role="tablist">
-                <a class="nav-link nav-item active" aria-current="page" href="{{ route('allTweetGet') }}">全てのつぶやき</a>
-                <a class="nav-link nav-item" href="{{ route('myTweetGet') }}">自分のつぶやき</a>
-                <a class="nav-link nav-item" href="{{ route('followerTweetGet') }}">フォロワーのつぶやき</a>
-                <a class="nav-link nav-item" href="{{ route('talkRoom') }}">トークルーム</a>
+        <nav class="navbar bg-body">
+            <ul>
+                <li class="current"><a href="{{ route('allTweetGet') }}">全てのつぶやき</a></li>
+                <li><a href="{{ route('myTweetGet') }}">自分のつぶやき</a></li>
+                <li><a href="{{ route('followerTweetGet') }}">フォロワーのつぶやき</a></li>
+                <li><a href="{{ route('talkRoom') }}">トークルーム</a></li>
             </ul>
-        </div>
+        </nav>
         <form action="{{ route('tweetPost') }}" method="POST">
             @csrf
             <div class="tweetpost">
