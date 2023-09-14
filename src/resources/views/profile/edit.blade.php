@@ -56,7 +56,7 @@
                     <br>
                     <div class="mb-4">
                         @if (!$errors->has('email'))
-                            <input class="form" type="text" name="name" value="{{ $user->email }}"
+                            <input class="form" type="text" name="email" value="{{ $user->email }}"
                                 placeholder="※">
                             <label>　</label>
                         @else
@@ -75,7 +75,7 @@
                     <br>
                     <div class="mb-4">
                         @if (!$errors->has('nickname'))
-                            <input class="form" type="text" name="name" value="{{ $user->nickname }}"
+                            <input class="form" type="text" name="nickname" value="{{ $user->nickname }}"
                                 placeholder="※">
                             <label>　</label>
                         @else
@@ -109,7 +109,7 @@
                     <br>
                     <div class="mb-4">
                         @if (!$errors->has('password'))
-                            <input class="form" type="password" name="name" placeholder="※">
+                            <input class="form" type="password" name="password" placeholder="※">
                             <label>　</label>
                         @else
                             <input style="border: solid 2px red;" class="form" type="password" name="password"
