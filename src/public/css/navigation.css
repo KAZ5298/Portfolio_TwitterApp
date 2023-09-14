@@ -1,4 +1,8 @@
-ul {
+.navigationbar {
+    background-color: #0d6efd;
+}
+
+.navigationbar ul {
     display: table;
     margin: 0 auto;
     padding: 0;
@@ -6,28 +10,47 @@ ul {
     text-align: center;
 }
 
-ul li {
+.navigationbar ul li {
     display: table-cell;
     width: 25%;
 }
 
-ul li a {
+.nav-item a {
     display: block;
     width: 100%;
-    padding: 10px 0;
+    padding: 20px 0;
     text-decoration: none;
-    color: #555;
+    color: white;
+    /* font-weight: bold; */
+    opacity: 0.5;
+}
+
+.nav-item {
+    transition: 0.3s;
+    /* hover前後の拡大調整 */
+    transform: scale(1);
+}
+
+/* .navigationbar .current {
+    background-color: #4c8dff;
+    color: white;
     font-weight: bold;
+    opacity: 1;
+    transform: scale(1.2);
+} */
+
+.navigationbar .nav .li.current {
+    color: white;
+    font-weight: bold;
+    opacity: 1;
+    transform: scale(1.2);
 }
 
-ul li.current {
-    background-color: #DEEBF7;
-}
-
-ul li.current a {
-    color: #555;
-}
-
-ul li:hover {
-    background-color: #FFF2CC;
+.nav-item a:hover {
+    color: white;
+    font-weight: bold;
+    /* border-bottom: 2px solid #6610f2; */
+    opacity: 1;
+    transition: 0.3s;
+    transform: scale(1.2);
 }
