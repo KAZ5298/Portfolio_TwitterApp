@@ -49,7 +49,7 @@
                 </div>
             </div>
         </div>
-        <div class="nav-tabs">
+        <div class="nav-tabs bg-info-subtle">
             <ul class="nav nav-tabs justify-content-center nav-fill" id="myTab" role="tablist">
                 <a class="nav-link nav-item" href="{{ route('allTweetGet') }}">全てのつぶやき</a>
                 <a class="nav-link nav-item active" aria-current="page" href="{{ route('myTweetGet') }}">自分のつぶやき</a>
