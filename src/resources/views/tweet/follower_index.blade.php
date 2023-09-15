@@ -50,12 +50,12 @@
                 </div>
             </div>
         </div>
-        <nav class="navigationbar">
-            <ul class="nav">
-                <li class="nav-item"><a href="{{ route('allTweetGet') }}">全てのつぶやき</a></li>
-                <li class="nav-item"><a href="{{ route('myTweetGet') }}">自分のつぶやき</a></li>
-                <li class="current"><a href="{{ route('followerTweetGet') }}">フォロワーのつぶやき</a></li>
-                <li class="nav-item"><a href="{{ route('talkRoom') }}">トークルーム</a></li>
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="{{ route('allTweetGet') }}"><span>全てのつぶやき</span></a></li>
+                <li class="nav-item"><a href="{{ route('myTweetGet') }}"><span>自分のつぶやき</span></a></li>
+                <li class="nav-item current"><a href="{{ route('followerTweetGet') }}">フォロワーのつぶやき</a></li>
+                <li class="nav-item"><a href="{{ route('talkRoom') }}"><span>トークルーム</span></a></li>
             </ul>
         </nav>
     </div>
