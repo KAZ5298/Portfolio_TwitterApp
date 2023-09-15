@@ -53,7 +53,7 @@
         <nav>
             <ul>
                 <li class="nav-item"><a href="{{ route('allTweetGet') }}"><span>全てのつぶやき</span></a></li>
-                <li class="nav-item current"><a href="{{ route('myTweetGet') }}">自分のつぶやき</a></li>
+                <li class="nav-item current"><a href="{{ route('myTweetGet') }}"><span>自分のつぶやき</span></a></li>
                 <li class="nav-item"><a href="{{ route('followerTweetGet') }}"><span>フォロワーのつぶやき</span></a></li>
                 <li class="nav-item"><a href="{{ route('talkRoom') }}"><span>トークルーム</span></a></li>
             </ul>

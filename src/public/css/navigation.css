@@ -36,6 +36,11 @@ nav ul li.current a {
     transform: scale(1.2);
 }
 
+nav ul li.current span {
+    border-bottom: 2px solid white;
+    padding-bottom: 1px;
+}
+
 nav ul li:not(.current) a:hover {
     color: white;
     font-weight: bold;
