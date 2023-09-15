@@ -15,7 +15,7 @@ nav ul li {
     width: 25%;
 }
 
-li.nav-item a {
+nav ul li.nav-item a {
     display: block;
     width: 100%;
     padding: 20px 0;
@@ -24,19 +24,19 @@ li.nav-item a {
     opacity: 0.5;
 }
 
-li.nav-item {
+nav ul li.nav-item {
     transition: 0.3s;
     transform: scale(1);
 }
 
-li.current a {
+nav ul li.current a {
     color: white;
     font-weight: bold;
     opacity: 1;
     transform: scale(1.2);
 }
 
-li:not(.current) a:hover {
+nav ul li:not(.current) a:hover {
     color: white;
     font-weight: bold;
     opacity: 1;
@@ -44,7 +44,7 @@ li:not(.current) a:hover {
     transform: scale(1.2);
 }
 
-a:hover span {
+nav ul li a:hover span {
     border-bottom: 2px solid white;
     padding-bottom: 1px;
 }
