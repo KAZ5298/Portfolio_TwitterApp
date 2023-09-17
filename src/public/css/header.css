@@ -20,17 +20,8 @@
     display: flex;
 }
 
-.loginUser {
-    height: 200px;
-    color: white;
-    font-size: 20px;
-    text-align: center;
-    margin: auto;
-    display: flex;
-    align-items: center;
-}
-
-.userMenu {
+.loginUser, .userMenu {
+    font-family: 'Noto Sans JP', sans-serif;
     height: 200px;
     color: white;
     font-size: 20px;

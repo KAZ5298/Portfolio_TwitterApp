@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap">
 </head>
 
 <body class="bg-primary-subtle">
@@ -49,14 +50,10 @@
                 </div>
             </div>
         </div>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand">フォロワー一覧</a>
-            </div>
-            <div class="container-fluid">
-                <a class="navbar-brand btn btn-secondary" href=""
-                    onclick="javascript:history.back(); return false;">ＴＯＰ画面へ戻る</a>
-            </div>
+        <nav class="navbar bg-primary">
+            <a class="navbar-name">フォロワー一覧</a>
+            <a class="navbar-button btn btn-secondary" href=""
+                onclick="javascript:history.back(); return false;">ＴＯＰ画面へ戻る</a>
         </nav>
     </div>
 
