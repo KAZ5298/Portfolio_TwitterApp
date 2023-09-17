@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\User;
 
 class ProfileController extends Controller
 {
@@ -71,15 +72,19 @@ class ProfileController extends Controller
 
     public function show(ProfileUpdateRequest $request)
     {
-        $user = $request;
-
-        if (isset($request->icon)) {
-            $original = request()->file('icon')->getClientOriginalName();
-            $icon = date('Ymd_His') . '_' . $original;
-            request()->file('icon')->move('storage/images', $icon);
+        if ($request->icon_change == "yes") {
+            if (isset($request->icon)) {
+                $original = request()->file('icon')->getClientOriginalName();
+                $icon = date('Ymd_His') . '_' . $original;
+                request()->file('icon')->move('storage/images', $icon);
+            } else {
+                $icon = null;
+            }
         } else {
-            $icon = null;
+            $icon = User::find($request->id)->icon;
         }
+
+        $user = $request;
 
         return view('profile.check', compact('user', 'icon'));
     }

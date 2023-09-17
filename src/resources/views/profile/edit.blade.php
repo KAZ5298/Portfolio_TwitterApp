@@ -31,6 +31,8 @@
                     <label>下記の項目を入力してください。<span style="color:red">（※項目は入力必須）</span></label>
                 </div>
 
+                <input type="hidden" name="id" value="{{ $user->id }}">
+
                 <!-- Name -->
                 <div class="input">
                     <label>アカウント名（ユーザーＩＤ）</label>
@@ -91,6 +93,11 @@
                 <!-- Profile Icon -->
                 <div class="mt-4">
                     <label>プロフィール画像</label>
+                    <br>
+                    <input type="radio" id="icon_change" name="icon_change" value="no" checked>
+                    <label for="icon_change">変更しない</label>
+                    <input type="radio" id="icon_change" name="icon_change" value="yes">
+                    <label for="icon_change">変更する</label>
                     <br>
                     @if (isset($user->icon))
                         <img src="{{ asset('storage/images/' . $user->icon) }}" width="80" height="80">
