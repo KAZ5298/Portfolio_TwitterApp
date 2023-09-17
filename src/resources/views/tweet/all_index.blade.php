@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/header.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/navigation.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/message.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/tweet.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,7 +73,7 @@
     <div class="main">
         <div class="container">
             @if ($errors->any())
-                <div class="border px-4 py-3 rounded relative bg-danger-subtle">
+                <div class="error-message bg-danger-subtle">
                     @foreach ($errors->all() as $message)
                         {{ $message }}
                     @endforeach
@@ -80,7 +81,7 @@
             @endif
 
             @if (session('message'))
-                <div class="border px-4 py-3 rounded relative bg-success-subtle">
+                <div class="success-message bg-success-subtle">
                     {{ session('message') }}
                 </div>
             @endif

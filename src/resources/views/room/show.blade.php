@@ -7,6 +7,7 @@
     <title>Twitter Modoki</title>
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/message.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/room.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,20 +60,6 @@
     {{-- メインコンテンツ --}}
     <div class="main">
         <div class="container">
-            @if ($errors->any())
-                <div class="border px-4 py-3 rounded relative bg-danger-subtle">
-                    @foreach ($errors->all() as $message)
-                        {{ $message }}
-                    @endforeach
-                </div>
-            @endif
-
-            @if (session('message'))
-                <div class="border px-4 py-3 rounded relative bg-success-subtle">
-                    {{ session('message') }}
-                </div>
-            @endif
-
             <form action="{{ route('messagePost', $rooms) }}" method="POST">
                 @csrf
                 <div class="messagepost">
@@ -80,6 +67,20 @@
                     <button type="submit" class="btn btn-primary">投稿</button>
                 </div>
             </form>
+
+            @if ($errors->any())
+                <div class="error-message bg-danger-subtle">
+                    @foreach ($errors->all() as $message)
+                        {{ $message }}
+                    @endforeach
+                </div>
+            @endif
+
+            @if (session('message'))
+                <div class="success-message bg-success-subtle">
+                    {{ session('message') }}
+                </div>
+            @endif
 
             <div class="kaiwa line mt-4">
                 <div class="profile">

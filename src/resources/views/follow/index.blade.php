@@ -7,6 +7,7 @@
     <title>Twitter Modoki</title>
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/message.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/follow.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,14 +53,27 @@
         </div>
         <nav class="navbar bg-primary">
             <a class="navbar-name">フォロワー一覧</a>
-            <a class="navbar-button btn btn-secondary" href=""
-                onclick="javascript:history.back(); return false;">ＴＯＰ画面へ戻る</a>
+            <a href="{{ route('allTweetGet') }}"class="btn btn-secondary">ＴＯＰ画面へ戻る</a>
         </nav>
     </div>
 
     {{-- メインコンテンツ --}}
     <div class="main">
         <div class="container">
+            @if ($errors->any())
+                <div class="error-message bg-danger-subtle">
+                    @foreach ($errors->all() as $message)
+                        {{ $message }}
+                    @endforeach
+                </div>
+            @endif
+
+            @if (session('message'))
+                <div class="success-message bg-success-subtle">
+                    {{ session('message') }}
+                </div>
+            @endif
+
             @foreach ($followers as $follower)
                 <div class="followerContainer">
                     <div class="followerIcon">
