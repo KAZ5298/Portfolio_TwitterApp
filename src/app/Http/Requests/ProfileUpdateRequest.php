@@ -19,8 +19,8 @@ class ProfileUpdateRequest extends FormRequest
             // 'name' => ['string', 'max:255'],
             // 'email' => ['email', 'max:255', Rule::unique(User::class)->ignore($this->user()->id)],
             // 'nickname' => ['string', 'max:255'],
-            'name' => ['required', 'string', 'max:50'],
-            'email' => ['required', 'string', 'email:filter', 'max:50'],
+            'name' => ['required', 'string', 'max:50', Rule::unique(User::class)->ignore($this->user()->id)],
+            'email' => ['required', 'string', 'email:filter', 'max:50', Rule::unique(User::class)->ignore($this->user()->id)],
             'nickname' => ['required', 'string', 'max:50'],
             'password' => ['required', 'confirmed', 'regex:/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z\-]{8,}$/'],
         ];
@@ -34,6 +34,10 @@ class ProfileUpdateRequest extends FormRequest
             'email.required' => '入力必須項目です。',
             'nickname.required' => '入力必須項目です。',
             'password.required' => '入力必須項目です。',
+
+            // ユニークチェック
+            'name.unique' => '既に登録されているアカウント名です。',
+            'email.unique' => '既に登録されているメールアドレスです。',
 
             // 文字数チェック
             'name.max' => 'アカウント名は５０文字以下で入力して下さい。',
