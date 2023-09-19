@@ -114,6 +114,11 @@
                 <div class="input">
                     <label>パスワード</label>
                     <br>
+                    {{-- <input type="radio" id="password_change" name="password_change" value="no" checked>
+                    <label for="password_change">変更しない</label>
+                    <input type="radio" id="password_change" name="password_change" value="yes">
+                    <label for="password_change">変更する</label>
+                    <br> --}}
                     <div class="mb-4">
                         @if (!$errors->has('password'))
                             <input class="form" type="password" name="password" placeholder="※">

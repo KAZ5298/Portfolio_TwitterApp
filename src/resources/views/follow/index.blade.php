@@ -52,8 +52,8 @@
             </div>
         </div>
         <nav class="navbar bg-primary">
-            <a class="navbar-name">フォロワー一覧</a>
-            <a href="{{ route('allTweetGet') }}"class="btn btn-secondary">ＴＯＰ画面へ戻る</a>
+            <a class="navbar-name"><span>フォロワー一覧</span></a>
+            <a class="navbar-button btn btn-secondary" href="{{ route('allTweetGet') }}">ＴＯＰ画面へ戻る</a>
         </nav>
     </div>
 

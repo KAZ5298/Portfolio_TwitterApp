@@ -52,7 +52,7 @@
             </div>
         </div>
         <nav class="navbar bg-primary">
-            <a class="navbar-name">{{ $rooms->user->nickname }}さんとのトークルーム</a>
+            <a class="navbar-name"><span>{{ $rooms->user->nickname }}さんとのトークルーム</span></a>
             <a class="navbar-button btn btn-secondary" href="{{ route('talkRoom') }}">一覧へ戻る</a>
         </nav>
     </div>
