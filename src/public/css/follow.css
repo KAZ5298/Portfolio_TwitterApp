@@ -7,7 +7,7 @@
 }
 
 .main .container {
-    padding: 5px;
+    padding: 20px 0;
 }
 
 .followerContainer {
@@ -62,6 +62,7 @@
     grid-template-columns: 5fr 1fr;
     padding: 10px;
     height: 60px;
+    background-color: #0dcaf078;
 }
 
 .navbar-name {
