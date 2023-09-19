@@ -1,5 +1,5 @@
 nav {
-    background-color: #0d6efd;
+    background-color: #86b7fe57;
     font-family: 'Noto Sans JP', sans-serif;
     height: 60px;
 }
@@ -18,12 +18,15 @@ nav ul li {
 }
 
 nav ul li.nav-item a {
-    display: block;
+    display: flex;
     width: 100%;
-    padding: 20px 0;
+    /* padding: 20px 0; */
     text-decoration: none;
     color: white;
     opacity: 0.5;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
 }
 
 nav ul li.nav-item {

@@ -62,7 +62,7 @@
     grid-template-columns: 5fr 1fr;
     padding: 10px;
     height: 60px;
-    background-color: #0dcaf078;
+    background-color: #86b7fe57;
 }
 
 .navbar-name {
@@ -80,5 +80,5 @@
 
 .navbar-button {
     grid-column: 2 / 3;
-    margin-right: 20px;
+    /* margin-right: 20px; */
 }

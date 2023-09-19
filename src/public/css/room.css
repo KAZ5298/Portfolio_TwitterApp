@@ -7,7 +7,7 @@
 }
 
 .main .container {
-    padding: 5px;
+    padding: 10px;
 }
 
 .roomContainer {
@@ -16,6 +16,7 @@
     grid-template-columns: 100px 1fr;
     grid-template-rows: 100px;
     margin: 0 auto;
+    margin-top: 10px;
     margin-bottom: 10px;
     border: 1px solid;
 }
@@ -187,6 +188,7 @@ LINE風フキダシ
     grid-template-columns: 5fr 1fr;
     padding: 10px;
     height: 60px;
+    background-color: #86b7fe57;
 }
 
 .navbar-name {
@@ -204,5 +206,5 @@ LINE風フキダシ
 
 .navbar-button {
     grid-column: 2 / 3;
-    margin-right: 20px;
+    /* margin-right: 20px; */
 }
