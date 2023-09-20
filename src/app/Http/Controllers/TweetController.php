@@ -9,13 +9,6 @@ use App\Http\Requests\TweetRequest;
 
 class TweetController extends Controller
 {
-    // private $loginUser;
-
-    // public function __construct()
-    // {
-    //     $this->loginUser = auth()->user();
-    // }
-
     public function allTweetGet()
     {
         $loginUser = auth()->user();

@@ -74,6 +74,10 @@ class ProfileController extends Controller
     {
         $user = $request;
 
+        if ($request->password_change == "no") {
+            unset($user->password);
+        }
+
         if ($request->icon_change == "yes") {
             if (isset($request->icon)) {
                 $original = request()->file('icon')->getClientOriginalName();
@@ -86,13 +90,6 @@ class ProfileController extends Controller
             $icon = User::find($request->id)->icon;
         }
 
-        // if (!$request->password_change == "yes") {
-        //     $user->password = User::find($request->id)->password;
-        // }
-
-        // dd($user);
-
         return view('profile.check', compact('user', 'icon'));
     }
-
 }
