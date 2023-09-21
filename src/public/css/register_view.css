@@ -16,7 +16,7 @@
     background-color: white;
     margin: 0 auto;
     width: 600px;
-    height: 700px;
+    /* height: 700px; */
     padding: 20px;
     border-radius: 0 0 10px 10px;
 }
@@ -36,7 +36,7 @@
     justify-content: center;
 }
 
-.button a{
+.button a {
     display: block;
     padding: 12px;
     text-align: center;
