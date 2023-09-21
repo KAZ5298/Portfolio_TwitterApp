@@ -26,7 +26,7 @@ class RegisterRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:50', Rule::unique(User::class)],
             'email' => ['required', 'string', 'email:filter', 'max:50', Rule::unique(User::class)],
-            'nickname' => ['required', 'string', 'max:50'],
+            'nickname' => ['required', 'string', 'max:50', Rule::unique(User::class)],
             'password' => ['required', 'confirmed', 'regex:/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z\-]{8,}$/'],
         ];
     }
@@ -52,6 +52,7 @@ class RegisterRequest extends FormRequest
             // ユニークチェック
             'name.unique' => '既に登録されているアカウント名です。',
             'email.unique' => '既に登録されているメールアドレスです。',
+            'nickname.unique' => '既に登録されているニックネームです。',
 
             // ダブルチェック
             'password.confirmed' => 'パスワードが一致しません。',

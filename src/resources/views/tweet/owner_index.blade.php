@@ -63,7 +63,7 @@
         <form action="{{ route('tweetPost') }}" method="POST">
             @csrf
             <div class="tweetpost">
-                <textarea class="tweet" name="content" placeholder="つぶやきは１００文字以下で入力してください。"></textarea>
+                <textarea class="tweet" name="content" placeholder="つぶやきは１００文字以下で入力してください。">{{ old('content') }}</textarea>
                 <button type="submit" class="btn btn-primary">つぶやく</button>
             </div>
         </form>

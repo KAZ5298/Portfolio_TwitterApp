@@ -63,7 +63,7 @@
             <form action="{{ route('messagePost', $rooms) }}" method="POST">
                 @csrf
                 <div class="messagepost">
-                    <textarea class="message" name="message" placeholder="メッセージは１００文字以下で入力してください。"></textarea>
+                    <textarea class="message" name="message" placeholder="メッセージは１００文字以下で入力してください。">{{ old('message') }}</textarea>
                     <button type="submit" class="btn btn-primary">投稿</button>
                 </div>
             </form>

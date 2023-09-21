@@ -44,7 +44,7 @@
                             <label>　</label>
                         @else
                             <input style="border: solid 2px red;" class="form" type="text" name="name"
-                                value="{{ $user->name }}" placeholder="※">
+                                value="{{ old('name') }}" placeholder="※">
                             @foreach ($errors->get('name') as $message)
                                 <label style="color: red">{{ $message }}</label>
                             @endforeach
@@ -63,7 +63,7 @@
                             <label>　</label>
                         @else
                             <input style="border: solid 2px red;" class="form" type="text" name="email"
-                                value="{{ $user->email }}" placeholder="※">
+                                value="{{ old('email') }}" placeholder="※">
                             @foreach ($errors->get('email') as $message)
                                 <label style="color: red">{{ $message }}</label>
                             @endforeach
@@ -82,7 +82,7 @@
                             <label>　</label>
                         @else
                             <input style="border: solid 2px red;" class="form" type="text" name="nickname"
-                                value="{{ $user->nickname }}" placeholder="※">
+                                value="{{ old('nickname') }}" placeholder="※">
                             @foreach ($errors->get('nickname') as $message)
                                 <label style="color: red">{{ $message }}</label>
                             @endforeach
