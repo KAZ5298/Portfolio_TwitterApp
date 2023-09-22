@@ -10,8 +10,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap">
-    {{-- @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @vite('resources/js/reset.button.js') --}}
 </head>
 
 <body class="bg-primary-subtle">
@@ -146,9 +144,7 @@
 
                 <div class="button">
                     <button type="submit" class="btn btn-primary">登録</button>
-                    {{-- <button type="reset" class="btn btn-danger">リセット</button> --}}
-                    <input type="reset" class="btn btn-danger">
-                    {{-- <button type="button" class="btn btn-danger" onclick="resetEditForm()">リセット</button> --}}
+                    <a href="/profile" class="btn btn-danger">リセット</a>
                     <a href="{{ route('allTweetGet') }}" class="btn btn-secondary">ＴＯＰ画面へ戻る</a>
                 </div>
             </form>

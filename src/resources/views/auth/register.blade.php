@@ -126,7 +126,7 @@
 
                 <div class="button">
                     <button type="submit" class="btn btn-primary">登録</button>
-                    <button type="reset" class="btn btn-danger">リセット</button>
+                    <a href="register" class="btn btn-danger">リセット</a>
                     <a href="{{ route('login') }}" class="btn btn-secondary">ログイン画面へ戻る</a>
                 </div>
             </form>
