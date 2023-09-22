@@ -38,7 +38,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{{ route('profile.edit') }}">ユーザー情報編集</a></li>
                         <hr class="dropdown-divider">
-                        <li><a class="dropdown-item" href="{{ route('followerList') }}">フォロワー一覧</a></li>
+                        <li><a class="dropdown-item" href="{{ route('followerList') }}">フォロー一覧</a></li>
                         <hr class="dropdown-divider">
                         <li>
                             <a class="dropdown-item" href="{{ route('logout') }}"
@@ -55,7 +55,7 @@
             <ul>
                 <li class="nav-item"><a href="{{ route('allTweetGet') }}"><span>全てのつぶやき</span></a></li>
                 <li class="nav-item"><a href="{{ route('myTweetGet') }}"><span>自分のつぶやき</span></a></li>
-                <li class="nav-item"><a href="{{ route('followerTweetGet') }}"><span>フォロワーのつぶやき</span></a></li>
+                <li class="nav-item"><a href="{{ route('followingTweetGet') }}"><span>フォローしている人のつぶやき</span></a></li>
                 <li class="nav-item current"><a href="{{ route('talkRoom') }}"><span>トークルーム</span></a></li>
             </ul>
         </nav>

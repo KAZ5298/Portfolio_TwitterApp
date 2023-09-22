@@ -27,7 +27,7 @@ class TweetController extends Controller
         return view('tweet.owner_index', compact('loginUser', 'tweets'));
     }
 
-    public function followerTweetGet()
+    public function followingTweetGet()
     {
         $loginUser = auth()->user();
 
@@ -37,7 +37,7 @@ class TweetController extends Controller
 
         $tweets = Tweet::whereIn('user_id', $followerId)->orderby('created_at', 'desc')->get();
 
-        return view('tweet.follower_index', compact('loginUser', 'tweets'));
+        return view('tweet.following_index', compact('loginUser', 'tweets'));
     }
 
     public function tweetDestroy(Tweet $tweet)

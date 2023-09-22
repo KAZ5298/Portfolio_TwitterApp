@@ -63,7 +63,7 @@ Route::middleware('auth')->group(function () {
     // つぶやき一覧表示機能
     Route::get('/allTweets', [TweetController::class, 'allTweetGet'])->name('allTweetGet');
     Route::get('/myTweets', [TweetController::class, 'myTweetGet'])->name('myTweetGet');
-    Route::get('/followerTweets', [TweetController::class, 'followerTweetGet'])->name('followerTweetGet');
+    Route::get('/followingTweets', [TweetController::class, 'followingTweetGet'])->name('followingTweetGet');
 
     // つぶやき投稿機能
     Route::post('/tweetPost', [TweetController::class, 'tweetPost'])->name('tweetPost');

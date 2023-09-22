@@ -146,7 +146,8 @@
 
                 <div class="button">
                     <button type="submit" class="btn btn-primary">登録</button>
-                    <button type="reset" class="btn btn-danger">リセット</button>
+                    {{-- <button type="reset" class="btn btn-danger">リセット</button> --}}
+                    <input type="reset" class="btn btn-danger">
                     {{-- <button type="button" class="btn btn-danger" onclick="resetEditForm()">リセット</button> --}}
                     <a href="{{ route('allTweetGet') }}" class="btn btn-secondary">ＴＯＰ画面へ戻る</a>
                 </div>

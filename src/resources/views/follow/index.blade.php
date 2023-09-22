@@ -38,7 +38,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{{ route('profile.edit') }}">ユーザー情報編集</a></li>
                         <hr class="dropdown-divider">
-                        <li><a class="dropdown-item" href="{{ route('followerList') }}">フォロワー一覧</a></li>
+                        <li><a class="dropdown-item" href="{{ route('followerList') }}">フォロー一覧</a></li>
                         <hr class="dropdown-divider">
                         <li>
                             <a class="dropdown-item" href="{{ route('logout') }}"
@@ -52,7 +52,7 @@
             </div>
         </div>
         <nav class="navbar">
-            <a class="navbar-name"><span>フォロワー一覧</span></a>
+            <a class="navbar-name"><span>フォロー一覧</span></a>
             <a class="navbar-button btn btn-secondary" href="{{ route('allTweetGet') }}">ＴＯＰ画面へ戻る</a>
         </nav>
     </div>
