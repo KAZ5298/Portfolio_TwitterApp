@@ -56,14 +56,14 @@ Route::middleware('auth')->group(function () {
         return view('tweet.owner_index');
     });
 
-    Route::get('/followingTweets', function () {
-        return view('tweet.following_index');
+    Route::get('/followTweets', function () {
+        return view('tweet.follow_index');
     });
 
     // つぶやき一覧表示機能
     Route::get('/allTweets', [TweetController::class, 'allTweetGet'])->name('allTweetGet');
     Route::get('/myTweets', [TweetController::class, 'myTweetGet'])->name('myTweetGet');
-    Route::get('/followingTweets', [TweetController::class, 'followingTweetGet'])->name('followingTweetGet');
+    Route::get('/followTweets', [TweetController::class, 'followTweetGet'])->name('followTweetGet');
 
     // つぶやき投稿機能
     Route::post('/tweetPost', [TweetController::class, 'tweetPost'])->name('tweetPost');
