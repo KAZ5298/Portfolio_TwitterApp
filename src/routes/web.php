@@ -83,6 +83,14 @@ Route::middleware('auth')->group(function () {
     // いいね取消
     Route::delete('/tweet/{tweet}/unfavorite', [FavoriteController::class, 'unfavorite'])->name('unfavorite');
 
+    // いいね一覧View
+    Route::get('/favoriteList', function () {
+        return view('favorite.index');
+    });
+
+    // いいね一覧表示
+    Route::get('/favoriteList', [FavoriteController::class, 'favoriteGet'])->name('favoriteList');
+
     // トークルーム関連View
     Route::get('/talkRoom', function () {
         return view('room.index');

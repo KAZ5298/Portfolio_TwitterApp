@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tweet;
-use app\Models\User;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\TweetRequest;
 

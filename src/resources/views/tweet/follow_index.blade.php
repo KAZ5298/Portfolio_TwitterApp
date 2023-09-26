@@ -58,6 +58,7 @@
                 <li class="nav-item"><a href="{{ route('myTweetGet') }}"><span>自分のつぶやき</span></a></li>
                 <li class="nav-item current"><a href="{{ route('followTweetGet') }}"><span>フォローしている人のつぶやき</span></a>
                 </li>
+                <li class="nav-item"><a href="{{ route('favoriteList') }}"><span>いいねしたつぶやき</span></a></li>
                 <li class="nav-item"><a href="{{ route('talkRoom') }}"><span>トークルーム</span></a></li>
             </ul>
         </nav>
