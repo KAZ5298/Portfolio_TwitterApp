@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\FavoriteController;
-use App\Http\Controllers\FollowerController;
+use App\Http\Controllers\FollowController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
@@ -56,8 +56,8 @@ Route::middleware('auth')->group(function () {
         return view('tweet.owner_index');
     });
 
-    Route::get('/followerTweets', function () {
-        return view('tweet.follower_index');
+    Route::get('/followingTweets', function () {
+        return view('tweet.following_index');
     });
 
     // つぶやき一覧表示機能
@@ -72,10 +72,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/tweet/{tweet}/destroy', [TweetController::class, 'tweetDestroy'])->name('tweetDestroy');
 
     // フォロー機能
-    Route::post('/tweet/{follower}/follow', [UserController::class, 'follow'])->name('follow');
+    Route::post('/tweet/{follow}/follow', [UserController::class, 'follow'])->name('follow');
 
     // フォロー解除機能
-    Route::delete('/tweet/{follower}/unfollow', [UserController::class, 'unfollow'])->name('unfollow');
+    Route::delete('/tweet/{follow}/unfollow', [UserController::class, 'unfollow'])->name('unfollow');
 
     // いいね機能
     Route::post('/tweet/{tweet}/favorite', [FavoriteController::class, 'favorite'])->name('favorite');
@@ -97,13 +97,13 @@ Route::middleware('auth')->group(function () {
     // トークルーム内のメッセージ投稿機能
     Route::post('/talkRoom/{room}', [MessageController::class, 'messagePost'])->name('messagePost');
 
-    // フォロワー一覧View
-    Route::get('/followerList', function () {
+    // フォロー一覧View
+    Route::get('/followList', function () {
         return view('follow.index');
     });
 
-    // フォロワー一覧表示
-    Route::get('/followerList', [FollowerController::class, 'allFollowerGet'])->name('followerList');
+    // フォロー一覧表示
+    Route::get('/followList', [FollowController::class, 'allFollowGet'])->name('followList');
 });
 
 require __DIR__ . '/auth.php';

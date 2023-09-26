@@ -38,7 +38,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{{ route('profile.edit') }}">ユーザー情報編集</a></li>
                         <hr class="dropdown-divider">
-                        <li><a class="dropdown-item" href="{{ route('followerList') }}">フォロー一覧</a></li>
+                        <li><a class="dropdown-item" href="{{ route('followList') }}">フォロー一覧</a></li>
                         <hr class="dropdown-divider">
                         <li>
                             <a class="dropdown-item" href="{{ route('logout') }}"

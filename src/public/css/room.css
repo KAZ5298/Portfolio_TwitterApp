@@ -155,7 +155,7 @@ LINE風フキダシ
     margin: 0 auto;
 }
 
-.followerIcon {
+.followIcon {
     grid-column: 1 / 1;
     grid-row: 1 / 2;
     align-items: center;
@@ -163,7 +163,7 @@ LINE風フキダシ
     justify-content: left;
 }
 
-.followerName {
+.followName {
     text-align: left;
     padding-left: 10px;
 }

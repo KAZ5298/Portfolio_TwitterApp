@@ -38,7 +38,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{{ route('profile.edit') }}">ユーザー情報編集</a></li>
                         <hr class="dropdown-divider">
-                        <li><a class="dropdown-item" href="{{ route('followerList') }}">フォロー一覧</a></li>
+                        <li><a class="dropdown-item" href="{{ route('followList') }}">フォロー一覧</a></li>
                         <hr class="dropdown-divider">
                         <li>
                             <a class="dropdown-item" href="{{ route('logout') }}"
@@ -84,10 +84,10 @@
 
             <div class="kaiwa line mt-4">
                 <div class="profile">
-                    <div class="followerIcon">
+                    <div class="followIcon">
                         <img src="{{ asset('storage/images/' . $rooms->user->icon) }}" width="100" height="100">
                     </div>
-                    <div class="followerName">
+                    <div class="followName">
                         {{ $rooms->user->nickname }}
                     </div>
                     <div class="loginUserIcon">

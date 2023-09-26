@@ -38,7 +38,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{{ route('profile.edit') }}">ユーザー情報編集</a></li>
                         <hr class="dropdown-divider">
-                        <li><a class="dropdown-item" href="{{ route('followerList') }}">フォロー一覧</a></li>
+                        <li><a class="dropdown-item" href="{{ route('followList') }}">フォロー一覧</a></li>
                         <hr class="dropdown-divider">
                         <li>
                             <a class="dropdown-item" href="{{ route('logout') }}"
@@ -74,28 +74,28 @@
                 </div>
             @endif
 
-            @foreach ($followers as $follower)
-                <div class="followerContainer">
-                    <div class="followerIcon">
-                        @if ($follower->icon)
-                            <img src="{{ asset('storage/images/' . $follower->icon) }}" width="100" height="100">
+            @foreach ($follows as $follow)
+                <div class="followContainer">
+                    <div class="followIcon">
+                        @if ($follow->icon)
+                            <img src="{{ asset('storage/images/' . $follow->icon) }}" width="100" height="100">
                         @endif
                     </div>
-                    <div class="followerNickname">
-                        {{ $follower->nickname }}
+                    <div class="followNickname">
+                        {{ $follow->nickname }}
                         <br>
-                        @if ($loginUser->isFollowed($follower->id))
+                        @if ($loginUser->isFollowed($follow->id))
                             <div class="followed">
                                 フォローされています
                             </div>
                         @endif
                     </div>
-                    <div class="followerButton">
-                        @if ($loginUser->isFollowing($follower->id))
-                            <form action="{{ route('unfollow', $follower->id) }}" method="POST">
+                    <div class="followButton">
+                        @if ($loginUser->isFollowing($follow->id))
+                            <form action="{{ route('unfollow', $follow->id) }}" method="POST">
                                 @csrf
                                 @method('delete')
-                                @if ($loginUser->checkMessageInTalkRoom($loginUser->id, $follower->id))
+                                @if ($loginUser->checkMessageInTalkRoom($loginUser->id, $follow->id))
                                     <input type="submit" class="btn btn-danger"
                                         onclick="return confirm('トークルームのメッセージが削除されます。よろしいですか？');" value="フォロー解除">
                                 @else
