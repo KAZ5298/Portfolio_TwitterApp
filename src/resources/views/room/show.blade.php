@@ -82,7 +82,7 @@
                 </div>
             @endif
 
-            <div class="kaiwa line mt-4">
+            <div class="kaiwa line">
                 <div class="profile">
                     <div class="followIcon">
                         <img src="{{ asset('storage/images/' . $rooms->user->icon) }}" width="100" height="100">

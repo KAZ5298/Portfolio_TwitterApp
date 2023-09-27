@@ -13,8 +13,8 @@ class RoomController extends Controller
     {
         $loginUser = auth()->user();
 
-        $roomId = User::find($loginUser->id)->rooms->map(function ($e) {
-            return $e->id;
+        $roomId = User::find($loginUser->id)->rooms->map(function ($id) {
+            return $id->id;
         });
 
         $rooms = Room::whereIn('id', $roomId)->where('user_id', '<>', $loginUser->id)->get();

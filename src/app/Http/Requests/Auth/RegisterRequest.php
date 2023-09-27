@@ -47,7 +47,7 @@ class RegisterRequest extends FormRequest
 
             // 正規表現チェック
             'email.email' => 'メールアドレスは xxx@xxx.xxx の形式で入力して下さい。',
-            'password.regex' => 'パスワードは半角英数大文字小文字１文字含む８文字以上で入力して下さい。',
+            'password.regex' => 'パスワードは半角英数大文字小文字１文字ずつ含む８文字以上で入力して下さい。',
 
             // ユニークチェック
             'name.unique' => '既に登録されているアカウント名です。',

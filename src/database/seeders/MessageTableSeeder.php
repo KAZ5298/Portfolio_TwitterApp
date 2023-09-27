@@ -17,14 +17,14 @@ class MessageTableSeeder extends Seeder
         Message::create([
             'room_id' => 'room:2.5',
             'user_id' => 2,
-            'message' => 'Hello!',
+            'message' => 'Hello !',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
         ]);
         Message::create([
             'room_id' => 'room:2.5',
             'user_id' => 5,
-            'message' => 'Hey!',
+            'message' => 'Hey !',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
         ]);
@@ -52,7 +52,7 @@ class MessageTableSeeder extends Seeder
         Message::create([
             'room_id' => 'room:2.5',
             'user_id' => 5,
-            'message' => 'That is nice!',
+            'message' => 'That is nice !',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
         ]);
