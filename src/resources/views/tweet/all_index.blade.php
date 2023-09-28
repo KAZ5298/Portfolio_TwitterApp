@@ -26,10 +26,10 @@
             </div>
             <div class="userIcon">
                 @if ($loginUser->icon)
-                    <img src="{{ asset('storage/images/' . $loginUser->icon) }}" width="100" height="100">
+                    <img src="{{ asset('storage/images/' . $loginUser->icon) }}">
                 @endif
             </div>
-            <div class="loginUser">ログイン中：{{ $loginUser->nickname }}</div>
+            <div class="loginUser">ログイン中：{{ $loginUser->nickname }} さん</div>
             <div class="userMenu">
                 <div class="dropdown">
                     <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
@@ -56,7 +56,7 @@
             <ul>
                 <li class="nav-item current"><a href="{{ route('allTweetGet') }}"><span>全てのつぶやき</span></a></li>
                 <li class="nav-item"><a href="{{ route('myTweetGet') }}"><span>自分のつぶやき</span></a></li>
-                <li class="nav-item"><a href="{{ route('followTweetGet') }}"><span>フォローしている人のつぶやき</span></a></li>
+                <li class="nav-item"><a href="{{ route('followTweetGet') }}"><span>フォローした人のつぶやき</span></a></li>
                 <li class="nav-item"><a href="{{ route('favoriteList') }}"><span>いいねしたつぶやき</span></a></li>
                 <li class="nav-item"><a href="{{ route('talkRoom') }}"><span>トークルーム</span></a></li>
             </ul>

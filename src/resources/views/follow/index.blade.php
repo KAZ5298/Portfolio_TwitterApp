@@ -25,10 +25,10 @@
             </div>
             <div class="userIcon">
                 @if ($loginUser->icon)
-                    <img src="{{ asset('storage/images/' . $loginUser->icon) }}" width="100" height="100">
+                    <img src="{{ asset('storage/images/' . $loginUser->icon) }}">
                 @endif
             </div>
-            <div class="loginUser">ログイン中：{{ $loginUser->nickname }}</div>
+            <div class="loginUser">ログイン中：{{ $loginUser->nickname }} さん</div>
             <div class="userMenu">
                 <div class="dropdown">
                     <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
