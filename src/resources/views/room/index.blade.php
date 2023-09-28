@@ -13,6 +13,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 </head>
 
 <body class="bg-primary-subtle">
@@ -53,11 +55,21 @@
         </div>
         <nav>
             <ul>
-                <li class="nav-item"><a href="{{ route('allTweetGet') }}"><span>全てのつぶやき</span></a></li>
-                <li class="nav-item"><a href="{{ route('myTweetGet') }}"><span>自分のつぶやき</span></a></li>
-                <li class="nav-item"><a href="{{ route('followTweetGet') }}"><span>フォローした人のつぶやき</span></a></li>
-                <li class="nav-item"><a href="{{ route('favoriteList') }}"><span>いいねしたつぶやき</span></a></li>
-                <li class="nav-item current"><a href="{{ route('talkRoom') }}"><span>トークルーム</span></a></li>
+                <li class="nav-item"><a href="{{ route('allTweetGet') }}"><span class="material-symbols-outlined">
+                            home
+                        </span><span>全てのつぶやき</span></a></li>
+                <li class="nav-item"><a href="{{ route('myTweetGet') }}"><span class="material-symbols-outlined">
+                            person
+                        </span><span>自分のつぶやき</span></a></li>
+                <li class="nav-item"><a href="{{ route('followTweetGet') }}"><span class="material-symbols-outlined">
+                            handshake
+                        </span><span>フォローした人のつぶやき</span></a></li>
+                <li class="nav-item"><a href="{{ route('favoriteList') }}"><span class="material-symbols-outlined">
+                            volunteer_activism
+                        </span><span>いいねしたつぶやき</span></a></li>
+                <li class="nav-item current"><a href="{{ route('talkRoom') }}"><span class="material-symbols-outlined">
+                            communication
+                        </span><span>トークルーム</span></a></li>
             </ul>
         </nav>
     </div>
