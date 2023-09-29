@@ -45,7 +45,7 @@
                         <hr class="dropdown-divider">
                         <li>
                             <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault(); document.getElemenfbyId('logout').submit();">ログアウト</a>
+                                onclick="event.preventDefault(); document.getElementById('logout').submit();">ログアウト</a>
                             <form id="logout" action="{{ route('logout') }}" method="POST">
                                 @csrf
                             </form>
@@ -57,7 +57,7 @@
         <nav>
             <ul>
                 <li class="nav-item"><a href="{{ route('allTweetGet') }}"><span class="material-symbols-outlined nav">
-                            home
+                            groups
                         </span><span>全てのつぶやき</span></a></li>
                 <li class="nav-item"><a href="{{ route('myTweetGet') }}"><span class="material-symbols-outlined nav">
                             person
