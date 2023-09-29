@@ -55,19 +55,21 @@
         </div>
         <nav>
             <ul>
-                <li class="nav-item"><a href="{{ route('allTweetGet') }}"><span class="material-symbols-outlined">
+                <li class="nav-item"><a href="{{ route('allTweetGet') }}"><span class="material-symbols-outlined nav">
                             home
                         </span><span>全てのつぶやき</span></a></li>
-                <li class="nav-item"><a href="{{ route('myTweetGet') }}"><span class="material-symbols-outlined">
+                <li class="nav-item"><a href="{{ route('myTweetGet') }}"><span class="material-symbols-outlined nav">
                             person
                         </span><span>自分のつぶやき</span></a></li>
-                <li class="nav-item"><a href="{{ route('followTweetGet') }}"><span class="material-symbols-outlined">
+                <li class="nav-item"><a href="{{ route('followTweetGet') }}"><span
+                            class="material-symbols-outlined nav">
                             handshake
                         </span><span>フォローした人のつぶやき</span></a></li>
-                <li class="nav-item"><a href="{{ route('favoriteList') }}"><span class="material-symbols-outlined">
+                <li class="nav-item"><a href="{{ route('favoriteList') }}"><span class="material-symbols-outlined nav">
                             volunteer_activism
                         </span><span>いいねしたつぶやき</span></a></li>
-                <li class="nav-item current"><a href="{{ route('talkRoom') }}"><span class="material-symbols-outlined">
+                <li class="nav-item current"><a href="{{ route('talkRoom') }}"><span
+                            class="material-symbols-outlined nav">
                             communication
                         </span><span>トークルーム</span></a></li>
             </ul>

@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 /* google web font */
 .title {
     font-family: 'Black Ops One', cursive;
@@ -16,7 +20,6 @@
     background-color: white;
     margin: 0 auto;
     width: 600px;
-    /* height: 840px; */
     padding: 20px;
     border-radius: 0 0 10px 10px;
 }

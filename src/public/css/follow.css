@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .main {
     background-color: white;
     margin: 0 auto;
@@ -11,9 +15,9 @@
 }
 
 .followContainer {
-    width: 400px;
+    width: 310px;
     display: grid;
-    grid-template-columns: 100px 150px 150px;
+    grid-template-columns: 100px 150px 1fr;
     margin: 0 auto;
     margin-bottom: 10px;
     border: 1px solid;
@@ -50,9 +54,15 @@
 }
 
 .followButton .btn {
-    width: 100px;
-    height: auto;
+    width: 45px;
+    height: 45px;
     margin: 5px;
+}
+
+.material-symbols-outlined.tb {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
 }
 
 /* ナビゲーションバー */
@@ -80,5 +90,4 @@
 
 .navbar-button {
     grid-column: 2 / 3;
-    /* margin-right: 20px; */
 }

@@ -45,7 +45,7 @@
                         <hr class="dropdown-divider">
                         <li>
                             <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault(); document.getElementById('logout').submit();">ログアウト</a>
+                                onclick="event.preventDefault(); document.getElemenfbyId('logout').submit();">ログアウト</a>
                             <form id="logout" action="{{ route('logout') }}" method="POST">
                                 @csrf
                             </form>
@@ -56,20 +56,21 @@
         </div>
         <nav>
             <ul>
-                <li class="nav-item"><a href="{{ route('allTweetGet') }}"><span class="material-symbols-outlined">
+                <li class="nav-item"><a href="{{ route('allTweetGet') }}"><span class="material-symbols-outlined nav">
                             home
                         </span><span>全てのつぶやき</span></a></li>
-                <li class="nav-item"><a href="{{ route('myTweetGet') }}"><span class="material-symbols-outlined">
+                <li class="nav-item"><a href="{{ route('myTweetGet') }}"><span class="material-symbols-outlined nav">
                             person
                         </span><span>自分のつぶやき</span></a></li>
-                <li class="nav-item"><a href="{{ route('followTweetGet') }}"><span class="material-symbols-outlined">
+                <li class="nav-item"><a href="{{ route('followTweetGet') }}"><span
+                            class="material-symbols-outlined nav">
                             handshake
                         </span><span>フォローしている人のつぶやき</span></a></li>
                 <li class="nav-item current"><a href="{{ route('favoriteList') }}"><span
-                            class="material-symbols-outlined">
+                            class="material-symbols-outlined nav">
                             volunteer_activism
                         </span><span>いいねしたつぶやき</span></a></li>
-                <li class="nav-item"><a href="{{ route('talkRoom') }}"><span class="material-symbols-outlined">
+                <li class="nav-item"><a href="{{ route('talkRoom') }}"><span class="material-symbols-outlined nav">
                             communication
                         </span><span>トークルーム</span></a></li>
             </ul>
@@ -118,17 +119,17 @@
                                 @if ($loginUser->checkMessageInTalkRoom($loginUser->id, $favorite->user->id))
                                     <button type="submit" class="btn btn-danger"
                                         onclick="return confirm('トークルームのメッセージが削除されます。よろしいですか？');"><i
-                                            class="material-symbols-outlined">person_remove</i></button>
+                                            class="material-symbols-outlined fb">person_remove</i></button>
                                 @else
                                     <button type="submit" class="btn btn-danger"><i
-                                            class="material-symbols-outlined">person_remove</i></button>
+                                            class="material-symbols-outlined fb">person_remove</i></button>
                                 @endif
                             </form>
                         @else
                             <form action="{{ route('follow', $favorite->user->id) }}" method="POST">
                                 @csrf
                                 <button type="submit" class="btn btn-primary"><i
-                                        class="material-symbols-outlined">person_add</i></button>
+                                        class="material-symbols-outlined fb">person_add</i></button>
                             </form>
                         @endif
                         @if ($favorite->isFavorite($loginUser->id, $favorite->id))
@@ -136,13 +137,13 @@
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn btn-danger"><i
-                                        class="material-symbols-outlined">thumb_down</i></button>
+                                        class="material-symbols-outlined fb">thumb_down</i></button>
                             </form>
                         @else
                             <form action="{{ route('favorite', $favorite) }}" method="POST">
                                 @csrf
                                 <button type="submit" class="btn btn-primary"><i
-                                        class="material-symbols-outlined">thumb_up</i></button>
+                                        class="material-symbols-outlined fb">thumb_up</i></button>
                             </form>
                         @endif
                     </div>

@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .header {
     margin: 0 auto;
     width: 90%;
@@ -30,6 +34,10 @@
     margin: auto;
     display: flex;
     align-items: center;
+}
+
+.userMenu .dropdown .btn {
+    font-size: 20px;
 }
 
 .userIcon {

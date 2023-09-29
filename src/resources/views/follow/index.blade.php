@@ -13,6 +13,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@30,400,0,0">
 </head>
 
 <body class="bg-primary-subtle">
@@ -96,10 +98,12 @@
                                 @csrf
                                 @method('delete')
                                 @if ($loginUser->checkMessageInTalkRoom($loginUser->id, $follow->id))
-                                    <input type="submit" class="btn btn-danger"
-                                        onclick="return confirm('トークルームのメッセージが削除されます。よろしいですか？');" value="フォロー解除">
+                                    <button type="submit" class="btn btn-danger"
+                                        onclick="return confirm('トークルームのメッセージが削除されます。よろしいですか？');"><i
+                                            class="material-symbols-outlined fb">person_remove</i></button>
                                 @else
-                                    <input type="submit" class="btn btn-danger" value="フォロー解除">
+                                    <button type="submit" class="btn btn-danger"><i
+                                            class="material-symbols-outlined fb">person_remove</i></button>
                                 @endif
                             </form>
                         @endif

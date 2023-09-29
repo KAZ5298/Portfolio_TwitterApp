@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .main {
     background-color: white;
     margin: 0 auto;
@@ -53,9 +57,15 @@
 }
 
 .favoriteButton .btn {
-    width: 50px;
-    height: auto;
+    width: 45px;
+    height: 45px;
     margin: 5px;
+}
+
+.material-symbols-outlined.fb {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
 }
 
 .favoriteContent {

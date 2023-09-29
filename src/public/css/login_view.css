@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 /* google web font */
 .title {
     font-family: 'Black Ops One', cursive;
@@ -36,7 +40,7 @@
     justify-content: center;
 }
 
-.button a{
+.button a {
     display: block;
     padding: 10px;
     text-align: center;

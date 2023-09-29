@@ -56,20 +56,20 @@
         </div>
         <nav>
             <ul>
-                <li class="nav-item"><a href="{{ route('allTweetGet') }}"><span class="material-symbols-outlined">
+                <li class="nav-item"><a href="{{ route('allTweetGet') }}"><span class="material-symbols-outlined nav">
                             home
                         </span><span>全てのつぶやき</span></a></li>
-                <li class="nav-item"><a href="{{ route('myTweetGet') }}"><span class="material-symbols-outlined">
+                <li class="nav-item"><a href="{{ route('myTweetGet') }}"><span class="material-symbols-outlined nav">
                             person
                         </span><span>自分のつぶやき</span></a></li>
                 <li class="nav-item current"><a href="{{ route('followTweetGet') }}"><span
-                            class="material-symbols-outlined">
+                            class="material-symbols-outlined nav">
                             handshake
                         </span><span>フォローした人のつぶやき</span></a></li>
-                <li class="nav-item"><a href="{{ route('favoriteList') }}"><span class="material-symbols-outlined">
+                <li class="nav-item"><a href="{{ route('favoriteList') }}"><span class="material-symbols-outlined nav">
                             volunteer_activism
                         </span><span>いいねしたつぶやき</span></a></li>
-                <li class="nav-item"><a href="{{ route('talkRoom') }}"><span class="material-symbols-outlined">
+                <li class="nav-item"><a href="{{ route('talkRoom') }}"><span class="material-symbols-outlined nav">
                             communication
                         </span><span>トークルーム</span></a></li>
             </ul>
@@ -119,17 +119,17 @@
                                     @if ($loginUser->checkMessageInTalkRoom($loginUser->id, $tweet->user->id))
                                         <button type="submit" class="btn btn-danger"
                                             onclick="return confirm('トークルームのメッセージが削除されます。よろしいですか？');"><i
-                                                class="material-symbols-outlined">person_remove</i></button>
+                                                class="material-symbols-outlined tb">person_remove</i></button>
                                     @else
                                         <button type="submit" class="btn btn-danger"><i
-                                                class="material-symbols-outlined">person_remove</i></button>
+                                                class="material-symbols-outlined tb">person_remove</i></button>
                                     @endif
                                 </form>
                             @else
                                 <form action="{{ route('follow', $tweet->user->id) }}" method="POST">
                                     @csrf
                                     <button type="submit" class="btn btn-primary"><i
-                                            class="material-symbols-outlined">person_add</i></button>
+                                            class="material-symbols-outlined tb">person_add</i></button>
                                 </form>
                             @endif
                             @if ($tweet->isFavorite($loginUser->id, $tweet->id))
@@ -137,13 +137,13 @@
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="btn btn-danger"><i
-                                            class="material-symbols-outlined">thumb_down</i></button>
+                                            class="material-symbols-outlined tb">thumb_down</i></button>
                                 </form>
                             @else
                                 <form action="{{ route('favorite', $tweet) }}" method="POST">
                                     @csrf
                                     <button type="submit" class="btn btn-primary"><i
-                                            class="material-symbols-outlined">thumb_up</i></button>
+                                            class="material-symbols-outlined tb">thumb_up</i></button>
                                 </form>
                             @endif
                         @else
@@ -151,7 +151,7 @@
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn btn-danger"><i
-                                        class="material-symbols-outlined">delete</i></button>
+                                        class="material-symbols-outlined tb">delete</i></button>
                             </form>
                         @endif
                     </div>

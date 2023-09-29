@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .tweetpost {
     background-color: white;
     width: 100%;
@@ -65,9 +69,15 @@
 }
 
 .tweetButton .btn {
-    width: 50px;
-    height: auto;
+    width: 45px;
+    height: 45px;
     margin: 5px;
+}
+
+.material-symbols-outlined.tb {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
 }
 
 .tweetContent {
