@@ -13,6 +13,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@30,400,0,0">
 </head>
 
 <body class="bg-primary-subtle">
@@ -52,7 +54,7 @@
             </div>
         </div>
         <nav class="navbar">
-            <a class="navbar-name"><span>{{ $rooms->user->nickname }}さんとのトークルーム</span></a>
+            <a class="navbar-name"><span>{{ $rooms->user->nickname }}さんとのチャットルーム</span></a>
             <a class="navbar-button btn btn-secondary" href="{{ route('talkRoom') }}">一覧へ戻る</a>
         </nav>
     </div>
@@ -64,7 +66,8 @@
                 @csrf
                 <div class="messagepost">
                     <textarea class="message" name="message" placeholder="メッセージは１００文字以下で入力してください。">{{ old('message') }}</textarea>
-                    <button type="submit" class="btn btn-primary">投稿</button>
+                    <button type="submit" class="btn btn-primary"><i
+                            class="material-symbols-outlined tp">input</i></button>
                 </div>
             </form>
 

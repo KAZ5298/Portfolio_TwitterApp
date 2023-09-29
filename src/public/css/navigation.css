@@ -61,3 +61,12 @@ nav ul li a:hover span {
     border-bottom: 2px solid white;
     padding-bottom: 1px;
 }
+
+@media (max-width: 1000px) {
+
+    nav ul li.nav-item span:not(.material-symbols-outlined.nav) {
+        display: none;
+    }
+
+
+}

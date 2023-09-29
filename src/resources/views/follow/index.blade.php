@@ -99,7 +99,7 @@
                                 @method('delete')
                                 @if ($loginUser->checkMessageInTalkRoom($loginUser->id, $follow->id))
                                     <button type="submit" class="btn btn-danger"
-                                        onclick="return confirm('トークルームのメッセージが削除されます。よろしいですか？');"><i
+                                        onclick="return confirm('チャットルームのメッセージが削除されます。よろしいですか？');"><i
                                             class="material-symbols-outlined fb">person_remove</i></button>
                                 @else
                                     <button type="submit" class="btn btn-danger"><i

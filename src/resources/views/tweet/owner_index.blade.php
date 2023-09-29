@@ -58,28 +58,29 @@
             <ul>
                 <li class="nav-item"><a href="{{ route('allTweetGet') }}"><span class="material-symbols-outlined nav">
                             groups
-                        </span><span>全てのつぶやき</span></a></li>
+                        </span><span>全てのツイート</span></a></li>
                 <li class="nav-item current"><a href="{{ route('myTweetGet') }}"><span
                             class="material-symbols-outlined nav">
                             person
-                        </span><span>自分のつぶやき</span></a></li>
+                        </span><span>自分のツイート</span></a></li>
                 <li class="nav-item"><a href="{{ route('followTweetGet') }}"><span
                             class="material-symbols-outlined nav">
-                            handshake
-                        </span><span>フォローした人のつぶやき</span></a></li>
+                            person_add
+                        </span><span>フォローした人のツイート</span></a></li>
                 <li class="nav-item"><a href="{{ route('favoriteList') }}"><span class="material-symbols-outlined nav">
                             volunteer_activism
-                        </span><span>いいねしたつぶやき</span></a></li>
+                        </span><span>いいねしたツイート</span></a></li>
                 <li class="nav-item"><a href="{{ route('talkRoom') }}"><span class="material-symbols-outlined nav">
-                            communication
-                        </span><span>トークルーム</span></a></li>
+                            chat
+                        </span><span>チャットルーム</span></a></li>
             </ul>
         </nav>
         <form action="{{ route('tweetPost') }}" method="POST">
             @csrf
             <div class="tweetpost">
-                <textarea class="tweet" name="content" placeholder="つぶやきは１００文字以下で入力してください。">{{ old('content') }}</textarea>
-                <button type="submit" class="btn btn-primary">つぶやく</button>
+                <textarea class="tweet" name="content" placeholder="ツイートは１００文字以下で入力してください。">{{ old('content') }}</textarea>
+                <button type="submit" class="btn btn-primary"><i
+                        class="material-symbols-outlined tp">input</i></button>
             </div>
         </form>
     </div>
@@ -126,7 +127,7 @@
                                     @method('delete')
                                     @if ($loginUser->checkMessageInTalkRoom($loginUser->id, $tweet->user->id))
                                         <button type="submit" class="btn btn-danger"
-                                            onclick="return confirm('トークルームのメッセージが削除されます。よろしいですか？');"><i
+                                            onclick="return confirm('チャットルームのメッセージが削除されます。よろしいですか？');"><i
                                                 class="material-symbols-outlined tb">person_remove</i></button>
                                     @else
                                         <button type="submit" class="btn btn-danger"><i
