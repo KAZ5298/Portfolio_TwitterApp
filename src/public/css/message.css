@@ -1,7 +1,3 @@
-* {
-    box-sizing: border-box;
-}
-
 .error-message,
 .success-message {
     width: 475px;
