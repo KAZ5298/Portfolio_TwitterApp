@@ -48,3 +48,74 @@
     width: 100px;
     height: 100px;
 }
+
+/* スマホ対応 */
+@media screen and (max-width: 400px) {
+
+    .header>.container {
+        width: 300px;
+        display: grid;
+        grid-template-columns: 50px 1fr 50px;
+        grid-template-rows: 50px 50px;
+        margin: 0 auto;
+    }
+
+    .title {
+        font-family: 'Black Ops One', cursive;
+        font-size: 20px;
+        height: 50px;
+        color: white;
+        margin: auto;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        grid-column: 1 / 4;
+        grid-row: 1 / 2;
+    }
+
+    .userIcon {
+        text-align: center;
+        height: 50px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        grid-column: 1 / 2;
+        grid-row: 2 / 2;
+    }
+
+    .userIcon img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .loginUser {
+        font-family: 'Noto Sans JP', sans-serif;
+        height: 50px;
+        color: white;
+        font-size: 10px;
+        text-align: center;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        grid-column: 2 / 3;
+        grid-row: 2 / 2;
+    }
+
+    .userMenu {
+        font-family: 'Noto Sans JP', sans-serif;
+        height: 50px;
+        color: white;
+        font-size: 10px;
+        text-align: center;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        grid-column: 3 / 4;
+        grid-row: 2 / 2;
+    }
+
+    .userMenu .dropdown .btn {
+        font-size: 10px;
+    }
+
+}

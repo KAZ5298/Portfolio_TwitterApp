@@ -70,3 +70,16 @@ nav ul li a:hover span {
 
 
 }
+
+@media (max-width: 400px) {
+
+    nav ul li.nav-item span:not(.material-symbols-outlined.nav) {
+        display: none;
+    }
+
+    nav ul li:not(.current) a:hover {
+        pointer-events: none;
+    }
+
+
+}
