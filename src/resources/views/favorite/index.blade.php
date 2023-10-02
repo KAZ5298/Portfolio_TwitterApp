@@ -98,8 +98,7 @@
                 <div class="favoriteContainer">
                     <div class="favoriteIcon">
                         @if ($favorite->user->icon)
-                            <img src="{{ asset('storage/images/' . $favorite->user->icon) }}" width="100"
-                                height="100">
+                            <img src="{{ asset('storage/images/' . $favorite->user->icon) }}">
                         @endif
                     </div>
                     <div class="favoriteNickname">

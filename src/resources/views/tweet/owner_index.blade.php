@@ -106,8 +106,7 @@
                 <div class="tweetContainer">
                     <div class="tweetIcon">
                         @if ($tweet->user->icon)
-                            <img src="{{ asset('storage/images/' . $tweet->user->icon) }}" width="100"
-                                height="100">
+                            <img src="{{ asset('storage/images/' . $tweet->user->icon) }}">
                         @endif
                     </div>
                     <div class="tweetNickname">

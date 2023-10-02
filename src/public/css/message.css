@@ -9,3 +9,23 @@
     margin: 0 auto;
     margin-bottom: 10px;
 }
+
+/* タブレット対応 */
+@media screen and (max-width: 1024px) {}
+
+/* スマホ対応 */
+@media screen and (max-width: 670px) {
+
+    .error-message,
+    .success-message {
+        width: 200px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        font-size: 10px;
+    }
+}

@@ -83,8 +83,7 @@
                 <div class="roomContainer">
                     <div class="roomIcon">
                         @if ($room->user->icon)
-                            <img src="{{ asset('storage/images/' . $room->user->icon) }}" width="100"
-                                height="100">
+                            <img src="{{ asset('storage/images/' . $room->user->icon) }}">
                         @endif
                     </div>
                     <div class="roomLink">

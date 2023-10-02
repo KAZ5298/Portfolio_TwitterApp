@@ -1,3 +1,5 @@
+/* デスクトップファースト */
+/* ＰＣ対応 */
 .main {
     background-color: white;
     margin: 0 auto;
@@ -86,4 +88,175 @@
 
 .navbar-button {
     grid-column: 2 / 3;
+}
+
+/* タブレット対応 */
+/* @media screen and (max-width: 1024px) {
+    .tweetpost {
+        font-size: 10px;
+    }
+
+    .tweetContainer {
+        width: 300px;
+        display: grid;
+        grid-template-columns: 60px 100px 1fr 1fr;
+        grid-template-rows: 60px 60px 25px;
+        margin: 0 auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: 1px solid;
+        border-radius: 10px;
+        font-size: 10px;
+    }
+
+    .tweetIcon {
+        grid-column: 1 / 2;
+        grid-row: 1 / 1;
+        align-items: center;
+        display: flex;
+        border-right: 1px solid;
+        padding: 5px;
+    }
+
+    .tweetIcon img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .tweetNickname {
+        grid-column: 2 / 4;
+        grid-row: 1 / 2;
+        padding: 5px;
+    }
+
+    .followed {
+        background-color: darkgrey;
+        font-size: 1px;
+        border-radius: 5px;
+        text-align: center;
+        width: 100px;
+        font-weight: bold;
+    }
+
+    .tweetButton {
+        grid-column: 4 / 5;
+        grid-row: 1 / 2;
+        display: flex;
+        justify-content: center;
+        border-left: 1px solid;
+    }
+
+    .tweetButton .btn {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+
+    .material-symbols-outlined.tb {
+        display: flex;
+        justify-content: center;
+        font-size: 30px;
+    }
+
+    .tweetContent {
+        grid-column: 1 / 5;
+        grid-row: 2 / 3;
+        border-top: 1px solid;
+        padding: 5px;
+    }
+
+    .tweetTime {
+        grid-column: 1 / 5;
+        grid-row: 3 / 4;
+        padding: 5px;
+        text-align: right;
+        color: gray;
+    }
+} */
+
+/* スマホ対応 */
+@media screen and (max-width: 670px) {
+    .followContainer {
+        width: 300px;
+        display: grid;
+        grid-template-columns: 100px 150px 1fr;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        border: 1px solid;
+        font-size: 10px;
+    }
+
+    .followIcon {
+        grid-column: 1 / 2;
+        grid-row: 1 / 1;
+        align-items: center;
+        display: flex;
+        border-right: 1px solid;
+    }
+
+    .followIcon img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .followNickname {
+        grid-column: 2 / 3;
+        grid-row: 1 / 1;
+        border-right: 1px solid;
+    }
+
+    .followed {
+        background-color: darkgrey;
+        font-size: 9px;
+        border-radius: 10px;
+        text-align: center;
+        width: 100px;
+        font-weight: bold;
+    }
+
+    .followButton {
+        grid-column: 3 / 4;
+        grid-row: 1 / 1;
+        display: flex;
+        justify-content: left;
+    }
+
+    .followButton .btn {
+        width: 45px;
+        height: 45px;
+        margin: 5px;
+    }
+
+    .material-symbols-outlined.tb {
+        display: flex;
+        justify-content: center;
+        font-size: 30px;
+    }
+
+    /* ナビゲーションバー */
+    .navbar {
+        font-family: 'Noto Sans JP', sans-serif;
+        display: grid;
+        grid-template-columns: 5fr 1fr;
+        padding: 10px;
+        height: 60px;
+        background-color: #86b7fe57;
+    }
+
+    .navbar-name {
+        grid-column: 1 / 2;
+        display: flex;
+        color: white;
+        justify-content: center;
+        font-size: 20px;
+        text-decoration: none;
+    }
+
+    .navbar-name span {
+        border-bottom: 2px solid white;
+    }
+
+    .navbar-button {
+        grid-column: 2 / 3;
+    }
 }
