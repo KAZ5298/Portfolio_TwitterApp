@@ -1,3 +1,5 @@
+/* デスクトップファースト */
+/* ＰＣ対応 */
 nav {
     background-color: #86b7fe57;
     font-family: 'Noto Sans JP', sans-serif;
@@ -58,22 +60,16 @@ nav ul li a:hover span {
     padding-bottom: 1px;
 }
 
-@media (max-width: 1000px) {
-
-    nav ul li.nav-item span:not(.material-symbols-outlined.nav) {
-        display: none;
-    }
-
-    nav ul li:not(.current) a:hover {
-        pointer-events: none;
-    }
-
-
+.navName {
+    display: none;
 }
 
-@media (max-width: 400px) {
+/* タブレット対応 */
+@media screen and (max-width: 1024px) {}
 
-    nav ul li.nav-item span:not(.material-symbols-outlined.nav) {
+/* スマホ対応 */
+@media screen and (max-width: 670px) {
+    nav ul li.nav-item span:not(.material-symbols-outlined.icon, .navName) {
         display: none;
     }
 
@@ -81,5 +77,7 @@ nav ul li a:hover span {
         pointer-events: none;
     }
 
-
+    .navName {
+        display: block;
+    }
 }

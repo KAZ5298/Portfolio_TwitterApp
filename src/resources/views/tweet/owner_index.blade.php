@@ -126,40 +126,40 @@
                                     @method('delete')
                                     @if ($loginUser->checkMessageInTalkRoom($loginUser->id, $tweet->user->id))
                                         <button type="submit" class="btn btn-danger"
-                                            onclick="return confirm('チャットルームのメッセージが削除されます。よろしいですか？');"><i
-                                                class="material-symbols-outlined tb">person_remove</i></button>
+                                            onclick="return confirm('チャットルームのメッセージが削除されます。よろしいですか？');"><span
+                                                class="material-symbols-outlined tb">person_remove</span></button>
                                     @else
-                                        <button type="submit" class="btn btn-danger"><i
-                                                class="material-symbols-outlined tb">person_remove</i></button>
+                                        <button type="submit" class="btn btn-danger"><span
+                                                class="material-symbols-outlined tb">person_remove</span></button>
                                     @endif
                                 </form>
                             @else
                                 <form action="{{ route('follow', $tweet->user->id) }}" method="POST">
                                     @csrf
-                                    <button type="submit" class="btn btn-primary"><i
-                                            class="material-symbols-outlined tb">person_add</i></button>
+                                    <button type="submit" class="btn btn-primary"><span
+                                            class="material-symbols-outlined tb">person_add</span></button>
                                 </form>
                             @endif
                             @if ($tweet->isFavorite($loginUser->id, $tweet->id))
                                 <form action="{{ route('unfavorite', $tweet) }}" method="POST">
                                     @csrf
                                     @method('delete')
-                                    <button type="submit" class="btn btn-danger"><i
-                                            class="material-symbols-outlined tb">thumb_down</i></button>
+                                    <button type="submit" class="btn btn-danger"><span
+                                            class="material-symbols-outlined tb">thumb_down</span></button>
                                 </form>
                             @else
                                 <form action="{{ route('favorite', $tweet) }}" method="POST">
                                     @csrf
-                                    <button type="submit" class="btn btn-primary"><i
-                                            class="material-symbols-outlined tb">thumb_up</i></button>
+                                    <button type="submit" class="btn btn-primary"><span
+                                            class="material-symbols-outlined tb">thumb_up</span></button>
                                 </form>
                             @endif
                         @else
                             <form action="{{ route('tweetDestroy', $tweet) }}" method="POST">
                                 @csrf
                                 @method('delete')
-                                <button type="submit" class="btn btn-danger"><i
-                                        class="material-symbols-outlined tb">delete</i></button>
+                                <button type="submit" class="btn btn-danger"><span
+                                        class="material-symbols-outlined tb">delete</span></button>
                             </form>
                         @endif
                     </div>

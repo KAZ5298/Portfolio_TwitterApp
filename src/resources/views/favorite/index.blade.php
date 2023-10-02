@@ -117,32 +117,32 @@
                                 @method('delete')
                                 @if ($loginUser->checkMessageInTalkRoom($loginUser->id, $favorite->user->id))
                                     <button type="submit" class="btn btn-danger"
-                                        onclick="return confirm('チャットルームのメッセージが削除されます。よろしいですか？');"><i
-                                            class="material-symbols-outlined fb">person_remove</i></button>
+                                        onclick="return confirm('チャットルームのメッセージが削除されます。よろしいですか？');"><span
+                                            class="material-symbols-outlined fb">person_remove</span></button>
                                 @else
-                                    <button type="submit" class="btn btn-danger"><i
-                                            class="material-symbols-outlined fb">person_remove</i></button>
+                                    <button type="submit" class="btn btn-danger"><span
+                                            class="material-symbols-outlined fb">person_remove</span></button>
                                 @endif
                             </form>
                         @else
                             <form action="{{ route('follow', $favorite->user->id) }}" method="POST">
                                 @csrf
-                                <button type="submit" class="btn btn-primary"><i
-                                        class="material-symbols-outlined fb">person_add</i></button>
+                                <button type="submit" class="btn btn-primary"><span
+                                        class="material-symbols-outlined fb">person_add</span></button>
                             </form>
                         @endif
                         @if ($favorite->isFavorite($loginUser->id, $favorite->id))
                             <form action="{{ route('unfavorite', $favorite) }}" method="POST">
                                 @csrf
                                 @method('delete')
-                                <button type="submit" class="btn btn-danger"><i
-                                        class="material-symbols-outlined fb">thumb_down</i></button>
+                                <button type="submit" class="btn btn-danger"><span
+                                        class="material-symbols-outlined fb">thumb_down</span></button>
                             </form>
                         @else
                             <form action="{{ route('favorite', $favorite) }}" method="POST">
                                 @csrf
-                                <button type="submit" class="btn btn-primary"><i
-                                        class="material-symbols-outlined fb">thumb_up</i></button>
+                                <button type="submit" class="btn btn-primary"><span
+                                        class="material-symbols-outlined fb">thumb_up</span></button>
                             </form>
                         @endif
                     </div>
