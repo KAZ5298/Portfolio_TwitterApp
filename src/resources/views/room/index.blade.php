@@ -144,7 +144,7 @@
                         @endif
                     </div>
                     <div class="roomLink">
-                        <a href="{{ route('talkRoomShow', $room->id) }}">{{ $room->user->nickname }}さんとのチャットルーム</a>
+                        <a href="{{ route('talkRoomShow', $room->id) }}">{{ $room->user->nickname }} さんとのチャットルーム</a>
                     </div>
                 </div>
             @endforeach
