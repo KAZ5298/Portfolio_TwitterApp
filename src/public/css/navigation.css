@@ -193,9 +193,9 @@
     .navbar-follow {
         font-family: 'Noto Sans JP', sans-serif;
         display: grid;
-        grid-template-columns: 2fr 1fr;
-        padding: 10px;
-        height: 50px;
+        grid-template-columns: 5fr 1fr;
+        padding: 5px;
+        height: 40px;
         background-color: #86b7fe57;
     }
 
@@ -204,16 +204,31 @@
         display: flex;
         color: white;
         justify-content: center;
-        font-size: 10px;
+        font-size: 20px;
         text-decoration: none;
+        align-items: center;
     }
 
     .navbar-follow-name span {
         border-bottom: 2px solid white;
+        padding-bottom: 2px;
+        height: 20px;
+        font-size: 10px;
     }
 
     .navbar-follow-button {
         grid-column: 2 / 3;
-        font-size: 10px;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        height: 30px;
+    }
+
+    .navbar-follow-btn-name {
+        display: none;
+    }
+
+    .material-symbols-outlined.navbar-follow-btn {
+        font-size: 15px;
     }
 }
