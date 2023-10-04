@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@30,400,0,0">
 </head>
 
 <body class="bg-primary-subtle">
@@ -25,12 +27,18 @@
     <div class="main">
         <div class="container">
             <div class="mt-2 border px-4 py-3 rounded relative bg-success-subtle">
-                <label style="display: flex; justify-content: center;">登録が完了しました。</label>
+                <label class="done">登録が完了しました。</label>
             </div>
 
             <div class="button">
-                <a href="{{ route('loginRedirect', $user) }}"class="btn btn-primary">ログインして一覧画面へ</a>
-                <a href="{{ route('login') }}"class="btn btn-secondary">ログイン画面へ戻る</a>
+                <a href="{{ route('loginRedirect', $user) }}"class="btn btn-primary">
+                    <span class="material-symbols-outlined"> login </span>
+                    <span class="btn-name">ログインして一覧画面へ</span>
+                </a>
+                <a href="{{ route('login') }}"class="btn btn-secondary">
+                    <span class="material-symbols-outlined navbar-follow-btn"> undo </span>
+                    <span class="btn-name">ログイン画面へ戻る</span>
+                </a>
             </div>
         </div>
     </div>
