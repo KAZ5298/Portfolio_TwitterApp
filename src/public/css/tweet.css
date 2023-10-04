@@ -110,10 +110,6 @@
 
 /* スマホ対応 */
 @media screen and (max-width: 670px) {
-    .tweetpost {
-        font-size: 10px;
-    }
-
     .tweetContainer {
         width: 300px;
         display: grid;
@@ -196,6 +192,7 @@
         width: 100%;
         display: grid;
         grid-template-columns: 4fr 1fr;
-        padding: 20px 25px 0 25px
+        padding: 20px 25px 0 25px;
+        font-size: 10px;
     }
 }

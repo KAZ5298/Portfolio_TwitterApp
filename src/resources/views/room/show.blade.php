@@ -101,8 +101,8 @@
         <nav class="navbar-room">
             <a class="navbar-room-name"><span>{{ $rooms->user->nickname }} さんとのチャットルーム</span></a>
             <a class="navbar-room-button btn btn-secondary" href="{{ route('talkRoom') }}">
-                <span class="material-symbols-outlined"> undo </span>
-                <span> 一覧へ戻る </span>
+                <span class="material-symbols-outlined navbar-room-btn"> undo </span>
+                <span class="navbar-room-btn-name"> 一覧へ戻る </span>
             </a>
         </nav>
     </div>
@@ -114,8 +114,9 @@
                 @csrf
                 <div class="messagepost">
                     <textarea class="message" name="message" placeholder="メッセージは１００文字以下で入力してください。">{{ old('message') }}</textarea>
-                    <button type="submit" class="btn btn-primary"><i
-                            class="material-symbols-outlined tp">input</i></button>
+                    <button type="submit" class="btn btn-primary">
+                        <span class="material-symbols-outlined tp">input</span>
+                    </button>
                 </div>
             </form>
 
