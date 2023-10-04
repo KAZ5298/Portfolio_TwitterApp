@@ -42,24 +42,24 @@
 
 .navigation ul li.current span {
     border-bottom: 2px solid white;
-    /* padding-bottom: 1px; */
 }
 
-.navigation ul li:not(.current) a:hover {
-    color: white;
-    font-weight: bold;
-    opacity: 1;
-    transition: 0.3s;
-    transform: scale(1.2);
-    transform-origin: center;
+@media (any-hover:hover) {
+    .navigation ul li:not(.current) a:hover {
+        color: white;
+        font-weight: bold;
+        opacity: 1;
+        transition: 0.3s;
+        transform: scale(1.2);
+        transform-origin: center;
+    }
+
+    .navigation ul li a:hover span {
+        border-bottom: 2px solid white;
+    }
 }
 
-.navigation ul li a:hover span {
-    border-bottom: 2px solid white;
-    /* padding-bottom: 1px; */
-}
-
-.navName {
+.navigation ul li.nav-item a.nav-name-sp {
     display: none;
 }
 
@@ -99,8 +99,29 @@
         display: none;
     }
 
-    .navigation ul li:not(.current) a:hover {
+    .navigation ul li.nav-item a:not(.nav-name-sp) {
+        display: flex;
+        width: 100%;
+        color: white;
+        opacity: 0.5;
+        align-items: flex-start;
+        justify-content: center;
+        height: 30px;
+    }
+
+    .navigation ul li.nav-item a.nav-name-sp {
+        display: flex;
+        font-size: 1px;
+        color: white;
+        opacity: 0.5;
+        height: 20px;
+        align-items: flex-end;
         pointer-events: none;
     }
 
+    .navigation ul li.nav-item.current a {
+        color: white;
+        font-weight: bold;
+        opacity: 1;
+    }
 }

@@ -100,30 +100,35 @@
         <nav class="navigation">
             <ul>
                 <li class="nav-item">
+                    <a class="nav-name-sp">全て</a>
                     <a href="{{ route('allTweetGet') }}">
                         <span class="material-symbols-outlined icon">groups</span>
                         <span class="nav-name">全てのツイート</span>
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-name-sp">自分</a>
                     <a href="{{ route('myTweetGet') }}">
                         <span class="material-symbols-outlined icon">person</span>
                         <span class="nav-name">自分のツイート</span>
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-name-sp">フォロー</a>
                     <a href="{{ route('followTweetGet') }}">
                         <span class="material-symbols-outlined icon">person_add</span>
                         <span class="nav-name">フォローした人のツイート</span>
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-name-sp">いいね</a>
                     <a href="{{ route('favoriteList') }}">
                         <span class="material-symbols-outlined icon">volunteer_activism</span>
                         <span class="nav-name">いいねしたツイート</span>
                     </a>
                 </li>
                 <li class="nav-item current">
+                    <a class="nav-name-sp">チャット</a>
                     <a href="{{ route('talkRoom') }}">
                         <span class="material-symbols-outlined icon">chat</span>
                         <span class="nav-name">チャットルーム</span>
