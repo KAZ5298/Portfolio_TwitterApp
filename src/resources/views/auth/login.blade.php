@@ -56,7 +56,7 @@
 
                 <div class="button">
                     <a href="{{ route('register') }}" class="btn btn-primary">
-                        <span class="material-symbols-outlined"> how_to_reg </span>
+                        <span class="material-symbols-outlined"> person_add </span>
                         <span class="btn-name">新規登録</span>
                     </a>
                     <button type="submit" class="btn btn-primary">
