@@ -143,6 +143,7 @@
                 <textarea class="tweet" name="content" placeholder="ツイートは１００文字以下で入力してください。">{{ old('content') }}</textarea>
                 <button type="submit" class="btn btn-primary">
                     <span class="material-symbols-outlined tp">input</span>
+                    <span class="btn-name">ツイート</span>
                 </button>
             </div>
         </form>
