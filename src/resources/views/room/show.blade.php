@@ -99,8 +99,11 @@
             </div>
         </div>
         <nav class="navbar-room">
-            <a class="navbar-name"><span>{{ $rooms->user->nickname }} さんとのチャットルーム</span></a>
-            <a class="navbar-button btn btn-secondary" href="{{ route('talkRoom') }}">一覧へ戻る</a>
+            <a class="navbar-room-name"><span>{{ $rooms->user->nickname }} さんとのチャットルーム</span></a>
+            <a class="navbar-room-button btn btn-secondary" href="{{ route('talkRoom') }}">
+                <span class="material-symbols-outlined"> undo </span>
+                <span> 一覧へ戻る </span>
+            </a>
         </nav>
     </div>
 
@@ -133,14 +136,13 @@
             <div class="kaiwa line">
                 <div class="profile">
                     <div class="followIcon">
-                        <img src="{{ asset('storage/images/' . $rooms->user->icon) }}" width="100"
-                            height="100">
+                        <img src="{{ asset('storage/images/' . $rooms->user->icon) }}">
                     </div>
                     <div class="followName">
                         {{ $rooms->user->nickname }}
                     </div>
                     <div class="loginUserIcon">
-                        <img src="{{ asset('storage/images/' . $loginUser->icon) }}" width="100" height="100">
+                        <img src="{{ asset('storage/images/' . $loginUser->icon) }}">
                     </div>
                     <div class="loginUserName">
                         {{ $loginUser->nickname }}

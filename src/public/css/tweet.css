@@ -8,6 +8,11 @@
     padding: 20px 20px 0 20px;
 }
 
+.tweetpost .tweet {
+    border-radius: 5px;
+    padding-left: 5px
+}
+
 .tweetpost .btn {
     margin-left: 10px;
 }
@@ -33,7 +38,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
     border: 1px solid;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .tweetIcon {
@@ -118,7 +123,7 @@
         margin-top: 10px;
         margin-bottom: 10px;
         border: 1px solid;
-        border-radius: 10px;
+        border-radius: 5px;
         font-size: 10px;
     }
 
@@ -184,5 +189,13 @@
         padding: 5px;
         text-align: right;
         color: gray;
+    }
+
+    .tweetpost {
+        background-color: white;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 4fr 1fr;
+        padding: 20px 25px 0 25px
     }
 }

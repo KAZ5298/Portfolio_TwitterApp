@@ -22,7 +22,7 @@
 
     {{-- メインコンテンツ --}}
     <div class="main">
-        <div class="container">
+        <div class="container login">
             <form method="POST" action="{{ route('login') }}">
                 @csrf
 

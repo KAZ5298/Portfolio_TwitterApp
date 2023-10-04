@@ -1,3 +1,5 @@
+/* デスクトップファースト */
+/* ＰＣ対応 */
 .title {
     font-family: 'Black Ops One', cursive;
     font-size: 60px;
@@ -38,4 +40,52 @@
     display: block;
     padding: 12px;
     text-align: center;
+}
+
+/* タブレット対応 */
+@media screen and (max-width: 1024px) {}
+
+/* スマホ対応 */
+@media screen and (max-width: 670px) {
+    .title {
+        font-family: 'Black Ops One', cursive;
+        font-size: 60px;
+        width: 600px;
+        height: 180px;
+        text-align: center;
+        padding: 50px 0;
+        margin: 0 auto;
+        margin-top: 30px;
+        color: white;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .main {
+        background-color: white;
+        margin: 0 auto;
+        width: 600px;
+        padding: 20px;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .form {
+        width: 540px;
+    }
+
+    .btn {
+        width: 200px;
+        height: 50px;
+        margin: 10px 10px;
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+    }
+
+    .button a {
+        display: block;
+        padding: 12px;
+        text-align: center;
+    }
 }

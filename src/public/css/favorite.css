@@ -21,7 +21,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
     border: 1px solid;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .favoriteIcon {
@@ -47,7 +47,7 @@
 .followed {
     background-color: darkgrey;
     font-size: 9px;
-    border-radius: 10px;
+    border-radius: 5px;
     text-align: center;
     width: 100px;
     font-weight: bold;
@@ -103,7 +103,7 @@
         margin-top: 10px;
         margin-bottom: 10px;
         border: 1px solid;
-        border-radius: 10px;
+        border-radius: 5px;
         font-size: 10px;
     }
 
@@ -130,7 +130,7 @@
     .followed {
         background-color: darkgrey;
         font-size: 1px;
-        border-radius: 10px;
+        border-radius: 5px;
         text-align: center;
         width: 100px;
         font-weight: bold;
@@ -183,7 +183,7 @@
         margin-top: 10px;
         margin-bottom: 10px;
         border: 1px solid;
-        border-radius: 10px;
+        border-radius: 5px;
         font-size: 10px;
     }
 
@@ -210,7 +210,7 @@
     .followed {
         background-color: darkgrey;
         font-size: 1px;
-        border-radius: 10px;
+        border-radius: 5px;
         text-align: center;
         width: 100px;
         font-weight: bold;

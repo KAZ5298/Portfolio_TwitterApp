@@ -7,6 +7,7 @@
     <title>Twitter Modoki</title>
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/navigation.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/message.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/follow.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,16 +33,25 @@
             </div>
             <div class="loginUser">ログイン中：{{ $loginUser->nickname }} さん</div>
             <div class="userMenu">
+                {{-- ＰＣ対応 --}}
                 <div class="dropdown">
                     <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         ユーザーメニュー
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{ route('profile.edit') }}">ユーザー情報編集</a></li>
-                        <hr class="dropdown-divider">
-                        <li><a class="dropdown-item" href="{{ route('followList') }}">フォロー一覧</a></li>
-                        <hr class="dropdown-divider">
+                        <li>
+                            <a class="dropdown-item" href="{{ route('profile.edit') }}">ユーザー情報編集</a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="{{ route('followList') }}">フォロー一覧</a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
                         <li>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout').submit();">ログアウト</a>
@@ -51,11 +61,49 @@
                         </li>
                     </ul>
                 </div>
+                {{-- スマホ対応 --}}
+                <nav class="navbar bg-primary">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="offcanvas offcanvas-end text-bg-primary" tabindex="-1" id="offcanvasDarkNavbar"
+                            aria-labelledby="offcanvasDarkNavbarLabel">
+                            <div class="offcanvas-header">
+                                <p class="offcanvas-title" id="offcanvasDarkNavbarLabel">ユーザーメニュー</p>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <ul class="navbar-nav justify-content-end">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('profile.edit') }}">ユーザー情報編集</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('followList') }}">フォロー一覧</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault(); document.getElementById('logout').submit();">ログアウト</a>
+                                        <form id="logout" action="{{ route('logout') }}" method="POST">
+                                            @csrf
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
             </div>
         </div>
-        <nav class="navbar">
-            <a class="navbar-name"><span>フォロー一覧</span></a>
-            <a class="navbar-button btn btn-secondary" href="{{ route('allTweetGet') }}">ＴＯＰ画面へ戻る</a>
+        <nav class="navbar-follow">
+            <a class="navbar-follow-name"><span>フォロー一覧</span></a>
+            <a class="navbar-follow-button btn btn-secondary" href="{{ route('allTweetGet') }}">
+                <span class="material-symbols-outlined"> undo </span>
+                <span>ＴＯＰ画面へ戻る</span>
+            </a>
         </nav>
     </div>
 
@@ -80,7 +128,7 @@
                 <div class="followContainer">
                     <div class="followIcon">
                         @if ($follow->icon)
-                            <img src="{{ asset('storage/images/' . $follow->icon) }}" width="100" height="100">
+                            <img src="{{ asset('storage/images/' . $follow->icon) }}">
                         @endif
                     </div>
                     <div class="followNickname">
