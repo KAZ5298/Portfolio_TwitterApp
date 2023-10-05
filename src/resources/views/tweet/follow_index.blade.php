@@ -163,12 +163,23 @@
                             <img src="{{ asset('storage/images/' . $tweet->user->icon) }}">
                         @endif
                     </div>
-                    <div class="tweetNickname">
-                        {{ $tweet->user->nickname }}
-                        <br>
-                        @if ($loginUser->isFollowed($tweet->user->id))
-                            <div class="followed">
-                                フォローされています
+                    <div class="tweetUser">
+                        <div class="tweetNickname">
+                            {{ $tweet->user->nickname }}
+                        </div>
+                        <div class="tweetAccount">
+                            {{ $tweet->user->name }}
+                        </div>
+                    </div>
+                    <div class="tweetFollow">
+                        @if ($loginUser->isFollowing($tweet->user->id) && $loginUser->isFollowed($tweet->user->id))
+                            <div class="mutual-follow">
+                                <span class="material-symbols-outlined tb">handshake</span>
+                                <span class="mutual-follow-tb">相互フォローです</span>
+                            </div>
+                        @elseif(!$loginUser->isFollowing($tweet->user->id) && $loginUser->isFollowed($tweet->user->id))
+                            <div class="followed"><span class="material-symbols-outlined tb"> front_hand </span>
+                                <span class="followed-tb">フォローされています</span>
                             </div>
                         @endif
                     </div>

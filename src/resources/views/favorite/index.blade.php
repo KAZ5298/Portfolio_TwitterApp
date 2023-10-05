@@ -163,12 +163,23 @@
                             <img src="{{ asset('storage/images/' . $favorite->user->icon) }}">
                         @endif
                     </div>
-                    <div class="favoriteNickname">
-                        {{ $favorite->user->nickname }}
-                        <br>
-                        @if ($loginUser->isFollowed($favorite->user->id))
-                            <div class="followed">
-                                フォローされています
+                    <div class="favoriteUser">
+                        <div class="favoriteNickname">
+                            {{ $favorite->user->nickname }}
+                        </div>
+                        <div class="favoriteAccount">
+                            {{ $favorite->user->name }}
+                        </div>
+                    </div>
+                    <div class="favoriteFollow">
+                        @if ($loginUser->isFollowing($favorite->user->id) && $loginUser->isFollowed($favorite->user->id))
+                            <div class="mutual-follow">
+                                <span class="material-symbols-outlined fb">handshake</span>
+                                <span class="mutual-follow-fb">相互フォローです</span>
+                            </div>
+                        @elseif(!$loginUser->isFollowing($favorite->user->id) && $loginUser->isFollowed($favorite->user->id))
+                            <div class="followed"><span class="material-symbols-outlined fb"> front_hand </span>
+                                <span class="followed-fb">フォローされています</span>
                             </div>
                         @endif
                     </div>

@@ -165,7 +165,7 @@ LINE風フキダシ
 
 /* アイコンを左右端に配置*/
 .profile {
-    width: 950px;
+    width: 95%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 100px 25px;
@@ -363,7 +363,7 @@ LINE風フキダシ
 
     /* アイコンを左右端に配置*/
     .profile {
-        width: 300px;
+        width: 95%;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 50px 25px;
@@ -564,7 +564,7 @@ LINE風フキダシ
 
     /* アイコンを左右端に配置*/
     .profile {
-        width: 300px;
+        width: 95%;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 50px 25px;

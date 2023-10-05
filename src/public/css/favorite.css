@@ -16,7 +16,7 @@
     width: 500px;
     height: 200px;
     display: grid;
-    grid-template-columns: 60px 1fr 1fr;
+    grid-template-columns: 100px 100px 1fr;
     grid-template-rows: 60px 1fr 50px;
     margin: 0 auto;
     margin-top: 10px;
@@ -27,9 +27,10 @@
 
 .favoriteIcon {
     grid-column: 1 / 2;
-    grid-row: 1 / 1;
+    grid-row: 1 / 2;
     align-items: center;
     display: flex;
+    justify-content: center;
     padding: 5px;
 }
 
@@ -38,19 +39,40 @@
     height: 50px;
 }
 
-.favoriteNickname {
-    grid-column: 2 / 2;
+.favoriteUser {
+    grid-column: 2 / 3;
     grid-row: 1 / 2;
-    padding: 5px;
+    display: inline-grid;
+    justify-content: center;
 }
 
+.favoriteNickname {
+    font-size: 20px;
+}
+
+.favoriteAccount {
+    font-size: 15px;
+    color: gray;
+}
+
+.favoriteFollow {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mutual-follow,
 .followed {
     background-color: darkgrey;
-    font-size: 9px;
     border-radius: 5px;
-    text-align: center;
-    width: 100px;
+    width: 150px;
+    height: 30px;
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .favoriteButton {
@@ -79,7 +101,9 @@
     font-size: 20px;
 }
 
-.icon-name {
+.icon-name,
+.mutual-follow-fb,
+.followed-fb {
     font-size: 15px;
 }
 
@@ -94,7 +118,6 @@
     grid-column: 3 / 4;
     grid-row: 3 / 4;
     padding-right: 10px;
-    text-align: right;
     color: gray;
     display: flex;
     justify-content: right;
