@@ -109,7 +109,97 @@
 }
 
 /* タブレット対応 */
-@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 1024px) {
+    .tweetContainer {
+        width: 300px;
+        display: grid;
+        grid-template-columns: 60px 100px 1fr 1fr;
+        grid-template-rows: 60px 60px 25px;
+        margin: 0 auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: 1px solid;
+        border-radius: 5px;
+        font-size: 10px;
+    }
+
+    .tweetIcon {
+        grid-column: 1 / 2;
+        grid-row: 1 / 1;
+        align-items: center;
+        display: flex;
+        border-right: 1px solid;
+        padding: 5px;
+    }
+
+    .tweetIcon img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .tweetNickname {
+        grid-column: 2 / 4;
+        grid-row: 1 / 2;
+        padding: 5px;
+    }
+
+    .followed {
+        background-color: darkgrey;
+        font-size: 1px;
+        border-radius: 5px;
+        text-align: center;
+        width: 100px;
+        font-weight: bold;
+    }
+
+    .tweetButton {
+        grid-column: 4 / 5;
+        grid-row: 1 / 2;
+        display: flex;
+        justify-content: center;
+        border-left: 1px solid;
+    }
+
+    .tweetButton .btn {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+
+    .material-symbols-outlined.tb {
+        display: flex;
+        justify-content: center;
+        font-size: 30px;
+    }
+
+    .tweetContent {
+        grid-column: 1 / 5;
+        grid-row: 2 / 3;
+        border-top: 1px solid;
+        padding: 5px;
+    }
+
+    .tweetTime {
+        grid-column: 1 / 5;
+        grid-row: 3 / 4;
+        padding: 5px;
+        text-align: right;
+        color: gray;
+    }
+
+    .tweetpost {
+        background-color: white;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 85% 15%;
+        padding: 20px 25px 0 25px;
+        font-size: 10px;
+    }
+
+    .btn-name {
+        display: none;
+    }
+}
 
 /* スマホ対応 */
 @media screen and (max-width: 670px) {

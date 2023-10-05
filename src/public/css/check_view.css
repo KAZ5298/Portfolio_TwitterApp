@@ -71,7 +71,83 @@ img {
 }
 
 /* タブレット対応 */
-@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 1024px) {
+    .title {
+        font-family: 'Black Ops One', cursive;
+        font-size: 40px;
+        width: 90%;
+        height: auto;
+        text-align: center;
+        padding: 25px 0;
+        margin: 0 auto;
+        margin-top: 30px;
+        color: white;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .main {
+        background-color: white;
+        margin: 0 auto;
+        width: 90%;
+        height: auto;
+        padding: 10px;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .btn {
+        width: 100%;
+        height: auto;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+    }
+
+    .button a {
+        display: flex;
+        text-align: center;
+        font-size: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    th,
+    td {
+        border: solid 1px;
+        height: 90px;
+        width: 50%;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .input {
+        padding-left: 10px;
+        font-size: 10px;
+    }
+
+    .btn-name {
+        display: none;
+    }
+
+    .worning {
+        display: flex;
+        justify-content: center;
+        font-size: 10px;
+    }
+}
 
 /* スマホ対応 */
 @media screen and (max-width: 670px) {
