@@ -181,10 +181,12 @@
                                     <button type="submit" class="btn btn-danger"
                                         onclick="return confirm('チャットルームのメッセージが削除されます。よろしいですか？');">
                                         <span class="material-symbols-outlined fb">person_remove</span>
+                                        <span class="icon-name">フォロー解除</span>
                                     </button>
                                 @else
                                     <button type="submit" class="btn btn-danger">
                                         <span class="material-symbols-outlined fb">person_remove</span>
+                                        <span class="icon-name">フォロー解除</span>
                                     </button>
                                 @endif
                             </form>
@@ -193,6 +195,7 @@
                                 @csrf
                                 <button type="submit" class="btn btn-primary">
                                     <span class="material-symbols-outlined fb">person_add</span>
+                                    <span class="icon-name">フォロー</span>
                                 </button>
                             </form>
                         @endif
@@ -202,6 +205,7 @@
                                 @method('delete')
                                 <button type="submit" class="btn btn-danger">
                                     <span class="material-symbols-outlined fb">thumb_down</span>
+                                    <span class="icon-name">いいね解除</span>
                                 </button>
                             </form>
                         @else
@@ -209,6 +213,7 @@
                                 @csrf
                                 <button type="submit" class="btn btn-primary">
                                     <span class="material-symbols-outlined fb">thumb_up</span>
+                                    <span class="icon-name">いいね</span>
                                 </button>
                             </form>
                         @endif
