@@ -15,8 +15,8 @@
 .roomContainer {
     width: 400px;
     display: grid;
-    grid-template-columns: 100px 1fr;
-    grid-template-rows: 100px;
+    grid-template-columns: 60px 200px 1fr;
+    grid-template-rows: 60px;
     margin: 0 auto;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -28,11 +28,29 @@
     grid-column: 1 / 2;
     align-items: center;
     display: flex;
+    justify-content: center;
 }
 
 .roomIcon img {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
+}
+
+.roomUser {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    display: flow;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.roomNickname {
+    font-size: 15px;
+}
+
+.roomAccount {
+    font-size: 12px;
+    color: gray;
 }
 
 .roomLink {
@@ -211,7 +229,7 @@ LINE風フキダシ
     .roomContainer {
         width: 300px;
         display: grid;
-        grid-template-columns: 60px 1fr;
+        grid-template-columns: 60px 150px 1fr;
         grid-template-rows: 60px;
         margin: 0 auto;
         margin-top: 10px;
@@ -412,7 +430,7 @@ LINE風フキダシ
     .roomContainer {
         width: 300px;
         display: grid;
-        grid-template-columns: 60px 1fr;
+        grid-template-columns: 60px 150px 1fr;
         grid-template-rows: 60px;
         margin: 0 auto;
         margin-top: 10px;

@@ -148,8 +148,16 @@
                             <img src="{{ asset('storage/images/' . $room->user->icon) }}">
                         @endif
                     </div>
+                    <div class="roomUser">
+                        <div class="roomNickname">
+                            {{ $room->user->nickname }}
+                        </div>
+                        <div class="roomAccount">
+                            {{ $room->user->name }}
+                        </div>
+                    </div>
                     <div class="roomLink">
-                        <a href="{{ route('talkRoomShow', $room->id) }}">{{ $room->user->nickname }} さんとのチャットルーム</a>
+                        <a href="{{ route('talkRoomShow', $room->id) }}">入室する</a>
                     </div>
                 </div>
             @endforeach
