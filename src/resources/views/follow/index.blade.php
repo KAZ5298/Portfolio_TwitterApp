@@ -131,12 +131,23 @@
                             <img src="{{ asset('storage/images/' . $follow->icon) }}">
                         @endif
                     </div>
-                    <div class="followNickname">
-                        {{ $follow->nickname }}
-                        <br>
-                        @if ($loginUser->isFollowed($follow->id))
-                            <div class="followed">
-                                フォローされています
+                    <div class="followUser">
+                        <div class="followNickname">
+                            {{ $follow->nickname }}
+                        </div>
+                        <div class="followAccount">
+                            {{ $follow->name }}
+                        </div>
+                    </div>
+                    <div class="followFollow">
+                        @if ($loginUser->isFollowing($follow->id) && $loginUser->isFollowed($follow->id))
+                            <div class="mutual-follow">
+                                <span class="material-symbols-outlined fb">handshake</span>
+                                <span class="mutual-follow-fb">相互フォローです</span>
+                            </div>
+                        @elseif(!$loginUser->isFollowing($follow->id) && $loginUser->isFollowed($follow->id))
+                            <div class="followed"><span class="material-symbols-outlined fb"> front_hand </span>
+                                <span class="followed-fb">フォローされています</span>
                             </div>
                         @endif
                     </div>
@@ -147,11 +158,15 @@
                                 @method('delete')
                                 @if ($loginUser->checkMessageInTalkRoom($loginUser->id, $follow->id))
                                     <button type="submit" class="btn btn-danger"
-                                        onclick="return confirm('チャットルームのメッセージが削除されます。よろしいですか？');"><span
-                                            class="material-symbols-outlined fb">person_remove</span></button>
+                                        onclick="return confirm('チャットルームのメッセージが削除されます。よろしいですか？');">
+                                        <span class="material-symbols-outlined fb">person_remove</span>
+                                        <span class="icon-name">フォロー解除</span>
+                                    </button>
                                 @else
-                                    <button type="submit" class="btn btn-danger"><span
-                                            class="material-symbols-outlined fb">person_remove</span></button>
+                                    <button type="submit" class="btn btn-danger">
+                                        <span class="material-symbols-outlined fb">person_remove</span>
+                                        <span class="icon-name">フォロー解除</span>
+                                    </button>
                                 @endif
                             </form>
                         @endif

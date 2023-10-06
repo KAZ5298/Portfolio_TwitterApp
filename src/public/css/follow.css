@@ -13,11 +13,13 @@
 }
 
 .followContainer {
-    width: 320px;
+    width: 600px;
+    height: auto;
     display: grid;
-    grid-template-columns: 110px 150px 1fr;
-    grid-template-rows: 110px;
+    grid-template-columns: 100px 150px 1fr 1fr;
+    grid-template-rows: 60px;
     margin: 0 auto;
+    margin-top: 10px;
     margin-bottom: 10px;
     border: 1px solid;
     border-radius: 5px;
@@ -25,50 +27,86 @@
 
 .followIcon {
     grid-column: 1 / 2;
-    grid-row: 1 / 1;
+    grid-row: 1 / 2;
     align-items: center;
     display: flex;
-    border-right: 1px solid;
+    justify-content: center;
     padding: 5px;
 }
 
 .followIcon img {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
+}
+
+.followUser {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    display: flow;
+    padding-top: 5px;
+    padding-left: 10px;
 }
 
 .followNickname {
-    grid-column: 2 / 3;
-    grid-row: 1 / 1;
-    border-right: 1px solid;
+    font-size: 20px;
 }
 
+.followAccount {
+    font-size: 15px;
+    color: gray;
+}
+
+.followFollow {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.mutual-follow,
 .followed {
     background-color: darkgrey;
-    font-size: 9px;
     border-radius: 5px;
-    text-align: center;
-    width: 100px;
+    width: 150px;
+    height: 30px;
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .followButton {
-    grid-column: 3 / 4;
+    grid-column: 4 / 5;
     grid-row: 1 / 1;
     display: flex;
-    justify-content: left;
+    justify-content: center;
+    align-items: center;
+}
+
+.followButton button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .followButton .btn {
-    width: 45px;
-    height: 45px;
+    width: 150px;
+    height: auto;
     margin: 5px;
 }
 
-.material-symbols-outlined.tb {
+.material-symbols-outlined.fb {
     display: flex;
     justify-content: center;
-    font-size: 30px;
+    font-size: 20px;
+}
+
+.icon-name,
+.mutual-follow-fb,
+.followed-fb {
+    font-size: 15px;
 }
 
 /* タブレット対応 */
@@ -86,11 +124,13 @@
     }
 
     .followContainer {
-        width: 265px;
+        width: 300px;
+        height: auto;
         display: grid;
-        grid-template-columns: 60px 140px 60px;
+        grid-template-columns: 58px 100px 1fr;
         grid-template-rows: 60px;
         margin: 0 auto;
+        margin-top: 10px;
         margin-bottom: 10px;
         border: 1px solid;
         border-radius: 5px;
@@ -98,10 +138,10 @@
 
     .followIcon {
         grid-column: 1 / 2;
-        grid-row: 1 / 1;
+        grid-row: 1 / 2;
         align-items: center;
         display: flex;
-        border-right: 1px solid;
+        justify-content: center;
         padding: 5px;
     }
 
@@ -110,40 +150,79 @@
         height: 50px;
     }
 
-    .followNickname {
+    .followUser {
         grid-column: 2 / 3;
-        grid-row: 1 / 1;
-        border-right: 1px solid;
-        font-size: 10px;
-        padding: 5px;
+        grid-row: 1 / 2;
+        display: flow;
+        padding-top: 10px;
+        padding-left: 10px;
     }
 
+    .followNickname {
+        font-size: 15px;
+    }
+
+    .followAccount {
+        font-size: 10px;
+        color: gray;
+    }
+
+    .followFollow {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        padding-right: 0;
+    }
+
+    .mutual-follow,
     .followed {
         background-color: darkgrey;
-        font-size: 9px;
         border-radius: 5px;
-        text-align: center;
-        width: 100px;
+        width: 90px;
+        height: 20px;
         font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .followButton {
         grid-column: 3 / 4;
-        grid-row: 1 / 1;
+        grid-row: 1 / 2;
         display: flex;
-        justify-content: left;
+        justify-content: right;
+        align-items: center;
+    }
+
+    .followButton button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .followButton .btn {
-        width: 50px;
-        height: 50px;
+        width: 30px;
+        height: 20px;
         margin: 5px;
     }
 
-    .material-symbols-outlined.tb {
+    .material-symbols-outlined.fb {
         display: flex;
         justify-content: center;
-        font-size: 30px;
+        font-size: 15px;
+    }
+
+    .icon-name,
+    .mutual-follow-fb,
+    .followed-fb {
+        font-size: 10px;
+    }
+
+    .btn-name,
+    .icon-name {
+        display: none;
     }
 }
 
@@ -162,11 +241,13 @@
     }
 
     .followContainer {
-        width: 265px;
+        width: 300px;
+        height: auto;
         display: grid;
-        grid-template-columns: 60px 140px 60px;
+        grid-template-columns: 58px 100px 1fr;
         grid-template-rows: 60px;
         margin: 0 auto;
+        margin-top: 10px;
         margin-bottom: 10px;
         border: 1px solid;
         border-radius: 5px;
@@ -174,10 +255,10 @@
 
     .followIcon {
         grid-column: 1 / 2;
-        grid-row: 1 / 1;
+        grid-row: 1 / 2;
         align-items: center;
         display: flex;
-        border-right: 1px solid;
+        justify-content: center;
         padding: 5px;
     }
 
@@ -186,39 +267,78 @@
         height: 50px;
     }
 
-    .followNickname {
+    .followUser {
         grid-column: 2 / 3;
-        grid-row: 1 / 1;
-        border-right: 1px solid;
-        font-size: 10px;
-        padding: 5px;
+        grid-row: 1 / 2;
+        display: flow;
+        padding-top: 10px;
+        padding-left: 10px;
     }
 
+    .followNickname {
+        font-size: 15px;
+    }
+
+    .followAccount {
+        font-size: 10px;
+        color: gray;
+    }
+
+    .followFollow {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        padding-right: 0;
+    }
+
+    .mutual-follow,
     .followed {
         background-color: darkgrey;
-        font-size: 9px;
         border-radius: 5px;
-        text-align: center;
-        width: 100px;
+        width: 90px;
+        height: 20px;
         font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .followButton {
         grid-column: 3 / 4;
-        grid-row: 1 / 1;
+        grid-row: 1 / 2;
         display: flex;
-        justify-content: left;
+        justify-content: right;
+        align-items: center;
+    }
+
+    .followButton button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .followButton .btn {
-        width: 50px;
-        height: 50px;
+        width: 30px;
+        height: 20px;
         margin: 5px;
     }
 
-    .material-symbols-outlined.tb {
+    .material-symbols-outlined.fb {
         display: flex;
         justify-content: center;
-        font-size: 30px;
+        font-size: 15px;
+    }
+
+    .icon-name,
+    .mutual-follow-fb,
+    .followed-fb {
+        font-size: 10px;
+    }
+
+    .btn-name,
+    .icon-name {
+        display: none;
     }
 }
