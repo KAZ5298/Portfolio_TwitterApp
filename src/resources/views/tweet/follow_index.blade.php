@@ -190,13 +190,13 @@
                                     @csrf
                                     @method('delete')
                                     @if ($loginUser->checkMessageInTalkRoom($loginUser->id, $tweet->user->id))
-                                        <button type="submit" class="btn btn-danger"
+                                        <button type="submit" class="btn unfollow"
                                             onclick="return confirm('チャットルームのメッセージが削除されます。よろしいですか？');">
                                             <span class="material-symbols-outlined tb">person_remove</span>
                                             <span class="icon-name">フォロー解除</span>
                                         </button>
                                     @else
-                                        <button type="submit" class="btn btn-danger">
+                                        <button type="submit" class="btn unfollow">
                                             <span class="material-symbols-outlined tb">person_remove</span>
                                             <span class="icon-name">フォロー解除</span>
                                         </button>
@@ -215,7 +215,7 @@
                                 <form action="{{ route('unfavorite', $tweet) }}" method="POST">
                                     @csrf
                                     @method('delete')
-                                    <button type="submit" class="btn btn-danger">
+                                    <button type="submit" class="btn unfavorite">
                                         <span class="material-symbols-outlined tb">thumb_down</span>
                                         <span class="icon-name">いいね解除</span>
                                     </button>
@@ -233,7 +233,7 @@
                             <form action="{{ route('tweetDestroy', $tweet) }}" method="POST">
                                 @csrf
                                 @method('delete')
-                                <button type="submit" class="btn btn-danger">
+                                <button type="submit" class="btn delete">
                                     <span class="material-symbols-outlined tb">delete</span>
                                     <span class="icon-name">削除</span>
                                 </button>

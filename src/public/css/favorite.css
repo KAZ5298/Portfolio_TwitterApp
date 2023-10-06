@@ -67,7 +67,7 @@
 
 .mutual-follow,
 .followed {
-    background-color: darkgrey;
+    background-color: #dee2e6;
     border-radius: 5px;
     width: 150px;
     height: 30px;
@@ -95,6 +95,13 @@
     width: 120px;
     height: auto;
     margin: 5px;
+}
+
+.favoriteButton .btn.unfollow,
+.favoriteButton .btn.unfavorite,
+.favoriteButton .btn.delete {
+    background-color: #808080ad;
+    color: white;
 }
 
 .material-symbols-outlined.fb {
@@ -183,7 +190,7 @@
 
     .mutual-follow,
     .followed {
-        background-color: darkgrey;
+        background-color: #dee2e6;
         border-radius: 5px;
         width: 100px;
         height: 30px;
@@ -306,7 +313,7 @@
 
     .mutual-follow,
     .followed {
-        background-color: darkgrey;
+        background-color: #dee2e6;
         border-radius: 5px;
         width: 100px;
         height: 30px;

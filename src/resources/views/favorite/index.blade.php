@@ -189,13 +189,13 @@
                                 @csrf
                                 @method('delete')
                                 @if ($loginUser->checkMessageInTalkRoom($loginUser->id, $favorite->user->id))
-                                    <button type="submit" class="btn btn-danger"
+                                    <button type="submit" class="btn unfollow"
                                         onclick="return confirm('チャットルームのメッセージが削除されます。よろしいですか？');">
                                         <span class="material-symbols-outlined fb">person_remove</span>
                                         <span class="icon-name">フォロー解除</span>
                                     </button>
                                 @else
-                                    <button type="submit" class="btn btn-danger">
+                                    <button type="submit" class="btn unfollow">
                                         <span class="material-symbols-outlined fb">person_remove</span>
                                         <span class="icon-name">フォロー解除</span>
                                     </button>
@@ -214,7 +214,7 @@
                             <form action="{{ route('unfavorite', $favorite) }}" method="POST">
                                 @csrf
                                 @method('delete')
-                                <button type="submit" class="btn btn-danger">
+                                <button type="submit" class="btn unfavorite">
                                     <span class="material-symbols-outlined fb">thumb_down</span>
                                     <span class="icon-name">いいね解除</span>
                                 </button>
