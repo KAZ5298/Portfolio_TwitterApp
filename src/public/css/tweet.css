@@ -166,7 +166,7 @@
 
     .tweetContainer {
         width: 400px;
-        height: 200px;
+        height: 250px;
         display: grid;
         grid-template-columns: 60px 150px 1fr;
         grid-template-rows: 60px 1fr 50px;
