@@ -1,6 +1,8 @@
+/* モバイルファースト */
+/* スマホ対応 */
 .error-message,
 .success-message {
-    width: 475px;
+    width: 80%;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -8,38 +10,23 @@
     border-radius: 10px;
     margin: 0 auto;
     margin-bottom: 10px;
+    font-size: 10px;
 }
 
 /* タブレット対応 */
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 670px) {
 
     .error-message,
     .success-message {
-        width: 200px;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        padding: 20px;
-        border-radius: 10px;
-        margin: 0 auto;
-        margin-bottom: 10px;
-        font-size: 10px;
+        font-size: 15px;
     }
 }
 
-/* スマホ対応 */
-@media screen and (max-width: 670px) {
+/* ＰＣ対応 */
+@media screen and (min-width: 1024px) {
 
     .error-message,
     .success-message {
-        width: 200px;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        padding: 20px;
-        border-radius: 10px;
-        margin: 0 auto;
-        margin-bottom: 10px;
-        font-size: 10px;
+        width: 475px;
     }
 }

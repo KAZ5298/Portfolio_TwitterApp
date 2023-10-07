@@ -1,91 +1,110 @@
-/* デスクトップファースト */
-/* ＰＣ対応 */
+/* モバイルファースト */
+/* スマホ対応 */
 .header {
     margin: 0 auto;
     width: 90%;
     border-radius: 10px 10px 0 0;
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
 .header>.container {
-    display: flex;
-    justify-content: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50px 2fr 1fr;
+    grid-template-rows: 50px 50px;
+    margin: 0 auto;
+    padding: 0 25px;
 }
 
 .title {
     font-family: 'Black Ops One', cursive;
-    font-size: 60px;
-    height: 200px;
+    font-size: 25px;
+    height: auto;
     color: white;
-    margin: auto;
     align-items: center;
     display: flex;
-}
-
-.loginUser,
-.userMenu {
-    font-family: 'Noto Sans JP', sans-serif;
-    height: 200px;
-    color: white;
-    font-size: 20px;
-    text-align: center;
-    margin: auto;
-    display: flex;
-    align-items: center;
-}
-
-.userMenu .navbar {
-    display: none;
-}
-
-.userMenu .dropdown .btn {
-    font-size: 20px;
+    justify-content: center;
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
 }
 
 .userIcon {
     text-align: center;
-    height: 200px;
+    height: auto;
     margin: auto;
     display: flex;
     align-items: center;
+    justify-content: center;
+    grid-column: 1 / 2;
+    grid-row: 2 / 2;
 }
 
 .userIcon img {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
+}
+
+.loginUser {
+    font-family: 'Noto Sans JP', sans-serif;
+    height: auto;
+    color: white;
+    font-size: 10px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 2 / 3;
+    grid-row: 2 / 2;
+}
+
+.userMenu {
+    font-family: 'Noto Sans JP', sans-serif;
+    width: 100%;
+    height: auto;
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    grid-column: 3 / 4;
+    grid-row: 2 / 2;
+}
+
+.userMenu .dropdown {
+    display: none;
+}
+
+.userMenu .navbar {
+    display: block;
+}
+
+.userMenu .navbar-toggler {
+    font-size: 15px;
+}
+
+.userMenu .navbar .offcanvas {
+    width: 35%;
+}
+
+.userMenu .nav-link {
+    color: white;
+}
+
+.userMenu .offcanvas-title {
+    color: white;
+    font-size: 10px;
 }
 
 /* タブレット対応 */
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 670px) {
     .header>.container {
-        width: 300px;
-        display: grid;
-        grid-template-columns: 50px 1fr 50px;
-        grid-template-rows: 50px 50px;
-        margin: 0 auto;
+        grid-template-columns: 1fr 5fr 1fr;
+        padding: 0px 100px;
     }
 
     .title {
-        font-family: 'Black Ops One', cursive;
-        font-size: 20px;
-        height: 50px;
-        color: white;
-        margin: auto;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        grid-column: 1 / 4;
-        grid-row: 1 / 2;
-    }
-
-    .userIcon {
-        text-align: center;
-        height: 50px;
-        margin: auto;
-        display: flex;
-        align-items: center;
-        grid-column: 1 / 2;
-        grid-row: 2 / 2;
+        font-size: 30px;
     }
 
     .userIcon img {
@@ -94,23 +113,11 @@
     }
 
     .loginUser {
-        font-family: 'Noto Sans JP', sans-serif;
-        height: 50px;
-        color: white;
-        font-size: 10px;
-        text-align: center;
-        margin: auto;
-        display: flex;
-        align-items: center;
-        grid-column: 2 / 3;
-        grid-row: 2 / 2;
+        font-size: 15px;
     }
 
     .userMenu {
-        font-family: 'Noto Sans JP', sans-serif;
-        height: 50px;
-        color: white;
-        font-size: 10px;
+        font-size: 15px;
         text-align: center;
         margin: auto;
         display: flex;
@@ -132,7 +139,7 @@
     }
 
     .userMenu .navbar .offcanvas {
-        width: 35%;
+        width: 20%;
     }
 
     .userMenu .nav-link {
@@ -140,98 +147,66 @@
     }
 
     .userMenu .offcanvas-title {
-        color: white;
-        font-size: 10px;
+        font-size: 13px;
     }
 }
 
-/* スマホ対応 */
-@media screen and (max-width: 670px) {
+/* ＰＣ対応 */
+@media screen and (min-width: 1024px) {
+    .header {
+        margin-top: 30px;
+    }
+
     .header>.container {
-        width: 300px;
+        width: 100%;
         display: grid;
-        grid-template-columns: 50px 1fr 50px;
-        grid-template-rows: 50px 50px;
-        margin: 0 auto;
+        grid-template-columns: 2fr 200px 1fr 1fr;
+        grid-template-rows: 200px;
+        padding: 0;
     }
 
     .title {
         font-family: 'Black Ops One', cursive;
-        font-size: 20px;
-        height: 50px;
-        color: white;
-        margin: auto;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        grid-column: 1 / 4;
-        grid-row: 1 / 2;
+        font-size: 60px;
+        grid-column: 1 / 2;
     }
 
     .userIcon {
         text-align: center;
-        height: 50px;
-        margin: auto;
-        display: flex;
-        align-items: center;
-        grid-column: 1 / 2;
-        grid-row: 2 / 2;
+        height: 200px;
+        grid-column: 2 / 3;
+        grid-row: 1 / 1;
     }
 
     .userIcon img {
-        width: 50px;
-        height: 50px;
+        width: 100px;
+        height: 100px;
     }
 
     .loginUser {
-        font-family: 'Noto Sans JP', sans-serif;
-        height: 50px;
-        color: white;
-        font-size: 10px;
-        text-align: center;
-        margin: auto;
-        display: flex;
-        align-items: center;
-        grid-column: 2 / 3;
-        grid-row: 2 / 2;
+        font-size: 20px;
+        grid-column: 3 / 4;
+        grid-row: 1 / 1;
     }
 
     .userMenu {
-        font-family: 'Noto Sans JP', sans-serif;
-        height: 50px;
-        color: white;
-        font-size: 10px;
-        text-align: center;
+        font-size: 20px;
         margin: auto;
-        display: flex;
-        align-items: center;
-        grid-column: 3 / 4;
-        grid-row: 2 / 2;
+        grid-column: 4 / 5;
+        grid-row: 1 / 1;
+        justify-content: center;
+    }
+
+    .userMenu .dropdown .btn {
+        font-size: 20px;
     }
 
     .userMenu .dropdown {
-        display: none;
+        display: flex;
+        justify-content: center;
     }
 
     .userMenu .navbar {
-        display: block;
+        display: none;
     }
-
-    .userMenu .navbar-toggler {
-        font-size: 15px;
-    }
-
-    .userMenu .navbar .offcanvas {
-        width: 35%;
-    }
-
-    .userMenu .nav-link {
-        color: white;
-    }
-
-    .userMenu .offcanvas-title {
-        color: white;
-        font-size: 10px;
-    }
-
 }
