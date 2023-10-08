@@ -62,9 +62,12 @@ img {
     display: none;
 }
 
-
 /* タブレット対応 */
-@media screen and (min-width: 670px) {}
+@media screen and (min-width: 670px) {
+    label {
+        font-size: 15px;
+    }
+}
 
 /* ＰＣ対応 */
 @media screen and (min-width: 1024px) {
@@ -76,6 +79,10 @@ img {
 
     .main {
         width: 40%;
+    }
+
+    label {
+        font-size: 20px;
     }
 
     .button a {

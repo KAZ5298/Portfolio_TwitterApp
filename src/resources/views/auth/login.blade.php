@@ -32,6 +32,7 @@
                     <label for="name">アカウント名（ユーザーＩＤ）または、メールアドレス</label>
                     @if (!$errors->has('email_or_id'))
                         <input id="name" class="form" type="text" name="email_or_id">
+                        <label>　</label>
                     @else
                         <input style="border: solid 2px red;" id="name" class="form" type="text"
                             name="email_or_id">
@@ -45,6 +46,7 @@
                     <label for="password">パスワード</label>
                     @if (!$errors->has('password'))
                         <input id="password" class="form" type="password" name="password">
+                        <label>　</label>
                     @else
                         <input style="border: solid 2px red;" id="password" class="form" type="password"
                             name="password">

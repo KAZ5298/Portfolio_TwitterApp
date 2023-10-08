@@ -74,10 +74,6 @@ class ProfileController extends Controller
     {
         $user = $request;
 
-        if ($request->password_change == "no") {
-            unset($user->password);
-        }
-
         if ($request->icon_change == "yes") {
             if (isset($request->icon)) {
                 $original = request()->file('icon')->getClientOriginalName();

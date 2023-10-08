@@ -22,7 +22,7 @@ class ProfileUpdateRequest extends FormRequest
             'name' => ['required', 'string', 'max:50', Rule::unique(User::class)->ignore($this->user()->id)],
             'email' => ['required', 'string', 'email:filter', 'max:50', Rule::unique(User::class)->ignore($this->user()->id)],
             'nickname' => ['required', 'string', 'max:50', Rule::unique(User::class)->ignore($this->user()->id)],
-            'password' => ['exclude_if:password_change,no', 'required', 'confirmed', 'regex:/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z\-]{8,}$/'],
+            'password' => ['required', 'confirmed', 'regex:/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z\-]{8,}$/'],
         ];
     }
 

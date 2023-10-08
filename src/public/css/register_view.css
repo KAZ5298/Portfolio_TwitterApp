@@ -18,73 +18,112 @@
     margin: 0 auto;
     width: 90%;
     height: auto;
-    padding: 10px;
     border-radius: 0 0 10px 10px;
 }
 
-.form {
+.form,
+.input {
     width: 100%;
+    font-size: 10px;
+}
+
+.input.guide {
+    padding: 10px 0;
 }
 
 .btn {
     width: 100%;
     height: auto;
     margin: 5px;
+    padding: 0;
+}
+
+.button a,
+.button button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .button {
     display: flex;
-    justify-content: center;
-}
-
-.button a {
-    display: flex;
-    text-align: center;
-    font-size: 10px;
     align-items: center;
     justify-content: center;
-}
-
-.input {
-    margin-bottom: 20px;
-    font-size: 10px;
+    padding-bottom: 10px;
 }
 
 .btn-name {
     display: none;
 }
 
+.button .material-symbols-outlined {
+    font-size: 20px;
+}
+
 /* タブレット対応 */
-@media screen and (min-width: 670px) {}
+@media screen and (min-width: 670px) {
+    .title {
+        font-size: 50px;
+    }
+
+    .form,
+    .input {
+        font-size: 15px;
+    }
+
+    .btn {
+        padding: 0;
+    }
+
+
+    .button {
+        padding-bottom: 20px;
+    }
+
+    .button .material-symbols-outlined {
+        font-size: 25px;
+    }
+
+    .btn-name {
+        display: block;
+        font-size: 15px;
+    }
+}
 
 /* ＰＣ対応 */
 @media screen and (min-width: 1024px) {
     .title {
         font-size: 60px;
-        width: 40%;
+        width: 60%;
         padding: 50px 0;
     }
 
     .main {
-        width: 40%;
+        width: 60%;
+    }
+
+    .form,
+    .input {
+        font-size: 20px;
+    }
+
+    .input.guide {
+        padding: 20px 0;
     }
 
     .btn {
-        margin: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        padding: 5px;
     }
 
-    .button a {
-        font-size: 15px;
+    .button {
+        padding-bottom: 20px;
     }
 
-    .input {
-        font-size: 15px;
+    .button .material-symbols-outlined {
+        font-size: 30px;
     }
 
     .btn-name {
-        display: block;
+        font-size: 20px;
     }
 }
