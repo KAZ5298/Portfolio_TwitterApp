@@ -27,6 +27,11 @@
     font-size: 10px;
 }
 
+.input,
+.button {
+    padding-bottom: 10px;
+}
+
 .input.guide {
     padding: 10px 0;
 }
@@ -38,18 +43,12 @@
     padding: 0;
 }
 
+.button,
 .button a,
 .button button {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 10px;
 }
 
 .btn-name {
@@ -67,17 +66,21 @@
     }
 
     .form,
-    .input {
+    .input,
+    .btn-name {
         font-size: 15px;
+    }
+
+    .input {
+        padding-bottom: 15px;
     }
 
     .btn {
         padding: 0;
     }
 
-
     .button {
-        padding-bottom: 20px;
+        padding: 20px 0;
     }
 
     .button .material-symbols-outlined {
@@ -86,7 +89,6 @@
 
     .btn-name {
         display: block;
-        font-size: 15px;
     }
 }
 
@@ -103,11 +105,17 @@
     }
 
     .form,
-    .input {
+    .input,
+    .btn-name {
         font-size: 20px;
     }
 
-    .input.guide {
+    .input {
+        padding-bottom: 20px;
+    }
+
+    .input.guide,
+    .button {
         padding: 20px 0;
     }
 
@@ -115,15 +123,7 @@
         padding: 5px;
     }
 
-    .button {
-        padding-bottom: 20px;
-    }
-
     .button .material-symbols-outlined {
         font-size: 30px;
-    }
-
-    .btn-name {
-        font-size: 20px;
     }
 }

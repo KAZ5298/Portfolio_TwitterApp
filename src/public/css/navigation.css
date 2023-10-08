@@ -3,7 +3,6 @@
 /* ＴＯＰ画面のナビゲーションバー */
 .navigation {
     background-color: #86b7fe57;
-    font-family: 'Noto Sans JP', sans-serif;
 }
 
 .navigation ul {
@@ -22,13 +21,10 @@
 }
 
 .navigation ul li.nav-item a {
-    display: flex;
     width: 100%;
     text-decoration: none;
     color: white;
     opacity: 0.5;
-    align-items: center;
-    justify-content: center;
 }
 
 .navigation ul li.current a {
@@ -37,16 +33,7 @@
 }
 
 .navigation ul li.current span {
-    border-bottom: 2px solid white;
     padding-bottom: 0px;
-}
-
-.navigation ul li.nav-item a span.nav-name {
-    display: none;
-}
-
-.navigation ul li.nav-item a span.material-symbols-outlined.icon {
-    font-size: 30px;
 }
 
 .navigation ul li.nav-item a.nav-name-sp {
@@ -54,89 +41,111 @@
 }
 
 /* トークルーム画面のナビゲーションバー */
-.navbar-room {
-    font-family: 'Noto Sans JP', sans-serif;
-    display: grid;
-    grid-template-columns: 80% 20%;
-    background-color: #86b7fe57;
-    align-items: center;
-}
-
-.navbar-room-name {
-    grid-column: 1 / 2;
-    display: flex;
-    color: white;
-    justify-content: center;
-    font-size: 10px;
-    text-decoration: none;
-    align-items: center;
-    padding: 10px 0;
-}
-
-.navbar-room-name span {
-    border-bottom: 2px solid white;
-    padding-bottom: 2px;
-}
-
-.navbar-room-button {
-    grid-column: 2 / 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5px;
-}
-
-.material-symbols-outlined.navbar-room-btn {
-    font-size: 20px;
-}
-
-.navbar-room-btn-name {
-    display: none;
-}
-
 /* フォロー一覧画面のナビゲーションバー */
+.navbar-room,
 .navbar-follow {
-    font-family: 'Noto Sans JP', sans-serif;
     display: grid;
     grid-template-columns: 80% 20%;
     background-color: #86b7fe57;
-    align-items: center;
 }
 
+.navbar-room-name,
 .navbar-follow-name {
     grid-column: 1 / 2;
-    display: flex;
     color: white;
-    justify-content: center;
     font-size: 10px;
     text-decoration: none;
-    align-items: center;
     padding: 10px 0;
 }
 
+.navbar-room-name span,
 .navbar-follow-name span {
-    border-bottom: 2px solid white;
     padding-bottom: 2px;
 }
 
+.navbar-room-button,
 .navbar-follow-button {
     grid-column: 2 / 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin: 5px;
 }
 
-.material-symbols-outlined.navbar-follow-btn {
-    font-size: 20px;
+.navigation ul li.nav-item a,
+.navbar-room-name,
+.navbar-room-button,
+.navbar-follow-name,
+.navbar-follow-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.navigation ul li.nav-item a span.nav-name,
+.navbar-room-btn-name,
 .navbar-follow-btn-name {
     display: none;
 }
 
+.navigation,
+.navbar-room,
+.navbar-follow {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.navigation ul li.nav-item a span.material-symbols-outlined.icon,
+.material-symbols-outlined.navbar-room-btn,
+.material-symbols-outlined.navbar-follow-btn {
+    font-size: 20px;
+}
+
+.navigation ul li.current span,
+.navbar-room-name span,
+.navbar-follow-name span {
+    border-bottom: 2px solid white;
+}
+
 /* タブレット対応 */
-@media screen and (min-width: 670px) {}
+@media screen and (min-width: 670px) {
+
+    /* ＴＯＰ画面のナビゲーションバー */
+    .navigation ul li.nav-item a.nav-name-sp {
+        font-size: 12px;
+    }
+
+    /* トークルーム画面のナビゲーションバー */
+    /* フォロー一覧画面のナビゲーションバー */
+    .navbar-room,
+    .navbar-follow {
+        display: grid;
+        grid-template-columns: 80% 20%;
+        background-color: #86b7fe57;
+    }
+
+    .navbar-room-name,
+    .navbar-follow-name {
+        grid-column: 1 / 2;
+        color: white;
+        font-size: 10px;
+        text-decoration: none;
+        padding: 10px 0;
+    }
+
+    .navbar-room-name span,
+    .navbar-follow-name span {
+        padding-bottom: 2px;
+    }
+
+    .navbar-room-button,
+    .navbar-follow-button {
+        grid-column: 2 / 3;
+        margin: 5px;
+    }
+
+    .navigation ul li.nav-item a span.material-symbols-outlined.icon,
+    .material-symbols-outlined.navbar-room-btn,
+    .material-symbols-outlined.navbar-follow-btn {
+        font-size: 25px;
+    }
+}
 
 /* ＰＣ対応 */
 @media screen and (min-width: 1024px) {
@@ -148,10 +157,6 @@
 
     .navigation ul li.nav-item a {
         padding: 15px 0;
-    }
-
-    .navigation ul li.current a {
-        opacity: 1;
     }
 
     .navigation ul li.current span {
@@ -226,5 +231,46 @@
     .navbar-follow-btn-name {
         font-size: 20px;
         display: block;
+    }
+
+    /* ＴＯＰ画面のナビゲーションバー */
+    .navigation ul li.current a {
+        font-weight: bold;
+        opacity: 1;
+    }
+
+    /* トークルーム画面のナビゲーションバー */
+    /* フォロー一覧画面のナビゲーションバー */
+    .navbar-room,
+    .navbar-follow {
+        display: grid;
+        grid-template-columns: 80% 20%;
+        background-color: #86b7fe57;
+    }
+
+    .navbar-room-name,
+    .navbar-follow-name {
+        grid-column: 1 / 2;
+        color: white;
+        font-size: 10px;
+        text-decoration: none;
+        padding: 10px 0;
+    }
+
+    .navbar-room-name span,
+    .navbar-follow-name span {
+        padding-bottom: 2px;
+    }
+
+    .navbar-room-button,
+    .navbar-follow-button {
+        grid-column: 2 / 3;
+        margin: 5px;
+    }
+
+    .navigation ul li.nav-item a span.material-symbols-outlined.icon,
+    .material-symbols-outlined.navbar-room-btn,
+    .material-symbols-outlined.navbar-follow-btn {
+        font-size: 30px;
     }
 }

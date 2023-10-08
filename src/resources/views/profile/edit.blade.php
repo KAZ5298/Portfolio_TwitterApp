@@ -41,7 +41,6 @@
                     @if (!$errors->has('name'))
                         <input id="name" class="form" type="text" name="name" value="{{ $user->name }}"
                             placeholder="※">
-                        <label></label>
                     @else
                         <input style="border: solid 2px red;" id="name" class="form" type="text"
                             name="name" value="{{ old('name') }}" placeholder="※">
@@ -57,7 +56,6 @@
                     @if (!$errors->has('email'))
                         <input id="email" class="form" type="text" name="email" value="{{ $user->email }}"
                             placeholder="※">
-                        <label></label>
                     @else
                         <input style="border: solid 2px red;" id="email" class="form" type="text"
                             name="email" value="{{ old('email') }}" placeholder="※">
@@ -73,7 +71,6 @@
                     @if (!$errors->has('nickname'))
                         <input id="nickname" class="form" type="text" name="nickname"
                             value="{{ $user->nickname }}" placeholder="※">
-                        <label></label>
                     @else
                         <input style="border: solid 2px red;" id="nickname" class="form" type="text"
                             name="nickname" value="{{ old('nickname') }}" placeholder="※">
@@ -106,7 +103,6 @@
                     <label for="password">パスワード</label>
                     @if (!$errors->has('password'))
                         <input id="password" class="form" type="password" name="password" placeholder="※">
-                        <label></label>
                     @else
                         <input style="border: solid 2px red;" id="password" class="form" type="password"
                             name="password" placeholder="※">

@@ -38,7 +38,6 @@
                     <label for="name">アカウント名（ユーザーＩＤ）</label>
                     @if (!$errors->has('name'))
                         <input class="form" type="text" name="name" value="{{ old('name') }}" placeholder="※">
-                        <label></label>
                     @else
                         <input style="border: solid 2px red;" id="name" class="form" type="text"
                             name="name" value="{{ old('name') }}" placeholder="※">
@@ -53,7 +52,6 @@
                     <label for="email">メールアドレス</label>
                     @if (!$errors->has('email'))
                         <input class="form" type="text" name="email" value="{{ old('email') }}" placeholder="※">
-                        <label></label>
                     @else
                         <input style="border: solid 2px red;" id="email" class="form" type="text"
                             name="email" value="{{ old('email') }}" placeholder="※">
@@ -69,7 +67,6 @@
                     @if (!$errors->has('nickname'))
                         <input class="form" type="text" name="nickname" value="{{ old('nickname') }}"
                             placeholder="※">
-                        <label></label>
                     @else
                         <input style="border: solid 2px red;" id="nickname" class="form" type="text"
                             name="nickname" value="{{ old('nickname') }}" placeholder="※">
@@ -84,8 +81,6 @@
                     <label for="icon">プロフィール画像</label>
                     <br>
                     <input id="icon" type="file" name="icon">
-                    <br>
-                    <label></label>
                 </div>
 
                 <!-- Password -->
@@ -93,7 +88,6 @@
                     <label for="password">パスワード</label>
                     @if (!$errors->has('password'))
                         <input id="password" class="form" type="password" name="password" placeholder="※">
-                        <label></label>
                     @else
                         <input style="border: solid 2px red;" id="password" class="form" type="password"
                             name="password" placeholder="※">
@@ -107,7 +101,6 @@
                 <div class="input password">
                     <label for="password">パスワード（再確認）</label>
                     <input id="password" class="form" type="password" name="password_confirmation" placeholder="※">
-                    <label></label>
                 </div>
 
                 <div class="button">
@@ -115,7 +108,7 @@
                         <span class="material-symbols-outlined"> how_to_reg </span>
                         <span class="btn-name">登録</span>
                     </button>
-                    <a href="/profile" class="btn btn-danger">
+                    <a href="/register" class="btn btn-danger">
                         <span class="material-symbols-outlined"> restart_alt </span>
                         <span class="btn-name">リセット</span>
                     </a>

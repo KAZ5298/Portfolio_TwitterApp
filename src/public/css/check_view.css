@@ -18,30 +18,29 @@
     margin: 0 auto;
     width: 90%;
     height: auto;
-    padding: 10px;
+    padding: 15px;
     border-radius: 0 0 10px 10px;
+}
+
+.btn,
+.button,
+.button a,
+.worning {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button a,
+.input,
+.worning {
+    font-size: 10px;
 }
 
 .btn {
     width: 100%;
     height: auto;
-    margin: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.button {
-    display: flex;
-    justify-content: center;
-}
-
-.button a {
-    display: flex;
-    text-align: center;
-    font-size: 10px;
-    align-items: center;
-    justify-content: center;
+    margin: 10px 5px;
 }
 
 th,
@@ -52,7 +51,6 @@ td {
 }
 
 table {
-    border-collapse: collapse;
     width: 100%;
 }
 
@@ -63,36 +61,71 @@ img {
 
 .input {
     padding-left: 10px;
-    font-size: 10px;
 }
 
 .btn-name {
     display: none;
 }
 
-.worning {
-    display: flex;
-    justify-content: center;
-    font-size: 10px;
+.button .material-symbols-outlined {
+    font-size: 20px;
 }
 
 /* タブレット対応 */
-@media screen and (min-width: 670px) {}
+@media screen and (min-width: 670px) {
+    .title {
+        font-size: 50px;
+        padding: 30px 0;
+    }
+
+    .button a,
+    .input,
+    .worning,
+    .btn-name {
+        font-size: 15px;
+    }
+
+    .btn {
+        width: 100%;
+        height: auto;
+        margin: 10px 5px;
+    }
+
+    img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .input {
+        padding-left: 15px;
+    }
+
+    .btn-name {
+        display: block;
+    }
+
+    .button .material-symbols-outlined {
+        font-size: 25px;
+    }
+}
 
 /* ＰＣ対応 */
 @media screen and (min-width: 1024px) {
     .title {
         font-size: 60px;
-        width: 35%;
+        width: 40%;
         padding: 50px 0;
     }
 
     .main {
-        width: 35%;
+        width: 40%;
     }
 
-    .button a {
-        font-size: 15px;
+    .button a,
+    .input,
+    .worning,
+    .btn-name {
+        font-size: 20px;
     }
 
     img {
@@ -100,15 +133,15 @@ img {
         height: 80px;
     }
 
-    .input {
-        font-size: 15px;
-    }
-
-    .worning {
-        font-size: 15px;
+    .btn {
+        padding: 10px;
     }
 
     .btn-name {
         display: block;
+    }
+
+    .button .material-symbols-outlined {
+        font-size: 30px;
     }
 }
