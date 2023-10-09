@@ -10,8 +10,8 @@
 .header>.container {
     width: 100%;
     display: grid;
-    grid-template-columns: 50px 3fr 1fr;
-    grid-template-rows: 50px;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
     margin: 0 auto;
     padding: 0 10px;
 }
@@ -19,22 +19,11 @@
 .title {
     font-family: 'Black Ops One', cursive;
     font-size: 30px;
-    height: auto;
-    color: white;
-    align-items: center;
-    display: flex;
-    justify-content: center;
     grid-column: 1 / 4;
     grid-row: 1 / 2;
 }
 
 .userIcon {
-    text-align: center;
-    height: auto;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     grid-column: 1 / 2;
     grid-row: 2 / 2;
 }
@@ -45,28 +34,12 @@
 }
 
 .loginUser {
-    font-family: 'Noto Sans JP', sans-serif;
-    height: auto;
-    color: white;
-    font-size: 12px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     grid-column: 2 / 3;
     grid-row: 2 / 2;
 }
 
 .userMenu {
-    font-family: 'Noto Sans JP', sans-serif;
     width: 100%;
-    height: auto;
-    color: white;
-    font-size: 10px;
-    text-align: center;
-    margin: auto;
-    display: flex;
-    align-items: center;
     grid-column: 3 / 4;
     grid-row: 2 / 2;
 }
@@ -79,71 +52,64 @@
     display: block;
 }
 
-.userMenu .navbar-toggler {
-    font-size: 15px;
-}
-
 .userMenu .navbar .offcanvas {
     width: 35%;
 }
 
-.userMenu .nav-link {
+/* 共通化 */
+.title,
+.userIcon,
+.loginUser,
+.userMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* フォントカラー */
+.title,
+.loginUser,
+.userMenu,
+.userMenu .nav-link,
+.userMenu .offcanvas-title {
     color: white;
 }
 
-.userMenu .offcanvas-title {
-    color: white;
+/* フォントサイズ */
+.loginUser,
+.userMenu,
+.userMenu .offcanvas-title,
+.userMenu .navbar-toggler {
+    font-family: 'Noto Sans JP', sans-serif;
     font-size: 10px;
 }
 
 /* タブレット対応 */
 @media screen and (min-width: 670px) {
     .header>.container {
-        grid-template-columns: 1fr 5fr 1fr;
-        padding: 0px 100px;
+        padding: 0 100px;
     }
 
     .title {
-        font-size: 30px;
+        font-size: 40px;
     }
 
     .userIcon img {
-        width: 50px;
-        height: 50px;
-    }
-
-    .loginUser {
-        font-size: 15px;
-    }
-
-    .userMenu {
-        font-size: 15px;
-        text-align: center;
-        margin: auto;
-        display: flex;
-        align-items: center;
-        grid-column: 3 / 4;
-        grid-row: 2 / 2;
-    }
-
-    .userMenu .dropdown {
-        display: none;
-    }
-
-    .userMenu .navbar {
-        display: block;
+        width: 60px;
+        height: 60px;
     }
 
     .userMenu .navbar .offcanvas {
-        width: 20%;
+        width: 25%;
     }
 
-    .userMenu .nav-link {
-        color: white;
-    }
-
-    .userMenu .offcanvas-title {
-        font-size: 13px;
+    /* 共通化 */
+    /* フォントサイズ */
+    .loginUser,
+    .userMenu,
+    .userMenu .offcanvas-title,
+    .userMenu .navbar-toggler {
+        font-size: 15px;
     }
 }
 
@@ -155,22 +121,20 @@
     }
 
     .header>.container {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 2fr 200px 1fr 1fr;
-        grid-template-rows: 200px;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
         padding: 0;
     }
 
     .title {
-        font-size: 60px;
+        font-size: 50px;
         grid-column: 1 / 2;
     }
 
     .userIcon {
         height: 200px;
         grid-column: 2 / 3;
-        grid-row: 1 / 1;
+        grid-row: 1 / 2;
     }
 
     .userIcon img {
@@ -179,29 +143,30 @@
     }
 
     .loginUser {
-        font-size: 20px;
         grid-column: 3 / 4;
-        grid-row: 1 / 1;
+        grid-row: 1 / 2;
     }
 
     .userMenu {
-        font-size: 20px;
-        margin: auto;
         grid-column: 4 / 5;
-        grid-row: 1 / 1;
-        justify-content: center;
-    }
-
-    .userMenu .dropdown .btn {
-        font-size: 20px;
+        grid-row: 1 / 2;
     }
 
     .userMenu .dropdown {
-        display: flex;
-        justify-content: center;
+        display: block;
     }
 
     .userMenu .navbar {
         display: none;
+    }
+
+    /* 共通化 */
+    /* フォントサイズ */
+    .loginUser,
+    .userMenu,
+    .userMenu .offcanvas-title,
+    .userMenu .navbar-toggler,
+    .userMenu .dropdown .btn {
+        font-size: 20px;
     }
 }
