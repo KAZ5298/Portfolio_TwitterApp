@@ -159,12 +159,12 @@
                                 @if ($loginUser->checkMessageInTalkRoom($loginUser->id, $follow->id))
                                     <button type="submit" class="btn unfollow"
                                         onclick="return confirm('チャットルームのメッセージが削除されます。よろしいですか？');">
-                                        <span class="material-symbols-outlined tb">person_remove</span>
+                                        <span class="material-symbols-outlined fb">person_remove</span>
                                         <span class="icon-name">フォロー解除</span>
                                     </button>
                                 @else
                                     <button type="submit" class="btn unfollow">
-                                        <span class="material-symbols-outlined tb">person_remove</span>
+                                        <span class="material-symbols-outlined fb">person_remove</span>
                                         <span class="icon-name">フォロー解除</span>
                                     </button>
                                 @endif

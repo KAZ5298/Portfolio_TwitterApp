@@ -113,31 +113,10 @@
 
     /* トークルーム画面のナビゲーションバー */
     /* フォロー一覧画面のナビゲーションバー */
-    .navbar-room,
-    .navbar-follow {
-        display: grid;
-        grid-template-columns: 80% 20%;
-        background-color: #86b7fe57;
-    }
-
     .navbar-room-name,
     .navbar-follow-name {
-        grid-column: 1 / 2;
-        color: white;
-        font-size: 10px;
-        text-decoration: none;
+        font-size: 15px;
         padding: 10px 0;
-    }
-
-    .navbar-room-name span,
-    .navbar-follow-name span {
-        padding-bottom: 2px;
-    }
-
-    .navbar-room-button,
-    .navbar-follow-button {
-        grid-column: 2 / 3;
-        margin: 5px;
     }
 
     .navigation ul li.nav-item a span.material-symbols-outlined.icon,
@@ -157,6 +136,11 @@
 
     .navigation ul li.nav-item a {
         padding: 15px 0;
+    }
+
+    .navigation ul li.current a {
+        font-weight: bold;
+        opacity: 1;
     }
 
     .navigation ul li.current span {
@@ -188,89 +172,32 @@
     }
 
     /* トークルーム画面のナビゲーションバー */
-    .navbar-room-name {
-        font-size: 20px;
-        padding: 15px 0;
-    }
-
-    .navbar-room-name span {
-        border-bottom: 3px solid white;
-    }
-
-    .navbar-room-button {
-        margin: 10px;
-    }
-
-    .material-symbols-outlined.navbar-room-btn {
-        font-size: 30px;
-    }
-
-    .navbar-room-btn-name {
-        font-size: 20px;
-        display: block;
-    }
-
     /* フォロー一覧画面のナビゲーションバー */
-    .navbar-follow-name {
-        font-size: 20px;
-        padding: 15px 0;
-    }
-
-    .navbar-follow-name span {
-        border-bottom: 3px solid white;
-    }
-
-    .navbar-follow-button {
-        margin: 10px;
-    }
-
-    .material-symbols-outlined.navbar-follow-btn {
-        font-size: 30px;
-    }
-
-    .navbar-follow-btn-name {
-        font-size: 20px;
-        display: block;
-    }
-
-    /* ＴＯＰ画面のナビゲーションバー */
-    .navigation ul li.current a {
-        font-weight: bold;
-        opacity: 1;
-    }
-
-    /* トークルーム画面のナビゲーションバー */
-    /* フォロー一覧画面のナビゲーションバー */
-    .navbar-room,
-    .navbar-follow {
-        display: grid;
-        grid-template-columns: 80% 20%;
-        background-color: #86b7fe57;
-    }
-
     .navbar-room-name,
     .navbar-follow-name {
-        grid-column: 1 / 2;
-        color: white;
-        font-size: 10px;
-        text-decoration: none;
-        padding: 10px 0;
-    }
-
-    .navbar-room-name span,
-    .navbar-follow-name span {
-        padding-bottom: 2px;
+        font-size: 20px;
+        padding: 15px 0;
     }
 
     .navbar-room-button,
     .navbar-follow-button {
-        grid-column: 2 / 3;
-        margin: 5px;
+        margin: 10px;
     }
 
     .navigation ul li.nav-item a span.material-symbols-outlined.icon,
     .material-symbols-outlined.navbar-room-btn,
     .material-symbols-outlined.navbar-follow-btn {
         font-size: 30px;
+    }
+
+    .navbar-room-name span,
+    .navbar-follow-name span {
+        border-bottom: 3px solid white;
+    }
+
+    .navbar-room-btn-name,
+    .navbar-follow-btn-name {
+        font-size: 20px;
+        display: block;
     }
 }
