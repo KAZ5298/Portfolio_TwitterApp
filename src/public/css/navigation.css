@@ -32,7 +32,7 @@
 }
 
 .navigation ul li.current span {
-    padding-bottom: 0px;
+    padding-bottom: 2px;
 }
 
 .navigation ul li.nav-item a.nav-name-sp {
