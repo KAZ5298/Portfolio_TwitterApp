@@ -11,13 +11,12 @@
     padding: 0;
     width: 100%;
     height: auto;
-    text-align: center;
 }
 
 .navigation ul li {
     display: table-cell;
     width: 20%;
-    padding: 5px 0;
+    padding: 2% 0;
 }
 
 .navigation ul li.nav-item a {
@@ -111,6 +110,10 @@
         font-size: 12px;
     }
 
+    .navigation ul li {
+        padding: 1% 0;
+    }
+
     /* トークルーム画面のナビゲーションバー */
     /* フォロー一覧画面のナビゲーションバー */
     .navbar-room-name,
@@ -130,14 +133,6 @@
 @media screen and (min-width: 1024px) {
 
     /* ＴＯＰ画面のナビゲーションバー */
-    .navigation ul li {
-        padding: 0;
-    }
-
-    .navigation ul li.nav-item a {
-        padding: 15px 0;
-    }
-
     .navigation ul li.current a {
         font-weight: bold;
         opacity: 1;

@@ -5,7 +5,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: 80% 20%;
-    padding: 20px 20px 0 20px;
+    padding: 3% 5% 0 5%;
     font-size: 10px;
 }
 
@@ -16,25 +16,25 @@
 
 .main {
     background-color: white;
-    margin: 0 auto;
+    margin: 0 5%;
     width: 90%;
     border-radius: 0 0 10px 10px;
-    margin-bottom: 19.5px;
+    margin-bottom: 5%;
 }
 
 .main .container {
-    padding: 10px 0;
+    padding: 2% 0;
 }
 
 .tweetContainer {
     width: 90%;
     height: 250px;
     display: grid;
-    grid-template-columns: 80px 1fr 1fr 1fr;
-    grid-template-rows: 60px 1fr 50px;
-    margin: 0 auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    margin: 0 5%;
+    /* margin-top: 0%; */
+    margin-bottom: 5%;
     border: 1px solid;
     border-radius: 5px;
 }
@@ -43,7 +43,7 @@
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     justify-content: center;
-    padding: 5px;
+    padding: 5%;
 }
 
 .tweetIcon img {
