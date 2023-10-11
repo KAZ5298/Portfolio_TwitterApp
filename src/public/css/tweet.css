@@ -5,7 +5,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: 80% 20%;
-    padding: 3% 5%;
+    padding: 2% 5%;
     font-size: 10px;
 }
 
@@ -30,9 +30,10 @@
 
 .tweetContainer {
     width: 90%;
+    height: 200px;
     display: grid;
-    grid-template-columns: 2fr 2fr 1fr 1fr 2fr;
-    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-columns: 30% 25% 10% 10% 25%;
+    grid-template-rows: 30% 50% 20%;
     margin: 0 5%;
     margin-top: 2%;
     margin-bottom: 2%;
@@ -93,7 +94,7 @@
 
 .tweetButton .btn {
     width: 90%;
-    margin: 0 5%;
+    margin: 0 0%;
 }
 
 .material-symbols-outlined.tb,
@@ -165,16 +166,13 @@
         font-size: 13px;
     }
 
-    .tweetpost button {
-        /* margin-left: 10%; */
-    }
-
     .tweetContainer {
-        width: 85%;
-        grid-template-columns: 2fr 3fr 1fr 1fr 3fr;
+        width: 70%;
+        height: 250px;
+        grid-template-columns: 20% 30% 10% 10% 30%;
         margin: 0 auto;
-        margin-top: 2%;
-        margin-bottom: 2%;
+        margin-top: 1%;
+        margin-bottom: 1%;
     }
 
     .tweetIcon img {
@@ -203,68 +201,37 @@
 
 /* ＰＣ対応 */
 @media screen and (min-width: 1024px) {
-    .tweetpost {
-        font-size: 20px;
-    }
-
     .tweetpost .tweet {
         border-radius: 5px;
-        padding-left: 5px
+        padding-left: 5px;
     }
 
-    .tweetpost .btn {
-        /* margin-left: 20px; */
-        /* justify-content: center; */
-    }
-
-    .main {
-        margin: 0 3%;
-        width: 94%;
-        border-radius: 0 0 10px 10px;
-        margin-bottom: 3%;
-    }
-
-    .tweetNickname {
-        font-size: 25px;
-    }
-
-    .tweetAccount {
+    .tweetpost {
+        padding: 1% 15%;
         font-size: 20px;
-    }
-
-    .mutual-follow,
-    .followed {
-        background-color: #dee2e6;
-        border-radius: 5px;
-        width: 150px;
-        height: 30px;
-        font-weight: bold;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .tweetButton button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .tweetButton .btn {
-        width: 160px;
-    }
-
-    .icon-name,
-    .mutual-follow-tb,
-    .followed-tb {
-        font-size: 15px;
     }
 
     .tweetContainer {
-        width: 100%;
+        width: 60%;
         height: 300px;
-        grid-template-columns: 110px 1fr 1fr 1fr;
-        grid-template-rows: 110px 1fr 80px;
+        grid-template-columns: 20% 20% 20%;
+        margin: 0 auto;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        grid-template-rows: 40% 40% 20%;
+    }
+
+    .tweetAccount {
+        font-size: 17px;
+    }
+
+    .tweetButton {
+        padding-left: 2%;
+    }
+
+    .tweetButton .btn {
+        width: 140px;
+        margin: 0 5px;
     }
 
     .tweetIcon img {
@@ -272,227 +239,20 @@
         height: 100px;
     }
 
-    .mutual-follow,
-    .followed {
-        background-color: #dee2e6;
-        border-radius: 5px;
-        width: 70%;
-        height: 50%;
-        font-weight: bold;
-        justify-content: center;
-    }
-
-    .tweetButton button {
-        justify-content: center;
-    }
-
-    .material-symbols-outlined.tb,
-    .material-symbols-outlined.tp {
-        font-size: 30px;
-    }
-
-    .mutual-follow-tb,
-    .followed-tb,
-    .tweetContent,
-    .tweetTime,
     .btn-name,
     .icon-name {
-        font-size: 20px;
-    }
-
-    .btn-name,
-    .icon-name {
-        display: block;
-    }
-
-    .tweetpost {
-        background-color: white;
-        width: 100%;
-        display: grid;
-        grid-template-columns: 80% 20%;
-        padding: 3% 5%;
-        font-size: 10px;
-    }
-
-    .tweetpost button {
-        /* margin-left: 10%; */
-    }
-
-    .main {
-        background-color: white;
-        margin: 0 3%;
-        width: 94%;
-        border-radius: 0 0 10px 10px;
-        margin-bottom: 3%;
-        padding: 1%;
-    }
-
-    .main .container {
-        padding: 0;
-        width: 100%;
-        margin: 0 auto;
-    }
-
-    .tweetContainer {
-        width: 90%;
-        display: grid;
-        grid-template-columns: 2fr 2fr 1fr 1fr 2fr;
-        grid-template-rows: 1fr 2fr 1fr;
-        margin: 0 5%;
-        margin-top: 2%;
-        margin-bottom: 2%;
-        border: 1px solid;
-        border-radius: 5px;
-    }
-
-    .tweetIcon {
-        grid-column: 1 / 2;
-        grid-row: 1 / 2;
-        padding: 5%;
-    }
-
-    .tweetIcon img {
-        width: 50px;
-        height: 50px;
-    }
-
-    .tweetUser {
-        grid-column: 2 / 4;
-        grid-row: 1 / 2;
         display: flex;
-        flex-direction: column;
-        align-items: baseline;
-    }
-
-    .tweetNickname {
-        font-size: 15px;
-    }
-
-    .tweetAccount {
-        font-size: 13px;
-        color: gray;
-    }
-
-    .tweetFollow {
-        grid-column: 4 / 6;
-        grid-row: 1 / 2;
-        justify-content: right;
-        padding-right: 5%;
     }
 
     .mutual-follow,
     .followed {
-        background-color: #dee2e6;
-        border-radius: 5px;
-        width: 100%;
-        height: 50%;
-        font-weight: bold;
-    }
-
-    .tweetButton {
-        grid-column: 1 / 3;
-        grid-row: 3 / 4;
-        justify-content: left;
-        padding-left: 5%;
-    }
-
-    .tweetButton .btn {
-        width: 90%;
-        margin: 0 5%;
-    }
-
-    .material-symbols-outlined.tb,
-    .material-symbols-outlined.tp {
-        font-size: 20px;
-    }
-
-    .mutual-follow-tb,
-    .followed-tb {
-        font-size: 10px;
-    }
-
-    .tweetContent {
-        grid-column: 1 / 6;
-        grid-row: 2 / 3;
-        border-top: 1px solid;
-        padding: 1% 2%;
-        font-size: 15px;
-    }
-
-    .tweetTime {
-        grid-column: 3 / 6;
-        grid-row: 3 / 4;
-        padding-right: 5%;
-        color: gray;
-        justify-content: right;
-        font-size: 15px;
+        height: 40%;
     }
 
     /* 共通化 */
-    .btn-name,
-    .icon-name {
-        display: block;
-    }
-
-    .tweetButton .btn.unfollow,
-    .tweetButton .btn.unfavorite,
-    .tweetButton .btn.delete {
-        background-color: #808080ad;
-        color: white;
-    }
-
-    .tweetpost button,
-    .tweetIcon,
-    .tweetFollow,
-    .mutual-follow,
-    .followed,
-    .tweetButton,
-    .tweetButton button,
-    .material-symbols-outlined.tb,
-    .tweetTime {
-        /* display: flex; */
-        /* align-items: center; */
-    }
-
-    .tweetpost button,
-    .tweetIcon,
-    .tweetUser,
-    .mutual-follow,
-    .followed,
-    .tweetButton button {
-        /* justify-content: center; */
-    }
-
-    /* タブレット対応 */
-    .tweetpost {
-        padding: 1% 15%;
-        font-size: 20px;
-    }
-
-    .tweetpost button {
-        /* margin-left: 10%; */
-    }
-
-    .tweetContainer {
-        width: 85%;
-        grid-template-columns: 2fr 3fr 1fr 1fr 3fr;
-        margin: 0 auto;
-        margin-top: 2%;
-        margin-bottom: 2%;
-    }
-
-    .tweetIcon img {
-        width: 60px;
-        height: 60px;
-    }
-
-    .tweetAccount {
-        font-size: 15px;
-    }
-
     .material-symbols-outlined.tb,
     .material-symbols-outlined.tp {
-        font-size: 25px;
+        font-size: 30px;
     }
 
     /* 共通化 */
@@ -501,6 +261,6 @@
     .followed-tb,
     .tweetContent,
     .tweetTime {
-        font-size: 17px;
+        font-size: 20px;
     }
 }

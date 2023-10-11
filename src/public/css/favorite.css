@@ -2,25 +2,28 @@
 /* スマホ対応 */
 .main {
     background-color: white;
-    margin: 0 auto;
-    width: 90%;
+    margin: 0 3%;
+    width: 94%;
     border-radius: 0 0 10px 10px;
-    margin-bottom: 19.5px;
+    margin-bottom: 3%;
+    padding: 1%;
 }
 
 .main .container {
-    padding: 10px 0;
+    padding: 0;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .favoriteContainer {
     width: 90%;
-    height: 250px;
+    height: 200px;
     display: grid;
-    grid-template-columns: 80px 1fr 1fr 1fr;
-    grid-template-rows: 60px 1fr 50px;
-    margin: 0 auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    grid-template-columns: 30% 25% 10% 10% 25%;
+    grid-template-rows: 30% 50% 20%;
+    margin: 0 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
     border: 1px solid;
     border-radius: 5px;
 }
@@ -28,8 +31,7 @@
 .favoriteIcon {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    justify-content: center;
-    padding: 5px;
+    padding: 5%;
 }
 
 .favoriteIcon img {
@@ -43,7 +45,6 @@
     display: flex;
     flex-direction: column;
     align-items: baseline;
-    justify-content: center;
 }
 
 .favoriteNickname {
@@ -56,42 +57,35 @@
 }
 
 .favoriteFollow {
-    grid-column: 3 / 5;
+    grid-column: 4 / 6;
     grid-row: 1 / 2;
     justify-content: right;
-    padding-right: 10px;
+    padding-right: 5%;
 }
 
 .mutual-follow,
 .followed {
     background-color: #dee2e6;
     border-radius: 5px;
-    width: 70%;
+    width: 100%;
     height: 50%;
     font-weight: bold;
-    justify-content: center;
 }
 
 .favoriteButton {
     grid-column: 1 / 3;
     grid-row: 3 / 4;
     justify-content: left;
-    padding-left: 5px;
-}
-
-.favoriteButton button {
-    justify-content: center;
+    padding-left: 5%;
 }
 
 .favoriteButton .btn {
-    width: 50px;
-    height: auto;
-    margin: 5px;
+    width: 90%;
+    margin: 0 0%;
 }
 
 .material-symbols-outlined.fb,
 .material-symbols-outlined.fp {
-    justify-content: center;
     font-size: 20px;
 }
 
@@ -101,17 +95,17 @@
 }
 
 .favoriteContent {
-    grid-column: 1 / 5;
+    grid-column: 1 / 6;
     grid-row: 2 / 3;
     border-top: 1px solid;
-    padding: 5px 10px;
+    padding: 1% 2%;
     font-size: 15px;
 }
 
 .favoriteTime {
-    grid-column: 3 / 5;
+    grid-column: 3 / 6;
     grid-row: 3 / 4;
-    padding-right: 10px;
+    padding-right: 5%;
     color: gray;
     justify-content: right;
     font-size: 15px;
@@ -142,24 +136,33 @@
     align-items: center;
 }
 
+.favoritepost button,
+.favoriteIcon,
+.favoriteUser,
+.mutual-follow,
+.followed,
+.favoriteButton button {
+    justify-content: center;
+}
+
 /* タブレット対応 */
 @media screen and (min-width: 670px) {
     .favoriteAccount {
         font-size: 15px;
     }
 
-    .favoriteTime {
-        font-size: 15px;
-    }
-
-    .favoritepost {
-        padding: 20px 100px 0 100px;
+    .mutual-follow-fb,
+    .followed-fb {
         font-size: 15px;
     }
 
     .favoriteContainer {
-        width: 75%;
-        grid-template-rows: 70px 1fr 50px;
+        width: 70%;
+        height: 250px;
+        grid-template-columns: 20% 30% 10% 10% 30%;
+        margin: 0 auto;
+        margin-top: 1%;
+        margin-bottom: 1%;
     }
 
     .favoriteIcon img {
@@ -167,75 +170,44 @@
         height: 60px;
     }
 
-    .favoriteNickname,
-    .favoriteContent,
-    .favoriteTime {
-        font-size: 20px;
-    }
-
-    .favoriteButton .btn {
-        width: 60px;
-    }
-
     .material-symbols-outlined.fb,
     .material-symbols-outlined.fp {
         font-size: 25px;
     }
 
+    /* 共通化 */
+    .favoriteNickname,
     .mutual-follow-fb,
-    .followed-fb {
-        font-size: 15px;
+    .followed-fb,
+    .favoriteContent,
+    .favoriteTime {
+        font-size: 17px;
     }
 }
 
 /* ＰＣ対応 */
 @media screen and (min-width: 1024px) {
-    .favoriteNickname {
-        font-size: 25px;
+    .favoriteContainer {
+        width: 60%;
+        height: 300px;
+        grid-template-columns: 20% 20% 20%;
+        margin: 0 auto;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        grid-template-rows: 40% 40% 20%;
     }
 
     .favoriteAccount {
-        font-size: 20px;
+        font-size: 17px;
     }
 
-    .mutual-follow,
-    .followed {
-        background-color: #dee2e6;
-        border-radius: 5px;
-        width: 150px;
-        height: 30px;
-        font-weight: bold;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .favoriteButton button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .favoriteButton {
+        padding-left: 2%;
     }
 
     .favoriteButton .btn {
-        width: 160px;
-    }
-
-    .icon-name,
-    .mutual-follow-fb,
-    .followed-fb {
-        font-size: 15px;
-    }
-
-    .main {
-        width: 80%;
-        margin-bottom: 30px;
-    }
-
-    .favoriteContainer {
-        width: 50%;
-        height: 300px;
-        grid-template-columns: 110px 1fr 1fr 1fr;
-        grid-template-rows: 110px 1fr 80px;
+        width: 140px;
+        margin: 0 5px;
     }
 
     .favoriteIcon img {
@@ -243,36 +215,28 @@
         height: 100px;
     }
 
+    .btn-name,
+    .icon-name {
+        display: flex;
+    }
+
     .mutual-follow,
     .followed {
-        background-color: #dee2e6;
-        border-radius: 5px;
-        width: 70%;
-        height: 50%;
-        font-weight: bold;
-        justify-content: center;
+        height: 40%;
     }
 
-    .favoriteButton button {
-        justify-content: center;
-    }
-
+    /* 共通化 */
     .material-symbols-outlined.fb,
     .material-symbols-outlined.fp {
         font-size: 30px;
     }
 
+    /* 共通化 */
+    .favoriteNickname,
     .mutual-follow-fb,
     .followed-fb,
     .favoriteContent,
-    .favoriteTime,
-    .btn-name,
-    .icon-name {
+    .favoriteTime {
         font-size: 20px;
-    }
-
-    .btn-name,
-    .icon-name {
-        display: block;
     }
 }

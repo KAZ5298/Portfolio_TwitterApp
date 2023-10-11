@@ -54,7 +54,6 @@
     color: white;
     font-size: 10px;
     text-decoration: none;
-    padding: 10px 0;
 }
 
 .navbar-room-name span,
@@ -65,7 +64,7 @@
 .navbar-room-button,
 .navbar-follow-button {
     grid-column: 2 / 3;
-    margin: 5px;
+    margin: 5% 10%;
 }
 
 .navigation ul li.nav-item a,
@@ -119,7 +118,6 @@
     .navbar-room-name,
     .navbar-follow-name {
         font-size: 15px;
-        padding: 10px 0;
     }
 
     .navigation ul li.nav-item a span.material-symbols-outlined.icon,
@@ -176,7 +174,7 @@
 
     .navbar-room-button,
     .navbar-follow-button {
-        margin: 10px 20px;
+        margin: 5%;
     }
 
     .navigation ul li.nav-item a span.material-symbols-outlined.icon,

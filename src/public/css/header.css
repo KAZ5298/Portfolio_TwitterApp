@@ -110,12 +110,6 @@
 
 /* ＰＣ対応 */
 @media screen and (min-width: 1024px) {
-    .header {
-        margin: 0 3%;
-        margin-top: 3%;
-        width: 94%;
-    }
-
     .header>.container {
         grid-template-columns: 3fr 1fr 2fr 1fr;
         grid-template-rows: 1fr;
