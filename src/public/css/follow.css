@@ -2,32 +2,31 @@
 /* スマホ対応 */
 .main {
     background-color: white;
-    margin: 0 auto;
-    width: 90%;
+    margin: 0 3%;
+    width: 94%;
     border-radius: 0 0 10px 10px;
-    margin-bottom: 19.5px;
+    margin-bottom: 3%;
 }
 
 .main .container {
-    padding: 10px 0;
+    padding: 1% 0;
 }
 
 .followContainer {
     width: 90%;
     height: auto;
     display: grid;
-    grid-template-columns: 60px 2fr 2fr 1fr;
-    grid-template-rows: 60px;
+    grid-template-columns: 20% 30% 35% 15%;
     margin: 0 auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 2%;
+    margin-bottom: 2%;
     border: 1px solid;
     border-radius: 5px;
 }
 
 .followIcon {
     grid-column: 1 / 2;
-    padding: 5px;
+    padding: 1%;
 }
 
 .followIcon img {
@@ -44,7 +43,7 @@
 }
 
 .followAccount {
-    font-size: 13px;
+    font-size: 11px;
     color: gray;
 }
 
@@ -56,7 +55,7 @@
 .followed {
     background-color: #dee2e6;
     border-radius: 5px;
-    width: 130px;
+    width: 100%;
     height: auto;
     font-weight: bold;
 }
@@ -66,14 +65,12 @@
 }
 
 .followButton .btn {
-    width: auto;
-    height: 22.5px;
-    margin: 5px;
-    padding: 5px;
+    width: 100%;
+    height: auto;
 }
 
 .material-symbols-outlined.fb {
-    font-size: 20px;
+    font-size: 15px;
 }
 
 /* 共通化 */
@@ -97,10 +94,9 @@
 }
 
 .followNickname,
-.icon-name,
 .mutual-follow-fb,
 .followed-fb {
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .btn-name,
@@ -117,15 +113,10 @@
 
 /* タブレット対応 */
 @media screen and (min-width: 670px) {
-    .main {
-        width: 90%;
-        margin-bottom: 41px;
-    }
-
     .followContainer {
         width: 70%;
-        grid-template-columns: 70px 2fr 2fr 1fr;
-        grid-template-rows: 70px;
+        margin-top: 1%;
+        margin-bottom: 1%;
     }
 
     .followIcon img {
@@ -134,42 +125,28 @@
     }
 
     .followAccount {
-        font-size: 15px;
-    }
-
-    .mutual-follow,
-    .followed {
-        width: 150px;
-    }
-
-    .followButton .btn {
-        height: 25.5px;
+        font-size: 13px;
     }
 
     .material-symbols-outlined.fb {
-        font-size: 25px;
+        font-size: 20px;
     }
 
     /* 共通化 */
     .followNickname,
-    .icon-name,
     .mutual-follow-fb,
     .followed-fb {
-        font-size: 17px;
+        font-size: 15px;
     }
 }
 
 /* ＰＣ対応 */
 @media screen and (min-width: 1024px) {
-    .main {
-        width: 80%;
-        margin-bottom: 19.5px;
-    }
-
     .followContainer {
         width: 50%;
-        grid-template-columns: 110px 1fr 1fr 1fr;
-        grid-template-rows: 110px;
+        grid-template-columns: 20% 25% 30% 25%;
+        margin-top: 1%;
+        margin-bottom: 1%;
     }
 
     .followIcon img {
@@ -179,23 +156,6 @@
 
     .followAccount {
         font-size: 17px;
-    }
-
-    .icon-name,
-    .mutual-follow-fb,
-    .followed-fb {
-        font-size: 15px;
-        display: block;
-    }
-
-    .mutual-follow,
-    .followed {
-        width: 180px;
-    }
-
-    .followButton .btn {
-        width: auto;
-        height: 30px;
     }
 
     .material-symbols-outlined.fb {
@@ -210,6 +170,9 @@
         font-size: 20px;
     }
 
+    .icon-name,
+    .mutual-follow-fb,
+    .followed-fb,
     .btn-name,
     .icon-name {
         display: block;
