@@ -2,54 +2,53 @@
 /* スマホ対応 */
 .title {
     font-family: 'Black Ops One', cursive;
-    font-size: 40px;
+    font-size: 200%;
     width: 90%;
     height: auto;
     text-align: center;
-    padding: 25px 0;
-    margin: 0 auto;
-    margin-top: 30px;
+    padding: 5% 0;
+    margin: 0 5%;
+    margin-top: 5%;
     color: white;
     border-radius: 10px 10px 0 0;
 }
 
 .main {
     background-color: white;
-    margin: 0 auto;
+    margin: 0 5%;
     width: 90%;
     height: auto;
     border-radius: 0 0 10px 10px;
+    padding: 5% 0;
+}
+
+form {
+    margin: 0;
 }
 
 .form,
 .input {
     width: 100%;
-    font-size: 10px;
+    font-size: 80%;
 }
 
-.input.name {
-    padding-top: 10px;
+.input {
+    padding-bottom: 5%;
 }
 
 .btn {
     width: 100%;
     height: auto;
-    margin: 5px;
-    padding: 0;
+    margin: 1% 2%;
+    padding: 1%;
 }
 
+.button,
 .button a,
 .button button {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 0;
 }
 
 .btn-name {
@@ -63,25 +62,31 @@
 /* タブレット対応 */
 @media screen and (min-width: 670px) {
     .title {
-        font-size: 50px;
+        font-size: 400%;
+        width: 80%;
+        padding: 4% 0;
+        margin: 0 10%;
+        margin-top: 5%;
+    }
+
+    .main {
+        width: 80%;
+        margin: 0 10%;
+        padding: 2% 0;
     }
 
     .form,
     .input {
-        font-size: 15px;
+        font-size: 90%;
     }
 
-    .btn {
-        padding: 0;
-    }
-
-    .button {
-        padding: 20px 0;
+    .input {
+        padding-bottom: 2%;
     }
 
     .btn-name {
         display: block;
-        font-size: 15px;
+        font-size: 90%;
     }
 
     .button .material-symbols-outlined {
@@ -92,33 +97,29 @@
 /* ＰＣ対応 */
 @media screen and (min-width: 1024px) {
     .title {
-        font-size: 60px;
-        width: 60%;
-        padding: 50px 0;
+        font-size: 600%;
+        width: 70%;
+        padding: 3% 0;
+        margin: 0 15%;
+        margin-top: 5%;
     }
 
     .main {
-        width: 60%;
+        width: 70%;
+        margin: 0 15%;
+        padding: 2% 0;
     }
 
     .form,
     .input {
-        font-size: 20px;
+        font-size: 100%;
     }
 
-    .input.name {
-        padding-top: 20px;
-    }
-
-    .btn {
-        padding: 5px;
+    .btn-name {
+        font-size: 100%;
     }
 
     .button .material-symbols-outlined {
         font-size: 30px;
-    }
-
-    .btn-name {
-        font-size: 20px;
     }
 }

@@ -9,14 +9,21 @@ nav.navbar-room {
 }
 
 /* ulタグ */
-nav.navigation ul,
+nav.navigation ul {
+    display: table;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    padding: 1% 0;
+}
+
 nav.navbar-follow ul,
 nav.navbar-room ul {
     display: table;
     margin: 0 auto;
     width: 100%;
     height: auto;
-    padding: 2% 0;
+    padding: 1.41% 0;
 }
 
 /* liタグ */
@@ -95,6 +102,13 @@ nav.navbar-follow ul li a span.material-symbols-outlined.navbar-follow-btn {
 /* タブレット対応 */
 @media screen and (min-width: 670px) {
 
+    /* ulタグ */
+    nav.navbar-follow ul,
+    nav.navbar-room ul {
+        padding: 1.49% 0;
+    }
+
+    /* aタグ */
     nav.navigation ul li.nav-item a.nav-name-sp {
         font-size: 13px;
     }
@@ -104,6 +118,7 @@ nav.navbar-follow ul li a span.material-symbols-outlined.navbar-follow-btn {
         font-size: 15px;
     }
 
+    /* spanタグ */
     nav.navigation ul li.nav-item a span.material-symbols-outlined.icon,
     nav.navbar-room ul li a span.material-symbols-outlined.navbar-room-btn,
     nav.navbar-follow ul li a span.material-symbols-outlined.navbar-follow-btn {
@@ -117,10 +132,19 @@ nav.navbar-follow ul li a span.material-symbols-outlined.navbar-follow-btn {
     /* navタグ */
 
     /* ulタグ */
+    nav.navigation ul,
+    nav.navbar-follow ul,
+    nav.navbar-room ul {
+        padding: 0;
+    }
 
     /* liタグ */
 
     /* aタグ */
+    nav.navigation ul li.nav-item a {
+        padding: 4% 0;
+    }
+
     nav.navigation ul li:not(.current) a:hover {
         color: white;
         font-weight: bold;
@@ -137,6 +161,7 @@ nav.navbar-follow ul li a span.material-symbols-outlined.navbar-follow-btn {
     nav.navbar-follow ul li a.navbar-follow-name,
     nav.navbar-room ul li a.navbar-room-name {
         font-size: 20px;
+        padding: 1% 0;
     }
 
     /* spanタグ */
