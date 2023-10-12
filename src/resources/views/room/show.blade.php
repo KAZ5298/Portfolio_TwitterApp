@@ -99,12 +99,19 @@
             </div>
         </div>
         <nav class="navbar-room">
-            <a class="navbar-room-name"><span>{{ $rooms->user->nickname }} さんとのチャットルーム</span></a>
-            <a class="navbar-room-button btn btn-secondary" href="{{ route('talkRoom') }}">
-                <span class="material-symbols-outlined navbar-room-btn"> undo </span>
-                <span class="navbar-room-btn-name"> 一覧へ戻る </span>
-            </a>
+            <ul>
+                <li class="nav-item-room name">
+                    <a class="navbar-room-name"><span>{{ $rooms->user->nickname }} さんとのチャットルーム</span></a>
+                </li>
+                <li class="nav-item-room btn">
+                    <a class="navbar-room-btn btn btn-secondary" href="{{ route('talkRoom') }}">
+                        <span class="material-symbols-outlined navbar-room-btn"> undo </span>
+                        <span class="navbar-room-btn-name">ＴＯＰ画面へ戻る</span>
+                    </a>
+                </li>
+            </ul>
         </nav>
+
     </div>
 
     {{-- メインコンテンツ --}}

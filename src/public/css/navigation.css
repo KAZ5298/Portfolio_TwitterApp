@@ -1,128 +1,112 @@
 /* モバイルファースト */
 /* スマホ対応 */
-/* ＴＯＰ画面のナビゲーションバー */
-.navigation {
+/* navタグ */
+nav.navigation,
+nav.navbar-follow,
+nav.navbar-room {
     background-color: #86b7fe57;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
-.navigation ul {
+/* ulタグ */
+nav.navigation ul,
+nav.navbar-follow ul,
+nav.navbar-room ul {
     display: table;
     margin: 0 auto;
-    padding: 0;
     width: 100%;
     height: auto;
-}
-
-.navigation ul li {
-    display: table-cell;
-    width: 20%;
     padding: 2% 0;
 }
 
-.navigation ul li.nav-item a {
-    width: 100%;
-    text-decoration: none;
-    color: white;
+/* liタグ */
+nav.navigation ul li {
+    display: table-cell;
+    width: 20%;
+}
+
+nav.navbar-follow ul li.nav-item-follow.name,
+nav.navbar-room ul li.nav-item-room.name {
+    display: table-cell;
+    width: 80%;
+    vertical-align: middle;
+}
+
+nav.navbar-follow ul li.nav-item-follow.btn,
+nav.navbar-room ul li.nav-item-room.btn {
+    display: table-cell;
+    width: 20%;
+    vertical-align: middle;
+    padding: 0 2%;
+}
+
+/* aタグ */
+nav.navigation ul li.nav-item a {
     opacity: 0.5;
 }
 
-.navigation ul li.current a {
+nav.navigation ul li.current a {
     font-weight: bold;
     opacity: 1;
 }
 
-.navigation ul li.current span {
-    padding-bottom: 2px;
-}
-
-.navigation ul li.nav-item a.nav-name-sp {
+nav.navigation ul li.nav-item a.nav-name-sp {
     font-size: 10px;
 }
 
-/* トークルーム画面のナビゲーションバー */
-/* フォロー一覧画面のナビゲーションバー */
-.navbar-room,
-.navbar-follow {
-    display: grid;
-    grid-template-columns: 80% 20%;
-    background-color: #86b7fe57;
+nav.navbar-follow ul li a.navbar-follow-name,
+nav.navbar-room ul li a.navbar-room-name {
+    font-size: 10px;
 }
 
-.navbar-room-name,
-.navbar-follow-name {
-    grid-column: 1 / 2;
-    color: white;
-    font-size: 10px;
+nav.navigation ul li.nav-item a,
+nav.navbar-room ul li a.navbar-room-name,
+nav.navbar-room ul li a.navbar-room-btn,
+nav.navbar-follow ul li a.navbar-follow-name,
+nav.navbar-follow ul li a.navbar-follow-btn {
+    width: 100%;
     text-decoration: none;
-}
-
-.navbar-room-name span,
-.navbar-follow-name span {
-    padding-bottom: 2px;
-}
-
-.navbar-room-button,
-.navbar-follow-button {
-    grid-column: 2 / 3;
-    margin: 5% 10%;
-}
-
-.navigation ul li.nav-item a,
-.navbar-room-name,
-.navbar-room-button,
-.navbar-follow-name,
-.navbar-follow-button {
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.navigation ul li.nav-item a span.nav-name,
-.navbar-room-btn-name,
-.navbar-follow-btn-name {
+/* spanタグ */
+nav.navigation ul li.current span,
+nav.navbar-room ul li a.navbar-room-name span,
+nav.navbar-follow ul li a.navbar-follow-name span {
+    border-bottom: 2px solid white;
+    padding-bottom: 2px;
+}
+
+nav.navigation ul li.nav-item a span.nav-name-pc,
+nav.navbar-room ul li a span.navbar-room-btn-name,
+nav.navbar-follow ul li a span.navbar-follow-btn-name {
     display: none;
 }
 
-.navigation,
-.navbar-room,
-.navbar-follow {
-    font-family: 'Noto Sans JP', sans-serif;
-}
-
-.navigation ul li.nav-item a span.material-symbols-outlined.icon,
-.material-symbols-outlined.navbar-room-btn,
-.material-symbols-outlined.navbar-follow-btn {
+nav.navigation ul li.nav-item a span.material-symbols-outlined.icon,
+nav.navbar-room ul li a span.material-symbols-outlined.navbar-room-btn,
+nav.navbar-follow ul li a span.material-symbols-outlined.navbar-follow-btn {
     font-size: 20px;
-}
-
-.navigation ul li.current span,
-.navbar-room-name span,
-.navbar-follow-name span {
-    border-bottom: 2px solid white;
 }
 
 /* タブレット対応 */
 @media screen and (min-width: 670px) {
 
-    /* ＴＯＰ画面のナビゲーションバー */
-    .navigation ul li.nav-item a.nav-name-sp {
-        font-size: 12px;
+    nav.navigation ul li.nav-item a.nav-name-sp {
+        font-size: 13px;
     }
 
-    .navigation ul li {
-        padding: 1% 0;
-    }
-
-    /* トークルーム画面のナビゲーションバー */
-    /* フォロー一覧画面のナビゲーションバー */
-    .navbar-room-name,
-    .navbar-follow-name {
+    nav.navbar-follow ul li a.navbar-follow-name,
+    nav.navbar-room ul li a.navbar-room-name {
         font-size: 15px;
     }
 
-    .navigation ul li.nav-item a span.material-symbols-outlined.icon,
-    .material-symbols-outlined.navbar-room-btn,
-    .material-symbols-outlined.navbar-follow-btn {
+    nav.navigation ul li.nav-item a span.material-symbols-outlined.icon,
+    nav.navbar-room ul li a span.material-symbols-outlined.navbar-room-btn,
+    nav.navbar-follow ul li a span.material-symbols-outlined.navbar-follow-btn {
         font-size: 25px;
     }
 }
@@ -130,18 +114,14 @@
 /* ＰＣ対応 */
 @media screen and (min-width: 1024px) {
 
-    /* ＴＯＰ画面のナビゲーションバー */
-    .navigation ul li.current a {
-        font-weight: bold;
-        opacity: 1;
-    }
+    /* navタグ */
 
-    .navigation ul li.current span {
-        border-bottom: 3px solid white;
-        padding-bottom: 2px;
-    }
+    /* ulタグ */
 
-    .navigation ul li:not(.current) a:hover {
+    /* liタグ */
+
+    /* aタグ */
+    nav.navigation ul li:not(.current) a:hover {
         color: white;
         font-weight: bold;
         opacity: 1;
@@ -150,47 +130,37 @@
         transform-origin: center;
     }
 
-    .navigation ul li a:hover span {
+    nav.navigation ul li.nav-item a.nav-name-sp {
+        display: none;
+    }
+
+    nav.navbar-follow ul li a.navbar-follow-name,
+    nav.navbar-room ul li a.navbar-room-name {
+        font-size: 20px;
+    }
+
+    /* spanタグ */
+    nav.navigation ul li a:hover span {
         border-bottom: 3px solid white;
         padding-bottom: 2px;
     }
 
-    .navigation ul li.nav-item a.nav-name-sp {
-        display: none;
-    }
-
-    .navigation ul li.nav-item a span.nav-name {
-        font-size: 20px;
-        display: block;
-    }
-
-    /* トークルーム画面のナビゲーションバー */
-    /* フォロー一覧画面のナビゲーションバー */
-    .navbar-room-name,
-    .navbar-follow-name {
-        font-size: 20px;
-        padding: 15px 0;
-    }
-
-    .navbar-room-button,
-    .navbar-follow-button {
-        margin: 5%;
-    }
-
-    .navigation ul li.nav-item a span.material-symbols-outlined.icon,
-    .material-symbols-outlined.navbar-room-btn,
-    .material-symbols-outlined.navbar-follow-btn {
-        font-size: 30px;
-    }
-
-    .navbar-room-name span,
-    .navbar-follow-name span {
+    nav.navigation ul li.current span,
+    nav.navbar-room ul li a.navbar-room-name span,
+    nav.navbar-follow ul li a.navbar-follow-name span {
         border-bottom: 3px solid white;
     }
 
-    .navbar-room-btn-name,
-    .navbar-follow-btn-name {
-        font-size: 20px;
+    nav.navigation ul li.nav-item a span.nav-name-pc,
+    nav.navbar-room ul li a span.navbar-room-btn-name,
+    nav.navbar-follow ul li a span.navbar-follow-btn-name {
         display: block;
+        font-size: 20px;
+    }
+
+    nav.navigation ul li.nav-item a span.material-symbols-outlined.icon,
+    nav.navbar-room ul li a span.material-symbols-outlined.navbar-room-btn,
+    nav.navbar-follow ul li a span.material-symbols-outlined.navbar-follow-btn {
+        font-size: 30px;
     }
 }

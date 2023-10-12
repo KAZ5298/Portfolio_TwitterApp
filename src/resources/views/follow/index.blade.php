@@ -99,11 +99,17 @@
             </div>
         </div>
         <nav class="navbar-follow">
-            <a class="navbar-follow-name"><span>フォロー一覧</span></a>
-            <a class="navbar-follow-button btn btn-secondary" href="{{ route('allTweetGet') }}">
-                <span class="material-symbols-outlined navbar-follow-btn"> undo </span>
-                <span class="navbar-follow-btn-name">ＴＯＰ画面へ戻る</span>
-            </a>
+            <ul>
+                <li class="nav-item-follow name">
+                    <a class="navbar-follow-name"><span>フォロー一覧</span></a>
+                </li>
+                <li class="nav-item-follow btn">
+                    <a class="navbar-follow-btn btn btn-secondary" href="{{ route('allTweetGet') }}">
+                        <span class="material-symbols-outlined navbar-follow-btn"> undo </span>
+                        <span class="navbar-follow-btn-name">ＴＯＰ画面へ戻る</span>
+                    </a>
+                </li>
+            </ul>
         </nav>
     </div>
 
