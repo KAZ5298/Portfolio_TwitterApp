@@ -37,10 +37,10 @@
                 <div class="input name">
                     <label for="name">アカウント名（ユーザーＩＤ）</label>
                     @if (!$errors->has('name'))
-                        <input class="form normal" type="text" name="name" value="{{ old('name') }}"
-                            placeholder="※">
+                        <input id="name" class="form normal" type="text" name="name"
+                            value="{{ old('name') }}" placeholder="※">
                     @else
-                        <input class="form error" id="name" type="text" name="name"
+                        <input id="name" class="form error" type="text" name="name"
                             value="{{ old('name') }}" placeholder="※">
                         @foreach ($errors->get('name') as $message)
                             <label class="error-msg">{{ $message }}</label>
@@ -52,10 +52,10 @@
                 <div class="input email">
                     <label for="email">メールアドレス</label>
                     @if (!$errors->has('email'))
-                        <input class="form normal" type="text" name="email" value="{{ old('email') }}"
-                            placeholder="※">
+                        <input id="email" class="form normal" type="text" name="email"
+                            value="{{ old('email') }}" placeholder="※">
                     @else
-                        <input class="form error" id="email" type="text" name="email"
+                        <input id="email" class="form error" type="text" name="email"
                             value="{{ old('email') }}" placeholder="※">
                         @foreach ($errors->get('email') as $message)
                             <label class="error-msg">{{ $message }}</label>
@@ -67,10 +67,10 @@
                 <div class="input nickname">
                     <label for="nickname">ニックネーム（一覧画面での表示名）</label>
                     @if (!$errors->has('nickname'))
-                        <input class="form normal" type="text" name="nickname" value="{{ old('nickname') }}"
-                            placeholder="※">
+                        <input id="nickname" class="form normal" type="text" name="nickname"
+                            value="{{ old('nickname') }}" placeholder="※">
                     @else
-                        <input class="form error" id="nickname" type="text" name="nickname"
+                        <input id="nickname" class="form error" type="text" name="nickname"
                             value="{{ old('nickname') }}" placeholder="※">
                         @foreach ($errors->get('nickname') as $message)
                             <label class="error-msg">{{ $message }}</label>
@@ -91,7 +91,7 @@
                     @if (!$errors->has('password'))
                         <input id="password" class="form normal" type="password" name="password" placeholder="※">
                     @else
-                        <input class="form error" id="password" type="password" name="password" placeholder="※">
+                        <input id="password" class="form error" type="password" name="password" placeholder="※">
                         @foreach ($errors->get('password') as $message)
                             <label class="error-msg">{{ $message }}</label>
                         @endforeach
@@ -100,9 +100,9 @@
 
                 <!-- Confirm Password -->
                 <div class="input password">
-                    <label for="password">パスワード（再確認）</label>
-                    <input id="password" class="form normal" type="password" name="password_confirmation"
-                        placeholder="※">
+                    <label for="password_confirmation">パスワード（再確認）</label>
+                    <input id="password_confirmation" class="form normal" type="password_confirmation"
+                        name="password_confirmation" placeholder="※">
                 </div>
 
                 <div class="button">

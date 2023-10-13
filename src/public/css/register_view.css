@@ -27,6 +27,7 @@ label,
 .form,
 #icon {
     font-size: 90%;
+    width: 100%;
 }
 
 .form,
@@ -34,8 +35,9 @@ label,
     width: 100%;
 }
 
-.form.normal {
-    margin-bottom: 9%;
+.form.normal,
+#icon {
+    margin-bottom: 9.73%;
 }
 
 .form.error {
@@ -45,10 +47,6 @@ label,
 .error-msg {
     color: red;
     padding-bottom: 2.4%;
-}
-
-.icon {
-    margin-bottom: 5%;
 }
 
 .input.guide {
@@ -75,55 +73,57 @@ label,
 }
 
 .button .material-symbols-outlined {
-    font-size: 135%;
+    font-size: 130%;
 }
 
 /* タブレット対応 */
 @media screen and (min-width: 670px) {
     .title {
         font-size: 300%;
+        width: 70%;
+        padding: 4% 0;
+        margin: 0 15%;
+        margin-top: 5%;
     }
 
     .main {
+        margin: 0 15%;
+        margin-bottom: 5%;
         padding: 4% 0;
+        width: 70%;
     }
 
     label,
     .form,
-    #icon,
-    .btn-name {
-        font-size: 130%;
+    #icon {
+        font-size: 120%;
     }
 
     .form.normal {
-        margin-bottom: 9%;
-    }
-
-    .icon {
-        margin-bottom: 5%;
+        margin-bottom: 7.555%;
     }
 
     .input.guide {
         padding-bottom: 4%;
     }
 
-    .btn-name {
-        display: block;
+    .button .material-symbols-outlined {
+        font-size: 150%;
     }
 
-    .button .material-symbols-outlined {
-        font-size: 195%;
+    .error-msg {
+        padding-bottom: 2%;
     }
 }
 
 /* ＰＣ対応 */
 @media screen and (min-width: 1024px) {
     .title {
-        font-size: 600%;
+        font-size: 400%;
         width: 60%;
         padding: 3% 0;
         margin: 0 20%;
-        margin-top: 5%;
+        margin-top: 3%;
     }
 
     .main {
@@ -135,37 +135,25 @@ label,
 
     label,
     .form,
+    #icon,
+    .btn-name {
+        font-size: 150%;
+    }
+
+    .form.normal,
     #icon {
-        font-size: 190%;
-    }
-
-    .form,
-    .input {
-        width: 100%;
-    }
-
-    .form.normal {
-        margin-bottom: 9%;
-    }
-
-    .icon {
-        margin-bottom: 5%;
+        margin-bottom: 6.0%;
     }
 
     .input.guide {
-        padding-bottom: 2%;
-    }
-
-    .btn {
-        padding: 1%;
+        padding-bottom: 3%;
     }
 
     .btn-name {
         display: block;
-        font-size: 170%;
     }
 
     .button .material-symbols-outlined {
-        font-size: 190%;
+        font-size: 225%;
     }
 }

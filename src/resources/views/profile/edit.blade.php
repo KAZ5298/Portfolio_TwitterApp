@@ -42,7 +42,7 @@
                         <input id="name" class="form normal" type="text" name="name"
                             value="{{ $user->name }}" placeholder="※">
                     @else
-                        <input class="form error" id="name" type="text" name="name"
+                        <input id="name" class="form error" type="text" name="name"
                             value="{{ old('name') }}" placeholder="※">
                         @foreach ($errors->get('name') as $message)
                             <label class="error-msg">{{ $message }}</label>
@@ -57,7 +57,7 @@
                         <input id="email" class="form normal" type="text" name="email"
                             value="{{ $user->email }}" placeholder="※">
                     @else
-                        <input class="form error" id="email" type="text" name="email"
+                        <input id="email" class="form error" type="text" name="email"
                             value="{{ old('email') }}" placeholder="※">
                         @foreach ($errors->get('email') as $message)
                             <label class="error-msg">{{ $message }}</label>
@@ -72,7 +72,7 @@
                         <input id="nickname" class="form normal" type="text" name="nickname"
                             value="{{ $user->nickname }}" placeholder="※">
                     @else
-                        <input class="form error" id="nickname" type="text" name="nickname"
+                        <input id="nickname" class="form error" type="text" name="nickname"
                             value="{{ old('nickname') }}" placeholder="※">
                         @foreach ($errors->get('nickname') as $message)
                             <label class="error-msg">{{ $message }}</label>
@@ -84,10 +84,13 @@
                 <div class="input icon">
                     <label for="icon">プロフィール画像</label>
                     <br>
-                    <input type="radio" id="icon_change" name="icon_change" value="no" checked>
-                    <label for="icon_change">変更しない</label>
-                    <input type="radio" id="icon_change" name="icon_change" value="yes">
-                    <label for="icon_change">変更する</label>
+                    <label for="icon_change_no">
+                        <input type="radio" id="icon_change_no" name="icon_change" value="no" checked>変更しない
+                    </label>
+                    <br>
+                    <label for="icon_change_yes">
+                        <input type="radio" id="icon_change_yes" name="icon_change" value="yes">変更する
+                    </label>
                     <br>
                     @if (isset($user->icon))
                         <img src="{{ asset('storage/images/' . $user->icon) }}">
@@ -104,7 +107,7 @@
                     @if (!$errors->has('password'))
                         <input id="password" class="form normal" type="password" name="password" placeholder="※">
                     @else
-                        <input class="form error" id="password" type="password" name="password" placeholder="※">
+                        <input id="password" class="form error" type="password" name="password" placeholder="※">
                         @foreach ($errors->get('password') as $message)
                             <label class="error-msg">{{ $message }}</label>
                         @endforeach
@@ -113,9 +116,9 @@
 
                 <!-- Confirm Password -->
                 <div class="input password">
-                    <label for="password">パスワード（再確認）</label>
-                    <input id="password" class="form normal" type="password" name="password_confirmation"
-                        placeholder="※">
+                    <label for="password_confirmation">パスワード（再確認）</label>
+                    <input id="password_confirmation" class="form normal" type="password_confirmation"
+                        name="password_confirmation" placeholder="※">
                 </div>
 
                 <div class="button">
