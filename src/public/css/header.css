@@ -10,16 +10,17 @@
 .header>.container {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    padding: 0 10%;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 50% 50%;
+    padding: 0 5%;
 }
 
 .title {
     font-family: 'Black Ops One', cursive;
-    font-size: 30px;
+    font-size: 200%;
     grid-column: 1 / 4;
     grid-row: 1 / 2;
+    padding-top: 5%;
 }
 
 .userIcon {
@@ -28,8 +29,7 @@
 }
 
 .userIcon img {
-    width: 50px;
-    height: 50px;
+    width: 50%;
 }
 
 .loginUser {
@@ -78,24 +78,47 @@
 .loginUser,
 .userMenu,
 .userMenu .offcanvas-title,
-.userMenu .navbar-toggler {
+.userMenu,
+.offcanvas-body ul li a {
     font-family: 'Noto Sans JP', sans-serif;
-    font-size: 10px;
+    font-size: 70%;
+}
+
+.navbar-toggler {
+    font-size: 100%
 }
 
 /* タブレット対応 */
 @media screen and (min-width: 670px) {
+    .header>.container {
+        grid-template-columns: 20% 60% 20%;
+        padding: 0 10%;
+    }
+
     .title {
-        font-size: 40px;
+        font-size: 300%;
     }
 
     .userIcon img {
-        width: 60px;
-        height: 60px;
+        width: 60%;
+    }
+
+    .userMenu {
+        width: 100%;
+        grid-column: 3 / 4;
+        grid-row: 2 / 2;
+    }
+
+    .userMenu .dropdown {
+        display: none;
+    }
+
+    .userMenu .navbar {
+        display: block;
     }
 
     .userMenu .navbar .offcanvas {
-        width: 25%;
+        width: 35%;
     }
 
     /* 共通化 */
@@ -103,26 +126,31 @@
     .loginUser,
     .userMenu,
     .userMenu .offcanvas-title,
-    .userMenu .navbar-toggler {
-        font-size: 15px;
+    .userMenu,
+    .offcanvas-body ul li a {
+        font-size: 100%;
+    }
+
+    .navbar-toggler {
+        font-size: 150%;
     }
 }
 
 /* ＰＣ対応 */
 @media screen and (min-width: 1024px) {
     .header>.container {
-        grid-template-columns: 3fr 1fr 2fr 1fr;
-        grid-template-rows: 1fr;
-        padding: 0 3%;
+        grid-template-columns: 45% 10% 25% 20%;
+        grid-template-rows: 100%;
+        padding: 2% 1%;
     }
 
     .title {
-        font-size: 50px;
+        font-size: 400%;
         grid-column: 1 / 2;
+        padding-top: 0;
     }
 
     .userIcon {
-        height: 200px;
         grid-column: 2 / 3;
         grid-row: 1 / 2;
     }
@@ -157,6 +185,6 @@
     .userMenu .offcanvas-title,
     .userMenu .navbar-toggler,
     .userMenu .dropdown .btn {
-        font-size: 20px;
+        font-size: 130%;
     }
 }
