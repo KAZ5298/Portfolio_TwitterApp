@@ -2,23 +2,22 @@
 /* スマホ対応 */
 .title {
     font-family: 'Black Ops One', cursive;
-    font-size: 40px;
+    font-size: 200%;
     width: 90%;
-    height: auto;
     text-align: center;
-    padding: 25px 0;
-    margin: 0 auto;
-    margin-top: 30px;
+    padding: 5% 0;
+    margin: 0 5%;
+    margin-top: 5%;
     color: white;
     border-radius: 10px 10px 0 0;
 }
 
 .main {
     background-color: white;
-    margin: 0 auto;
+    margin: 0 5%;
+    margin-bottom: 5%;
+    padding: 3% 0;
     width: 90%;
-    height: auto;
-    padding: 10px;
     border-radius: 0 0 10px 10px;
 }
 
@@ -35,75 +34,117 @@
 .input,
 .done,
 .btn-name {
-    font-size: 10px;
+    font-size: 80%;
+}
+
+.done {
+    width: 100%;
+    padding: 3%;
+    border-radius: 10px;
 }
 
 .btn {
     width: 100%;
-    height: auto;
-    margin-top: 10px;
+    margin-top: 5%;
+    padding: 3%;
 }
 
-/* 
+
 .btn-name {
-    display: block;
-} */
+    display: none;
+}
 
 .button .material-symbols-outlined {
-    font-size: 20px;
+    font-size: 119.9%;
 }
 
 /* タブレット対応 */
 @media screen and (min-width: 670px) {
     .title {
-        font-size: 45px;
-        padding: 30px 0;
+        font-size: 300%;
+        width: 70%;
+        padding: 4% 0;
+        margin: 0 15%;
+        margin-top: 5%;
+    }
+
+    .main {
+        margin: 0 15%;
+        margin-bottom: 5%;
+        padding: 3% 0;
+        width: 70%;
     }
 
     .button a,
     .input,
     .done,
     .btn-name {
-        font-size: 15px;
+        font-size: 90%;
+    }
+
+    .done {
+        width: 98%;
+        padding: 2% 0%;
+        margin: 0 1%;
     }
 
     .btn {
         width: 100%;
-        height: auto;
-        margin-top: 10px;
+        margin: 0 1%;
+        margin-top: 3%;
+        padding: 2%;
+    }
+
+    .btn-name {
+        display: block;
     }
 
     .button .material-symbols-outlined {
-        font-size: 25px;
+        font-size: 135.1%;
     }
 }
 
 /* ＰＣ対応 */
 @media screen and (min-width: 1024px) {
     .title {
-        font-size: 60px;
-        width: 35%;
-        padding: 50px 0;
+        font-size: 400%;
+        width: 60%;
+        padding: 3% 0;
+        margin: 0 20%;
+        margin-top: 5%;
     }
 
     .main {
-        width: 35%;
+        margin: 0 20%;
+        margin-bottom: 5%;
+        padding: 2% 0;
+        width: 60%;
     }
 
     .button a,
     .input,
     .done,
     .btn-name {
-        font-size: 20px;
+        font-size: 100%;
+    }
+
+    .done {
+        width: 98%;
+        margin: 0 1%;
     }
 
     .btn {
         width: 100%;
-        height: auto;
-        margin-top: 10px;
+        margin: 0 1%;
+        margin-top: 3%;
+        padding: 2%;
+    }
+
+    .btn-name {
+        display: block;
     }
 
     .button .material-symbols-outlined {
-        font-size: 30px;
+        font-size: 150%;
     }
 }

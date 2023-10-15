@@ -4,7 +4,6 @@
     font-family: 'Black Ops One', cursive;
     font-size: 200%;
     width: 90%;
-    height: auto;
     text-align: center;
     padding: 5% 0;
     margin: 0 5%;
@@ -19,25 +18,22 @@
     margin-bottom: 5%;
     padding: 5% 0;
     width: 90%;
-    height: auto;
     border-radius: 0 0 10px 10px;
 }
 
-label,
-.form,
-#icon {
-    font-size: 90%;
-    width: 100%;
+form {
+    margin: 0;
 }
 
-.form,
-.input {
+.input label,
+.input input {
     width: 100%;
+    font-size: 80%;
 }
 
 .form.normal,
 #icon {
-    margin-bottom: 9.73%;
+    margin-bottom: 10%;
 }
 
 .form.error {
@@ -46,7 +42,7 @@ label,
 
 .error-msg {
     color: red;
-    padding-bottom: 2.4%;
+    padding-bottom: 3.22%;
 }
 
 .input.guide {
@@ -55,9 +51,8 @@ label,
 
 .btn {
     width: 100%;
-    height: auto;
     margin: 1%;
-    padding: 2%;
+    padding: 0.612%;
 }
 
 .button,
@@ -73,46 +68,48 @@ label,
 }
 
 .button .material-symbols-outlined {
-    font-size: 130%;
+    font-size: 119.9%;
 }
 
 /* タブレット対応 */
 @media screen and (min-width: 670px) {
     .title {
         font-size: 300%;
-        width: 70%;
-        padding: 4% 0;
-        margin: 0 15%;
+        width: 80%;
+        margin: 0 10%;
         margin-top: 5%;
     }
 
     .main {
-        margin: 0 15%;
-        margin-bottom: 5%;
+        margin: 0 10%;
+        width: 80%;
         padding: 4% 0;
-        width: 70%;
     }
 
-    label,
-    .form,
+    .input label,
+    .input input {
+        font-size: 90%;
+    }
+
+    .form.normal,
     #icon {
-        font-size: 120%;
+        margin-bottom: 5%;
     }
 
-    .form.normal {
-        margin-bottom: 7.555%;
+    .error-msg {
+        padding-bottom: 1.265%;
     }
 
     .input.guide {
         padding-bottom: 4%;
     }
 
-    .button .material-symbols-outlined {
-        font-size: 150%;
+    .btn {
+        padding: 0.318%;
     }
 
-    .error-msg {
-        padding-bottom: 2%;
+    .button .material-symbols-outlined {
+        font-size: 135.1%;
     }
 }
 
@@ -121,32 +118,40 @@ label,
     .title {
         font-size: 400%;
         width: 60%;
-        padding: 3% 0;
+        padding: 4% 0;
         margin: 0 20%;
         margin-top: 3%;
     }
 
     .main {
         margin: 0 20%;
-        margin-bottom: 5%;
-        padding: 1% 0;
+        margin-bottom: 3%;
+        padding: 2% 0;
         width: 60%;
     }
 
-    label,
-    .form,
-    #icon,
+    .input label,
+    .input input,
     .btn-name {
-        font-size: 150%;
+        font-size: 100%;
     }
 
     .form.normal,
     #icon {
-        margin-bottom: 6.0%;
+        margin-bottom: 3%;
+    }
+
+    .error-msg {
+        padding-bottom: 0.872%;
     }
 
     .input.guide {
         padding-bottom: 3%;
+    }
+
+    .btn {
+        padding: 0.3%;
+        margin: 0.5%;
     }
 
     .btn-name {
@@ -154,6 +159,6 @@ label,
     }
 
     .button .material-symbols-outlined {
-        font-size: 225%;
+        font-size: 150%;
     }
 }

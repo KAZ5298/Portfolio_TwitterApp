@@ -2,24 +2,49 @@
 /* スマホ対応 */
 .title {
     font-family: 'Black Ops One', cursive;
-    font-size: 40px;
+    font-size: 200%;
     width: 90%;
-    height: auto;
     text-align: center;
-    padding: 25px 0;
-    margin: 0 auto;
-    margin-top: 30px;
+    padding: 5% 0;
+    margin: 0 5%;
+    margin-top: 5%;
     color: white;
     border-radius: 10px 10px 0 0;
 }
 
 .main {
     background-color: white;
-    margin: 0 auto;
+    margin: 0 5%;
+    margin-bottom: 5%;
+    padding: 3% 0;
     width: 90%;
-    height: auto;
-    padding: 15px;
     border-radius: 0 0 10px 10px;
+}
+
+table {
+    width: 100%;
+}
+
+th,
+td {
+    border: solid 1px;
+    height: 90px;
+    width: 50%;
+    padding-left: 3%;
+}
+
+th,
+td,
+.worning,
+.btn-name {
+    font-size: 80%;
+}
+
+.worning {
+    width: 100%;
+    padding: 3%;
+    margin-top: 3%;
+    border-radius: 10px;
 }
 
 .btn,
@@ -31,117 +56,100 @@
     align-items: center;
 }
 
-.button a,
-.input,
-.worning {
-    font-size: 10px;
-}
-
 .btn {
     width: 100%;
-    height: auto;
-    margin: 10px 5px;
-}
-
-th,
-td {
-    border: solid 1px;
-    height: 90px;
-    width: 50%;
-}
-
-table {
-    width: 100%;
+    margin: 0 1%;
+    margin-top: 3%;
+    padding: 2%;
 }
 
 img {
-    width: 50px;
-    height: 50px;
+    width: 50%;
 }
 
-.input {
-    padding-left: 10px;
-}
-
-.btn-name {
+.btn-name,
+tr span {
     display: none;
 }
 
 .button .material-symbols-outlined {
-    font-size: 20px;
+    font-size: 119.9%;
 }
 
 /* タブレット対応 */
 @media screen and (min-width: 670px) {
     .title {
-        font-size: 50px;
-        padding: 30px 0;
+        font-size: 300%;
+        width: 70%;
+        padding: 4% 0;
+        margin: 0 15%;
+        margin-top: 5%;
     }
 
-    .button a,
-    .input,
+    .main {
+        margin: 0 15%;
+        margin-bottom: 5%;
+        width: 70%;
+    }
+
+    th,
+    td,
     .worning,
     .btn-name {
-        font-size: 15px;
+        font-size: 90%;
     }
 
-    .btn {
-        width: 100%;
-        height: auto;
-        margin: 10px 5px;
+    .worning {
+        padding: 2%;
     }
 
     img {
-        width: 50px;
-        height: 50px;
+        width: 30%;
     }
 
-    .input {
-        padding-left: 15px;
-    }
-
-    .btn-name {
-        display: block;
+    .btn-name,
+    tr span {
+        display: inline-block;
     }
 
     .button .material-symbols-outlined {
-        font-size: 25px;
+        font-size: 135.1%;
     }
 }
 
 /* ＰＣ対応 */
 @media screen and (min-width: 1024px) {
     .title {
-        font-size: 60px;
-        width: 40%;
-        padding: 50px 0;
+        font-size: 400%;
+        width: 60%;
+        padding: 3% 0;
+        margin: 0 20%;
+        margin-top: 3%;
     }
 
     .main {
-        width: 40%;
+        margin: 0 20%;
+        margin-bottom: 5%;
+        width: 60%;
+        padding: 2% 0;
     }
 
-    .button a,
-    .input,
+    th,
+    td,
     .worning,
     .btn-name {
-        font-size: 20px;
+        font-size: 100%;
+    }
+
+    .worning {
+        padding: 1.5%;
     }
 
     img {
-        width: 80px;
-        height: 80px;
-    }
-
-    .btn {
-        padding: 10px;
-    }
-
-    .btn-name {
-        display: block;
+        width: 20%;
     }
 
     .button .material-symbols-outlined {
-        font-size: 30px;
+        font-size: 150%;
     }
 }

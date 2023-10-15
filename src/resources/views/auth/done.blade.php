@@ -26,7 +26,7 @@
     {{-- メインコンテンツ --}}
     <div class="main">
         <div class="container">
-            <div class="mt-2 border px-4 py-3 rounded relative bg-success-subtle">
+            <div class="done bg-success-subtle">
                 <label class="done">登録が完了しました。</label>
             </div>
 

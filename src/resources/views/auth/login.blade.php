@@ -31,13 +31,11 @@
                 <div class="input name">
                     <label for="name">アカウント名（ユーザーＩＤ）または、メールアドレス</label>
                     @if (!$errors->has('email_or_id'))
-                        <input id="name" class="form" type="text" name="email_or_id">
-                        <label>　</label>
+                        <input id="name" class="form normal" type="text" name="email_or_id">
                     @else
-                        <input style="border: solid 2px red;" id="name" class="form" type="text"
-                            name="email_or_id">
+                        <input id="name" class="form error" type="text" name="email_or_id">
                         @foreach ($errors->get('email_or_id') as $message)
-                            <label style="color: red">{{ $message }}</label>
+                            <label class="error-msg">{{ $message }}</label>
                         @endforeach
                     @endif
                 </div>
@@ -45,13 +43,11 @@
                 <div class="input password">
                     <label for="password">パスワード</label>
                     @if (!$errors->has('password'))
-                        <input id="password" class="form" type="password" name="password">
-                        <label>　</label>
+                        <input id="password" class="form normal" type="password" name="password">
                     @else
-                        <input style="border: solid 2px red;" id="password" class="form" type="password"
-                            name="password">
+                        <input id="password" class="form error" type="password" name="password">
                         @foreach ($errors->get('password') as $message)
-                            <label style="color: red">{{ $message }}</label>
+                            <label class="error-msg">{{ $message }}</label>
                         @endforeach
                     @endif
                 </div>

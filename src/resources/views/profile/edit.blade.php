@@ -82,7 +82,7 @@
 
                 <!-- Profile Icon -->
                 <div class="input icon">
-                    <label for="icon">プロフィール画像</label>
+                    <label>プロフィール画像</label>
                     <br>
                     <label for="icon_change_no">
                         <input type="radio" id="icon_change_no" name="icon_change" value="no" checked>変更しない
@@ -115,9 +115,9 @@
                 </div>
 
                 <!-- Confirm Password -->
-                <div class="input password">
+                <div class="input password_confirmation">
                     <label for="password_confirmation">パスワード（再確認）</label>
-                    <input id="password_confirmation" class="form normal" type="password_confirmation"
+                    <input id="password_confirmation" class="form normal" type="password"
                         name="password_confirmation" placeholder="※">
                 </div>
 
