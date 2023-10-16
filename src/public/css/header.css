@@ -89,7 +89,7 @@
 }
 
 /* タブレット対応 */
-@media screen and (min-width: 670px) {
+@media screen and (min-width: 768px) {
     .header>.container {
         grid-template-columns: 20% 60% 20%;
         padding: 0 10%;
@@ -109,16 +109,12 @@
         grid-row: 2 / 2;
     }
 
-    .userMenu .dropdown {
-        display: none;
-    }
-
     .userMenu .navbar {
         display: block;
     }
 
     .userMenu .navbar .offcanvas {
-        width: 35%;
+        width: 25%;
     }
 
     /* 共通化 */
@@ -137,37 +133,40 @@
 }
 
 /* ＰＣ対応 */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
     .header>.container {
         grid-template-columns: 45% 10% 25% 20%;
         grid-template-rows: 100%;
-        padding: 2% 1%;
+        padding: 5% 1%;
     }
 
     .title {
-        font-size: 400%;
+        font-size: 300%;
         grid-column: 1 / 2;
         padding-top: 0;
     }
 
     .userIcon {
         grid-column: 2 / 3;
-        grid-row: 1 / 2;
     }
 
     .userIcon img {
-        width: 100px;
-        height: 100px;
+        width: 70%;
     }
 
     .loginUser {
         grid-column: 3 / 4;
-        grid-row: 1 / 2;
     }
 
     .userMenu {
         grid-column: 4 / 5;
-        grid-row: 1 / 2;
+    }
+
+    .title,
+    .userIcon,
+    .loginUser,
+    .userMenu {
+        grid-row: 1 / 1;
     }
 
     .userMenu .dropdown {
@@ -176,15 +175,5 @@
 
     .userMenu .navbar {
         display: none;
-    }
-
-    /* 共通化 */
-    /* フォントサイズ */
-    .loginUser,
-    .userMenu,
-    .userMenu .offcanvas-title,
-    .userMenu .navbar-toggler,
-    .userMenu .dropdown .btn {
-        font-size: 130%;
     }
 }

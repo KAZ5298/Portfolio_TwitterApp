@@ -59,7 +59,7 @@
 }
 
 /* タブレット対応 */
-@media screen and (min-width: 670px) {
+@media screen and (min-width: 768px) {
     .title {
         font-size: 300%;
         width: 70%;
@@ -105,7 +105,7 @@
 }
 
 /* ＰＣ対応 */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
     .title {
         font-size: 400%;
         width: 60%;

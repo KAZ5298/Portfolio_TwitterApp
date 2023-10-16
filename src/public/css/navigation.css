@@ -100,7 +100,7 @@ nav.navbar-follow ul li a span.material-symbols-outlined.navbar-follow-btn {
 }
 
 /* タブレット対応 */
-@media screen and (min-width: 670px) {
+@media screen and (min-width: 768px) {
 
     /* ulタグ */
     nav.navbar-follow ul,
@@ -127,7 +127,7 @@ nav.navbar-follow ul li a span.material-symbols-outlined.navbar-follow-btn {
 }
 
 /* ＰＣ対応 */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
 
     /* navタグ */
 

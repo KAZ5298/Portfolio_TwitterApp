@@ -146,7 +146,7 @@
 }
 
 /* タブレット対応 */
-@media screen and (min-width: 670px) {
+@media screen and (min-width: 768px) {
     .favoriteAccount {
         font-size: 15px;
     }
@@ -186,7 +186,7 @@
 }
 
 /* ＰＣ対応 */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
     .favoriteContainer {
         width: 60%;
         height: 300px;

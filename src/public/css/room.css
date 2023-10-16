@@ -222,7 +222,7 @@ LINE風フキダシ
 }
 
 /* タブレット対応 */
-@media screen and (min-width: 670px) {
+@media screen and (min-width: 768px) {
 
     /* 一覧画面 */
     .roomIcon img {
@@ -315,7 +315,7 @@ LINE風フキダシ
 }
 
 /* ＰＣ対応 */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
 
     /* 一覧画面 */
     .roomContainer {

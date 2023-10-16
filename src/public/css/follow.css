@@ -112,7 +112,7 @@
 }
 
 /* タブレット対応 */
-@media screen and (min-width: 670px) {
+@media screen and (min-width: 768px) {
     .followContainer {
         width: 70%;
         margin-top: 1%;
@@ -141,7 +141,7 @@
 }
 
 /* ＰＣ対応 */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
     .followContainer {
         width: 50%;
         grid-template-columns: 20% 25% 30% 25%;

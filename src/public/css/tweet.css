@@ -160,7 +160,7 @@
 }
 
 /* タブレット対応 */
-@media screen and (min-width: 670px) {
+@media screen and (min-width: 768px) {
     .tweetpost {
         padding: 2% 10%;
         font-size: 13px;
@@ -200,7 +200,7 @@
 }
 
 /* ＰＣ対応 */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
     .tweetpost .tweet {
         border-radius: 5px;
         padding-left: 5px;

@@ -16,7 +16,7 @@
     background-color: white;
     margin: 0 5%;
     margin-bottom: 5%;
-    padding: 5% 0;
+    padding: 3% 0;
     width: 90%;
     border-radius: 0 0 10px 10px;
 }
@@ -33,7 +33,7 @@ form {
 
 .form.normal,
 #icon {
-    margin-bottom: 10%;
+    margin-bottom: 7.461%;
 }
 
 .form.error {
@@ -42,7 +42,7 @@ form {
 
 .error-msg {
     color: red;
-    padding-bottom: 3.22%;
+    padding-bottom: 1%;
 }
 
 .input.guide {
@@ -68,22 +68,22 @@ form {
 }
 
 .button .material-symbols-outlined {
-    font-size: 119.9%;
+    font-size: 120%;
 }
 
 /* タブレット対応 */
-@media screen and (min-width: 670px) {
+@media screen and (min-width: 768px) {
     .title {
         font-size: 300%;
         width: 80%;
         margin: 0 10%;
         margin-top: 5%;
+        padding: 4% 0;
     }
 
     .main {
         margin: 0 10%;
         width: 80%;
-        padding: 4% 0;
     }
 
     .input label,
@@ -93,11 +93,11 @@ form {
 
     .form.normal,
     #icon {
-        margin-bottom: 5%;
+        margin-bottom: 6.064%;
     }
 
     .error-msg {
-        padding-bottom: 1.265%;
+        padding-bottom: 2%;
     }
 
     .input.guide {
@@ -109,16 +109,16 @@ form {
     }
 
     .button .material-symbols-outlined {
-        font-size: 135.1%;
+        font-size: 135%;
     }
 }
 
 /* ＰＣ対応 */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
     .title {
-        font-size: 400%;
+        font-size: 350%;
         width: 60%;
-        padding: 4% 0;
+        padding: 3% 0;
         margin: 0 20%;
         margin-top: 3%;
     }
@@ -126,7 +126,7 @@ form {
     .main {
         margin: 0 20%;
         margin-bottom: 3%;
-        padding: 2% 0;
+        padding: 5% 0;
         width: 60%;
     }
 
