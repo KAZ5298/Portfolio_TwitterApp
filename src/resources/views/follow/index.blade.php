@@ -159,22 +159,24 @@
                     </div>
                     <div class="followButton">
                         @if ($loginUser->isFollowing($follow->id))
-                            <form action="{{ route('unfollow', $follow->id) }}" method="POST">
-                                @csrf
-                                @method('delete')
-                                @if ($loginUser->checkMessageInTalkRoom($loginUser->id, $follow->id))
-                                    <button type="submit" class="btn unfollow"
-                                        onclick="return confirm('チャットルームのメッセージが削除されます。よろしいですか？');">
-                                        <span class="material-symbols-outlined fb">person_remove</span>
-                                        <span class="icon-name">フォロー解除</span>
-                                    </button>
-                                @else
-                                    <button type="submit" class="btn unfollow">
-                                        <span class="material-symbols-outlined fb">person_remove</span>
-                                        <span class="icon-name">フォロー解除</span>
-                                    </button>
-                                @endif
-                            </form>
+                            <div class="unfollow-btn">
+                                <form action="{{ route('unfollow', $follow->id) }}" method="POST">
+                                    @csrf
+                                    @method('delete')
+                                    @if ($loginUser->checkMessageInTalkRoom($loginUser->id, $follow->id))
+                                        <button type="submit" class="btn unfollow"
+                                            onclick="return confirm('チャットルームのメッセージが削除されます。よろしいですか？');">
+                                            <span class="material-symbols-outlined fb">person_remove</span>
+                                            <span class="icon-name">フォロー解除</span>
+                                        </button>
+                                    @else
+                                        <button type="submit" class="btn unfollow">
+                                            <span class="material-symbols-outlined fb">person_remove</span>
+                                            <span class="icon-name">フォロー解除</span>
+                                        </button>
+                                    @endif
+                                </form>
+                            </div>
                         @endif
                     </div>
                 </div>

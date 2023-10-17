@@ -193,52 +193,7 @@
                         @endif
                     </div>
                     <div class="tweetButton">
-                        @if ($tweet->user->id != $loginUser->id)
-                            @if ($loginUser->isFollowing($tweet->user->id))
-                                <form action="{{ route('unfollow', $tweet->user->id) }}" method="POST">
-                                    @csrf
-                                    @method('delete')
-                                    @if ($loginUser->checkMessageInTalkRoom($loginUser->id, $tweet->user->id))
-                                        <button type="submit" class="btn unfollow"
-                                            onclick="return confirm('チャットルームのメッセージが削除されます。よろしいですか？');">
-                                            <span class="material-symbols-outlined tb">person_remove</span>
-                                            <span class="icon-name">フォロー解除</span>
-                                        </button>
-                                    @else
-                                        <button type="submit" class="btn unfollow">
-                                            <span class="material-symbols-outlined tb">person_remove</span>
-                                            <span class="icon-name">フォロー解除</span>
-                                        </button>
-                                    @endif
-                                </form>
-                            @else
-                                <form action="{{ route('follow', $tweet->user->id) }}" method="POST">
-                                    @csrf
-                                    <button type="submit" class="btn btn-primary">
-                                        <span class="material-symbols-outlined tb">person_add</span>
-                                        <span class="icon-name">フォロー</span>
-                                    </button>
-                                </form>
-                            @endif
-                            @if ($tweet->isFavorite($loginUser->id, $tweet->id))
-                                <form action="{{ route('unfavorite', $tweet) }}" method="POST">
-                                    @csrf
-                                    @method('delete')
-                                    <button type="submit" class="btn unfavorite">
-                                        <span class="material-symbols-outlined tb">thumb_down</span>
-                                        <span class="icon-name">いいね解除</span>
-                                    </button>
-                                </form>
-                            @else
-                                <form action="{{ route('favorite', $tweet) }}" method="POST">
-                                    @csrf
-                                    <button type="submit" class="btn btn-primary">
-                                        <span class="material-symbols-outlined tb">thumb_up</span>
-                                        <span class="icon-name">いいね</span>
-                                    </button>
-                                </form>
-                            @endif
-                        @else
+                        <div class="delete-btn">
                             <form action="{{ route('tweetDestroy', $tweet) }}" method="POST">
                                 @csrf
                                 @method('delete')
@@ -247,7 +202,7 @@
                                     <span class="icon-name">削除</span>
                                 </button>
                             </form>
-                        @endif
+                        </div>
                     </div>
                     <div class="tweetContent">
                         {{ $tweet->content }}

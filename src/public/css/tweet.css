@@ -48,8 +48,7 @@
 }
 
 .tweetIcon img {
-    width: 50px;
-    height: 50px;
+    width: 50%;
 }
 
 .tweetUser {
@@ -61,11 +60,11 @@
 }
 
 .tweetNickname {
-    font-size: 15px;
+    font-size: 100%;
 }
 
 .tweetAccount {
-    font-size: 13px;
+    font-size: 80%;
     color: gray;
 }
 
@@ -85,26 +84,31 @@
     font-weight: bold;
 }
 
+
+/* ボタン関連 */
 .tweetButton {
     grid-column: 1 / 3;
     grid-row: 3 / 4;
     justify-content: left;
-    padding-left: 5%;
+    padding-left: 3%;
 }
 
-.tweetButton .btn {
-    width: 90%;
-    margin: 0 0%;
+.follow-btn,
+.unfollow-btn,
+.favorite-btn,
+.unfavorite-btn,
+.delete-btn {
+    padding: 0 2%;
 }
 
 .material-symbols-outlined.tb,
 .material-symbols-outlined.tp {
-    font-size: 20px;
+    font-size: 100%;
 }
 
 .mutual-follow-tb,
 .followed-tb {
-    font-size: 10px;
+    font-size: 70%;
 }
 
 .tweetContent {
@@ -112,16 +116,16 @@
     grid-row: 2 / 3;
     border-top: 1px solid;
     padding: 1% 2%;
-    font-size: 15px;
+    font-size: 100%;
 }
 
 .tweetTime {
     grid-column: 3 / 6;
     grid-row: 3 / 4;
-    padding-right: 5%;
+    padding-right: 10%;
     color: gray;
     justify-content: right;
-    font-size: 15px;
+    font-size: 80%;
 }
 
 /* 共通化 */

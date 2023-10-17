@@ -31,7 +31,7 @@ form {
 }
 
 .form.normal {
-    margin-bottom: 10%;
+    margin-bottom: 8.355%;
 }
 
 .form.error {
@@ -40,7 +40,7 @@ form {
 
 .error-msg {
     color: red;
-    padding-bottom: 3.22%;
+    padding-bottom: 3%;
 }
 
 .btn {
@@ -62,7 +62,7 @@ form {
 }
 
 .button .material-symbols-outlined {
-    font-size: 119.9%;
+    font-size: 120%;
 }
 
 /* タブレット対応 */
