@@ -105,7 +105,7 @@
                         <div class="nav-item">
                             <p class="nav-name-sp">全て</p>
                             <span class="material-symbols-outlined nav-icon">groups</span>
-                            <span class="nav-name-pc">全てのツイート</span>
+                            <p class="nav-name-pc">全てのツイート</p>
                         </div>
                     </a>
                 </li>
@@ -114,7 +114,7 @@
                         <div class="nav-item">
                             <p class="nav-name-sp">自分</p>
                             <span class="material-symbols-outlined nav-icon">person</span>
-                            <span class="nav-name-pc">自分のツイート</span>
+                            <p class="nav-name-pc">自分のツイート</p>
                         </div>
                     </a>
                 </li>
@@ -123,7 +123,7 @@
                         <div class="nav-item current">
                             <p class="nav-name-sp">フォロー</p>
                             <span class="material-symbols-outlined nav-icon">person_add</span>
-                            <span class="nav-name-pc">フォローした人のツイート</span>
+                            <p class="nav-name-pc">フォローした人のツイート</p>
                         </div>
                     </a>
                 </li>
@@ -132,7 +132,7 @@
                         <div class="nav-item">
                             <p class="nav-name-sp">いいね</p>
                             <span class="material-symbols-outlined nav-icon">volunteer_activism</span>
-                            <span class="nav-name-pc">いいねしたツイート</span>
+                            <p class="nav-name-pc">いいねしたツイート</p>
                         </div>
                     </a>
                 </li>
@@ -141,7 +141,7 @@
                         <div class="nav-item">
                             <p class="nav-name-sp">チャット</p>
                             <span class="material-symbols-outlined nav-icon">chat</span>
-                            <span class="nav-name-pc">チャットルーム</span>
+                            <p class="nav-name-pc">チャットルーム</p>
                         </div>
                     </a>
                 </li>

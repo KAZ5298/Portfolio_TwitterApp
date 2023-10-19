@@ -7,7 +7,7 @@
     grid-template-columns: 80% 20%;
     padding: 2% 6%;
     padding-bottom: 0;
-    font-size: 80%;
+    font-size: 50%;
 }
 
 .tweetpost button {
@@ -61,11 +61,11 @@
 }
 
 .tweetNickname {
-    font-size: 100%;
+    font-size: 80%;
 }
 
 .tweetAccount {
-    font-size: 80%;
+    font-size: 70%;
     color: gray;
 }
 
@@ -103,12 +103,12 @@
 
 .material-symbols-outlined.tb,
 .material-symbols-outlined.tp {
-    font-size: 100%;
+    font-size: 75%;
 }
 
 .mutual-follow-tb,
 .followed-tb {
-    font-size: 70%;
+    font-size: 50%;
 }
 
 .tweetContent {
@@ -116,16 +116,16 @@
     grid-row: 2 / 3;
     border-top: 1px solid;
     padding: 1% 2%;
-    font-size: 100%;
+    font-size: 70%;
 }
 
 .tweetTime {
     grid-column: 3 / 4;
     grid-row: 3 / 4;
-    /* padding-left: 0%; */
+    /* padding-right: 10%; */
     color: gray;
     justify-content: center;
-    font-size: 80%;
+    font-size: 60%;
 }
 
 /* 共通化 */
