@@ -166,8 +166,12 @@
 /* タブレット対応 */
 @media screen and (min-width: 768px) {
     .tweetContainer {
-        height: 400px;
+        width: 70%;
+        height: 300px;
         grid-template-columns: 20% 40% 40%;
+        margin: 0 auto;
+        margin-top: 2%;
+        margin-bottom: 2%;
     }
 
     .tweetIcon img {
@@ -223,6 +227,7 @@
 
     .tweetContainer {
         width: 60%;
+        height: 400px;
         margin: 0 auto;
         margin-top: 1%;
         margin-bottom: 1%;

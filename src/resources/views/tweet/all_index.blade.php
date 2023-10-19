@@ -100,39 +100,49 @@
         </div>
         <nav class="navigation">
             <ul>
-                <li class="nav-item current">
-                    <a class="nav-name-sp">全て</a>
+                <li class="current">
                     <a href="{{ route('allTweetGet') }}">
-                        <span class="material-symbols-outlined icon">groups</span>
-                        <span class="nav-name-pc">全てのツイート</span>
+                        <div class="nav-item current">
+                            <p class="nav-name-sp">全て</p>
+                            <span class="material-symbols-outlined nav-icon">groups</span>
+                            <span class="nav-name-pc">全てのツイート</span>
+                        </div>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-name-sp">自分</a>
+                <li>
                     <a href="{{ route('myTweetGet') }}">
-                        <span class="material-symbols-outlined icon">person</span>
-                        <span class="nav-name-pc">自分のツイート</span>
+                        <div class="nav-item">
+                            <p class="nav-name-sp">自分</p>
+                            <span class="material-symbols-outlined nav-icon">person</span>
+                            <span class="nav-name-pc">自分のツイート</span>
+                        </div>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-name-sp">フォロー</a>
+                <li>
                     <a href="{{ route('followTweetGet') }}">
-                        <span class="material-symbols-outlined icon">person_add</span>
-                        <span class="nav-name-pc">フォローした人のツイート</span>
+                        <div class="nav-item">
+                            <p class="nav-name-sp">フォロー</p>
+                            <span class="material-symbols-outlined nav-icon">person_add</span>
+                            <span class="nav-name-pc">フォローした人のツイート</span>
+                        </div>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-name-sp">いいね</a>
+                <li>
                     <a href="{{ route('favoriteList') }}">
-                        <span class="material-symbols-outlined icon">volunteer_activism</span>
-                        <span class="nav-name-pc">いいねしたツイート</span>
+                        <div class="nav-item">
+                            <p class="nav-name-sp">いいね</p>
+                            <span class="material-symbols-outlined nav-icon">volunteer_activism</span>
+                            <span class="nav-name-pc">いいねしたツイート</span>
+                        </div>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-name-sp">チャット</a>
+                <li>
                     <a href="{{ route('talkRoom') }}">
-                        <span class="material-symbols-outlined icon">chat</span>
-                        <span class="nav-name-pc">チャットルーム</span>
+                        <div class="nav-item">
+                            <p class="nav-name-sp">チャット</p>
+                            <span class="material-symbols-outlined nav-icon">chat</span>
+                            <span class="nav-name-pc">チャットルーム</span>
+                        </div>
                     </a>
                 </li>
             </ul>
