@@ -59,7 +59,7 @@ nav.navigation ul li.current a {
 
 nav.navbar-follow ul li a.navbar-follow-name,
 nav.navbar-room ul li a.navbar-room-name {
-    font-size: 80%;
+    font-size: 60%;
 }
 
 nav.navigation ul li a,
@@ -76,23 +76,19 @@ nav.navbar-follow ul li a.navbar-follow-btn {
 }
 
 /* div */
-.nav-item.current {
-    border-bottom: thin solid white;
-    padding-bottom: 1%;
-}
-
 nav.navigation ul li a .nav-item {
-    width: 50%;
+    width: 100%;
 }
 
 /* pタグ */
 nav.navigation ul li a .nav-item p.nav-name-sp {
-    font-size: 40%;
-    margin: 0;
+    font-size: 60%;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+    transform: scale(0.7);
 }
 
 /* spanタグ */
@@ -120,6 +116,14 @@ nav.navigation ul li a span.material-symbols-outlined.nav-icon,
 nav.navbar-room ul li a span.material-symbols-outlined.navbar-room-btn,
 nav.navbar-follow ul li a span.material-symbols-outlined.navbar-follow-btn {
     font-size: 100%;
+
+}
+
+nav.navigation ul li.current a span.material-symbols-outlined.nav-icon {
+    width: 40%;
+    margin: 0 auto;
+    border-bottom: medium solid white;
+    padding-bottom: 5%;
 }
 
 /* btnタグ */

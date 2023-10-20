@@ -81,14 +81,27 @@
 .loginUser,
 .userMenu,
 .userMenu .offcanvas-title,
-.userMenu,
-.offcanvas-body ul li a {
+.userMenu {
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 60%;
 }
 
+.offcanvas-body ul li a {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 100%;
+    transform: scale(0.8);
+}
+
 .navbar-toggler {
     font-size: 100%
+}
+
+.offcanvas-header {
+    padding: 10% 5%;
+}
+
+.offcanvas-body {
+    padding: 0;
 }
 
 /* タブレット対応 */

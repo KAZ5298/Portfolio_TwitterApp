@@ -31,10 +31,10 @@
 
 .tweetContainer {
     width: 90%;
-    height: 200px;
+    height: 150px;
     display: grid;
     grid-template-columns: 25% 37.5% 37.5%;
-    grid-template-rows: 30% 50% 20%;
+    grid-template-rows: 25% 50% 25%;
     margin: 0 5%;
     margin-top: 2%;
     margin-bottom: 2%;
@@ -108,7 +108,8 @@
 
 .mutual-follow-tb,
 .followed-tb {
-    font-size: 50%;
+    font-size: 60%;
+    transform: scale(0.9);
 }
 
 .tweetContent {
