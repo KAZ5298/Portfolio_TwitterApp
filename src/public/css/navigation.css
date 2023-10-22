@@ -94,7 +94,7 @@ nav.navigation ul li a .nav-item p.nav-name-sp {
 /* spanタグ */
 nav.navbar-room ul li a.navbar-room-name span,
 nav.navbar-follow ul li a.navbar-follow-name span {
-    border-bottom: medium solid white;
+    border-bottom: thin solid white;
     padding-bottom: 1%;
 }
 
@@ -122,8 +122,8 @@ nav.navbar-follow ul li a span.material-symbols-outlined.navbar-follow-btn {
 nav.navigation ul li.current a span.material-symbols-outlined.nav-icon {
     width: 40%;
     margin: 0 auto;
-    border-bottom: medium solid white;
-    padding-bottom: 5%;
+    border-bottom: thin solid white;
+    padding-bottom: 3%;
 }
 
 /* btnタグ */
@@ -135,6 +135,8 @@ nav.navbar-follow ul li a.navbar-follow-btn {
 
 /* タブレット対応 */
 @media screen and (min-width: 768px) {
+
+    /* navタグ */
 
     /* ulタグ */
     nav.navbar-follow ul,
@@ -148,44 +150,124 @@ nav.navbar-follow ul li a.navbar-follow-btn {
         padding: 0 3%;
     }
 
-    /* aタグ */
-    nav.navigation ul li.nav-item a.nav-name-sp,
     nav.navbar-follow ul li a.navbar-follow-name,
     nav.navbar-room ul li a.navbar-room-name {
-        font-size: 80%;
+        font-size: 100%;
+    }
+
+    /* div */
+
+    /* pタグ */
+    nav.navigation ul li a .nav-item p.nav-name-sp {
+        transform: scale(1);
     }
 
     /* spanタグ */
+    nav.navbar-room ul li a.navbar-room-name span,
+    nav.navbar-follow ul li a.navbar-follow-name span {
+        border-bottom: medium solid white;
+    }
+
     nav.navigation ul li a span.material-symbols-outlined.nav-icon,
     nav.navbar-room ul li a span.material-symbols-outlined.navbar-room-btn,
     nav.navbar-follow ul li a span.material-symbols-outlined.navbar-follow-btn {
         font-size: 200%;
     }
 
-    nav.navbar-room ul li a.navbar-room-name span,
-    nav.navbar-follow ul li a.navbar-follow-name span {
-        border-bottom: thin solid white;
-        padding-bottom: 0.5%;
-    }
-
-    /* div */
-    nav.navigation ul li a .nav-item.current {
-        /* border-bottom: medium solid white; */
-        padding-bottom: 3%;
-    }
-
-    nav.navigation ul li a .nav-item {
-        width: 40%;
-    }
-
-    /* pタグ */
-    nav.navigation ul li a .nav-item p.nav-name-sp {
-        font-size: 70%;
+    nav.navigation ul li.current a span.material-symbols-outlined.nav-icon {
+        width: 30%;
+        border-bottom: medium solid white;
     }
 }
 
 /* ＰＣ対応 */
 @media screen and (min-width: 1280px) {
+
+    /* navタグ */
+
+    /* ulタグ */
+    nav.navbar-follow ul,
+    nav.navbar-room ul {
+        display: table;
+        margin: 0 auto;
+        width: 100%;
+        height: auto;
+        padding: 2.8% 5%;
+    }
+
+    /* liタグ */
+    nav.navbar-follow ul li.nav-item-follow.name,
+    nav.navbar-room ul li.nav-item-room.name {
+        display: table-cell;
+        width: 80%;
+        vertical-align: middle;
+    }
+
+    nav.navbar-follow ul li.nav-item-follow.btn,
+    nav.navbar-room ul li.nav-item-room.btn {
+        display: table-cell;
+        width: 20%;
+        vertical-align: middle;
+        padding: 0 2%;
+    }
+
+    /* aタグ */
+    nav.navbar-follow ul li a.navbar-follow-name,
+    nav.navbar-room ul li a.navbar-room-name {
+        font-size: 60%;
+    }
+
+    /* div */
+    nav.navigation ul li a .nav-item {
+        /* width: 100%; */
+    }
+
+    /* pタグ */
+    nav.navigation ul li a .nav-item p.nav-name-sp {
+        /* font-size: 60%; */
+        /* margin: 0 auto; */
+        /* display: flex; */
+        /* justify-content: center; */
+        /* align-items: center; */
+        /* width: 100%; */
+        /* transform: scale(0.7); */
+    }
+
+    /* spanタグ */
+    nav.navbar-room ul li a.navbar-room-name span,
+    nav.navbar-follow ul li a.navbar-follow-name span {
+        border-bottom: thin solid white;
+        padding-bottom: 1%;
+    }
+
+    nav.navigation ul li a p.nav-name-pc,
+    nav.navbar-room ul li a span.navbar-room-btn-name,
+    nav.navbar-follow ul li a span.navbar-follow-btn-name {
+        display: block;
+        margin: 0;
+        width: 100%;
+    }
+
+    nav.navigation ul li a span.material-symbols-outlined.nav-icon,
+    nav.navbar-room ul li a span.material-symbols-outlined.navbar-room-btn,
+    nav.navbar-follow ul li a span.material-symbols-outlined.navbar-follow-btn {
+        font-size: 100%;
+
+    }
+
+    nav.navigation ul li.current a span.material-symbols-outlined.nav-icon {
+        width: 100%;
+        margin: 0;
+        border-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    /* btnタグ */
+    nav.navbar-room ul li a.navbar-room-btn,
+    nav.navbar-follow ul li a.navbar-follow-btn {
+        padding: 1%;
+        margin: 1%;
+    }
 
     /* navタグ */
 
@@ -248,6 +330,6 @@ nav.navbar-follow ul li a.navbar-follow-btn {
     nav.navigation ul li a .nav-item span.material-symbols-outlined.nav-icon,
     nav.navbar-room ul li a span.material-symbols-outlined.navbar-room-btn,
     nav.navbar-follow ul li a span.material-symbols-outlined.navbar-follow-btn {
-        /* font-size: 200%; */
+        font-size: 200%;
     }
 }
