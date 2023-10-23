@@ -101,12 +101,14 @@
         <nav class="navbar-room">
             <ul>
                 <li class="nav-item-room name">
-                    <a class="navbar-room-name"><span>{{ $rooms->user->nickname }} さんとのチャットルーム</span></a>
+                    <a class="navbar-room-name">
+                        <p>{{ $rooms->user->nickname }} さんとのチャットルーム</p>
+                    </a>
                 </li>
                 <li class="nav-item-room btn">
                     <a class="navbar-room-btn btn btn-secondary" href="{{ route('talkRoom') }}">
-                        <span class="material-symbols-outlined navbar-room-btn"> undo </span>
-                        <span class="navbar-room-btn-name">ＴＯＰ画面へ戻る</span>
+                        <p class="material-symbols-outlined navbar-room-btn"> undo </p>
+                        <p class="navbar-room-btn-name">ＴＯＰ画面へ戻る</p>
                     </a>
                 </li>
             </ul>

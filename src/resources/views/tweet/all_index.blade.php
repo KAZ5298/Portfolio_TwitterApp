@@ -104,7 +104,7 @@
                     <a href="{{ route('allTweetGet') }}">
                         <div class="nav-item current">
                             <p class="nav-name-sp">全て</p>
-                            <span class="material-symbols-outlined nav-icon">groups</span>
+                            <p class="material-symbols-outlined nav-icon">group</p>
                             <p class="nav-name-pc">全てのツイート</p>
                         </div>
                     </a>
@@ -113,7 +113,7 @@
                     <a href="{{ route('myTweetGet') }}">
                         <div class="nav-item">
                             <p class="nav-name-sp">自分</p>
-                            <span class="material-symbols-outlined nav-icon">person</span>
+                            <p class="material-symbols-outlined nav-icon">person</p>
                             <p class="nav-name-pc">自分のツイート</p>
                         </div>
                     </a>
@@ -122,7 +122,7 @@
                     <a href="{{ route('followTweetGet') }}">
                         <div class="nav-item">
                             <p class="nav-name-sp">フォロー</p>
-                            <span class="material-symbols-outlined nav-icon">person_add</span>
+                            <p class="material-symbols-outlined nav-icon">person_add</p>
                             <p class="nav-name-pc">フォローした人のツイート</p>
                         </div>
                     </a>
@@ -131,7 +131,7 @@
                     <a href="{{ route('favoriteList') }}">
                         <div class="nav-item">
                             <p class="nav-name-sp">いいね</p>
-                            <span class="material-symbols-outlined nav-icon">volunteer_activism</span>
+                            <p class="material-symbols-outlined nav-icon">volunteer_activism</p>
                             <p class="nav-name-pc">いいねしたツイート</p>
                         </div>
                     </a>
@@ -140,7 +140,7 @@
                     <a href="{{ route('talkRoom') }}">
                         <div class="nav-item">
                             <p class="nav-name-sp">チャット</p>
-                            <span class="material-symbols-outlined nav-icon">chat</span>
+                            <p class="material-symbols-outlined nav-icon">chat</p>
                             <p class="nav-name-pc">チャットルーム</p>
                         </div>
                     </a>

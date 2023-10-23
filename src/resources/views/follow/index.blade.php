@@ -101,12 +101,14 @@
         <nav class="navbar-follow">
             <ul>
                 <li class="nav-item-follow name">
-                    <a class="navbar-follow-name"><span>フォロー一覧</span></a>
+                    <a class="navbar-follow-name">
+                        <p>フォロー一覧</p>
+                    </a>
                 </li>
                 <li class="nav-item-follow btn">
                     <a class="navbar-follow-btn btn btn-secondary" href="{{ route('allTweetGet') }}">
-                        <span class="material-symbols-outlined navbar-follow-btn"> undo </span>
-                        <span class="navbar-follow-btn-name">ＴＯＰ画面へ戻る</span>
+                        <p class="material-symbols-outlined navbar-follow-btn"> undo </p>
+                        <p class="navbar-follow-btn-name">ＴＯＰ画面へ戻る</p>
                     </a>
                 </li>
             </ul>
