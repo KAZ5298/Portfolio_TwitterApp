@@ -152,8 +152,8 @@
             <div class="tweetpost">
                 <textarea class="tweet" name="content" placeholder="ツイートは１００文字以下で入力してください。">{{ old('content') }}</textarea>
                 <button type="submit" class="btn btn-primary">
-                    <span class="material-symbols-outlined tp">input</span>
-                    <span class="btn-name">ツイート</span>
+                    <p class="material-symbols-outlined tp">input</p>
+                    <p class="btn-name">ツイート</p>
                 </button>
             </div>
         </form>
@@ -194,12 +194,13 @@
                     <div class="tweetFollow">
                         @if ($loginUser->isFollowing($tweet->user->id) && $loginUser->isFollowed($tweet->user->id))
                             <div class="mutual-follow">
-                                <span class="material-symbols-outlined tb">handshake</span>
-                                <span class="mutual-follow-tb">相互フォローです</span>
+                                <p class="material-symbols-outlined tb">handshake</p>
+                                <p class="mutual-follow-tb">相互フォローです</p>
                             </div>
                         @elseif(!$loginUser->isFollowing($tweet->user->id) && $loginUser->isFollowed($tweet->user->id))
-                            <div class="followed"><span class="material-symbols-outlined tb"> front_hand </span>
-                                <span class="followed-tb">フォローされています</span>
+                            <div class="followed">
+                                <p class="material-symbols-outlined tb"> front_hand </p>
+                                <p class="followed-tb">フォローされています</p>
                             </div>
                         @endif
                     </div>
@@ -209,8 +210,8 @@
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn delete">
-                                    <span class="material-symbols-outlined tb">delete</span>
-                                    <span class="icon-name">削除</span>
+                                    <p class="material-symbols-outlined tb">delete</p>
+                                    <p class="icon-name">削除</p>
                                 </button>
                             </form>
                         </div>

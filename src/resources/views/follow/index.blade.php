@@ -150,12 +150,8 @@
                     <div class="followFollow">
                         @if ($loginUser->isFollowing($follow->id) && $loginUser->isFollowed($follow->id))
                             <div class="mutual-follow">
-                                <span class="material-symbols-outlined fb">handshake</span>
-                                <span class="mutual-follow-fb">相互フォローです</span>
-                            </div>
-                        @elseif(!$loginUser->isFollowing($follow->id) && $loginUser->isFollowed($follow->id))
-                            <div class="followed"><span class="material-symbols-outlined fb"> front_hand </span>
-                                <span class="followed-fb">フォローされています</span>
+                                <p class="material-symbols-outlined">handshake</p>
+                                <p class="mutual-follow-fb">相互フォローです</p>
                             </div>
                         @endif
                     </div>
@@ -168,13 +164,13 @@
                                     @if ($loginUser->checkMessageInTalkRoom($loginUser->id, $follow->id))
                                         <button type="submit" class="btn unfollow"
                                             onclick="return confirm('チャットルームのメッセージが削除されます。よろしいですか？');">
-                                            <span class="material-symbols-outlined fb">person_remove</span>
-                                            <span class="icon-name">フォロー解除</span>
+                                            <p class="material-symbols-outlined">person_remove</p>
+                                            <p class="icon-name">フォロー解除</p>
                                         </button>
                                     @else
                                         <button type="submit" class="btn unfollow">
-                                            <span class="material-symbols-outlined fb">person_remove</span>
-                                            <span class="icon-name">フォロー解除</span>
+                                            <p class="material-symbols-outlined">person_remove</p>
+                                            <p class="icon-name">フォロー解除</p>
                                         </button>
                                     @endif
                                 </form>

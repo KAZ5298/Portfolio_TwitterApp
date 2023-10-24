@@ -10,6 +10,11 @@
     font-size: 50%;
 }
 
+.tweetpost .tweet {
+    border-radius: 3px;
+    padding-left: 1%;
+}
+
 .tweetpost button {
     margin-left: 10%;
 }
@@ -34,7 +39,7 @@
     height: 150px;
     display: grid;
     grid-template-columns: 25% 37.5% 37.5%;
-    grid-template-rows: 25% 50% 25%;
+    grid-template-rows: 30% 50% 20%;
     margin: 0 5%;
     margin-top: 2%;
     margin-bottom: 2%;
@@ -82,8 +87,12 @@
     width: 90%;
     height: 50%;
     font-weight: bold;
+    font-size: 50%;
 }
 
+p {
+    margin: 0;
+}
 
 /* ボタン関連 */
 .tweetButton {
@@ -101,15 +110,17 @@
     padding: 0 2%;
 }
 
-.material-symbols-outlined.tb,
-.material-symbols-outlined.tp {
-    font-size: 75%;
+.follow-btn button,
+.unfollow-btn button,
+.favorite-btn button,
+.unfavorite-btn button,
+.delete-btn button {
+    font-size: 50%;
 }
 
-.mutual-follow-tb,
-.followed-tb {
-    font-size: 60%;
-    transform: scale(0.9);
+.material-symbols-outlined.tp,
+.material-symbols-outlined.tb {
+    font-size: 150%;
 }
 
 .tweetContent {
@@ -123,14 +134,12 @@
 .tweetTime {
     grid-column: 3 / 4;
     grid-row: 3 / 4;
-    /* padding-right: 10%; */
     color: gray;
     justify-content: center;
     font-size: 60%;
 }
 
 /* 共通化 */
-.btn-name,
 .icon-name {
     display: none;
 }
@@ -166,6 +175,10 @@
 
 /* タブレット対応 */
 @media screen and (min-width: 768px) {
+    .tweetpost {
+        font-size: 100%;
+    }
+
     .tweetContainer {
         width: 70%;
         height: 300px;
@@ -180,24 +193,24 @@
     }
 
     .tweetNickname {
-        font-size: 150%;
+        font-size: 120%;
     }
 
     .tweetAccount {
-        font-size: 130%;
+        font-size: 100%;
     }
 
-    .follow-btn,
-    .unfollow-btn,
-    .favorite-btn,
-    .unfavorite-btn,
-    .delete-btn {
-        padding: 0 1%;
+    .mutual-follow,
+    .followed {
+        font-size: 100%;
     }
 
-    .material-symbols-outlined.tb,
-    .material-symbols-outlined.tp {
-        font-size: 150%;
+    .follow-btn button,
+    .unfollow-btn button,
+    .favorite-btn button,
+    .unfavorite-btn button,
+    .delete-btn button {
+        font-size: 100%;
     }
 
     .mutual-follow-tb,
@@ -206,29 +219,34 @@
     }
 
     .tweetContent {
-        font-size: 150%;
+        font-size: 130%;
     }
 
     .tweetTime {
-        font-size: 120%;
+        font-size: 100%;
     }
 }
 
 /* ＰＣ対応 */
 @media screen and (min-width: 1280px) {
-    .tweetpost .tweet {
-        border-radius: 5px;
-        padding-left: 1%;
+    .tweetpost {
+        padding: 2% 10%;
+        padding-bottom: 0;
+        font-size: 120%;
     }
 
-    .tweetpost {
-        padding: 1% 15%;
-        font-size: 100%;
+    .tweetpost .tweet {
+        border-radius: 5px;
+    }
+
+    .tweetpost button {
+        font-size: 120%;
     }
 
     .tweetContainer {
         width: 60%;
         height: 400px;
+        grid-template-rows: 30% 50% 20%;
         margin: 0 auto;
         margin-top: 1%;
         margin-bottom: 1%;
@@ -247,17 +265,16 @@
     }
 
     .tweetButton .btn {
-        width: 100%;
+        width: 150px;
+        font-size: 120%;
     }
 
     .tweetIcon img {
         width: 70%;
     }
 
-    .btn-name,
     .icon-name {
-        display: flex;
-        font-size: 150%;
+        display: block;
     }
 
     .mutual-follow,
@@ -267,11 +284,6 @@
     }
 
     /* 共通化 */
-    .material-symbols-outlined.tb,
-    .material-symbols-outlined.tp {
-        font-size: 200%;
-    }
-
     .mutual-follow-tb,
     .followed-tb {
         font-size: 130%;

@@ -184,12 +184,13 @@
                     <div class="favoriteFollow">
                         @if ($loginUser->isFollowing($favorite->user->id) && $loginUser->isFollowed($favorite->user->id))
                             <div class="mutual-follow">
-                                <span class="material-symbols-outlined fb">handshake</span>
-                                <span class="mutual-follow-fb">相互フォローです</span>
+                                <p class="material-symbols-outlined fb">handshake</p>
+                                <p class="mutual-follow-fb">相互フォローです</p>
                             </div>
                         @elseif(!$loginUser->isFollowing($favorite->user->id) && $loginUser->isFollowed($favorite->user->id))
-                            <div class="followed"><span class="material-symbols-outlined fb"> front_hand </span>
-                                <span class="followed-fb">フォローされています</span>
+                            <div class="followed">
+                                <p class="material-symbols-outlined fb"> front_hand </p>
+                                <p class="followed-fb">フォローされています</p>
                             </div>
                         @endif
                     </div>
@@ -202,13 +203,13 @@
                                     @if ($loginUser->checkMessageInTalkRoom($loginUser->id, $favorite->user->id))
                                         <button type="submit" class="btn unfollow"
                                             onclick="return confirm('チャットルームのメッセージが削除されます。よろしいですか？');">
-                                            <span class="material-symbols-outlined fb">person_remove</span>
-                                            <span class="icon-name">フォロー解除</span>
+                                            <p class="material-symbols-outlined fb">person_remove</p>
+                                            <p class="icon-name">フォロー解除</p>
                                         </button>
                                     @else
                                         <button type="submit" class="btn unfollow">
-                                            <span class="material-symbols-outlined fb">person_remove</span>
-                                            <span class="icon-name">フォロー解除</span>
+                                            <p class="material-symbols-outlined fb">person_remove</p>
+                                            <p class="icon-name">フォロー解除</p>
                                         </button>
                                     @endif
                                 </form>
@@ -218,8 +219,8 @@
                                 <form action="{{ route('follow', $favorite->user->id) }}" method="POST">
                                     @csrf
                                     <button type="submit" class="btn btn-primary">
-                                        <span class="material-symbols-outlined fb">person_add</span>
-                                        <span class="icon-name">フォロー</span>
+                                        <p class="material-symbols-outlined fb">person_add</p>
+                                        <p class="icon-name">フォロー</p>
                                     </button>
                                 </form>
                             </div>
@@ -230,8 +231,8 @@
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="btn unfavorite">
-                                        <span class="material-symbols-outlined fb">thumb_down</span>
-                                        <span class="icon-name">いいね解除</span>
+                                        <p class="material-symbols-outlined fb">thumb_down</p>
+                                        <p class="icon-name">いいね解除</p>
                                     </button>
                                 </form>
                             </div>
@@ -240,8 +241,8 @@
                                 <form action="{{ route('favorite', $favorite) }}" method="POST">
                                     @csrf
                                     <button type="submit" class="btn btn-primary">
-                                        <span class="material-symbols-outlined fb">thumb_up</span>
-                                        <span class="icon-name">いいね</span>
+                                        <p class="material-symbols-outlined fb">thumb_up</p>
+                                        <p class="icon-name">いいね</p>
                                     </button>
                                 </form>
                             </div>

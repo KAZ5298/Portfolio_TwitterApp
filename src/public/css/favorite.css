@@ -1,5 +1,24 @@
 /* モバイルファースト */
 /* スマホ対応 */
+.favoritepost {
+    background-color: white;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 80% 20%;
+    padding: 2% 6%;
+    padding-bottom: 0;
+    font-size: 50%;
+}
+
+.favoritepost .favorite {
+    border-radius: 3px;
+    padding-left: 1%;
+}
+
+.favoritepost button {
+    margin-left: 10%;
+}
+
 .main {
     background-color: white;
     margin: 0 3%;
@@ -17,7 +36,7 @@
 
 .favoriteContainer {
     width: 90%;
-    height: 200px;
+    height: 150px;
     display: grid;
     grid-template-columns: 25% 37.5% 37.5%;
     grid-template-rows: 30% 50% 20%;
@@ -47,11 +66,11 @@
 }
 
 .favoriteNickname {
-    font-size: 100%;
+    font-size: 80%;
 }
 
 .favoriteAccount {
-    font-size: 80%;
+    font-size: 70%;
     color: gray;
 }
 
@@ -68,8 +87,12 @@
     width: 90%;
     height: 50%;
     font-weight: bold;
+    font-size: 50%;
 }
 
+p {
+    margin: 0;
+}
 
 /* ボタン関連 */
 .favoriteButton {
@@ -87,14 +110,17 @@
     padding: 0 2%;
 }
 
-.material-symbols-outlined.fb,
-.material-symbols-outlined.fp {
-    font-size: 100%;
+.follow-btn button,
+.unfollow-btn button,
+.favorite-btn button,
+.unfavorite-btn button,
+.delete-btn button {
+    font-size: 50%;
 }
 
-.mutual-follow-fb,
-.followed-fb {
-    font-size: 70%;
+.material-symbols-outlined.fp,
+.material-symbols-outlined.fb {
+    font-size: 150%;
 }
 
 .favoriteContent {
@@ -102,20 +128,18 @@
     grid-row: 2 / 3;
     border-top: 1px solid;
     padding: 1% 2%;
-    font-size: 100%;
+    font-size: 70%;
 }
 
 .favoriteTime {
     grid-column: 3 / 4;
     grid-row: 3 / 4;
-    /* padding-left: 0%; */
     color: gray;
     justify-content: center;
-    font-size: 80%;
+    font-size: 60%;
 }
 
 /* 共通化 */
-.btn-name,
 .icon-name {
     display: none;
 }
@@ -151,9 +175,17 @@
 
 /* タブレット対応 */
 @media screen and (min-width: 768px) {
+    .favoritepost {
+        font-size: 100%;
+    }
+
     .favoriteContainer {
-        height: 400px;
+        width: 70%;
+        height: 300px;
         grid-template-columns: 20% 40% 40%;
+        margin: 0 auto;
+        margin-top: 2%;
+        margin-bottom: 2%;
     }
 
     .favoriteIcon img {
@@ -161,24 +193,24 @@
     }
 
     .favoriteNickname {
-        font-size: 150%;
+        font-size: 120%;
     }
 
     .favoriteAccount {
-        font-size: 130%;
+        font-size: 100%;
     }
 
-    .follow-btn,
-    .unfollow-btn,
-    .favorite-btn,
-    .unfavorite-btn,
-    .delete-btn {
-        padding: 0 1%;
+    .mutual-follow,
+    .followed {
+        font-size: 100%;
     }
 
-    .material-symbols-outlined.fb,
-    .material-symbols-outlined.fp {
-        font-size: 150%;
+    .follow-btn button,
+    .unfollow-btn button,
+    .favorite-btn button,
+    .unfavorite-btn button,
+    .delete-btn button {
+        font-size: 100%;
     }
 
     .mutual-follow-fb,
@@ -187,28 +219,34 @@
     }
 
     .favoriteContent {
-        font-size: 150%;
+        font-size: 130%;
     }
 
     .favoriteTime {
-        font-size: 120%;
+        font-size: 100%;
     }
 }
 
 /* ＰＣ対応 */
 @media screen and (min-width: 1280px) {
-    .favoritepost .favorite {
-        border-radius: 5px;
-        padding-left: 1%;
+    .favoritepost {
+        padding: 2% 10%;
+        padding-bottom: 0;
+        font-size: 120%;
     }
 
-    .favoritepost {
-        padding: 1% 15%;
-        font-size: 100%;
+    .favoritepost .favorite {
+        border-radius: 5px;
+    }
+
+    .favoritepost button {
+        font-size: 120%;
     }
 
     .favoriteContainer {
         width: 60%;
+        height: 400px;
+        grid-template-rows: 30% 50% 20%;
         margin: 0 auto;
         margin-top: 1%;
         margin-bottom: 1%;
@@ -227,17 +265,16 @@
     }
 
     .favoriteButton .btn {
-        width: 100%;
+        width: 150px;
+        font-size: 120%;
     }
 
     .favoriteIcon img {
         width: 70%;
     }
 
-    .btn-name,
     .icon-name {
-        display: flex;
-        font-size: 150%;
+        display: block;
     }
 
     .mutual-follow,
@@ -247,11 +284,6 @@
     }
 
     /* 共通化 */
-    .material-symbols-outlined.fb,
-    .material-symbols-outlined.fp {
-        font-size: 200%;
-    }
-
     .mutual-follow-fb,
     .followed-fb {
         font-size: 130%;
