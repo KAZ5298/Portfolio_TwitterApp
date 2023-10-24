@@ -140,7 +140,7 @@ p {
 }
 
 /* 共通化 */
-.icon-name {
+p.icon-name {
     display: none;
 }
 
@@ -202,7 +202,7 @@ p {
 
     .mutual-follow,
     .followed {
-        font-size: 100%;
+        font-size: 150%;
     }
 
     .follow-btn button,
@@ -273,7 +273,7 @@ p {
         width: 70%;
     }
 
-    .icon-name {
+    p.icon-name {
         display: block;
     }
 
@@ -284,11 +284,6 @@ p {
     }
 
     /* 共通化 */
-    .mutual-follow-tb,
-    .followed-tb {
-        font-size: 130%;
-    }
-
     .tweetContent {
         font-size: 200%;
     }

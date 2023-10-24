@@ -167,7 +167,10 @@
                         </div>
                     </div>
                     <div class="roomLink">
-                        <a href="{{ route('talkRoomShow', $room->id) }}">入室する</a>
+                        <a class="enter-btn btn btn-primary" href="{{ route('talkRoomShow', $room->id) }}">
+                            <p class="material-symbols-outlined icon">login</p>
+                            <p class="icon-name">入室する</p>
+                        </a>
                     </div>
                 </div>
             @endforeach

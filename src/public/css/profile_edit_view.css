@@ -6,7 +6,7 @@
     width: 90%;
     text-align: center;
     padding: 5% 0;
-    margin: 0 5%;
+    margin: 0 auto;
     margin-top: 5%;
     color: white;
     border-radius: 10px 10px 0 0;
@@ -14,7 +14,7 @@
 
 .main {
     background-color: white;
-    margin: 0 5%;
+    margin: 0 auto;
     margin-bottom: 5%;
     padding: 5% 0;
     width: 90%;
@@ -25,7 +25,7 @@
 .input input.form,
 #icon {
     width: 100%;
-    font-size: 80%;
+    font-size: 70%;
 }
 
 .form.normal,
@@ -39,7 +39,7 @@
 
 .error-msg {
     color: red;
-    padding-bottom: 2.921%;
+    padding-bottom: 3%;
 }
 
 .input.guide {
@@ -49,7 +49,7 @@
 .btn {
     width: 100%;
     margin: 1%;
-    padding: 0.612%;
+    padding: 1%;
 }
 
 .button,
@@ -58,14 +58,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 100%;
 }
 
-.btn-name {
+p.icon-name {
     display: none;
 }
 
-.button .material-symbols-outlined {
-    font-size: 119.9%;
+p.material-symbols-outlined.icon {
+    font-size: 150%;
 }
 
 .input.icon label input {
@@ -79,20 +80,22 @@ img {
     margin: 3% 0;
 }
 
+p {
+    margin: 0;
+}
+
 /* タブレット対応 */
 @media screen and (min-width: 768px) {
     .title {
         font-size: 300%;
         width: 80%;
-        margin: 0 10%;
-        margin-top: 4%;
         padding: 4% 0;
+        margin-top: 4%;
     }
 
     .main {
-        margin: 0 10%;
+        padding: 3% 0;
         width: 80%;
-        padding: 4% 0;
     }
 
     .input label,
@@ -103,33 +106,30 @@ img {
 
     .form.normal,
     #icon {
-        margin-bottom: 5.262%;
+        margin-bottom: 6%;
     }
 
     .error-msg {
-        padding-bottom: 1.265%;
+        padding-bottom: 2%;
     }
 
     .input.guide {
         padding-bottom: 4%;
     }
 
-    .input.icon label input {
-        transform: scale(1);
+    .button,
+    .button a,
+    .button button {
+        font-size: 110%;
     }
 
-    .btn {
-        margin: 0.5%;
-        padding: 0.331%;
+    .input.icon label input {
+        transform: scale(1.0);
     }
 
     img {
         width: 20%;
         margin: 2% 0;
-    }
-
-    .button .material-symbols-outlined {
-        font-size: 135.1%;
     }
 }
 
@@ -139,21 +139,17 @@ img {
         font-size: 400%;
         width: 60%;
         padding: 3% 0;
-        margin: 0 20%;
         margin-top: 3%;
     }
 
     .main {
-        margin: 0 20%;
-        margin-bottom: 3%;
-        padding: 3% 0;
+        padding: 2% 0;
         width: 60%;
     }
 
     .input label,
     .input input.form,
-    #icon,
-    .btn-name {
+    #icon {
         font-size: 100%;
     }
 
@@ -162,25 +158,13 @@ img {
         margin-bottom: 5%;
     }
 
-    .error-msg {
-        padding-bottom: 0.935%;
-    }
-
     .input.guide {
         padding-bottom: 3%;
     }
 
     .input.icon label input {
         transform: scale(1.2);
-    }
-
-    .btn {
-        padding: 0.34%;
-        margin: 0.5%;
-    }
-
-    .btn-name {
-        display: block;
+        margin-left: 1%;
     }
 
     img {
@@ -188,7 +172,7 @@ img {
         margin: 1% 0;
     }
 
-    .button .material-symbols-outlined {
-        font-size: 150%;
+    p.icon-name {
+        display: block;
     }
 }

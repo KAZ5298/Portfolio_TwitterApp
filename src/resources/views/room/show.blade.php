@@ -125,7 +125,7 @@
                     <textarea class="message" name="message" placeholder="メッセージは１００文字以下で入力してください。">{{ old('message') }}</textarea>
                     <button type="submit" class="btn btn-primary">
                         <p class="material-symbols-outlined mp">input</p>
-                        <p class="btn-name">投稿</p>
+                        <p class="icon-name">投稿</p>
                     </button>
                 </div>
             </form>

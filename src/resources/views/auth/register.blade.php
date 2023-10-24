@@ -107,16 +107,16 @@
 
                 <div class="button">
                     <button type="submit" class="btn btn-primary">
-                        <span class="material-symbols-outlined"> how_to_reg </span>
-                        <span class="btn-name">登録</span>
+                        <p class="material-symbols-outlined icon"> how_to_reg </p>
+                        <p class="icon-name">登録</p>
                     </button>
                     <a href="/register" class="btn btn-danger">
-                        <span class="material-symbols-outlined"> restart_alt </span>
-                        <span class="btn-name">リセット</span>
+                        <p class="material-symbols-outlined icon"> restart_alt </p>
+                        <p class="icon-name">リセット</p>
                     </a>
                     <a href="{{ route('login') }}" class="btn btn-secondary">
-                        <span class="material-symbols-outlined navbar-follow-btn"> undo </span>
-                        <span class="btn-name">ログイン画面へ戻る</span>
+                        <p class="material-symbols-outlined icon"> undo </p>
+                        <p class="icon-name">ＴＯＰ画面へ戻る</p>
                     </a>
                 </div>
             </form>
