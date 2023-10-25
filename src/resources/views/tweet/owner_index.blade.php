@@ -194,13 +194,13 @@
                     <div class="tweetFollow">
                         @if ($loginUser->isFollowing($tweet->user->id) && $loginUser->isFollowed($tweet->user->id))
                             <div class="mutual-follow">
-                                <p class="material-symbols-outlined tb">handshake</p>
-                                <p class="mutual-follow-tb">相互フォローです</p>
+                                <p class="material-symbols-outlined icon">handshake</p>
+                                <p class="icon-name">相互フォローです</p>
                             </div>
                         @elseif(!$loginUser->isFollowing($tweet->user->id) && $loginUser->isFollowed($tweet->user->id))
                             <div class="followed">
-                                <p class="material-symbols-outlined tb"> front_hand </p>
-                                <p class="followed-tb">フォローされています</p>
+                                <p class="material-symbols-outlined icon"> front_hand </p>
+                                <p class="icon-name">フォローされています</p>
                             </div>
                         @endif
                     </div>
@@ -210,7 +210,7 @@
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn delete">
-                                    <p class="material-symbols-outlined tb">delete</p>
+                                    <p class="material-symbols-outlined icon">delete</p>
                                     <p class="icon-name">削除</p>
                                 </button>
                             </form>

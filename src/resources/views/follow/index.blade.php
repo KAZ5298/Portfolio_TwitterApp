@@ -150,8 +150,8 @@
                     <div class="followFollow">
                         @if ($loginUser->isFollowing($follow->id) && $loginUser->isFollowed($follow->id))
                             <div class="mutual-follow">
-                                <p class="material-symbols-outlined">handshake</p>
-                                <p class="mutual-follow-fb">相互フォローです</p>
+                                <p class="material-symbols-outlined icon">handshake</p>
+                                <p class="icon-name">相互フォローです</p>
                             </div>
                         @endif
                     </div>
@@ -164,12 +164,12 @@
                                     @if ($loginUser->checkMessageInTalkRoom($loginUser->id, $follow->id))
                                         <button type="submit" class="btn unfollow"
                                             onclick="return confirm('チャットルームのメッセージが削除されます。よろしいですか？');">
-                                            <p class="material-symbols-outlined">person_remove</p>
+                                            <p class="material-symbols-outlined icon">person_remove</p>
                                             <p class="icon-name">フォロー解除</p>
                                         </button>
                                     @else
                                         <button type="submit" class="btn unfollow">
-                                            <p class="material-symbols-outlined">person_remove</p>
+                                            <p class="material-symbols-outlined icon">person_remove</p>
                                             <p class="icon-name">フォロー解除</p>
                                         </button>
                                     @endif

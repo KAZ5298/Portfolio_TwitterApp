@@ -184,13 +184,13 @@
                     <div class="favoriteFollow">
                         @if ($loginUser->isFollowing($favorite->user->id) && $loginUser->isFollowed($favorite->user->id))
                             <div class="mutual-follow">
-                                <p class="material-symbols-outlined fb">handshake</p>
-                                <p class="mutual-follow-fb">相互フォローです</p>
+                                <p class="material-symbols-outlined icon">handshake</p>
+                                <p class="icon-name">相互フォローです</p>
                             </div>
                         @elseif(!$loginUser->isFollowing($favorite->user->id) && $loginUser->isFollowed($favorite->user->id))
                             <div class="followed">
-                                <p class="material-symbols-outlined fb"> front_hand </p>
-                                <p class="followed-fb">フォローされています</p>
+                                <p class="material-symbols-outlined icon"> front_hand </p>
+                                <p class="icon-name">フォローされています</p>
                             </div>
                         @endif
                     </div>
@@ -203,12 +203,12 @@
                                     @if ($loginUser->checkMessageInTalkRoom($loginUser->id, $favorite->user->id))
                                         <button type="submit" class="btn unfollow"
                                             onclick="return confirm('チャットルームのメッセージが削除されます。よろしいですか？');">
-                                            <p class="material-symbols-outlined fb">person_remove</p>
+                                            <p class="material-symbols-outlined icon">person_remove</p>
                                             <p class="icon-name">フォロー解除</p>
                                         </button>
                                     @else
                                         <button type="submit" class="btn unfollow">
-                                            <p class="material-symbols-outlined fb">person_remove</p>
+                                            <p class="material-symbols-outlined icon">person_remove</p>
                                             <p class="icon-name">フォロー解除</p>
                                         </button>
                                     @endif
@@ -219,7 +219,7 @@
                                 <form action="{{ route('follow', $favorite->user->id) }}" method="POST">
                                     @csrf
                                     <button type="submit" class="btn btn-primary">
-                                        <p class="material-symbols-outlined fb">person_add</p>
+                                        <p class="material-symbols-outlined icon">person_add</p>
                                         <p class="icon-name">フォロー</p>
                                     </button>
                                 </form>
@@ -231,7 +231,7 @@
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="btn unfavorite">
-                                        <p class="material-symbols-outlined fb">thumb_down</p>
+                                        <p class="material-symbols-outlined icon">thumb_down</p>
                                         <p class="icon-name">いいね解除</p>
                                     </button>
                                 </form>
@@ -241,7 +241,7 @@
                                 <form action="{{ route('favorite', $favorite) }}" method="POST">
                                     @csrf
                                     <button type="submit" class="btn btn-primary">
-                                        <p class="material-symbols-outlined fb">thumb_up</p>
+                                        <p class="material-symbols-outlined icon">thumb_up</p>
                                         <p class="icon-name">いいね</p>
                                     </button>
                                 </form>

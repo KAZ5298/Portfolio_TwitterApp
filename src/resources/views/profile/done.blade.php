@@ -27,13 +27,13 @@
     <div class="main">
         <div class="container">
             <div class="done bg-success-subtle">
-                <label class="done">修正が完了しました。</label>
+                <label>修正が完了しました。</label>
             </div>
 
             <div class="button">
                 <a href="{{ route('allTweetGet') }}"class="btn btn-primary">
-                    <span class="material-symbols-outlined navbar-follow-btn"> undo </span>
-                    <span class="btn-name">ＴＯＰ画面へ戻る</span>
+                    <p class="material-symbols-outlined icon"> undo </p>
+                    <p class="icon-name">ＴＯＰ画面へ戻る</p>
                 </a>
             </div>
         </div>

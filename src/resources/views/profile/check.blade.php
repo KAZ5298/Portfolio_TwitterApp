@@ -66,16 +66,16 @@
 
                 <div class="button">
                     <button type="submit" class="btn btn-primary">
-                        <span class="material-symbols-outlined"> check_circle </span>
-                        <span class="btn-name">はい</span>
+                        <p class="material-symbols-outlined icon"> check_circle </p>
+                        <p class="icon-name">はい</p>
                     </button>
                     <a href="{{ route('profile.edit') }}" class="btn btn-danger">
-                        <span class="material-symbols-outlined"> cancel </span>
-                        <span class="btn-name">いいえ</span>
+                        <p class="material-symbols-outlined icon"> cancel </p>
+                        <p class="icon-name">いいえ</p>
                     </a>
                     <a href="{{ route('allTweetGet') }}" class="btn btn-secondary">
-                        <span class="material-symbols-outlined navbar-follow-btn"> undo </span>
-                        <span class="btn-name">ＴＯＰ画面へ戻る</span>
+                        <p class="material-symbols-outlined icon"> undo </p>
+                        <p class="icon-name">ＴＯＰ画面へ戻る</p>
                     </a>
                 </div>
             </form>

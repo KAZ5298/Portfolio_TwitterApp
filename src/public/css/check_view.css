@@ -6,7 +6,7 @@
     width: 90%;
     text-align: center;
     padding: 5% 0;
-    margin: 0 5%;
+    margin: 0 auto;
     margin-top: 5%;
     color: white;
     border-radius: 10px 10px 0 0;
@@ -14,7 +14,7 @@
 
 .main {
     background-color: white;
-    margin: 0 5%;
+    margin: 0 auto;
     margin-bottom: 5%;
     padding: 3% 0;
     width: 90%;
@@ -35,9 +35,12 @@ td {
 
 th,
 td,
-.worning,
-.btn-name {
-    font-size: 80%;
+.worning {
+    font-size: 90%;
+}
+
+.icon-name {
+    font-size: 100%;
 }
 
 .worning {
@@ -61,19 +64,24 @@ td,
     margin: 0 1%;
     margin-top: 3%;
     padding: 2%;
+    font-size: 100%;
 }
 
 img {
     width: 50%;
 }
 
-.btn-name,
+p {
+    margin: 0;
+}
+
+p.icon-name,
 tr span {
     display: none;
 }
 
 .button .material-symbols-outlined {
-    font-size: 119.9%;
+    font-size: 150%;
 }
 
 /* タブレット対応 */
@@ -82,38 +90,24 @@ tr span {
         font-size: 300%;
         width: 70%;
         padding: 4% 0;
-        margin: 0 15%;
-        margin-top: 5%;
     }
 
     .main {
-        margin: 0 15%;
-        margin-bottom: 5%;
+        padding: 2% 0;
         width: 70%;
     }
 
-    th,
-    td,
-    .worning,
-    .btn-name {
+    .btn {
         font-size: 90%;
     }
 
-    .worning {
-        padding: 2%;
-    }
-
     img {
-        width: 30%;
+        width: 40%;
     }
 
-    .btn-name,
+    p.icon-name,
     tr span {
         display: inline-block;
-    }
-
-    .button .material-symbols-outlined {
-        font-size: 135.1%;
     }
 }
 
@@ -123,33 +117,24 @@ tr span {
         font-size: 400%;
         width: 60%;
         padding: 3% 0;
-        margin: 0 20%;
-        margin-top: 3%;
     }
 
     .main {
-        margin: 0 20%;
-        margin-bottom: 5%;
-        width: 60%;
         padding: 2% 0;
+        width: 60%;
     }
 
     th,
     td,
-    .worning,
-    .btn-name {
+    .worning {
         font-size: 100%;
     }
 
-    .worning {
-        padding: 1.5%;
+    .btn {
+        font-size: 100%;
     }
 
     img {
-        width: 20%;
-    }
-
-    .button .material-symbols-outlined {
-        font-size: 150%;
+        width: 40%;
     }
 }
