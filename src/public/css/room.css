@@ -106,8 +106,17 @@ p {
     padding-left: 2%;
 }
 
+.messagepost button {
+    font-size: 150%;
+}
+
 .messagepost button p.icon-name {
     display: none;
+    font-size: 100%;
+}
+
+.messagepost button p.icon {
+    font-size: 150%;
 }
 
 /*==============
@@ -130,7 +139,7 @@ LINE風フキダシ
 .kaiwa.line .fukidasi {
     position: relative;
     display: inline-block;
-    margin: 8px 0 0;
+    margin: 2% 0 0;
     padding: 9px 14px;
     border-radius: 19px;
     overflow-wrap: break-word;
@@ -142,7 +151,7 @@ LINE風フキダシ
 /*フキダシ左*/
 .kaiwa.line .fukidasi.left {
     float: left;
-    margin-left: 10%;
+    margin-left: 7%;
     background: white;
     font-size: 60%;
 }
@@ -150,7 +159,7 @@ LINE風フキダシ
 /*フキダシ右*/
 .kaiwa.line .fukidasi.right {
     float: right;
-    margin-right: 10%;
+    margin-right: 7%;
     background: #7adc40;
     font-size: 60%;
 }
@@ -186,10 +195,11 @@ LINE風フキダシ
 
 /* アイコンを左右端に配置*/
 .profile {
-    width: 95%;
+    width: 90%;
+    height: 70px;
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 75% 25%;
+    grid-template-rows: 70% 30%;
     margin: 0 auto;
 }
 
@@ -197,31 +207,27 @@ LINE風フキダシ
     grid-column: 1 / 1;
     grid-row: 1 / 2;
     justify-content: left;
-    padding-left: 2%;
 }
 
 .followName {
-    font-size: 70%;
+    font-size: 50%;
     justify-content: left;
-    padding-left: 2%;
 }
 
 .loginUserIcon {
     grid-column: 2 / 2;
     grid-row: 1 / 2;
     justify-content: right;
-    padding-right: 2%;
 }
 
 .loginUserName {
-    font-size: 70%;
+    font-size: 50%;
     justify-content: right;
-    padding-right: 2%;
 }
 
 .kaiwa.line .profile .followIcon img,
 .kaiwa.line .profile .loginUserIcon img {
-    width: 40%;
+    width: 25%;
 }
 
 .material-symbols-outlined.mp {
@@ -243,7 +249,7 @@ LINE風フキダシ
     /* 一覧画面 */
     .roomContainer {
         width: 60%;
-        height: 70px;
+        height: 100px;
         margin: 0 20%;
         margin-top: 1%;
         margin-bottom: 1%;
@@ -254,11 +260,11 @@ LINE風フキダシ
     }
 
     .roomNickname {
-        font-size: 90%;
+        font-size: 100%;
     }
 
     .roomAccount {
-        font-size: 80%;
+        font-size: 90%;
     }
 
     .roomLink a.enter-btn {
@@ -270,23 +276,28 @@ LINE風フキダシ
         font-size: 70%;
     }
 
+    .profile {
+        height: 120px;
+    }
+
     /*==============
     LINE風フキダシ
     ===============*/
     /*フレームとフォント*/
     .kaiwa.line {
         width: 90%;
+        padding: 3% 0;
     }
 
     /*フキダシ左*/
     .kaiwa.line .fukidasi.left {
-        font-size: 80%;
+        font-size: 100%;
         margin-left: 8%;
     }
 
     /*フキダシ右*/
     .kaiwa.line .fukidasi.right {
-        font-size: 80%;
+        font-size: 100%;
         margin-right: 8%;
     }
 
@@ -297,11 +308,6 @@ LINE風フキダシ
     .loginUserName {
         font-size: 90%;
     }
-
-    .kaiwa.line .profile .followIcon img,
-    .kaiwa.line .profile .loginUserIcon img {
-        width: 30%;
-    }
 }
 
 /* ＰＣ対応 */
@@ -310,7 +316,7 @@ LINE風フキダシ
     /* 一覧画面 */
     .roomContainer {
         width: 60%;
-        height: 100px;
+        height: 130px;
         margin: 0 auto;
         margin-top: 2%;
         margin-bottom: 2%;
@@ -333,7 +339,7 @@ LINE風フキダシ
         font-size: 130%;
     }
 
-    .icon-name {
+    .messagepost button p.icon-name {
         display: block;
     }
 
@@ -346,7 +352,11 @@ LINE風フキダシ
     }
 
     .messagepost button {
-        font-size: 100%;
+        font-size: 150%;
+    }
+
+    .profile {
+        height: 160px;
     }
 
     /*==============
