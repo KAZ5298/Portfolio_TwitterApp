@@ -1,24 +1,5 @@
 /* モバイルファースト */
 /* スマホ対応 */
-.favoritepost {
-    background-color: white;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 80% 20%;
-    padding: 2% 6%;
-    padding-bottom: 0;
-    font-size: 50%;
-}
-
-.favoritepost .favorite {
-    border-radius: 3px;
-    padding-left: 1%;
-}
-
-.favoritepost button {
-    margin-left: 10%;
-}
-
 .main {
     background-color: white;
     margin: 0 3%;
@@ -92,6 +73,7 @@
 
 p {
     margin: 0;
+    font-size: 100%;
 }
 
 /* ボタン関連 */
@@ -118,8 +100,7 @@ p {
     font-size: 50%;
 }
 
-.material-symbols-outlined.fp,
-.material-symbols-outlined.fb {
+.material-symbols-outlined.icon {
     font-size: 150%;
 }
 
@@ -140,7 +121,7 @@ p {
 }
 
 /* 共通化 */
-.icon-name {
+button p.icon-name {
     display: none;
 }
 
@@ -158,7 +139,7 @@ p {
 .followed,
 .favoriteButton,
 .favoriteButton button,
-.material-symbols-outlined.fb,
+.material-symbols-outlined.icon,
 .favoriteTime {
     display: flex;
     align-items: center;
@@ -175,10 +156,6 @@ p {
 
 /* タブレット対応 */
 @media screen and (min-width: 768px) {
-    .favoritepost {
-        font-size: 100%;
-    }
-
     .favoriteContainer {
         width: 70%;
         height: 300px;
@@ -202,7 +179,7 @@ p {
 
     .mutual-follow,
     .followed {
-        font-size: 150%;
+        font-size: 100%;
     }
 
     .follow-btn button,
@@ -213,8 +190,8 @@ p {
         font-size: 100%;
     }
 
-    .mutual-follow-fb,
-    .followed-fb {
+    .mutual-follow-tb,
+    .followed-tb {
         font-size: 100%;
     }
 
@@ -229,20 +206,6 @@ p {
 
 /* ＰＣ対応 */
 @media screen and (min-width: 1280px) {
-    .favoritepost {
-        padding: 2% 10%;
-        padding-bottom: 0;
-        font-size: 120%;
-    }
-
-    .favoritepost .favorite {
-        border-radius: 5px;
-    }
-
-    .favoritepost button {
-        font-size: 120%;
-    }
-
     .favoriteContainer {
         width: 60%;
         height: 400px;
@@ -273,14 +236,19 @@ p {
         width: 70%;
     }
 
-    .icon-name {
+    button p.icon-name {
         display: block;
     }
 
     .mutual-follow,
     .followed {
         width: 80%;
-        height: 50%;
+        font-size: 120%;
+    }
+
+    .mutual-follow-tb,
+    .followed-tb {
+        font-size: 150%;
     }
 
     /* 共通化 */

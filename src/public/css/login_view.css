@@ -64,6 +64,7 @@ p {
 
 p.icon-name {
     display: none;
+    font-size: 100%;
 }
 
 p.material-symbols-outlined.icon {
